@@ -29,13 +29,13 @@ app.get('/webhook/', function(req, res){
 })
 
 app.post('/webhook/', function(req, res){
-	let messaging_event = req.body.entry[0].messaging
-	for(let i = 0; i < messaging_event.length; i++){
-		let event = messaging_event[i]
+	let messaging_events = req.body.entry[0].messaging
+	for(let i = 0; i < messaging_events.length; i++){
+		let event = messaging_events[i]
 		let sender = event.sender.id
 		if(event.message && event.message.text){
 			let text = event.message.text
-			senderText(sender, "Text echo:" + text.substring(0, 100))
+			sendText(sender, "Text echo:" + text.substring(0, 100))
 		}
 	}
 	res.sendStatus(200)
