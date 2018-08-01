@@ -42,6 +42,8 @@ app.post('/webhook/', function(req, res) {
 				sendText(sender, "I cant understand! Please type correct command")
 			}
 			
+		} else if (text.includes("let me know the traffic status in davao city")){
+		  sendText(sender, "Well, Ok! may I ask you, are you a motorist or a commuter?")
 		}
 	}
 	res.sendStatus(200)
