@@ -58,7 +58,8 @@ function sendText(sender, text) {
 		} else if (response.body.error) {
 			console.log("response body error")
 		}
-	})
+	}
+	)
 }
 
 app.listen(app.get('port'), function() {
