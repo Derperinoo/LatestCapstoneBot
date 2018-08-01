@@ -38,6 +38,8 @@ app.post('/webhook/', function(req, res) {
 			let text = event.message.text
 			if(text.includes("good day chatbot")){
 				sendText(sender, "whats up ? how may I help you")
+			}else{
+				sendText(sender, "I cant understand! Please type correct command")
 			}
 			
 		}
