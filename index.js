@@ -36,7 +36,10 @@ app.post('/webhook/', function(req, res) {
 		let sender = event.sender.id
 		if (event.message && event.message.text) {
 			let text = event.message.text
-			sendText(sender, text.substring(0, 100))
+			if(text.includes("good day chatbot")){
+				sendText(sender, "whats up ? how may I help you")
+			}
+			
 		}
 	}
 	res.sendStatus(200)
