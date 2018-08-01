@@ -36,7 +36,12 @@ app.post('/webhook/', function(req, res) {
 		let sender = event.sender.id
 		if (event.message && event.message.text) {
 			let text = event.message.text
-			sendText(sender, text.substring(0, 100))
+			if (text.includes("happy")){
+				sendText(sender, text.substring(0, 100))
+			}else{
+				sendText(sender,"wew" + text.substring(0, 100))
+			}
+			
 		}
 	}
 	res.sendStatus(200)
