@@ -38,12 +38,12 @@ app.post('/webhook/', function(req, res) {
 			let text = event.message.text
 			if(text.includes("good day chatbot")){
 				sendText(sender, "whats up ? how may I help you")
+			}else if (text.includes("let me know the traffic status in davao city")){
+				sendText(sender, "Well, Ok! are you a motorist or a commuter?")
 			}else{
-				sendText(sender, "I cant understand! Please type correct command")
+				sendText(sender, "asdasda")
 			}
 			
-		} else if (text.includes("let me know the traffic status in davao city")){
-		  sendText(sender, "Well, Ok! may I ask you, are you a motorist or a commuter?")
 		}
 	}
 	res.sendStatus(200)
