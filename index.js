@@ -42,6 +42,8 @@ app.post('/webhook/', function(req, res) {
 				sendText(sender, "Well, Ok! are you a motorist or a commuter?")
 			}else if (text.includes("I am a commuter")){
 				sendText(sender, "Ok, so you are commuter. What route of jeep are you going to ride ? ")
+			}else if (text.includes("I am a motorist")){
+				sendText(sender, "Ok, so you are motorist. Where your location and where are you heading to? Example: PoceSt to Manila")
 			}else{
 				sendText(sender, "I cant understand :( please type correct command")
 			}
