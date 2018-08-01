@@ -18,7 +18,7 @@ app.get('/', function(req, res) {
 	res.send("Hi I am a chatbot")
 })
 
-let token = "EAAimrKFwRkIBALkEQUCwoncU4Qy5horbpz8ZCIjeVEergHeHXczojxfYfK9L5WQf5DWy1yCDXeY7LSNH6CrVEMN2MqHVYu0AZAryJ9sClmwZANZBJf9z3qZARY34Bv6wQjGxYAlJHMDqhw2n1UnVDSCJraKZACQ6rPOHMysvlncgZDZD"
+let token = "EAAimrKFwRkIBADU9ZAgmFJPZBZB2hipmHHPdMFp0X8soLUq1ElyX0v20noVjGBvuyjppZBEHKaR1rhZAjCM9eI7nWG5JiRCaJISuLo8Oxfp9KDxx489dj5ukAReIgSc0c1IOcHmzTFEovaCvRhGZCcZCMDnJL2D251mkZCnJjs8uggZDZD"
 
 // Facebook 
 
@@ -36,7 +36,7 @@ app.post('/webhook/', function(req, res) {
 		let sender = event.sender.id
 		if (event.message && event.message.text) {
 			let text = event.message.text
-			sendText(sender, text.substring(0, 100))
+			sendText(sender, "Text echo: " + text.substring(0, 100))
 		}
 	}
 	res.sendStatus(200)
@@ -52,20 +52,15 @@ function sendText(sender, text) {
 			recipient: {id: sender},
 			message : messageData,
 		}
-	}) 
-function(error, response, body) {
-	if (error) {
-		console.log("sending error")
-	} else if (response.body.error) {
-		console.log("response body error")
+	}, function(error, response, body) {
+		if (error) {
+			console.log("sending error")
+		} else if (response.body.error) {
+			console.log("response body error")
 		}
-	}
-
+	})
 }
 
 app.listen(app.get('port'), function() {
 	console.log("running: port")
 })
-
-
-
