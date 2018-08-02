@@ -41,11 +41,11 @@ app.post('/webhook/', function(req, res) {
 			}else if (text.includes("let me know the traffic status in davao city")){
 				sendText(sender, "Well, Ok! are you a motorist or a commuter?")
 			}else if (text.includes("I am a commuter")){
-				sendText(sender, "Ok, so you are commuter. What route of jeep are you going to ride ? ")
+				sendText(sender, "Ok, so you are commuter. What route of jeep are you going to ride?")
 			}else if (text.includes("I am a motorist")){
 				sendText(sender, "Ok, so you are motorist. Where your location and where are you heading to? Example: PoceSt to Manila")
 			}else{
-				sendText(sender, "I cant understand :( please type correct command")
+				sendText(sender, "I cant understand :( please type correct command! type yes if you want to see all commands and no if not")
 			}
 			
 		}
