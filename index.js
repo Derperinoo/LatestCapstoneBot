@@ -44,8 +44,12 @@ app.post('/webhook/', function(req, res) {
 				sendText(sender, "Ok, so you are commuter. What route of jeep are you going to ride?")
 			}else if (text.includes("I am a motorist")){
 				sendText(sender, "Ok, so you are motorist. Where your location and where are you heading to? Example: PoceSt to Manila")
+			}else if (text.includes("NO")){
+				sendText(sender, "Ok! What now?")
+			}else if (text.includes("YES")){
+				sendText(sender, "good day chatbot, let me know the traffic status in davao city, I am a commuter and I am a motorist")
 			}else{
-				sendText(sender, "I cant understand :( please type correct command! type yes if you want to see all commands and no if not")
+				sendText(sender, "I cant understand :( please type correct command! type YES if you want to see all commands and NO if not")
 			}
 			
 		}
