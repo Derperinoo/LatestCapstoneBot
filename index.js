@@ -49,7 +49,7 @@ app.post('/webhook/', function(req, res) {
 			}else if (text.includes("YES")){
 				sendText(sender, "This are the necessary commands! 					good day chatbot, 					what is the traffic status in davao city, 					I am a commuter,				and I am a motorist")
 			}else{
-				sendText(sender, "I cant understand :( please type correct command! type YES if you want to see all commands and NO if not")
+				sendText(sender, "I cant understand :( please type correct command! type help if you want to see all commands")
 			}
 			
 		}
