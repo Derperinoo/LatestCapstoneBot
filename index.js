@@ -47,7 +47,7 @@ app.post('/webhook/', function(req, res) {
 			}else if (text.includes("NO")){
 				sendText(sender, "Ok! What now?")
 			}else if (text.includes("help")){
-				sendText(sender, "This are the necessary commands! 					good day chatbot, 					what is the traffic status in davao city, 					I am a commuter,				and I am a motorist")
+				sendText(sender, "This are the necessary commands! 		mamama,			good day chatbot, 					what is the traffic status in davao city, 					I am a commuter,				and I am a motorist")
 			}else{
 				sendText(sender, "I cant understand :( please type correct command! type 'help' if you want to see all commands")
 			}
