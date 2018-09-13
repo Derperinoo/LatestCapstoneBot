@@ -43,11 +43,38 @@ app.get('/equirino',function(_req, _res){
 	  	const jf1 = body.RWS[0].RW[0].FIS[0].FI[0].CF[0].JF;
 	  	
 	  	let analysis = "";
-	  	if(jf1 > 3){
-	  		analysis = "RED";
-	  	}else if(jf1 <= 3){
-	  		analysis = "GREEN";
+	  	if(jf1 = 4){
+	  		analysis = "Free flow of traffic";
+	  	}else if(jf1 = 3){
+	  		analysis = "Free flow of traffic";
+	  	}else if(jf1 = 2){
+	  		analysis = "Free flow of traffic";
+	  	}else if(jf1 = 3){
+	  		analysis = "Free flow of traffic";
+	  	}else if(jf1 = 2){
+	  		analysis = "Free flow of traffic";
+	  	}else if(jf1 = 1){
+	  		analysis = "Free flow of traffic";
+	  	}else if(jf1 = 0){
+	  		analysis = "Free flow of traffic";
+	  	}else if(jf1 = 8){
+	  		analysis = "Sluggish flow of traffic";
+	  	}else if(jf1 = 7){
+	  		analysis = "Sluggish flow of traffic"
+	  	}else if(jf1 = 6){
+	  		analysis = "Sluggish flow of traffic"
+	  	}else if(jf1 = 5){
+	  		analysis = "Sluggish flow of traffic"
+	  	}else if(jf1 = 4){
+	  		analysis = "Sluggish flow of traffic"
+	  	}else if(jf1 = 8){
+	  		analysis = "Slow flow of traffic"
+	  	}else if(jf1 = 9){
+	  		analysis = "Slow flow of traffic"
+	  	}else if(jf1 = 10){
+	  		analysis = "Slow flow of traffic"
 	  	}
+
 
 
 	  	_res.setHeader('Content-Type', 'application/json');
