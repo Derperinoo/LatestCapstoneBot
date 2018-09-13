@@ -139,7 +139,7 @@ app.post('/webhook/', function(req, res) {
 				axios.get('https://polar-castle-83452.herokuapp.com/equirino')
 				  .then(function (response) {
 				    //console.log(response);
-				    chatbotResponse = "ok";
+				    chatbotResponse = response.jf1;
 				    sendText(sender, chatbotResponse)
 				  })
 				  .catch(function (error) {
