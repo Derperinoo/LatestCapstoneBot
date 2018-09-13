@@ -78,16 +78,28 @@ app.get('/geo',function(req, res){
 	//   console.log("Error: " + err.message);
 	// });
 
-	request('https://traffic.api.here.com/traffic/6.1/flow.json?bbox=7.2598%2C125.0860%3B6.7670%2C125.6674&app_id=fQbW8CGYiU3l5mLqWgBE&app_code=SYZXwjFBHSYi_1t1GNuHow', { json: true }, (err, res, body) => {
-	  if (err) { return console.log(err); }
-	  // console.log(body.url);
-	  // console.log(body.explanation);
-	  console.log(body.RWS[0].RW);
-	  console.log("###################");
-	  console.log(body.RWS[0].RW[0].DE);
-	  console.log(body.RWS[0].RW[0].FIS[0].FI[0].TMC.DE);
-	  console.log(body.RWS[0].RW[0].FIS[0].FI[0].CF[0].JF);
-	});
+	// request('https://traffic.api.here.com/traffic/6.1/flow.json?bbox=7.2598%2C125.0860%3B6.7670%2C125.6674&app_id=fQbW8CGYiU3l5mLqWgBE&app_code=SYZXwjFBHSYi_1t1GNuHow', { json: true }, (err, res, body) => {
+	//   if (err) { return console.log(err); }
+	//   // console.log(body.url);
+	//   // console.log(body.explanation);
+	//   console.log(body.RWS[0].RW);
+	//   console.log("###################");
+	//   console.log(body.RWS[0].RW[0].DE);
+	//   console.log(body.RWS[0].RW[0].FIS[0].FI[0].TMC.DE);
+	//   console.log(body.RWS[0].RW[0].FIS[0].FI[0].CF[0].JF);
+	// });
+
+	axios.get('https://polar-castle-83452.herokuapp.com/equirino')
+	  .then(function (response) {
+	    console.log(response.data);
+	    //chatbotResponse = response.jf1;
+	    //sendText(sender, chatbotResponse)
+	  })
+	  .catch(function (error) {
+	    console.log(error);
+	    //chatbotResponse = "not ok";
+	    //sendText(sender, chatbotResponse)
+	  });
 
 })
 
@@ -139,7 +151,7 @@ app.post('/webhook/', function(req, res) {
 				axios.get('https://polar-castle-83452.herokuapp.com/equirino')
 				  .then(function (response) {
 				    //console.log(response);
-				    chatbotResponse = response.jf1;
+				    chatbotResponse = response.data.jf1;
 				    sendText(sender, chatbotResponse)
 				  })
 				  .catch(function (error) {
