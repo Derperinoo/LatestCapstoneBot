@@ -36,11 +36,18 @@ app.get('/equirino',function(_req, _res){
 	  	console.log("###################");
 	  	console.log(body.RWS[0].RW[0].DE);
 	  	console.log(body.RWS[0].RW[0].FIS[0].FI[0].TMC.DE);
-	  	console.log(body.RWS[0].RW[0].FIS[0].FI[0].CF[0].JF);
+	  	console.log(sum);
+
 	  	
 	  	const sep = ("----------------------");
 
+	  	const sep1 = ("----------------------");
+
 	  	const sep2 = ("----------------------");
+
+	  	const sep3 = ("----------------------");
+
+	  	const sep4 = ("----------------------");
 
 	  	const street = body.RWS[0].RW[0].DE;
 	  	const int1 = body.RWS[0].RW[0].FIS[0].FI[0].TMC.DE;
@@ -52,9 +59,15 @@ app.get('/equirino',function(_req, _res){
 	  	const int3 = body.RWS[0].RW[0].FIS[0].FI[2].TMC.DE;
 	  	const jf3 = body.RWS[0].RW[0].FIS[0].FI[2].CF[0].JF;
 
-	  	const y = 3
+	  	const int4 = body.RWS[0].RW[0].FIS[0].FI[3].TMC.DE;
+	  	const jf4 = body.RWS[0].RW[0].FIS[0].FI[3].CF[0].JF;
+
+	  	const int5 = body.RWS[0].RW[0].FIS[0].FI[4].TMC.DE;
+	  	const jf5 = body.RWS[0].RW[0].FIS[0].FI[4].CF[0].JF;
+
+	  	const y = 4
 	  
-	  	const sum = jf1 + jf2 + jf3 / y;
+	  	var sum = jf1 + jf2 + jf3 + jf4 + jf5 / y;
 
 	  	
 	  	let analysis = "";
@@ -93,7 +106,8 @@ app.get('/equirino',function(_req, _res){
 
 
 	  	_res.setHeader('Content-Type', 'application/json');
-    	_res.send(JSON.stringify({ street: street, int1: int1, jf1: jf1, sep: sep, int2: int2, jf2: jf2, sep2: sep2, int3: int3, jf3: jf3, analysis: analysis }));
+    	_res.send(JSON.stringify({ street: street,sep1:sep1, int1: int1, jf1: jf1, sep: sep, int2: int2, jf2: jf2, sep2: sep2, int3: int3, jf3: jf3, sep3: sep3, 
+    		int4: int4, jf4: jf4, sep4: sep4, int5: int5, jf5: jf5,  analysis: analysis }));
 	
 
 
