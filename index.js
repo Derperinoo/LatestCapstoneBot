@@ -79,7 +79,8 @@ app.get('/equirino',function(_req, _res){
 
 	  	_res.setHeader('Content-Type', 'application/json');
     	_res.send(JSON.stringify({ street: street, int1: int1, jf1: jf1, analysis: analysis }));
-	});
+	
+
 
 
 	    const street2 = body.RWS[0].RW[0].DE;
@@ -89,6 +90,9 @@ app.get('/equirino',function(_req, _res){
 	    _res.setHeader('Content-Type', 'application/json');
     	_res.send(JSON.stringify({ street2: street2, int2: int2, jf2: jf2 }));
     
+	});
+
+
 });
 
 app.get('/geo',function(req, res){
