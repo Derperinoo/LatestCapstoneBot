@@ -42,6 +42,7 @@ app.get('/equirino',function(_req, _res){
 	  	const int1 = body.RWS[0].RW[0].FIS[0].FI[0].TMC.DE;
 	  	const jf1 = body.RWS[0].RW[0].FIS[0].FI[0].CF[0].JF;
 
+	  	const street2 = body.RWS[0].RW[0].DE;
 	  	const int2 = body.RWS[0].RW[0].FIS[0].FI[0].TMC.DE;
 	  	const jf2 = body.RWS[0].RW[0].FIS[0].FI[0].CF[1].JF;
 	  	
@@ -81,7 +82,7 @@ app.get('/equirino',function(_req, _res){
 
 
 	  	_res.setHeader('Content-Type', 'application/json');
-    	_res.send(JSON.stringify({ street: street, int1: int1, jf1: jf1, jf2: jf2,  analysis: analysis }));
+    	_res.send(JSON.stringify({ street: street, int1: int1, jf1: jf1, street2: street2, jf2: jf2,  analysis: analysis }));
 	});
 
     
