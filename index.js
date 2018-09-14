@@ -102,7 +102,7 @@ app.get('/equirino',function(_req, _res){
 	  	}else if(sum <= 10){
 	  		analysis = "Slow flow of traffic"
 	  	}else{
-	  		sendText(sender, "traffic di ma compute")
+	  		analysis = "traffi8c kaayo di makaya"
 	  	}
 
 
