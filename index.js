@@ -44,7 +44,7 @@ app.get('/equirino',function(_req, _res){
 
 	  	const stree2t = body.RWS[0].RW[0].DE;
 	  	const int2 = body.RWS[0].RW[0].FIS[0].FI[0].TMC.DE;
-	  	const jf2 = body.RWS[0].RW[0].FIS[0].FI[0].CF[1].JF;
+	  	const jf2 = body.RWS[0].RW[0].FIS[0].FI[0].CF[0].JF;
 	  	
 	  	if(jf1 == 4){
 	  		analysis = "Free flow of traffic";
