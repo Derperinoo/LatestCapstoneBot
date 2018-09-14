@@ -41,8 +41,11 @@ app.get('/equirino',function(_req, _res){
 	  	const street = body.RWS[0].RW[0].DE;
 	  	const int1 = body.RWS[0].RW[0].FIS[0].FI[0].TMC.DE;
 	  	const jf1 = body.RWS[0].RW[0].FIS[0].FI[0].CF[0].JF;
+
+	  	const stree2t = body.RWS[0].RW[0].DE;
+	  	const int2 = body.RWS[0].RW[0].FIS[0].FI[0].TMC.DE;
+	  	const jf2 = body.RWS[0].RW[0].FIS[0].FI[0].CF[1].JF;
 	  	
-	  	let analysis = "";
 	  	if(jf1 == 4){
 	  		analysis = "Free flow of traffic";
 	  	}else if(jf1 == 3){
@@ -81,18 +84,15 @@ app.get('/equirino',function(_req, _res){
 	  	_res.setHeader('Content-Type', 'application/json');
     	_res.send(JSON.stringify({ street: street, int1: int1, jf1: jf1, analysis: analysis }));
 
-
-    	const stree2t = body.RWS[0].RW[0].DE;
-	  	const int2 = body.RWS[0].RW[0].FIS[0].FI[0].TMC.DE;
-	  	const jf2 = body.RWS[0].RW[0].FIS[0].FI[0].CF[1].JF;
-	  	_res.setHeader('Content-Type', 'application/json');
+    	_res.setHeader('Content-Type', 'application/json');
     	_res.send(JSON.stringify({ street2: street2, int2: int2, jf2: jf2 }));
-
-
-	});
+	  	
+	 
+		
+		});
 
     
-});
+		});
 
 app.get('/geo',function(req, res){
 	// res.send('Hi geo');
