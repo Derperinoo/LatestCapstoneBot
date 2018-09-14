@@ -65,7 +65,7 @@ app.get('/equirino',function(_req, _res){
 	  	const int5 = body.RWS[0].RW[0].FIS[0].FI[4].TMC.DE;
 	  	const jf5 = body.RWS[0].RW[0].FIS[0].FI[4].CF[0].JF;
 
-	  	const y = 4
+	  	const y = 5
 	  
 	  	var sum = jf1 + jf2 + jf3 + jf4 + jf5 / y;
 
@@ -125,10 +125,10 @@ app.get('/jplaurel',function(_req, _res){
 	  if (err) { return console.log(err); }
 	  	// console.log(body.url);
 	  	// console.log(body.explanation);
-	  	console.log(body.RWS[0].RW);
-	  	console.log("###################");
-	  	console.log(body.RWS[0].RW[0].DE);
-	  	console.log(body.RWS[0].RW[0].FIS[0].FI[0].TMC.DE);
+	  	// console.log(body.RWS[0].RW);
+	  	// console.log("###################");
+	  	// console.log(body.RWS[0].RW[2].DE);
+	  	// console.log(body.RWS[0].RW[0].FIS[0].FI[0].TMC.DE);
 	  	
 
 	  	
@@ -142,65 +142,70 @@ app.get('/jplaurel',function(_req, _res){
 
 	  	const sep4 = ("----------------------");
 
-	  	const street = body.RWS[0].RW[0].DE;
-	  	const int1 = body.RWS[0].RW[0].FIS[0].FI[0].TMC.DE;
-	  	const jf1 = body.RWS[0].RW[0].FIS[0].FI[0].CF[0].JF;
+	  	const street1 = body.RWS[0].RW[2].DE;
+	  	const int01 = body.RWS[0].RW[2].FIS[0].FI[0].TMC.DE;
+	  	const jf01 = body.RWS[0].RW[2].FIS[0].FI[0].CF[0].JF;
 	  	
-	  	const int2 = body.RWS[0].RW[0].FIS[0].FI[1].TMC.DE;
-	  	const jf2 = body.RWS[0].RW[0].FIS[0].FI[1].CF[0].JF;
+	  	const int02 = body.RWS[0].RW[2].FIS[0].FI[1].TMC.DE;
+	  	const jf02 = body.RWS[0].RW[2].FIS[0].FI[1].CF[0].JF;
 
-	  	const int3 = body.RWS[0].RW[0].FIS[0].FI[2].TMC.DE;
-	  	const jf3 = body.RWS[0].RW[0].FIS[0].FI[2].CF[0].JF;
+	  	const int03 = body.RWS[0].RW[2].FIS[0].FI[2].TMC.DE;
+	  	const jf03 = body.RWS[0].RW[2].FIS[0].FI[2].CF[0].JF;
 
-	  	const int4 = body.RWS[0].RW[0].FIS[0].FI[3].TMC.DE;
-	  	const jf4 = body.RWS[0].RW[0].FIS[0].FI[3].CF[0].JF;
+	  	const int04 = body.RWS[0].RW[2].FIS[0].FI[3].TMC.DE;
+	  	const jf04 = body.RWS[0].RW[2].FIS[0].FI[3].CF[0].JF;
 
-	  	const int5 = body.RWS[0].RW[0].FIS[0].FI[4].TMC.DE;
-	  	const jf5 = body.RWS[0].RW[0].FIS[0].FI[4].CF[0].JF;
+	  	const int05 = body.RWS[0].RW[2].FIS[0].FI[4].TMC.DE;
+	  	const jf05 = body.RWS[0].RW[2].FIS[0].FI[4].CF[0].JF;
 
-	  	const y = 4
+	  	const int06 = body.RWS[0].RW[2].FIS[0].FI[5].TMC.DE;
+	  	const jf06 = body.RWS[0].RW[2].FIS[0].FI[5].CF[0].JF;
+
+	  	const x = 6
 	  
-	  	var sum = jf1 + jf2 + jf3 + jf4 + jf5 / y;
+	  	var sum1 = jf01 + jf02 + jf03 + jf04 + jf05 + jf06 / x;
 
 	  	
-	  	let analysis = "";
-	  	if(sum <= 4){
-	  		analysis = "Free flow of traffic";
-	  	}else if(sum <= 3){
-	  		analysis = "Free flow of traffic";
-	  	}else if(sum <= 2){
-	  		analysis = "Free flow of traffic";
-	  	}else if(sum <= 3){
-	  		analysis = "Free flow of traffic";
-	  	}else if(sum <= 2){
-	  		analysis = "Free flow of traffic";
-	  	}else if(sum <= 1){
-	  		analysis = "Free flow of traffic";
-	  	}else if(sum <= 0){
-	  		analysis = "Free flow of traffic";
-	  	}else if(sum <= 8){
-	  		analysis = "Sluggish flow of traffic";
-	  	}else if(sum <= 7){
-	  		analysis = "Sluggish flow of traffic"
-	  	}else if(sum <= 6){
-	  		analysis = "Sluggish flow of traffic"
-	  	}else if(sum <= 5){
-	  		analysis = "Sluggish flow of traffic"
-	  	}else if(sum <= 4){
-	  		analysis = "Sluggish flow of traffic"
-	  	}else if(sum <= 8){
-	  		analysis = "Slow flow of traffic"
-	  	}else if(sum <= 9){
-	  		analysis = "Slow flow of traffic"
-	  	}else if(sum <= 10){
-	  		analysis = "Slow flow of traffic"
+	  	let analysis1 = "";
+	  	if(sum1 <= 4){
+	  		analysis1 = "Free flow of traffic";
+	  	}else if(sum1 <= 3){
+	  		analysis1 = "Free flow of traffic";
+	  	}else if(sum1 <= 2){
+	  		analysis1 = "Free flow of traffic";
+	  	}else if(sum1 <= 3){
+	  		analysis1 = "Free flow of traffic";
+	  	}else if(sum1 <= 2){
+	  		analysis1 = "Free flow of traffic";
+	  	}else if(sum1 <= 1){
+	  		analysis1 = "Free flow of traffic";
+	  	}else if(sum1 <= 0){
+	  		analysis1 = "Free flow of traffic";
+	  	}else if(sum1 <= 8){
+	  		analysis1 = "Sluggish flow of traffic";
+	  	}else if(sum1 <= 7){
+	  		analysis1 = "Sluggish flow of traffic"
+	  	}else if(sum1 <= 6){
+	  		analysis1 = "Sluggish flow of traffic"
+	  	}else if(sum1 <= 5){
+	  		analysis1 = "Sluggish flow of traffic"
+	  	}else if(sum1 <= 4){
+	  		analysis1 = "Sluggish flow of traffic"
+	  	}else if(sum1 <= 8){
+	  		analysis1 = "Slow flow of traffic"
+	  	}else if(sum1 <= 9){
+	  		analysis1 = "Slow flow of traffic"
+	  	}else if(sum1 <= 10){
+	  		analysis1 = "Slow flow of traffic"
+	  	}else{
+	  		analysis1 = "dili nako ma computer"
 	  	}
 
 
 
 	  	_res.setHeader('Content-Type', 'application/json');
-    	_res.send(JSON.stringify({ street: street,sep1:sep1, int1: int1, jf1: jf1, sep: sep, int2: int2, jf2: jf2, sep2: sep2, int3: int3, jf3: jf3, sep3: sep3, 
-    		int4: int4, jf4: jf4, sep4: sep4, int5: int5, jf5: jf5,  analysis: analysis }));
+    	_res.send(JSON.stringify({ street1: street1, sep1:sep1, int01: int01, jf01: jf01, sep: sep, int02: int02, jf02: jf02, sep2: sep2, int03: int03, jf03: jf03, sep3: sep3, 
+    		int04: int04, jf04: jf04, sep4: sep4, int05: int05, jf05: jf05,  analysis1: analysis1 }));
 	
 
 
@@ -244,6 +249,23 @@ app.get('/geo',function(req, res){
 	// });
 
 	axios.get('https://polar-castle-83452.herokuapp.com/equirino')
+	  .then(function (response) {
+	    console.log(response.data);
+	    //chatbotResponse = response.jf1;
+	    //sendText(sender, chatbotResponse)
+	  })
+	  .catch(function (error) {
+	    console.log(error);
+	    //chatbotResponse = "not ok";
+	    //sendText(sender, chatbotResponse)
+	  });
+
+})
+
+app.get('/geo',function(req, res){
+	
+
+	axios.get('https://polar-castle-83452.herokuapp.com/jplaurel')
 	  .then(function (response) {
 	    console.log(response.data);
 	    //chatbotResponse = response.jf1;
@@ -302,6 +324,24 @@ app.post('/webhook/', function(req, res) {
 				  .then(function (response) {
 				    //console.log(response);
 				    chatbotResponse = response.data.analysis;
+				    sendText(sender, chatbotResponse)
+				  })
+				  .catch(function (error) {
+				    //console.log(error);
+				    chatbotResponse = "not ok";
+				    sendText(sender, chatbotResponse)
+				  });
+
+				
+			}
+			if(text.includes("jplaurel")){
+				let chatbotResponse = "";
+				
+				//source : https://www.npmjs.com/package/axios
+				axios.get('https://polar-castle-83452.herokuapp.com/jplaurel')
+				  .then(function (response) {
+				    //console.log(response);
+				    chatbotResponse = response.data.analysis1;
 				    sendText(sender, chatbotResponse)
 				  })
 				  .catch(function (error) {
