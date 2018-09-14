@@ -37,59 +37,68 @@ app.get('/equirino',function(_req, _res){
 	  	console.log(body.RWS[0].RW[0].DE);
 	  	console.log(body.RWS[0].RW[0].FIS[0].FI[0].TMC.DE);
 	  	console.log(body.RWS[0].RW[0].FIS[0].FI[0].CF[0].JF);
+	  	
+	  	const sep = ("----------------------");
+
+	  	const sep2 = ("----------------------");
 
 	  	const street = body.RWS[0].RW[0].DE;
 	  	const int1 = body.RWS[0].RW[0].FIS[0].FI[0].TMC.DE;
 	  	const jf1 = body.RWS[0].RW[0].FIS[0].FI[0].CF[0].JF;
 	  	
+	  	const int2 = body.RWS[0].RW[0].FIS[0].FI[1].TMC.DE;
+	  	const jf2 = body.RWS[0].RW[0].FIS[0].FI[1].CF[0].JF;
+
+	  	const int3 = body.RWS[0].RW[0].FIS[0].FI[2].TMC.DE;
+	  	const jf3 = body.RWS[0].RW[0].FIS[0].FI[2].CF[0].JF;
+
+	  	const y = 3
+	  
+	  	const sum = jf1 + jf2 + jf3 / y;
+
+	  	
 	  	let analysis = "";
-	  	if(jf1 == 4){
+	  	if(sum <= 4){
 	  		analysis = "Free flow of traffic";
-	  	}else if(jf1 == 3){
+	  	}else if(sum <= 3){
 	  		analysis = "Free flow of traffic";
-	  	}else if(jf1 == 2){
+	  	}else if(sum <= 2){
 	  		analysis = "Free flow of traffic";
-	  	}else if(jf1 == 3){
+	  	}else if(sum <= 3){
 	  		analysis = "Free flow of traffic";
-	  	}else if(jf1 == 2){
+	  	}else if(sum <= 2){
 	  		analysis = "Free flow of traffic";
-	  	}else if(jf1 == 1){
+	  	}else if(sum <= 1){
 	  		analysis = "Free flow of traffic";
-	  	}else if(jf1 == 0){
+	  	}else if(sum <= 0){
 	  		analysis = "Free flow of traffic";
-	  	}else if(jf1 == 8){
+	  	}else if(sum <= 8){
 	  		analysis = "Sluggish flow of traffic";
-	  	}else if(jf1 == 7){
+	  	}else if(sum <= 7){
 	  		analysis = "Sluggish flow of traffic"
-	  	}else if(jf1 == 6){
+	  	}else if(sum <= 6){
 	  		analysis = "Sluggish flow of traffic"
-	  	}else if(jf1 == 5){
+	  	}else if(sum <= 5){
 	  		analysis = "Sluggish flow of traffic"
-	  	}else if(jf1 == 4){
+	  	}else if(sum <= 4){
 	  		analysis = "Sluggish flow of traffic"
-	  	}else if(jf1 == 8){
+	  	}else if(sum <= 8){
 	  		analysis = "Slow flow of traffic"
-	  	}else if(jf1 == 9){
+	  	}else if(sum <= 9){
 	  		analysis = "Slow flow of traffic"
-	  	}else if(jf1 == 10){
+	  	}else if(sum <= 10){
 	  		analysis = "Slow flow of traffic"
 	  	}
 
 
 
 	  	_res.setHeader('Content-Type', 'application/json');
-    	_res.send(JSON.stringify({ street: street, int1: int1, jf1: jf1, analysis: analysis }));
+    	_res.send(JSON.stringify({ street: street, int1: int1, jf1: jf1, sep: sep, int2: int2, jf2: jf2, sep2: sep2, int3: int3, jf3: jf3, analysis: analysis }));
 	
 
 
 
-	    const street2 = body.RWS[0].RW[0].DE;
-	  	const int2 = body.RWS[0].RW[0].FIS[0].FI[0].TMC.DE;
-	  	const jf2 = body.RWS[0].RW[0].FIS[0].FI[0].CF[1].JF;
-
-	    _res.setHeader('Content-Type', 'application/json');
-    	_res.send(JSON.stringify({ street2: street2, int2: int2, jf2: jf2 }));
-    
+	  
 	});
 
 
