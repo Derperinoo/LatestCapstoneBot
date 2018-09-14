@@ -41,11 +41,6 @@ app.get('/equirino',function(_req, _res){
 	  	const street = body.RWS[0].RW[0].DE;
 	  	const int1 = body.RWS[0].RW[0].FIS[0].FI[0].TMC.DE;
 	  	const jf1 = body.RWS[0].RW[0].FIS[0].FI[0].CF[0].JF;
-
-	  	const sep = ("###################");
-	  	const street2 = body.RWS[0].RW[0].DE;
-	  	const int2 = body.RWS[0].RW[0].FIS[0].FI[0].TMC.DE;
-	  	const jf2 = body.RWS[0].RW[0].FIS[0].FI[0].CF[1].JF;
 	  	
 	  	let analysis = "";
 	  	if(jf1 == 4){
@@ -83,7 +78,7 @@ app.get('/equirino',function(_req, _res){
 
 
 	  	_res.setHeader('Content-Type', 'application/json');
-    	_res.send(JSON.stringify({ street: street, int1: int1, jf1: jf1, sep, street2: street2, jf2: jf2,  analysis: analysis }));
+    	_res.send(JSON.stringify({ street: street, int1: int1, jf1: jf1, analysis: analysis }));
 	});
 
     
@@ -164,9 +159,14 @@ app.post('/webhook/', function(req, res) {
 				sendText(sender, "Ok, so you are motorist. Where your location and where are you heading to? Example: PoceSt to Manila")
 			}else if (text.includes("NO")){
 				sendText(sender, "Ok! What now?")
-			}else if (text.includes("help")){
-				sendText(sender, "This are the necessary commands!,			good day chatbot, 					what is the traffic status in davao city, 					I am a commuter,				and I am a motorist")
 			}
+
+			if(text.includes("route2")){
+
+				
+				sendText(sender, "whats up ? how may I help you")
+			}
+
 			if(text.includes("equirino")){
 				let chatbotResponse = "";
 				
