@@ -119,6 +119,100 @@ app.get('/equirino',function(_req, _res){
 
 
 });
+
+app.get('/equirino-',function(_req, _res){
+
+	request('https://traffic.api.here.com/traffic/6.1/flow.json?bbox=7.2598%2C125.0860%3B6.7670%2C125.6674&app_id=fQbW8CGYiU3l5mLqWgBE&app_code=SYZXwjFBHSYi_1t1GNuHow', { json: true }, (err, res, body) => {
+	  if (err) { return console.log(err); }
+	  	// console.log(body.url);
+	  	// console.log(body.explanation);
+	  	console.log(body.RWS[0].RW);
+	  	console.log("###################");
+	  	console.log(body.RWS[0].RW[0].DE);
+	  	console.log(body.RWS[0].RW[0].FIS[0].FI[0].TMC.DE);
+	  	
+
+	  	
+	  	const sep = ("----------------------");
+
+	  	const sep1 = ("----------------------");
+
+	  	const sep2 = ("----------------------");
+
+	  	const sep3 = ("----------------------");
+
+	  	const sep4 = ("----------------------");
+
+	  	const street = body.RWS[0].RW[1].DE;
+	  	const int1 = body.RWS[0].RW[1].FIS[0].FI[0].TMC.DE;
+	  	const jf1 = body.RWS[0].RW[1].FIS[0].FI[0].CF[0].JF;
+	  	
+	  	const int2 = body.RWS[0].RW[1].FIS[0].FI[1].TMC.DE;
+	  	const jf2 = body.RWS[0].RW[1].FIS[0].FI[1].CF[0].JF;
+
+	  	const int3 = body.RWS[0].RW[1].FIS[0].FI[2].TMC.DE;
+	  	const jf3 = body.RWS[0].RW[1].FIS[0].FI[2].CF[0].JF;
+
+	  	const int4 = body.RWS[0].RW[1].FIS[0].FI[3].TMC.DE;
+	  	const jf4 = body.RWS[0].RW[1].FIS[0].FI[3].CF[0].JF;
+
+	  	const int5 = body.RWS[0].RW[1].FIS[0].FI[4].TMC.DE;
+	  	const jf5 = body.RWS[0].RW[1].FIS[0].FI[4].CF[0].JF;
+
+	  	var y = 5
+	  
+	  	var sum = jf1 + jf2 + jf3 + jf4 + jf5 / y;
+
+	  	
+	  	let analysis = "";
+	  	if(sum <= 4){
+	  		analysis = "Free flow of traffic";
+	  	}else if(sum <= 3){
+	  		analysis = "Free flow of traffic";
+	  	}else if(sum <= 2){
+	  		analysis = "Free flow of traffic";
+	  	}else if(sum <= 3){
+	  		analysis = "Free flow of traffic";
+	  	}else if(sum <= 2){
+	  		analysis = "Free flow of traffic";
+	  	}else if(sum <= 1){
+	  		analysis = "Free flow of traffic";
+	  	}else if(sum <= 0){
+	  		analysis = "Free flow of traffic";
+	  	}else if(sum <= 8){
+	  		analysis = "Sluggish flow of traffic";
+	  	}else if(sum <= 7){
+	  		analysis = "Sluggish flow of traffic"
+	  	}else if(sum <= 6){
+	  		analysis = "Sluggish flow of traffic"
+	  	}else if(sum <= 5){
+	  		analysis = "Sluggish flow of traffic"
+	  	}else if(sum <= 4){
+	  		analysis = "Sluggish flow of traffic"
+	  	}else if(sum <= 8){
+	  		analysis = "Slow flow of traffic"
+	  	}else if(sum <= 9){
+	  		analysis = "Slow flow of traffic"
+	  	}else if(sum <= 10){
+	  		analysis = "Slow flow of traffic"
+	  	}else{
+	  		analysis = "traffi8c kaayo di makaya"
+	  	}
+
+
+
+	  	_res.setHeader('Content-Type', 'application/json');
+    	_res.send(JSON.stringify({ street: street,sep1:sep1, int1: int1, jf1: jf1, sep: sep, int2: int2, jf2: jf2, sep2: sep2, int3: int3, jf3: jf3, sep3: sep3, 
+    		int4: int4, jf4: jf4, sep4: sep4, int5: int5, jf5: jf5,  analysis: analysis }));
+	
+
+
+
+	  
+	});
+
+
+});
 app.get('/jplaurel',function(_req, _res){
 
 	request('https://traffic.api.here.com/traffic/6.1/flow.json?bbox=7.2598%2C125.0860%3B6.7670%2C125.6674&app_id=fQbW8CGYiU3l5mLqWgBE&app_code=SYZXwjFBHSYi_1t1GNuHow', { json: true }, (err, res, body) => {
@@ -360,6 +454,23 @@ app.get('/geo',function(req, res){
 	// });
 
 	axios.get('https://polar-castle-83452.herokuapp.com/equirino')
+	  .then(function (response) {
+	    console.log(response.data);
+	    //chatbotResponse = response.jf1;
+	    //sendText(sender, chatbotResponse)
+	  })
+	  .catch(function (error) {
+	    console.log(error);
+	    //chatbotResponse = "not ok";
+	    //sendText(sender, chatbotResponse)
+	  });
+
+})
+
+app.get('/geo',function(req, res){
+	
+
+	axios.get('https://polar-castle-83452.herokuapp.com/equirino-')
 	  .then(function (response) {
 	    console.log(response.data);
 	    //chatbotResponse = response.jf1;
