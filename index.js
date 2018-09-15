@@ -39,15 +39,7 @@ app.get('/equirino',function(_req, _res){
 	  	
 
 	  	
-	  	const sep = ("----------------------");
-
-	  	const sep1 = ("----------------------");
-
-	  	const sep2 = ("----------------------");
-
-	  	const sep3 = ("----------------------");
-
-	  	const sep4 = ("----------------------");
+	  	
 
 	  	const street = body.RWS[0].RW[0].DE;
 	  	const int1 = body.RWS[0].RW[0].FIS[0].FI[0].TMC.DE;
@@ -67,8 +59,9 @@ app.get('/equirino',function(_req, _res){
 
 	  	var y = 5
 	  
-	  	var sum = jf1 + jf2 + jf3 + jf4 + jf5 / y;
+	  	var sum1 = jf1 + jf2 + jf3 + jf4 + jf5 ;
 
+	  	var sum = sum1/y;
 	  	
 	  	let analysis = "";
 	  	if(sum <= 4){
@@ -108,8 +101,8 @@ app.get('/equirino',function(_req, _res){
 
 
 	  	_res.setHeader('Content-Type', 'application/json');
-    	_res.send(JSON.stringify({ street: street,sep1:sep1, int1: int1, jf1: jf1, sep: sep, int2: int2, jf2: jf2, sep2: sep2, int3: int3, jf3: jf3, sep3: sep3, 
-    		int4: int4, jf4: jf4, sep4: sep4, int5: int5, jf5: jf5,  analysis: analysis }));
+    	_res.send(JSON.stringify({ street: street, int1: int1, jf1: jf1,  int2: int2, jf2: jf2,  int3: int3, jf3: jf3, 
+    		int4: int4, jf4: jf4,  int5: int5, jf5: jf5,  analysis: analysis }));
 	
 
 
@@ -126,74 +119,62 @@ app.get('/equirino-',function(_req, _res){
 	  if (err) { return console.log(err); }
 	  	// console.log(body.url);
 	  	// console.log(body.explanation);
-	  	console.log(body.RWS[0].RW);
-	  	console.log("###################");
-	  	console.log(body.RWS[0].RW[0].DE);
-	  	console.log(body.RWS[0].RW[0].FIS[0].FI[0].TMC.DE);
-	  	
 
 	  	
-	  	const sep = ("----------------------");
-
-	  	const sep1 = ("----------------------");
-
-	  	const sep2 = ("----------------------");
-
-	  	const sep3 = ("----------------------");
-
-	  	const sep4 = ("----------------------");
 
 	  	const street = body.RWS[0].RW[1].DE;
-	  	const int1 = body.RWS[0].RW[1].FIS[0].FI[0].TMC.DE;
-	  	const jf1 = body.RWS[0].RW[1].FIS[0].FI[0].CF[0].JF;
+	  	const inte1 = body.RWS[0].RW[1].FIS[0].FI[0].TMC.DE;
+	  	const jfe1 = body.RWS[0].RW[1].FIS[0].FI[0].CF[0].JF;
 	  	
-	  	const int2 = body.RWS[0].RW[1].FIS[0].FI[1].TMC.DE;
-	  	const jf2 = body.RWS[0].RW[1].FIS[0].FI[1].CF[0].JF;
+	  	const inte2 = body.RWS[0].RW[1].FIS[0].FI[1].TMC.DE;
+	  	const jfe2 = body.RWS[0].RW[1].FIS[0].FI[1].CF[0].JF;
 
-	  	const int3 = body.RWS[0].RW[1].FIS[0].FI[2].TMC.DE;
-	  	const jf3 = body.RWS[0].RW[1].FIS[0].FI[2].CF[0].JF;
+	  	const inte3 = body.RWS[0].RW[1].FIS[0].FI[2].TMC.DE;
+	  	const jfe3 = body.RWS[0].RW[1].FIS[0].FI[2].CF[0].JF;
 
-	  	const int4 = body.RWS[0].RW[1].FIS[0].FI[3].TMC.DE;
-	  	const jf4 = body.RWS[0].RW[1].FIS[0].FI[3].CF[0].JF;
+	  	const inte4 = body.RWS[0].RW[1].FIS[0].FI[3].TMC.DE;
+	  	const jfe4 = body.RWS[0].RW[1].FIS[0].FI[3].CF[0].JF;
 
-	  	const int5 = body.RWS[0].RW[1].FIS[0].FI[4].TMC.DE;
-	  	const jf5 = body.RWS[0].RW[1].FIS[0].FI[4].CF[0].JF;
+	  	const inte5 = body.RWS[0].RW[1].FIS[0].FI[4].TMC.DE;
+	  	const jfe5 = body.RWS[0].RW[1].FIS[0].FI[4].CF[0].JF;
 
 	  	var y = 5
 	  
-	  	var sum = jf1 + jf2 + jf3 + jf4 + jf5 / y;
+	  	var ave = jfe1 + jfe2 + jfe3 + jfe4 + jfe5;
+
+	  	var aveq = ave/y;
 
 	  	
 	  	let analysis = "";
-	  	if(sum <= 4){
+	  	if(aveq <= 4){
 	  		analysis = "Free flow of traffic";
-	  	}else if(sum <= 3){
+	  	}else if(aveq <= 3){
 	  		analysis = "Free flow of traffic";
-	  	}else if(sum <= 2){
+	  	}else if(aveq <= 2){
 	  		analysis = "Free flow of traffic";
-	  	}else if(sum <= 3){
+	  	}else if(aveq <= 3){
 	  		analysis = "Free flow of traffic";
-	  	}else if(sum <= 2){
+	  	}else if(aveq <= 2){
 	  		analysis = "Free flow of traffic";
-	  	}else if(sum <= 1){
+	  	}else if(aveq <= 1){
 	  		analysis = "Free flow of traffic";
-	  	}else if(sum <= 0){
+	  	}else if(aveq <= 0){
 	  		analysis = "Free flow of traffic";
-	  	}else if(sum <= 8){
+	  	}else if(aveq <= 8){
 	  		analysis = "Sluggish flow of traffic";
-	  	}else if(sum <= 7){
+	  	}else if(aveq <= 7){
 	  		analysis = "Sluggish flow of traffic"
-	  	}else if(sum <= 6){
+	  	}else if(aveq <= 6){
 	  		analysis = "Sluggish flow of traffic"
-	  	}else if(sum <= 5){
+	  	}else if(aveq <= 5){
 	  		analysis = "Sluggish flow of traffic"
-	  	}else if(sum <= 4){
+	  	}else if(aveq <= 4){
 	  		analysis = "Sluggish flow of traffic"
-	  	}else if(sum <= 8){
+	  	}else if(aveq <= 8){
 	  		analysis = "Slow flow of traffic"
-	  	}else if(sum <= 9){
+	  	}else if(aveq <= 9){
 	  		analysis = "Slow flow of traffic"
-	  	}else if(sum <= 10){
+	  	}else if(aveq <= 10){
 	  		analysis = "Slow flow of traffic"
 	  	}else{
 	  		analysis = "traffi8c kaayo di makaya"
@@ -202,11 +183,8 @@ app.get('/equirino-',function(_req, _res){
 
 
 	  	_res.setHeader('Content-Type', 'application/json');
-    	_res.send(JSON.stringify({ street: street,sep1:sep1, int1: int1, jf1: jf1, sep: sep, int2: int2, jf2: jf2, sep2: sep2, int3: int3, jf3: jf3, sep3: sep3, 
-    		int4: int4, jf4: jf4, sep4: sep4, int5: int5, jf5: jf5,  analysis: analysis }));
-	
-
-
+    	_res.send(JSON.stringify({ street: street, inte1: inte1, jfe1: jfe1,  inte2: inte2, jfe2: jfe2,  inte3: inte3, jfe3: jfe3, 
+    		inte4: inte4, jfe4: jfe4,  inte5: inte5, jfe5: jfe5,  analysis: analysis }));
 
 	  
 	});
@@ -218,15 +196,6 @@ app.get('/jplaurel',function(_req, _res){
 	request('https://traffic.api.here.com/traffic/6.1/flow.json?bbox=7.2598%2C125.0860%3B6.7670%2C125.6674&app_id=fQbW8CGYiU3l5mLqWgBE&app_code=SYZXwjFBHSYi_1t1GNuHow', { json: true }, (err, res, body) => {
 	  if (err) { return console.log(err); }
 	  	
-	  	const sep = ("----------------------");
-
-	  	const sep1 = ("----------------------");
-
-	  	const sep2 = ("----------------------");
-
-	  	const sep3 = ("----------------------");
-
-	  	const sep4 = ("----------------------");
 
 	  	const street1 = body.RWS[0].RW[2].DE;
 	  	const int01 = body.RWS[0].RW[2].FIS[0].FI[0].TMC.DE;
@@ -249,39 +218,40 @@ app.get('/jplaurel',function(_req, _res){
 
 	  	const x = 6
 	  
-	  	var sum1 = jf01 + jf02 + jf03 + jf04 + jf05 + jf06 / x;
+	  	var avejp = jf01 + jf02 + jf03 + jf04 + jf05 + jf06;
+	  	var avejp1 = avejp/x;
 
 	  	
 	  	let analysis1 = "";
-	  	if(sum1 <= 4){
+	  	if(avejp1 <= 4){
 	  		analysis1 = "Free flow of traffic";
-	  	}else if(sum1 <= 3){
+	  	}else if(avejp1 <= 3){
 	  		analysis1 = "Free flow of traffic";
-	  	}else if(sum1 <= 2){
+	  	}else if(avejp1 <= 2){
 	  		analysis1 = "Free flow of traffic";
-	  	}else if(sum1 <= 3){
+	  	}else if(avejp1 <= 3){
 	  		analysis1 = "Free flow of traffic";
-	  	}else if(sum1 <= 2){
+	  	}else if(avejp1 <= 2){
 	  		analysis1 = "Free flow of traffic";
-	  	}else if(sum1 <= 1){
+	  	}else if(avejp1 <= 1){
 	  		analysis1 = "Free flow of traffic";
-	  	}else if(sum1 <= 0){
+	  	}else if(avejp1 <= 0){
 	  		analysis1 = "Free flow of traffic";
-	  	}else if(sum1 <= 8){
+	  	}else if(avejp1 <= 8){
 	  		analysis1 = "Sluggish flow of traffic";
-	  	}else if(sum1 <= 7){
+	  	}else if(avejp1 <= 7){
 	  		analysis1 = "Sluggish flow of traffic"
-	  	}else if(sum1 <= 6){
+	  	}else if(avejp1 <= 6){
 	  		analysis1 = "Sluggish flow of traffic"
-	  	}else if(sum1 <= 5){
+	  	}else if(avejp1 <= 5){
 	  		analysis1 = "Sluggish flow of traffic"
-	  	}else if(sum1 <= 4){
+	  	}else if(avejp1 <= 4){
 	  		analysis1 = "Sluggish flow of traffic"
-	  	}else if(sum1 <= 8){
+	  	}else if(avejp1 <= 8){
 	  		analysis1 = "Slow flow of traffic"
-	  	}else if(sum1 <= 9){
+	  	}else if(avejp1 <= 9){
 	  		analysis1 = "Slow flow of traffic"
-	  	}else if(sum1 <= 10){
+	  	}else if(avejp1 <= 10){
 	  		analysis1 = "Slow flow of traffic"
 	  	}else{
 	  		analysis1 = "dili nako ma computer"
@@ -290,8 +260,8 @@ app.get('/jplaurel',function(_req, _res){
 
 
 	  	_res.setHeader('Content-Type', 'application/json');
-    	_res.send(JSON.stringify({ street1: street1, sep1:sep1, int01: int01, jf01: jf01, sep: sep, int02: int02, jf02: jf02, sep2: sep2, int03: int03, jf03: jf03, sep3: sep3, 
-    		int04: int04, jf04: jf04, sep4: sep4, int05: int05, jf05: jf05,  analysis1: analysis1 }));
+    	_res.send(JSON.stringify({ street1: street1,  int01: int01, jf01: jf01,  int02: int02, jf02: jf02,  int03: int03, jf03: jf03,  
+    		int04: int04, jf04: jf04,  int05: int05, jf05: jf05,  analysis1: analysis1 }));
 	
 
 
@@ -307,15 +277,7 @@ app.get('/jplaurel-',function(_req, _res){
 	request('https://traffic.api.here.com/traffic/6.1/flow.json?bbox=7.2598%2C125.0860%3B6.7670%2C125.6674&app_id=fQbW8CGYiU3l5mLqWgBE&app_code=SYZXwjFBHSYi_1t1GNuHow', { json: true }, (err, res, body) => {
 	  if (err) { return console.log(err); }
 	  	
-	  	const sep = ("----------------------");
-
-	  	const sep1 = ("----------------------");
-
-	  	const sep2 = ("----------------------");
-
-	  	const sep3 = ("----------------------");
-
-	  	const sep4 = ("----------------------");
+	
 
 	  	const street1 = body.RWS[0].RW[3].DE;
 	  	const int01 = body.RWS[0].RW[3].FIS[0].FI[0].TMC.DE;
@@ -338,39 +300,40 @@ app.get('/jplaurel-',function(_req, _res){
 
 	  	const x = 6
 	  
-	  	var sum1 = jf01 + jf02 + jf03 + jf04 + jf05 + jf06 / x;
+	  	var varj = jf01 + jf02 + jf03 + jf04 + jf05 + jf06 ;
+	  	var varjp = varj/x;
 
 	  	
 	  	let analysis1 = "";
-	  	if(sum1 <= 4){
+	  	if(varjp <= 4){
 	  		analysis1 = "Free flow of traffic";
-	  	}else if(sum1 <= 3){
+	  	}else if(varjp <= 3){
 	  		analysis1 = "Free flow of traffic";
-	  	}else if(sum1 <= 2){
+	  	}else if(varjp <= 2){
 	  		analysis1 = "Free flow of traffic";
-	  	}else if(sum1 <= 3){
+	  	}else if(varjp <= 3){
 	  		analysis1 = "Free flow of traffic";
-	  	}else if(sum1 <= 2){
+	  	}else if(varjp <= 2){
 	  		analysis1 = "Free flow of traffic";
-	  	}else if(sum1 <= 1){
+	  	}else if(varjp <= 1){
 	  		analysis1 = "Free flow of traffic";
-	  	}else if(sum1 <= 0){
+	  	}else if(varjp <= 0){
 	  		analysis1 = "Free flow of traffic";
-	  	}else if(sum1 <= 8){
+	  	}else if(varjp <= 8){
 	  		analysis1 = "Sluggish flow of traffic";
-	  	}else if(sum1 <= 7){
+	  	}else if(varjp <= 7){
 	  		analysis1 = "Sluggish flow of traffic"
-	  	}else if(sum1 <= 6){
+	  	}else if(varjp <= 6){
 	  		analysis1 = "Sluggish flow of traffic"
-	  	}else if(sum1 <= 5){
+	  	}else if(varjp <= 5){
 	  		analysis1 = "Sluggish flow of traffic"
-	  	}else if(sum1 <= 4){
+	  	}else if(varjp <= 4){
 	  		analysis1 = "Sluggish flow of traffic"
-	  	}else if(sum1 <= 8){
+	  	}else if(varjp <= 8){
 	  		analysis1 = "Slow flow of traffic"
-	  	}else if(sum1 <= 9){
+	  	}else if(varjp <= 9){
 	  		analysis1 = "Slow flow of traffic"
-	  	}else if(sum1 <= 10){
+	  	}else if(varjp <= 10){
 	  		analysis1 = "Slow flow of traffic"
 	  	}else{
 	  		analysis1 = "dili nako ma computer"
@@ -379,9 +342,9 @@ app.get('/jplaurel-',function(_req, _res){
 
 
 	  	_res.setHeader('Content-Type', 'application/json');
-    	_res.send(JSON.stringify({ street1: street1, sep1:sep1, int01: int01, jf01: jf01, sep: sep, int02: int02, jf02: jf02, sep2: sep2, int03: int03, jf03: jf03, sep3: sep3, 
-    		int04: int04, jf04: jf04, sep4: sep4, int05: int05, jf05: jf05,  analysis1: analysis1 }));
+    	_res.send(JSON.stringify({ street1: street1,  int01: int01, jf01: jf01,  int02: int02, jf02:  jf02 ,int03: int03, jf03: jf03, int04: int04, jf04: jf04,  int05: int05, jf05: jf05,  analysis1: analysis1 }));
 	});
+
 	});
 
 
@@ -391,15 +354,7 @@ app.get('/mcarthur',function(_req, _res){
 	request('https://traffic.api.here.com/traffic/6.1/flow.json?bbox=7.2598%2C125.0860%3B6.7670%2C125.6674&app_id=fQbW8CGYiU3l5mLqWgBE&app_code=SYZXwjFBHSYi_1t1GNuHow', { json: true }, (err, res, body) => {
 	  if (err) { return console.log(err); }
 	  	
-	  	const sep = ("----------------------");
-
-	  	const sep1 = ("----------------------");
-
-	  	const sep2 = ("----------------------");
-
-	  	const sep3 = ("----------------------");
-
-	  	const sep4 = ("----------------------");
+	  	
 
 	  	const streetmm = body.RWS[0].RW[5].DE;
 	  	const intm = body.RWS[0].RW[5].FIS[0].FI[0].TMC.DE;
@@ -446,40 +401,42 @@ app.get('/mcarthur',function(_req, _res){
 
 	  	const x = 14
 	  
-	  	var sum1 = jfm + jf02 + jfm2 + jfm3 + jfm4 + jfm5 + jfm6 + jfm8
-	  	+ jfm9 + jfm10 + jfm11 + jfm12 + jfm13  / x;
+	  	var avem = jfm + jf02 + jfm2 + jfm3 + jfm4 + jfm5 + jfm6 + jfm8
+	  	+ jfm9 + jfm10 + jfm11 + jfm12 + jfm13  ;
+
+	  	var avemc = avem/x;
 
 	  	
 	  	let analysis2 = "";
-	  	if(sum1 <= 4){
+	  	if(avemc <= 4){
 	  		analysis2 = "Free flow of traffic";
-	  	}else if(sum1 <= 3){
+	  	}else if(avemc <= 3){
 	  		analysis2 = "Free flow of traffic";
-	  	}else if(sum1 <= 2){
+	  	}else if(avemc <= 2){
 	  		analysis2 = "Free flow of traffic";
-	  	}else if(sum1 <= 3){
+	  	}else if(avemc <= 3){
 	  		analysis2 = "Free flow of traffic";
-	  	}else if(sum1 <= 2){
+	  	}else if(avemc <= 2){
 	  		analysis2 = "Free flow of traffic";
-	  	}else if(sum1 <= 1){
+	  	}else if(avemc <= 1){
 	  		analysis2 = "Free flow of traffic";
-	  	}else if(sum1 <= 0){
+	  	}else if(avemc <= 0){
 	  		analysis2 = "Free flow of traffic";
-	  	}else if(sum1 <= 8){
+	  	}else if(avemc <= 8){
 	  		analysis2 = "Sluggish flow of traffic";
-	  	}else if(sum1 <= 7){
+	  	}else if(avemc <= 7){
 	  		analysis2 = "Sluggish flow of traffic"
-	  	}else if(sum1 <= 6){
+	  	}else if(avemc <= 6){
 	  		analysis2 = "Sluggish flow of traffic"
-	  	}else if(sum1 <= 5){
+	  	}else if(avemc <= 5){
 	  		analysis2 = "Sluggish flow of traffic"
-	  	}else if(sum1 <= 4){
+	  	}else if(avemc <= 4){
 	  		analysis2 = "Sluggish flow of traffic"
-	  	}else if(sum1 <= 8){
+	  	}else if(avemc <= 8){
 	  		analysis2 = "Slow flow of traffic"
-	  	}else if(sum1 <= 9){
+	  	}else if(avemc <= 9){
 	  		analysis2 = "Slow flow of traffic"
-	  	}else if(sum1 <= 10){
+	  	}else if(avemc <= 10){
 	  		analysis2 = "Slow flow of traffic"
 	  	}else{
 	  		analysis2 = "dili nako ma computer"
@@ -488,10 +445,10 @@ app.get('/mcarthur',function(_req, _res){
 
 
 	  	_res.setHeader('Content-Type', 'application/json');
-    	_res.send(JSON.stringify({ streetmm: streetmm, sep1:sep1, intm1: intm1, jfm: jfm, sep: sep, intm2: intm2, jfm2: jfm2, sep2: sep2, intm3: intm3, 
-    		jfm3: jfm3, sep3: sep3, 
-    		intm4: intm4, jfm4: jfm4, sep4: sep4, intm5: intm5, jfm5: jfm5, sep: sep, intm6: intm6, jfm6: jfm6, sep4: sep4, intm7: intm7, 
-    		jfm7: jfm7, sep4: sep4, intm8: intm8, jfm8: jfm8, sep2: sep2, intm9: intm9, jfm9: jfm9, intm10: intm10, jfm10: jfm10, 
+    	_res.send(JSON.stringify({ streetmm: streetmm,  intm1: intm1, jfm: jfm,  intm2: intm2, jfm2: jfm2,  intm3: intm3, 
+    		jfm3: jfm3,  
+    		intm4: intm4, jfm4: jfm4,  intm5: intm5, jfm5: jfm5,  intm6: intm6, jfm6: jfm6,  intm7: intm7, 
+    		jfm7: jfm7,  intm8: intm8, jfm8: jfm8,  intm9: intm9, jfm9: jfm9, intm10: intm10, jfm10: jfm10, 
     		intm11: intm11, jfm11: jfm11, intm12: intm12, jfm13: jfm13, intm13: intm13, jfm13: jfm13, analysis2: analysis2 }));
 	
 
