@@ -1233,7 +1233,7 @@ app.post('/webhook/', function(req, res) {
 				axios.get('https://polar-castle-83452.herokuapp.com/matinaaplaya')
 				  .then(function (response) {
 				    //console.log(response);
-				    chatbotResponse = response.data.analysis6;
+				    chatbotResponse = response.data.analysis7;
 				    sendText(sender, chatbotResponse)
 				  })
 				  .catch(function (error) {
