@@ -301,6 +301,91 @@ app.get('/jplaurel',function(_req, _res){
 
 
 });
+
+app.get('/jplaurel-',function(_req, _res){
+
+	request('https://traffic.api.here.com/traffic/6.1/flow.json?bbox=7.2598%2C125.0860%3B6.7670%2C125.6674&app_id=fQbW8CGYiU3l5mLqWgBE&app_code=SYZXwjFBHSYi_1t1GNuHow', { json: true }, (err, res, body) => {
+	  if (err) { return console.log(err); }
+	  	
+	  	const sep = ("----------------------");
+
+	  	const sep1 = ("----------------------");
+
+	  	const sep2 = ("----------------------");
+
+	  	const sep3 = ("----------------------");
+
+	  	const sep4 = ("----------------------");
+
+	  	const street1 = body.RWS[0].RW[3].DE;
+	  	const int01 = body.RWS[0].RW[3].FIS[0].FI[0].TMC.DE;
+	  	const jf01 = body.RWS[0].RW[3].FIS[0].FI[0].CF[0].JF;
+	  	
+	  	const int02 = body.RWS[0].RW[3].FIS[0].FI[1].TMC.DE;
+	  	const jf02 = body.RWS[0].RW[3].FIS[0].FI[1].CF[0].JF;
+
+	  	const int03 = body.RWS[0].RW[3].FIS[0].FI[2].TMC.DE;
+	  	const jf03 = body.RWS[0].RW[3].FIS[0].FI[2].CF[0].JF;
+
+	  	const int04 = body.RWS[0].RW[3].FIS[0].FI[3].TMC.DE;
+	  	const jf04 = body.RWS[0].RW[3].FIS[0].FI[3].CF[0].JF;
+
+	  	const int05 = body.RWS[0].RW[3].FIS[0].FI[4].TMC.DE;
+	  	const jf05 = body.RWS[0].RW[3].FIS[0].FI[4].CF[0].JF;
+
+	  	const int06 = body.RWS[0].RW[3].FIS[0].FI[5].TMC.DE;
+	  	const jf06 = body.RWS[0].RW[3].FIS[0].FI[5].CF[0].JF;
+
+	  	const x = 6
+	  
+	  	var sum1 = jf01 + jf02 + jf03 + jf04 + jf05 + jf06 / x;
+
+	  	
+	  	let analysis1 = "";
+	  	if(sum1 <= 4){
+	  		analysis1 = "Free flow of traffic";
+	  	}else if(sum1 <= 3){
+	  		analysis1 = "Free flow of traffic";
+	  	}else if(sum1 <= 2){
+	  		analysis1 = "Free flow of traffic";
+	  	}else if(sum1 <= 3){
+	  		analysis1 = "Free flow of traffic";
+	  	}else if(sum1 <= 2){
+	  		analysis1 = "Free flow of traffic";
+	  	}else if(sum1 <= 1){
+	  		analysis1 = "Free flow of traffic";
+	  	}else if(sum1 <= 0){
+	  		analysis1 = "Free flow of traffic";
+	  	}else if(sum1 <= 8){
+	  		analysis1 = "Sluggish flow of traffic";
+	  	}else if(sum1 <= 7){
+	  		analysis1 = "Sluggish flow of traffic"
+	  	}else if(sum1 <= 6){
+	  		analysis1 = "Sluggish flow of traffic"
+	  	}else if(sum1 <= 5){
+	  		analysis1 = "Sluggish flow of traffic"
+	  	}else if(sum1 <= 4){
+	  		analysis1 = "Sluggish flow of traffic"
+	  	}else if(sum1 <= 8){
+	  		analysis1 = "Slow flow of traffic"
+	  	}else if(sum1 <= 9){
+	  		analysis1 = "Slow flow of traffic"
+	  	}else if(sum1 <= 10){
+	  		analysis1 = "Slow flow of traffic"
+	  	}else{
+	  		analysis1 = "dili nako ma computer"
+	  	}
+
+
+
+	  	_res.setHeader('Content-Type', 'application/json');
+    	_res.send(JSON.stringify({ street1: street1, sep1:sep1, int01: int01, jf01: jf01, sep: sep, int02: int02, jf02: jf02, sep2: sep2, int03: int03, jf03: jf03, sep3: sep3, 
+    		int04: int04, jf04: jf04, sep4: sep4, int05: int05, jf05: jf05,  analysis1: analysis1 }));
+	});
+	});
+
+
+
 app.get('/mcarthur',function(_req, _res){
 
 	request('https://traffic.api.here.com/traffic/6.1/flow.json?bbox=7.2598%2C125.0860%3B6.7670%2C125.6674&app_id=fQbW8CGYiU3l5mLqWgBE&app_code=SYZXwjFBHSYi_1t1GNuHow', { json: true }, (err, res, body) => {
@@ -517,6 +602,23 @@ app.get('/geo',function(req, res){
 	  });
 
 })
+app.get('/geo',function(req, res){
+	
+
+	axios.get('https://polar-castle-83452.herokuapp.com/jplaurel-')
+	  .then(function (response) {
+	    console.log(response.data);
+	    //chatbotResponse = response.jf1;
+	    //sendText(sender, chatbotResponse)
+	  })
+	  .catch(function (error) {
+	    console.log(error);
+	    //chatbotResponse = "not ok";
+	    //sendText(sender, chatbotResponse)
+	  });
+
+})
+
 
 
  
