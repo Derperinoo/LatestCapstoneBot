@@ -648,6 +648,84 @@ app.get('/ecowestdr',function(_req, _res){
 
 
 });
+app.get('/ecowestdr-',function(_req, _res){
+
+	request('https://traffic.api.here.com/traffic/6.1/flow.json?bbox=7.2598%2C125.0860%3B6.7670%2C125.6674&app_id=fQbW8CGYiU3l5mLqWgBE&app_code=SYZXwjFBHSYi_1t1GNuHow', { json: true }, (err, res, body) => {
+	  if (err) { return console.log(err); }
+	  	// console.log(body.url);
+	  	// console.log(body.explanation);
+	  	console.log(body.RWS[0].RW);
+	  	console.log("###################");
+	  	console.log(body.RWS[0].RW[0].DE);
+	  	console.log(body.RWS[0].RW[0].FIS[0].FI[0].TMC.DE);
+	  	
+
+	  	
+	  	
+
+	  	const streeteec = body.RWS[0].RW[7].DE;
+	  	const intee1 = body.RWS[0].RW[7].FIS[0].FI[0].TMC.DE;
+	  	const jfee1 = body.RWS[0].RW[7].FIS[0].FI[0].CF[0].JF;
+	  	
+	  	const intee2 = body.RWS[0].RW[7].FIS[0].FI[1].TMC.DE;
+	  	const jfee2 = body.RWS[0].RW[7].FIS[0].FI[1].CF[0].JF;
+
+	  	
+
+	  	var y = 2
+	  
+	  	var ecoeco = jfee1 + jfee2 ;
+
+	  	var ecowestdr = ecoeco/y;
+	  	
+	  	let analysis5 = "";
+	  	if(ecowestdr <= 4){
+	  		analysis5 = "Free flow of traffic";
+	  	}else if(ecowestdr <= 3){
+	  		analysis5 = "Free flow of traffic";
+	  	}else if(ecowestdr <= 2){
+	  		analysis5 = "Free flow of traffic";
+	  	}else if(ecowestdr <= 3){
+	  		analysis5 = "Free flow of traffic";
+	  	}else if(ecowestdr <= 2){
+	  		analysis5 = "Free flow of traffic";
+	  	}else if(ecowestdr <= 1){
+	  		analysis5 = "Free flow of traffic";
+	  	}else if(ecowestdr <= 0){
+	  		analysis5 = "Free flow of traffic";
+	  	}else if(ecowestdr <= 8){
+	  		analysis5 = "Sluggish flow of traffic";
+	  	}else if(ecowestdr <= 7){
+	  		analysis5 = "Sluggish flow of traffic"
+	  	}else if(ecowestdr <= 6){
+	  		analysis5 = "Sluggish flow of traffic"
+	  	}else if(ecowestdr <= 5){
+	  		analysis5 = "Sluggish flow of traffic"
+	  	}else if(ecowestdr <= 4){
+	  		analysis5 = "Sluggish flow of traffic"
+	  	}else if(ecowestdr <= 8){
+	  		analysis5 = "Slow flow of traffic"
+	  	}else if(ecowestdr <= 9){
+	  		analysis5 = "Slow flow of traffic"
+	  	}else if(ecowestdr <= 10){
+	  		analysis5 = "Slow flow of traffic"
+	  	}else{
+	  		analysis5 = "traffi8c kaayo di makaya"
+	  	}
+
+
+
+	  	_res.setHeader('Content-Type', 'application/json');
+    	_res.send(JSON.stringify({ street: streeteec, intee1: intee1, jfee1: jfee1,  intee2: intee2, jfee2: jfee2, analysis5: analysis5 }));
+	
+
+
+
+	  
+	});
+
+
+});
 
 
 
@@ -800,6 +878,24 @@ app.get('/geo',function(req, res){
 
 })
 
+app.get('/geo',function(req, res){
+	
+
+	axios.get('https://polar-castle-83452.herokuapp.com/ecowestdr-')
+	  .then(function (response) {
+	    console.log(response.data);
+	    //chatbotResponse = response.jf1;
+	    //sendText(sender, chatbotResponse)
+	  })
+	  .catch(function (error) {
+	    console.log(error);
+	    //chatbotResponse = "not ok";
+	    //sendText(sender, chatbotResponse)
+	  });
+
+})
+
+
 
 
  
@@ -903,6 +999,24 @@ app.post('/webhook/', function(req, res) {
 				  .then(function (response) {
 				    //console.log(response);
 				    chatbotResponse = response.data.analysis4;
+				    sendText(sender, chatbotResponse)
+				  })
+				  .catch(function (error) {
+				    //console.log(error);
+				    chatbotResponse = "not ok";
+				    sendText(sender, chatbotResponse)
+				  });
+
+				
+			}
+			if(text.includes("ecowestdr-")){
+				let chatbotResponse = "";
+				
+				//source : https://www.npmjs.com/package/axios
+				axios.get('https://polar-castle-83452.herokuapp.com/ecowestdr-')
+				  .then(function (response) {
+				    //console.log(response);
+				    chatbotResponse = response.data.analysis5;
 				    sendText(sender, chatbotResponse)
 				  })
 				  .catch(function (error) {
