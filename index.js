@@ -594,11 +594,11 @@ app.get('/ecowestdr',function(_req, _res){
 
 	  	
 
-	  	var y = 2
+	  	var w = 2
 	  
 	  	var eco = jfe1 + jfe2 ;
 
-	  	var ecowest = eco/y;
+	  	var ecowest = eco/w;
 	  	
 	  	let analysis4 = "";
 	  	if(ecowest <= 4){
@@ -672,11 +672,11 @@ app.get('/ecowestdr-',function(_req, _res){
 
 	  	
 
-	  	var y = 2
+	  	var z = 2
 	  
 	  	var ecoeco = jfee1 + jfee2 ;
 
-	  	var ecowestdr = ecoeco/y;
+	  	var ecowestdr = ecoeco/z;
 	  	
 	  	let analysis5 = "";
 	  	if(ecowestdr <= 4){
@@ -717,6 +717,78 @@ app.get('/ecowestdr-',function(_req, _res){
 
 	  	_res.setHeader('Content-Type', 'application/json');
     	_res.send(JSON.stringify({ street: streeteec, intee1: intee1, jfee1: jfee1,  intee2: intee2, jfee2: jfee2, analysis5: analysis5 }));
+	
+
+
+
+	  
+	});
+
+
+});
+
+app.get('/ecoland',function(_req, _res){
+
+	request('https://traffic.api.here.com/traffic/6.1/flow.json?bbox=7.2598%2C125.0860%3B6.7670%2C125.6674&app_id=fQbW8CGYiU3l5mLqWgBE&app_code=SYZXwjFBHSYi_1t1GNuHow', { json: true }, (err, res, body) => {
+	  if (err) { return console.log(err); }
+
+	  	const streetc = body.RWS[0].RW[8].DE;
+	  	const intc1 = body.RWS[0].RW[8].FIS[0].FI[0].TMC.DE;
+	  	const jfc1 = body.RWS[0].RW[8].FIS[0].FI[0].CF[0].JF;
+	  	
+	  	const intc2 = body.RWS[0].RW[8].FIS[0].FI[1].TMC.DE;
+	  	const jfc2 = body.RWS[0].RW[8].FIS[0].FI[1].CF[0].JF;
+
+	  	const intc3 = body.RWS[0].RW[8].FIS[0].FI[2].TMC.DE;
+	  	const jfc3 = body.RWS[0].RW[8].FIS[0].FI[2].CF[0].JF;
+
+	  	
+
+	  	var p = 3
+	  
+	  	var ecoland = jfc1 + jfc2 ;
+
+	  	var ecolands = ecoland/p;
+	  	
+	  	let analysis6 = "";
+	  	if(ecolands <= 4){
+	  		analysis6 = "Free flow of traffic";
+	  	}else if(ecolands <= 3){
+	  		analysis6 = "Free flow of traffic";
+	  	}else if(ecolands <= 2){
+	  		analysis6 = "Free flow of traffic";
+	  	}else if(ecolands <= 3){
+	  		analysis6 = "Free flow of traffic";
+	  	}else if(ecolands <= 2){
+	  		analysis6 = "Free flow of traffic";
+	  	}else if(ecolands <= 1){
+	  		analysis6 = "Free flow of traffic";
+	  	}else if(ecolands <= 0){
+	  		analysis6 = "Free flow of traffic";
+	  	}else if(ecolands <= 8){
+	  		analysis6 = "Sluggish flow of traffic";
+	  	}else if(ecolands <= 7){
+	  		analysis6 = "Sluggish flow of traffic"
+	  	}else if(ecolands <= 6){
+	  		analysis6 = "Sluggish flow of traffic"
+	  	}else if(ecolands <= 5){
+	  		analysis6 = "Sluggish flow of traffic"
+	  	}else if(ecolands <= 4){
+	  		analysis6 = "Sluggish flow of traffic"
+	  	}else if(ecolands <= 8){
+	  		analysis6 = "Slow flow of traffic"
+	  	}else if(ecolands <= 9){
+	  		analysis6 = "Slow flow of traffic"
+	  	}else if(ecolands <= 10){
+	  		analysis6 = "Slow flow of traffic"
+	  	}else{
+	  		analysis6 = "traffi8c kaayo di makaya"
+	  	}
+
+
+
+	  	_res.setHeader('Content-Type', 'application/json');
+    	_res.send(JSON.stringify({ street: streetc, intc1: intc1, jfc1: jfc1,  intc2: intc2, jfc2: jfc2, analysis6: analysis6 }));
 	
 
 
@@ -894,6 +966,23 @@ app.get('/geo',function(req, res){
 	  });
 
 })
+app.get('/geo',function(req, res){
+	
+
+	axios.get('https://polar-castle-83452.herokuapp.com/ecoland')
+	  .then(function (response) {
+	    console.log(response.data);
+	    //chatbotResponse = response.jf1;
+	    //sendText(sender, chatbotResponse)
+	  })
+	  .catch(function (error) {
+	    console.log(error);
+	    //chatbotResponse = "not ok";
+	    //sendText(sender, chatbotResponse)
+	  });
+
+})
+
 
 
 
@@ -1017,6 +1106,24 @@ app.post('/webhook/', function(req, res) {
 				  .then(function (response) {
 				    //console.log(response);
 				    chatbotResponse = response.data.analysis5;
+				    sendText(sender, chatbotResponse)
+				  })
+				  .catch(function (error) {
+				    //console.log(error);
+				    chatbotResponse = "not ok";
+				    sendText(sender, chatbotResponse)
+				  });
+
+				
+			}
+			if(text.includes("ecoland")){
+				let chatbotResponse = "";
+				
+				//source : https://www.npmjs.com/package/axios
+				axios.get('https://polar-castle-83452.herokuapp.com/ecoland')
+				  .then(function (response) {
+				    //console.log(response);
+				    chatbotResponse = response.data.analysis6;
 				    sendText(sender, chatbotResponse)
 				  })
 				  .catch(function (error) {
