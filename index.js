@@ -271,39 +271,39 @@ app.get('/mcarthur',function(_req, _res){
 	  	+ jfm9 + jfm10 + jfm11 + jfm12 + jfm13  / x;
 
 	  	
-	  	let analysis1 = "";
+	  	let analysis2 = "";
 	  	if(sum1 <= 4){
-	  		analysis1 = "Free flow of traffic";
+	  		analysis2 = "Free flow of traffic";
 	  	}else if(sum1 <= 3){
-	  		analysis1 = "Free flow of traffic";
+	  		analysis2 = "Free flow of traffic";
 	  	}else if(sum1 <= 2){
-	  		analysis1 = "Free flow of traffic";
+	  		analysis2 = "Free flow of traffic";
 	  	}else if(sum1 <= 3){
-	  		analysis1 = "Free flow of traffic";
+	  		analysis2 = "Free flow of traffic";
 	  	}else if(sum1 <= 2){
-	  		analysis1 = "Free flow of traffic";
+	  		analysis2 = "Free flow of traffic";
 	  	}else if(sum1 <= 1){
-	  		analysis1 = "Free flow of traffic";
+	  		analysis2 = "Free flow of traffic";
 	  	}else if(sum1 <= 0){
-	  		analysis1 = "Free flow of traffic";
+	  		analysis2 = "Free flow of traffic";
 	  	}else if(sum1 <= 8){
-	  		analysis1 = "Sluggish flow of traffic";
+	  		analysis2 = "Sluggish flow of traffic";
 	  	}else if(sum1 <= 7){
-	  		analysis1 = "Sluggish flow of traffic"
+	  		analysis2 = "Sluggish flow of traffic"
 	  	}else if(sum1 <= 6){
-	  		analysis1 = "Sluggish flow of traffic"
+	  		analysis2 = "Sluggish flow of traffic"
 	  	}else if(sum1 <= 5){
-	  		analysis1 = "Sluggish flow of traffic"
+	  		analysis2 = "Sluggish flow of traffic"
 	  	}else if(sum1 <= 4){
-	  		analysis1 = "Sluggish flow of traffic"
+	  		analysis2 = "Sluggish flow of traffic"
 	  	}else if(sum1 <= 8){
-	  		analysis1 = "Slow flow of traffic"
+	  		analysis2 = "Slow flow of traffic"
 	  	}else if(sum1 <= 9){
-	  		analysis1 = "Slow flow of traffic"
+	  		analysis2 = "Slow flow of traffic"
 	  	}else if(sum1 <= 10){
-	  		analysis1 = "Slow flow of traffic"
+	  		analysis2 = "Slow flow of traffic"
 	  	}else{
-	  		analysis1 = "dili nako ma computer"
+	  		analysis2 = "dili nako ma computer"
 	  	}
 
 
@@ -313,7 +313,7 @@ app.get('/mcarthur',function(_req, _res){
     		jfm3: jfm3, sep3: sep3, 
     		intm4: intm4, jfm4: jfm4, sep4: sep4, intm5: intm5, jfm5: jfm5, sep: sep, intm6: intm6, jfm6: jfm6, sep4: sep4, intm7: intm7, 
     		jfm7: jfm7, sep4: sep4, intm8: intm8, jfm8: jfm8, sep2: sep2, intm9: intm9, jfm9: jfm9, intm10: intm10, jfm10: jfm10, 
-    		intm11: intm11, jfm11: jfm11, intm12: intm12, jfm13: jfm13, jfmsepanalysis1: analysis1 }));
+    		intm11: intm11, jfm11: jfm11, intm12: intm12, jfm13: jfm13, intm13: intm13, jfm13: jfm13, analysis2: analysis2 }));
 	
 
 
@@ -473,6 +473,24 @@ app.post('/webhook/', function(req, res) {
 				  .then(function (response) {
 				    //console.log(response);
 				    chatbotResponse = response.data.analysis1;
+				    sendText(sender, chatbotResponse)
+				  })
+				  .catch(function (error) {
+				    //console.log(error);
+				    chatbotResponse = "not ok";
+				    sendText(sender, chatbotResponse)
+				  });
+
+				
+			}
+			if(text.includes("mcarthur")){
+				let chatbotResponse = "";
+				
+				//source : https://www.npmjs.com/package/axios
+				axios.get('https://polar-castle-83452.herokuapp.com/mcarthur')
+				  .then(function (response) {
+				    //console.log(response);
+				    chatbotResponse = response.data.analysis2;
 				    sendText(sender, chatbotResponse)
 				  })
 				  .catch(function (error) {
