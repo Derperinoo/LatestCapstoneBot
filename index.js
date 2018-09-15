@@ -449,7 +449,7 @@ app.get('/mcarthur',function(_req, _res){
     		jfm3: jfm3,  
     		intm4: intm4, jfm4: jfm4,  intm5: intm5, jfm5: jfm5,  intm6: intm6, jfm6: jfm6,  intm7: intm7, 
     		jfm7: jfm7,  intm8: intm8, jfm8: jfm8,  intm9: intm9, jfm9: jfm9, intm10: intm10, jfm10: jfm10, 
-    		intm11: intm11, jfm11: jfm11, intm12: intm12, jfm13: jfm13, intm13: intm13, jfm13: jfm13, analysis2: analysis2 }));
+    		intm11: intm11, jfm11: jfm11, intm12: intm12, jfm12: jfm12,  intm13: intm13, jfm13: jfm13, analysis2: analysis2 }));
 	
 
 
