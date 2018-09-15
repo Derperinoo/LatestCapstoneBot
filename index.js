@@ -895,6 +895,24 @@ app.post('/webhook/', function(req, res) {
 
 				
 			}
+			if(text.includes("ecowestdr")){
+				let chatbotResponse = "";
+				
+				//source : https://www.npmjs.com/package/axios
+				axios.get('https://polar-castle-83452.herokuapp.com/ecowestdr')
+				  .then(function (response) {
+				    //console.log(response);
+				    chatbotResponse = response.data.analysis4;
+				    sendText(sender, chatbotResponse)
+				  })
+				  .catch(function (error) {
+				    //console.log(error);
+				    chatbotResponse = "not ok";
+				    sendText(sender, chatbotResponse)
+				  });
+
+				
+			}
 			
 		}
 	}
