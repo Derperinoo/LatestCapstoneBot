@@ -356,48 +356,48 @@ app.get('/mcarthur',function(_req, _res){
 	  	
 	  	
 
-	  	const streetmm = body.RWS[0].RW[5].DE;
-	  	const intm = body.RWS[0].RW[5].FIS[0].FI[0].TMC.DE;
-	  	const jfm = body.RWS[0].RW[5].FIS[0].FI[0].CF[0].JF;
+	  	const streetmm = body.RWS[0].RW[4].DE;
+	  	const intm = body.RWS[0].RW[4].FIS[0].FI[0].TMC.DE;
+	  	const jfm = body.RWS[0].RW[4].FIS[0].FI[0].CF[0].JF;
 	  	
-	  	const intm1 = body.RWS[0].RW[5].FIS[0].FI[1].TMC.DE;
-	  	const jf02 = body.RWS[0].RW[5].FIS[0].FI[1].CF[0].JF;
+	  	const intm1 = body.RWS[0].RW[4].FIS[0].FI[1].TMC.DE;
+	  	const jf02 = body.RWS[0].RW[4].FIS[0].FI[1].CF[0].JF;
 
-	  	const intm2 = body.RWS[0].RW[5].FIS[0].FI[2].TMC.DE;
-	  	const jfm2 = body.RWS[0].RW[5].FIS[0].FI[2].CF[0].JF;
+	  	const intm2 = body.RWS[0].RW[4].FIS[0].FI[2].TMC.DE;
+	  	const jfm2 = body.RWS[0].RW[4].FIS[0].FI[2].CF[0].JF;
 
-	  	const intm3 = body.RWS[0].RW[5].FIS[0].FI[3].TMC.DE;
-	  	const jfm3 = body.RWS[0].RW[5].FIS[0].FI[3].CF[0].JF;
+	  	const intm3 = body.RWS[0].RW[4].FIS[0].FI[3].TMC.DE;
+	  	const jfm3 = body.RWS[0].RW[4].FIS[0].FI[3].CF[0].JF;
 
-	  	const intm4 = body.RWS[0].RW[5].FIS[0].FI[4].TMC.DE;
-	  	const jfm4 = body.RWS[0].RW[5].FIS[0].FI[4].CF[0].JF;
+	  	const intm4 = body.RWS[0].RW[4].FIS[0].FI[4].TMC.DE;
+	  	const jfm4 = body.RWS[0].RW[4].FIS[0].FI[4].CF[0].JF;
 
-	  	const intm5 = body.RWS[0].RW[5].FIS[0].FI[5].TMC.DE;
-	  	const jfm5 = body.RWS[0].RW[5].FIS[0].FI[5].CF[0].JF;
+	  	const intm5 = body.RWS[0].RW[4].FIS[0].FI[5].TMC.DE;
+	  	const jfm5 = body.RWS[0].RW[4].FIS[0].FI[5].CF[0].JF;
 
-	  	const intm6 = body.RWS[0].RW[5].FIS[0].FI[6].TMC.DE;
-	  	const jfm6 = body.RWS[0].RW[5].FIS[0].FI[6].CF[0].JF;
+	  	const intm6 = body.RWS[0].RW[4].FIS[0].FI[6].TMC.DE;
+	  	const jfm6 = body.RWS[0].RW[4].FIS[0].FI[6].CF[0].JF;
 
-	  	const intm7 = body.RWS[0].RW[5].FIS[0].FI[7].TMC.DE;
-	  	const jfm7 = body.RWS[0].RW[5].FIS[0].FI[7].CF[0].JF;
+	  	const intm7 = body.RWS[0].RW[4].FIS[0].FI[7].TMC.DE;
+	  	const jfm7 = body.RWS[0].RW[4].FIS[0].FI[7].CF[0].JF;
 
-	  	const intm8 = body.RWS[0].RW[5].FIS[0].FI[8].TMC.DE;
-	  	const jfm8 = body.RWS[0].RW[5].FIS[0].FI[8].CF[0].JF;
+	  	const intm8 = body.RWS[0].RW[4].FIS[0].FI[8].TMC.DE;
+	  	const jfm8 = body.RWS[0].RW[4].FIS[0].FI[8].CF[0].JF;
 
-	  	const intm9 = body.RWS[0].RW[5].FIS[0].FI[9].TMC.DE;
-	  	const jfm9 = body.RWS[0].RW[5].FIS[0].FI[9].CF[0].JF;
+	  	const intm9 = body.RWS[0].RW[4].FIS[0].FI[9].TMC.DE;
+	  	const jfm9 = body.RWS[0].RW[4].FIS[0].FI[9].CF[0].JF;
 
-	  	const intm10 = body.RWS[0].RW[5].FIS[0].FI[10].TMC.DE;
-	  	const jfm10  = body.RWS[0].RW[5].FIS[0].FI[10].CF[0].JF;
+	  	const intm10 = body.RWS[0].RW[4].FIS[0].FI[10].TMC.DE;
+	  	const jfm10  = body.RWS[0].RW[4].FIS[0].FI[10].CF[0].JF;
 	  		
-	  	const intm11 = body.RWS[0].RW[5].FIS[0].FI[11].TMC.DE;
-	  	const jfm11 = body.RWS[0].RW[5].FIS[0].FI[11].CF[0].JF;
+	  	const intm11 = body.RWS[0].RW[4].FIS[0].FI[11].TMC.DE;
+	  	const jfm11 = body.RWS[0].RW[4].FIS[0].FI[11].CF[0].JF;
 	  	
-	  	const intm12 = body.RWS[0].RW[5].FIS[0].FI[12].TMC.DE;
-	  	const jfm12 = body.RWS[0].RW[5].FIS[0].FI[12].CF[0].JF;
+	  	const intm12 = body.RWS[0].RW[4].FIS[0].FI[12].TMC.DE;
+	  	const jfm12 = body.RWS[0].RW[4].FIS[0].FI[12].CF[0].JF;
 	  	
-	  	const intm13 = body.RWS[0].RW[5].FIS[0].FI[13].TMC.DE;
-	  	const jfm13 = body.RWS[0].RW[5].FIS[0].FI[13].CF[0].JF;
+	  	const intm13 = body.RWS[0].RW[4].FIS[0].FI[13].TMC.DE;
+	  	const jfm13 = body.RWS[0].RW[4].FIS[0].FI[13].CF[0].JF;
 
 	  	const x = 14
 	  
@@ -445,7 +445,7 @@ app.get('/mcarthur',function(_req, _res){
 
 
 	  	_res.setHeader('Content-Type', 'application/json');
-    	_res.send(JSON.stringify({ streetmm: streetmm,  intm1: intm1, jfm: jfm,  intm2: intm2, jfm2: jfm2,  intm3: intm3, 
+    	_res.send(JSON.stringify({ streetmm: streetmm,  intm1: intm1, jf02: jf02,  intm2: intm2, jfm2: jfm2,  intm3: intm3, 
     		jfm3: jfm3,  
     		intm4: intm4, jfm4: jfm4,  intm5: intm5, jfm5: jfm5,  intm6: intm6, jfm6: jfm6,  intm7: intm7, 
     		jfm7: jfm7,  intm8: intm8, jfm8: jfm8,  intm9: intm9, jfm9: jfm9, intm10: intm10, jfm10: jfm10, 
@@ -459,6 +459,196 @@ app.get('/mcarthur',function(_req, _res){
 
 
 });
+
+app.get('/mcarthur-',function(_req, _res){
+
+	request('https://traffic.api.here.com/traffic/6.1/flow.json?bbox=7.2598%2C125.0860%3B6.7670%2C125.6674&app_id=fQbW8CGYiU3l5mLqWgBE&app_code=SYZXwjFBHSYi_1t1GNuHow', { json: true }, (err, res, body) => {
+	  if (err) { return console.log(err); }
+	  	
+	  	
+
+	  	const streetmmm = body.RWS[0].RW[5].DE;
+	  	const intmm = body.RWS[0].RW[5].FIS[0].FI[0].TMC.DE;
+	  	const jfmm = body.RWS[0].RW[5].FIS[0].FI[0].CF[0].JF;
+	  	
+	  	const intmm1 = body.RWS[0].RW[5].FIS[0].FI[1].TMC.DE;
+	  	const jfm02 = body.RWS[0].RW[5].FIS[0].FI[1].CF[0].JF;
+
+	  	const intmm2 = body.RWS[0].RW[5].FIS[0].FI[2].TMC.DE;
+	  	const jfmm2 = body.RWS[0].RW[5].FIS[0].FI[2].CF[0].JF;
+
+	  	const intmm3 = body.RWS[0].RW[5].FIS[0].FI[3].TMC.DE;
+	  	const jfmm3 = body.RWS[0].RW[5].FIS[0].FI[3].CF[0].JF;
+
+	  	const intmm4 = body.RWS[0].RW[5].FIS[0].FI[4].TMC.DE;
+	  	const jfmm4 = body.RWS[0].RW[5].FIS[0].FI[4].CF[0].JF;
+
+	  	const intmm5 = body.RWS[0].RW[5].FIS[0].FI[5].TMC.DE;
+	  	const jfmm5 = body.RWS[0].RW[5].FIS[0].FI[5].CF[0].JF;
+
+	  	const intmm6 = body.RWS[0].RW[5].FIS[0].FI[6].TMC.DE;
+	  	const jfmm6 = body.RWS[0].RW[5].FIS[0].FI[6].CF[0].JF;
+
+	  	const intmm7 = body.RWS[0].RW[5].FIS[0].FI[7].TMC.DE;
+	  	const jfmm7 = body.RWS[0].RW[5].FIS[0].FI[7].CF[0].JF;
+
+	  	const intmm8 = body.RWS[0].RW[5].FIS[0].FI[8].TMC.DE;
+	  	const jfmm8 = body.RWS[0].RW[5].FIS[0].FI[8].CF[0].JF;
+
+	  	const intmm9 = body.RWS[0].RW[5].FIS[0].FI[9].TMC.DE;
+	  	const jfmm9 = body.RWS[0].RW[5].FIS[0].FI[9].CF[0].JF;
+
+	  	const intmm10 = body.RWS[0].RW[5].FIS[0].FI[10].TMC.DE;
+	  	const jfmm10  = body.RWS[0].RW[5].FIS[0].FI[10].CF[0].JF;
+	  		
+	  	const intmm11 = body.RWS[0].RW[5].FIS[0].FI[11].TMC.DE;
+	  	const jfmm11 = body.RWS[0].RW[5].FIS[0].FI[11].CF[0].JF;
+	  	
+	  	const intmm12 = body.RWS[0].RW[5].FIS[0].FI[12].TMC.DE;
+	  	const jfmm12 = body.RWS[0].RW[5].FIS[0].FI[12].CF[0].JF;
+	  	
+	  	const intmm13 = body.RWS[0].RW[5].FIS[0].FI[13].TMC.DE;
+	  	const jfmm13 = body.RWS[0].RW[5].FIS[0].FI[13].CF[0].JF;
+
+	  	const xm = 13
+	  
+	  	var avemm = jfmm + jfm02 + jfmm2 + jfmm3 + jfmm4 + jfmm5 + jfmm6 + jfmm8
+	  	+ jfmm9 + jfmm10 + jfmm11 + jfmm12 + jfmm13  ;
+
+	  	var avemcm = avemm/xm;
+
+	  	
+	  	let analysis3 = "";
+	  	if(avemcm <= 4){
+	  		analysis3 = "Free flow of traffic";
+	  	}else if(avemcm <= 3){
+	  		analysis3 = "Free flow of traffic";
+	  	}else if(avemcm <= 2){
+	  		analysis3 = "Free flow of traffic";
+	  	}else if(avemcm <= 3){
+	  		analysis3 = "Free flow of traffic";
+	  	}else if(avemcm <= 2){
+	  		analysis3 = "Free flow of traffic";
+	  	}else if(avemcm <= 1){
+	  		analysis3 = "Free flow of traffic";
+	  	}else if(avemcm <= 0){
+	  		analysis3 = "Free flow of traffic";
+	  	}else if(avemcm <= 8){
+	  		analysis3 = "Sluggish flow of traffic";
+	  	}else if(avemcm <= 7){
+	  		analysis3 = "Sluggish flow of traffic"
+	  	}else if(avemcm <= 6){
+	  		analysis3 = "Sluggish flow of traffic"
+	  	}else if(avemcm <= 5){
+	  		analysis3 = "Sluggish flow of traffic"
+	  	}else if(avemcm <= 4){
+	  		analysis3 = "Sluggish flow of traffic"
+	  	}else if(avemcm <= 8){
+	  		analysis3 = "Slow flow of traffic"
+	  	}else if(avemcm <= 9){
+	  		analysis3 = "Slow flow of traffic"
+	  	}else if(avemcm <= 10){
+	  		analysis3 = "Slow flow of traffic"
+	  	}else{
+	  		analysis3 = "dili nako ma computer"
+	  	}
+
+
+
+	  	_res.setHeader('Content-Type', 'application/json');
+    	_res.send(JSON.stringify({ streetmmm: streetmmm,  intmm1: intmm1, jfm02: jfm02,  intmm2: intmm2, jfmm2: jfmm2,  intmm3: intmm3, 
+    		jfmm3: jfmm3, intmm4: intmm4, jfmm4: jfmm4,  intmm5: intmm5, jfmm5: jfmm5,  intmm6: intmm6, jfmm6: jfmm6,  intmm7: intmm7, 
+    		jfmm7: jfmm7,  intmm8: intmm8, jfmm8: jfmm8,  intmm9: intmm9, jfmm9: jfmm9, intmm10: intmm10, jfmm10: jfmm10, 
+    		intmm11: intmm11, jfmm11: jfmm11, intmm12: intmm12, jfmm12: jfmm12,  intmm13: intmm13, jfmm13: jfmm13, analysis3: analysis3 }));
+	
+
+
+
+	  
+	});
+
+
+});
+
+app.get('/ecowestdr',function(_req, _res){
+
+	request('https://traffic.api.here.com/traffic/6.1/flow.json?bbox=7.2598%2C125.0860%3B6.7670%2C125.6674&app_id=fQbW8CGYiU3l5mLqWgBE&app_code=SYZXwjFBHSYi_1t1GNuHow', { json: true }, (err, res, body) => {
+	  if (err) { return console.log(err); }
+	  	// console.log(body.url);
+	  	// console.log(body.explanation);
+	  	console.log(body.RWS[0].RW);
+	  	console.log("###################");
+	  	console.log(body.RWS[0].RW[0].DE);
+	  	console.log(body.RWS[0].RW[0].FIS[0].FI[0].TMC.DE);
+	  	
+
+	  	
+	  	
+
+	  	const streetec = body.RWS[0].RW[6].DE;
+	  	const inte1 = body.RWS[0].RW[6].FIS[0].FI[0].TMC.DE;
+	  	const jfe1 = body.RWS[0].RW[6].FIS[0].FI[0].CF[0].JF;
+	  	
+	  	const inte2 = body.RWS[0].RW[6].FIS[0].FI[1].TMC.DE;
+	  	const jfe2 = body.RWS[0].RW[6].FIS[0].FI[1].CF[0].JF;
+
+	  	
+
+	  	var y = 2
+	  
+	  	var eco = jfe1 + jfe2 ;
+
+	  	var ecowest = eco/y;
+	  	
+	  	let analysis4 = "";
+	  	if(ecowest <= 4){
+	  		analysis4 = "Free flow of traffic";
+	  	}else if(ecowest <= 3){
+	  		analysis4 = "Free flow of traffic";
+	  	}else if(ecowest <= 2){
+	  		analysis4 = "Free flow of traffic";
+	  	}else if(ecowest <= 3){
+	  		analysis4 = "Free flow of traffic";
+	  	}else if(ecowest <= 2){
+	  		analysis4 = "Free flow of traffic";
+	  	}else if(ecowest <= 1){
+	  		analysis4 = "Free flow of traffic";
+	  	}else if(ecowest <= 0){
+	  		analysis4 = "Free flow of traffic";
+	  	}else if(ecowest <= 8){
+	  		analysis4 = "Sluggish flow of traffic";
+	  	}else if(ecowest <= 7){
+	  		analysis4 = "Sluggish flow of traffic"
+	  	}else if(ecowest <= 6){
+	  		analysis4 = "Sluggish flow of traffic"
+	  	}else if(ecowest <= 5){
+	  		analysis4 = "Sluggish flow of traffic"
+	  	}else if(ecowest <= 4){
+	  		analysis4 = "Sluggish flow of traffic"
+	  	}else if(ecowest <= 8){
+	  		analysis4 = "Slow flow of traffic"
+	  	}else if(ecowest <= 9){
+	  		analysis4 = "Slow flow of traffic"
+	  	}else if(ecowest <= 10){
+	  		analysis4 = "Slow flow of traffic"
+	  	}else{
+	  		analysis = "traffi8c kaayo di makaya"
+	  	}
+
+
+
+	  	_res.setHeader('Content-Type', 'application/json');
+    	_res.send(JSON.stringify({ street: streetec, inte1: inte1, jfe1: jfe1,  inte2: inte2, jfe2: jfe2, analysis: analysis4 }));
+	
+
+
+
+	  
+	});
+
+
+});
+
 
 
 
@@ -546,6 +736,23 @@ app.get('/geo',function(req, res){
 app.get('/geo',function(req, res){
 	
 
+	axios.get('https://polar-castle-83452.herokuapp.com/mcarthur-')
+	  .then(function (response) {
+	    console.log(response.data);
+	    //chatbotResponse = response.jf1;
+	    //sendText(sender, chatbotResponse)
+	  })
+	  .catch(function (error) {
+	    console.log(error);
+	    //chatbotResponse = "not ok";
+	    //sendText(sender, chatbotResponse)
+	  });
+
+})
+
+app.get('/geo',function(req, res){
+	
+
 	axios.get('https://polar-castle-83452.herokuapp.com/jplaurel')
 	  .then(function (response) {
 	    console.log(response.data);
@@ -563,6 +770,23 @@ app.get('/geo',function(req, res){
 	
 
 	axios.get('https://polar-castle-83452.herokuapp.com/jplaurel-')
+	  .then(function (response) {
+	    console.log(response.data);
+	    //chatbotResponse = response.jf1;
+	    //sendText(sender, chatbotResponse)
+	  })
+	  .catch(function (error) {
+	    console.log(error);
+	    //chatbotResponse = "not ok";
+	    //sendText(sender, chatbotResponse)
+	  });
+
+})
+
+app.get('/geo',function(req, res){
+	
+
+	axios.get('https://polar-castle-83452.herokuapp.com/ecowestdr')
 	  .then(function (response) {
 	    console.log(response.data);
 	    //chatbotResponse = response.jf1;
