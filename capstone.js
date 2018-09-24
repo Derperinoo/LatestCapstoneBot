@@ -1069,7 +1069,115 @@ app.get('/quimpoblvd',function(_req, _res){
 });
 
 
+app.get('/quezonblvd-',function(_req, _res){
 
+	request('https://traffic.api.here.com/traffic/6.1/flow.json?bbox=7.2598%2C125.0860%3B6.7670%2C125.6674&app_id=fQbW8CGYiU3l5mLqWgBE&app_code=SYZXwjFBHSYi_1t1GNuHow', { json: true }, (err, res, body) => {
+	  if (err) { return console.log(err); }
+
+	  	const streetc = body.RWS[0].RW[18].DE;
+	  	const intc1 = body.RWS[0].RW[18].FIS[0].FI[0].TMC.DE;
+	  	const jfc1 = body.RWS[0].RW[18].FIS[0].FI[0].CF[0].JF;
+	  	
+	  	const intc2 = body.RWS[0].RW[18].FIS[0].FI[1].TMC.DE;
+	  	const jfc2 = body.RWS[0].RW[18].FIS[0].FI[1].CF[0].JF;
+
+	    const intc3 = body.RWS[0].RW[18].FIS[0].FI[2].TMC.DE;
+	  	const jfc3 = body.RWS[0].RW[18].FIS[0].FI[2].CF[0].JF;
+
+	  	const intc4 = body.RWS[0].RW[18].FIS[0].FI[3].TMC.DE;
+	  	const jfc4 = body.RWS[0].RW[18].FIS[0].FI[3].CF[0].JF;
+
+	  	const intc5 = body.RWS[0].RW[18].FIS[0].FI[4].TMC.DE;
+	  	const jfc5 = body.RWS[0].RW[18].FIS[0].FI[4].CF[0].JF;
+
+
+	  	var p = 5
+	  
+	  	var quezon = jfc1 + jfc2 + jfc3 + jfc4 + jfc5;
+
+	  	var quezonb = quezon/p;
+	  	
+	  	let analysis16 = "";
+	  	
+	  	if(quezonb == 0 || quezonb <= 4){
+	  		analysis16 = "Free flow of traffic";
+	  	}else if(quezonb == 4 || quezonb <= 8){
+	  		analysis16 = "Sluggish flow of traffic";
+	  	}else if(quezonb == 8 || quezonb <=9){
+	  		analysis16 = "Slow flow of traffic";
+	  	}else if(quezonb == 10){
+	  		analysis16 = "Traffic stopped or Road closed"
+	  	}else{
+	  		analysis16 = "Cannot compute"
+	  	}
+
+	  	
+
+	  	_res.setHeader('Content-Type', 'application/json');
+    	_res.send(JSON.stringify({ street: streetc, intc1: intc1, jfc1: jfc1,  intc2: intc2, jfc2: jfc2, intc3: intc3, jfc3: jfc3, intc4: intc4, jfc4: jfc4, intc5: intc5, jfc5:jfc5, analysis16: analysis16 }));
+	
+
+
+
+	  
+	});
+
+
+});
+app.get('/quezonblvd',function(_req, _res){
+
+	request('https://traffic.api.here.com/traffic/6.1/flow.json?bbox=7.2598%2C125.0860%3B6.7670%2C125.6674&app_id=fQbW8CGYiU3l5mLqWgBE&app_code=SYZXwjFBHSYi_1t1GNuHow', { json: true }, (err, res, body) => {
+	  if (err) { return console.log(err); }
+
+	  	const streetc = body.RWS[0].RW[19].DE;
+	  	const intc1 = body.RWS[0].RW[19].FIS[0].FI[0].TMC.DE;
+	  	const jfc1 = body.RWS[0].RW[19].FIS[0].FI[0].CF[0].JF;
+	  	
+	  	const intc2 = body.RWS[0].RW[19].FIS[0].FI[1].TMC.DE;
+	  	const jfc2 = body.RWS[0].RW[19].FIS[0].FI[1].CF[0].JF;
+
+	    const intc3 = body.RWS[0].RW[19].FIS[0].FI[2].TMC.DE;
+	  	const jfc3 = body.RWS[0].RW[19].FIS[0].FI[2].CF[0].JF;
+
+	  	const intc4 = body.RWS[0].RW[19].FIS[0].FI[3].TMC.DE;
+	  	const jfc4 = body.RWS[0].RW[19].FIS[0].FI[3].CF[0].JF;
+
+	  	const intc5 = body.RWS[0].RW[19].FIS[0].FI[4].TMC.DE;
+	  	const jfc5 = body.RWS[0].RW[19].FIS[0].FI[4].CF[0].JF;
+
+
+	  	var p = 5
+	  
+	  	var quezonn = jfc1 + jfc2 + jfc3 + jfc4 + jfc5;
+
+	  	var quezonnb = quezonn/p;
+	  	
+	  	let analysis17 = "";
+	  	
+	  	if(quezonnb == 0 || quezonnb <=4){
+	  		analysis17 = "Free flow of traffic";
+	  	}else if(quezonnb == 4 || quezonnb <=8){
+	  		analysis17 = "Sluggish flow of traffic";
+	  	}else if(quezonnb == 8 || quezonnb <=9){
+	  		analysis17 = "Slow flow of traffic";
+	  	}else if(quezonnb == 10){
+	  		analysis17 = "Traffic stopped or Road closed"
+	  	}else{
+	  		analysis17 = "Cannot compute"
+	  	}
+
+
+	  	_res.setHeader('Content-Type', 'application/json');
+    	_res.send(JSON.stringify({ street: streetc, intc1: intc1, jfc1: jfc1,  intc2: intc2, jfc2: jfc2, intc3: intc3, jfc3: jfc3, intc4: intc4, jfc4: jfc4, intc5: intc5, jfc5:jfc5, analysis17: analysis17 }));
+	
+
+
+
+	  
+	});
+
+
+});
 app.get('/geo',function(req, res){
 	
 	axios.get(' https://cryptic-eyrie-21978.herokuapp.com/equirino')
@@ -1355,6 +1463,39 @@ app.get('/geo',function(req, res){
 	
 
 	axios.get('https://cryptic-eyrie-21978.herokuapp.com/quimpoblvd')
+	  .then(function (response) {
+	    console.log(response.data);
+	    //chatbotResponse = response.jf1;
+	    //sendText(sender, chatbotResponse)
+	  })
+	  .catch(function (error) {
+	    console.log(error);
+	    //chatbotResponse = "not ok";
+	    //sendText(sender, chatbotResponse)
+	  });
+
+})
+
+app.get('/geo',function(req, res){
+	
+
+	axios.get('https://cryptic-eyrie-21978.herokuapp.com/quezonblvd')
+	  .then(function (response) {
+	    console.log(response.data);
+	    //chatbotResponse = response.jf1;
+	    //sendText(sender, chatbotResponse)
+	  })
+	  .catch(function (error) {
+	    console.log(error);
+	    //chatbotResponse = "not ok";
+	    //sendText(sender, chatbotResponse)
+	  });
+
+})
+app.get('/geo',function(req, res){
+	
+
+	axios.get('https://cryptic-eyrie-21978.herokuapp.com/quezonblvd-')
 	  .then(function (response) {
 	    console.log(response.data);
 	    //chatbotResponse = response.jf1;
@@ -1707,6 +1848,47 @@ app.post('/webhook/', function(req, res) {
 				  .then(function (response) {
 				    //console.log(response);
 				    chatbotResponse = response.data.analysis15;
+				    sendText(sender, chatbotResponse)
+				  })
+				  .catch(function (error) {
+				    //console.log(error);
+				    chatbotResponse = "not ok";
+				    sendText(sender, chatbotResponse)
+				  });
+
+				
+			}
+
+			if(text=='quezon boulevard-')
+			// if(text.includes("quezon boulevard"))
+			{
+				let chatbotResponse = "";
+				
+				//source : https://www.npmjs.com/package/axios
+				axios.get('https://cryptic-eyrie-21978.herokuapp.com/quezonblvd-')
+				  .then(function (response) {
+				    //console.log(response);
+				    chatbotResponse = response.data.analysis16;
+				    sendText(sender, chatbotResponse)
+				  })
+				  .catch(function (error) {
+				    //console.log(error);
+				    chatbotResponse = "not ok";
+				    sendText(sender, chatbotResponse)
+				  });
+
+				
+			}
+			if(text=='quezon boulevard')
+			// if(text.includes("quezon boulevard-"))
+			{
+				let chatbotResponse = "";
+				
+				//source : https://www.npmjs.com/package/axios
+				axios.get('https://cryptic-eyrie-21978.herokuapp.com/quezonblvd')
+				  .then(function (response) {
+				    //console.log(response);
+				    chatbotResponse = response.data.analysis17;
 				    sendText(sender, chatbotResponse)
 				  })
 				  .catch(function (error) {
