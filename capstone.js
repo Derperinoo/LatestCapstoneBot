@@ -1583,6 +1583,187 @@ app.get('/sanpedro',function(_req, _res){
 
 });
 
+app.get('/ftorresst-',function(_req, _res){
+
+	request('https://traffic.api.here.com/traffic/6.1/flow.json?bbox=7.2598%2C125.0860%3B6.7670%2C125.6674&app_id=fQbW8CGYiU3l5mLqWgBE&app_code=SYZXwjFBHSYi_1t1GNuHow', { json: true }, (err, res, body) => {
+	  if (err) { return console.log(err); }
+
+	  	const streetc = body.RWS[0].RW[30].DE;
+	  	const intc1 = body.RWS[0].RW[30].FIS[0].FI[0].TMC.DE;
+	  	const jfc1 = body.RWS[0].RW[30].FIS[0].FI[0].CF[0].JF;
+
+	  	const intc2 = body.RWS[0].RW[30].FIS[0].FI[1].TMC.DE;
+	  	const jfc2 = body.RWS[0].RW[30].FIS[0].FI[1].CF[0].JF;
+
+	
+	  	var p = 2
+	  
+	  	var tor = jfc1 + jfc2 ;
+
+	  	var torress = tor/p;
+	  	
+	  	let analysis28 = "";
+	  	
+	  	if(torress == 0 || torress <=4){
+	  		analysis28 = "Free flow of traffic";
+	  	}else if(torress == 4 || torress <=8){
+	  		analysis28 = "Sluggish flow of traffic";
+	  	}else if(torress == 8 || torress <=9){
+	  		analysis28 = "Slow flow of traffic";
+	  	}else if(torress == 10){
+	  		analysis28 = "Traffic stopped or Road closed"
+	  	}else{
+	  		analysis28 = "Cannot compute"
+	  	}
+
+	  	
+
+
+	  	_res.setHeader('Content-Type', 'application/json');
+    	_res.send(JSON.stringify({ street: streetc, intc1: intc1, jfc1: jfc1, intc2: intc2, jfc2: jfc2, analysis28: analysis28 }));
+	
+
+
+
+	  
+	});
+
+
+});
+app.get('/abonifaciost-',function(_req, _res){
+
+	request('https://traffic.api.here.com/traffic/6.1/flow.json?bbox=7.2598%2C125.0860%3B6.7670%2C125.6674&app_id=fQbW8CGYiU3l5mLqWgBE&app_code=SYZXwjFBHSYi_1t1GNuHow', { json: true }, (err, res, body) => {
+	  if (err) { return console.log(err); }
+
+	  	const streetc = body.RWS[0].RW[31].DE;
+	  	const intc1 = body.RWS[0].RW[31].FIS[0].FI[0].TMC.DE;
+	  	const jfc1 = body.RWS[0].RW[31].FIS[0].FI[0].CF[0].JF;
+
+	  	const intc2 = body.RWS[0].RW[31].FIS[0].FI[1].TMC.DE;
+	  	const jfc2 = body.RWS[0].RW[31].FIS[0].FI[1].CF[0].JF;
+
+	  	const intc3 = body.RWS[0].RW[31].FIS[0].FI[2].TMC.DE;
+	  	const jfc3 = body.RWS[0].RW[31].FIS[0].FI[2].CF[0].JF;
+
+	
+	  	var p = 3
+	  
+	  	var boni = jfc1 + jfc2 + jfc3;
+
+	  	var bonifac = boni/p;
+	  	
+	  	let analysis29 = "";
+	  	
+	  	if(bonifac == 0 || bonifac <=4){
+	  		analysis29 = "Free flow of traffic";
+	  	}else if(bonifac == 4 || bonifac <=8){
+	  		analysis29 = "Sluggish flow of traffic";
+	  	}else if(bonifac == 8 || bonifac <=9){
+	  		analysis29 = "Slow flow of traffic";
+	  	}else if(bonifac == 10){
+	  		analysis29 = "Traffic stopped or Road closed"
+	  	}else{
+	  		analysis29 = "Cannot compute"
+	  	}
+
+	  	
+
+
+	  	_res.setHeader('Content-Type', 'application/json');
+    	_res.send(JSON.stringify({ street: streetc, intc1: intc1, jfc1: jfc1, intc2: intc2, jfc2: jfc2, intc3: intc3, jfc3: jfc3, analysis29: analysis29 }));
+	
+
+
+
+	  
+	});
+
+
+});
+app.get('/ftorresst',function(_req, _res){
+
+	request('https://traffic.api.here.com/traffic/6.1/flow.json?bbox=7.2598%2C125.0860%3B6.7670%2C125.6674&app_id=fQbW8CGYiU3l5mLqWgBE&app_code=SYZXwjFBHSYi_1t1GNuHow', { json: true }, (err, res, body) => {
+	  if (err) { return console.log(err); }
+
+	  	const streetc = body.RWS[0].RW[32].DE;
+	  	const intc1 = body.RWS[0].RW[32].FIS[0].FI[0].TMC.DE;
+	  	const jfc1 = body.RWS[0].RW[32].FIS[0].FI[0].CF[0].JF;
+
+	  	const intc2 = body.RWS[0].RW[32].FIS[0].FI[1].TMC.DE;
+	  	const jfc2 = body.RWS[0].RW[32].FIS[0].FI[1].CF[0].JF;
+	
+	  	var p = 2
+	  
+	  	var torr = jfc1 + jfc2 ;
+
+	  	var torresss = torr/p;
+	  	
+	  	let analysis30 = "";
+	  	
+	  	if(torresss == 0 || torresss <=4){
+	  		analysis30 = "Free flow of traffic";
+	  	}else if(torresss == 4 || torresss <=8){
+	  		analysis30 = "Sluggish flow of traffic";
+	  	}else if(torresss == 8 || torresss <=9){
+	  		analysis30 = "Slow flow of traffic";
+	  	}else if(torresss == 10){
+	  		analysis30 = "Traffic stopped or Road closed"
+	  	}else{
+	  		analysis30 = "Cannot compute"
+	  	}
+
+	  	
+	  	_res.setHeader('Content-Type', 'application/json');
+    	_res.send(JSON.stringify({ street: streetc, intc1: intc1, jfc1: jfc1, intc2: intc2, jfc2: jfc2, analysis30: analysis30 }));
+	  
+	});
+
+
+});
+app.get('/abonifaciost',function(_req, _res){
+
+	request('https://traffic.api.here.com/traffic/6.1/flow.json?bbox=7.2598%2C125.0860%3B6.7670%2C125.6674&app_id=fQbW8CGYiU3l5mLqWgBE&app_code=SYZXwjFBHSYi_1t1GNuHow', { json: true }, (err, res, body) => {
+	  if (err) { return console.log(err); }
+
+	  	const streetc = body.RWS[0].RW[33].DE;
+	  	const intc1 = body.RWS[0].RW[33].FIS[0].FI[0].TMC.DE;
+	  	const jfc1 = body.RWS[0].RW[33].FIS[0].FI[0].CF[0].JF;
+
+	  	const intc2 = body.RWS[0].RW[33].FIS[0].FI[1].TMC.DE;
+	  	const jfc2 = body.RWS[0].RW[33].FIS[0].FI[1].CF[0].JF;
+
+	  	const intc3 = body.RWS[0].RW[33].FIS[0].FI[2].TMC.DE;
+	  	const jfc3 = body.RWS[0].RW[33].FIS[0].FI[2].CF[0].JF;
+	
+	  	var p = 3
+	  
+	  	var bon = jfc1 + jfc2 + jfc3;
+
+	  	var bonifacioo = bon/p;
+	  	
+	  	let analysis31 = "";
+	  	
+	  	if(bonifacioo == 0 || bonifacioo <=4){
+	  		analysis31 = "Free flow of traffic";
+	  	}else if(bonifacioo == 4 || bonifacioo <=8){
+	  		analysis31 = "Sluggish flow of traffic";
+	  	}else if(bonifacioo == 8 || bonifacioo <=9){
+	  		analysis31 = "Slow flow of traffic";
+	  	}else if(bonifacioo == 10){
+	  		analysis31 = "Traffic stopped or Road closed"
+	  	}else{
+	  		analysis31 = "Cannot compute"
+	  	}
+
+	  	
+	  	_res.setHeader('Content-Type', 'application/json');
+    	_res.send(JSON.stringify({ street: streetc, intc1: intc1, jfc1: jfc1, intc2: intc2, jfc2: jfc2, intc3: intc3, jfc3: jfc3, analysis31: analysis31 }));
+	  
+	});
+
+
+});
+
 app.get('/pichonst-',function(_req, _res){
 
 	request('https://traffic.api.here.com/traffic/6.1/flow.json?bbox=7.2598%2C125.0860%3B6.7670%2C125.6674&app_id=fQbW8CGYiU3l5mLqWgBE&app_code=SYZXwjFBHSYi_1t1GNuHow', { json: true }, (err, res, body) => {
@@ -2105,6 +2286,72 @@ app.get('/geo',function(req, res){
 	
 
 	axios.get('https://cryptic-eyrie-21978.herokuapp.com/sanpedro')
+	  .then(function (response) {
+	    console.log(response.data);
+	    //chatbotResponse = response.jf1;
+	    //sendText(sender, chatbotResponse)
+	  })
+	  .catch(function (error) {
+	    console.log(error);
+	    //chatbotResponse = "not ok";
+	    //sendText(sender, chatbotResponse)
+	  });
+
+})
+
+pp.get('/geo',function(req, res){
+	
+
+	axios.get('https://cryptic-eyrie-21978.herokuapp.com/ftorresst-')
+	  .then(function (response) {
+	    console.log(response.data);
+	    //chatbotResponse = response.jf1;
+	    //sendText(sender, chatbotResponse)
+	  })
+	  .catch(function (error) {
+	    console.log(error);
+	    //chatbotResponse = "not ok";
+	    //sendText(sender, chatbotResponse)
+	  });
+
+})
+app.get('/geo',function(req, res){
+	
+
+	axios.get('https://cryptic-eyrie-21978.herokuapp.com/abonifaciost-')
+	  .then(function (response) {
+	    console.log(response.data);
+	    //chatbotResponse = response.jf1;
+	    //sendText(sender, chatbotResponse)
+	  })
+	  .catch(function (error) {
+	    console.log(error);
+	    //chatbotResponse = "not ok";
+	    //sendText(sender, chatbotResponse)
+	  });
+
+})
+app.get('/geo',function(req, res){
+	
+
+	axios.get('https://cryptic-eyrie-21978.herokuapp.com/ftorresst')
+	  .then(function (response) {
+	    console.log(response.data);
+	    //chatbotResponse = response.jf1;
+	    //sendText(sender, chatbotResponse)
+	  })
+	  .catch(function (error) {
+	    console.log(error);
+	    //chatbotResponse = "not ok";
+	    //sendText(sender, chatbotResponse)
+	  });
+
+})
+
+app.get('/geo',function(req, res){
+	
+
+	axios.get('https://cryptic-eyrie-21978.herokuapp.com/abonifaciost')
 	  .then(function (response) {
 	    console.log(response.data);
 	    //chatbotResponse = response.jf1;
@@ -2681,6 +2928,86 @@ app.post('/webhook/', function(req, res) {
 				  .then(function (response) {
 				    //console.log(response);
 				    chatbotResponse = response.data.analysis26;
+				    sendText(sender, chatbotResponse)
+				  })
+				  .catch(function (error) {
+				    //console.log(error);
+				    chatbotResponse = "not ok";
+				    sendText(sender, chatbotResponse)
+				  });
+
+				
+			}
+			if(text=='f torres street-')
+			// if(text.includes("pichon street-"))
+			{
+				let chatbotResponse = "";
+				
+				//source : https://www.npmjs.com/package/axios
+				axios.get('https://cryptic-eyrie-21978.herokuapp.com/ftorresst-')
+				  .then(function (response) {
+				    //console.log(response);
+				    chatbotResponse = response.data.analysis28;
+				    sendText(sender, chatbotResponse)
+				  })
+				  .catch(function (error) {
+				    //console.log(error);
+				    chatbotResponse = "not ok";
+				    sendText(sender, chatbotResponse)
+				  });
+
+				
+			}
+			if(text=='a bonifacio street-')
+			// if(text.includes("pichon street-"))
+			{
+				let chatbotResponse = "";
+				
+				//source : https://www.npmjs.com/package/axios
+				axios.get('https://cryptic-eyrie-21978.herokuapp.com/abonifaciost-')
+				  .then(function (response) {
+				    //console.log(response);
+				    chatbotResponse = response.data.analysis29;
+				    sendText(sender, chatbotResponse)
+				  })
+				  .catch(function (error) {
+				    //console.log(error);
+				    chatbotResponse = "not ok";
+				    sendText(sender, chatbotResponse)
+				  });
+
+				
+			}
+			if(text=='f torres street')
+			// if(text.includes("pichon street-"))
+			{
+				let chatbotResponse = "";
+				
+				//source : https://www.npmjs.com/package/axios
+				axios.get('https://cryptic-eyrie-21978.herokuapp.com/ftorresst')
+				  .then(function (response) {
+				    //console.log(response);
+				    chatbotResponse = response.data.analysis30;
+				    sendText(sender, chatbotResponse)
+				  })
+				  .catch(function (error) {
+				    //console.log(error);
+				    chatbotResponse = "not ok";
+				    sendText(sender, chatbotResponse)
+				  });
+
+				
+			}
+			if(text=='a bonifacio street')
+			// if(text.includes("pichon street-"))
+			{
+				let chatbotResponse = "";
+				
+				//source : https://www.npmjs.com/package/axios
+				axios.get('https://cryptic-eyrie-21978.herokuapp.com/abonifaciost')
+				  .then(function (response) {
+				    //console.log(response);
+				    chatbotResponse = response.data.analysis31;
 				    sendText(sender, chatbotResponse)
 				  })
 				  .catch(function (error) {
