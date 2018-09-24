@@ -1099,6 +1099,39 @@ app.get('/geo',function(req, res){
 
 })
 
+app.get('/geo',function(req, res){
+	
+
+	axios.get('https://glacial-bastion-40512.herokuapp.com/tulipdr')
+	  .then(function (response) {
+	    console.log(response.data);
+	    //chatbotResponse = response.jf1;
+	    //sendText(sender, chatbotResponse)
+	  })
+	  .catch(function (error) {
+	    console.log(error);
+	    //chatbotResponse = "not ok";
+	    //sendText(sender, chatbotResponse)
+	  });
+
+})
+app.get('/geo',function(req, res){
+	
+
+	axios.get('https://glacial-bastion-40512.herokuapp.com/tulipdr-')
+	  .then(function (response) {
+	    console.log(response.data);
+	    //chatbotResponse = response.jf1;
+	    //sendText(sender, chatbotResponse)
+	  })
+	  .catch(function (error) {
+	    console.log(error);
+	    //chatbotResponse = "not ok";
+	    //sendText(sender, chatbotResponse)
+	  });
+
+})
+
 
 
 
@@ -1315,6 +1348,47 @@ app.post('/webhook/', function(req, res) {
 				  .then(function (response) {
 				    //console.log(response);
 				    chatbotResponse = response.data.analysis9;
+				    sendText(sender, chatbotResponse)
+				  })
+				  .catch(function (error) {
+				    //console.log(error);
+				    chatbotResponse = "not ok";
+				    sendText(sender, chatbotResponse)
+				  });
+
+				
+			}
+
+			if(text=='tulip drive-')
+			// if(text.includes("tulip dr"))
+			{
+				let chatbotResponse = "";
+				
+				//source : https://www.npmjs.com/package/axios
+				axios.get('https://glacial-bastion-40512.herokuapp.com/tulipdr-')
+				  .then(function (response) {
+				    //console.log(response);
+				    chatbotResponse = response.data.analysis10;
+				    sendText(sender, chatbotResponse)
+				  })
+				  .catch(function (error) {
+				    //console.log(error);
+				    chatbotResponse = "not ok";
+				    sendText(sender, chatbotResponse)
+				  });
+
+				
+			}
+			if(text=='tulip drive')
+			// if(text.includes("tulip drive-"))
+			{
+				let chatbotResponse = "";
+				
+				//source : https://www.npmjs.com/package/axios
+				axios.get('https://glacial-bastion-40512.herokuapp.com/tulipdr')
+				  .then(function (response) {
+				    //console.log(response);
+				    chatbotResponse = response.data.analysis11;
 				    sendText(sender, chatbotResponse)
 				  })
 				  .catch(function (error) {
