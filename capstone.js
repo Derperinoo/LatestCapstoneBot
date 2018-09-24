@@ -712,9 +712,159 @@ app.get('/matinaaplaya-',function(_req, _res){
 });
 
 
+app.get('/ecoland',function(_req, _res){
+
+	request('https://traffic.api.here.com/traffic/6.1/flow.json?bbox=7.2598%2C125.0860%3B6.7670%2C125.6674&app_id=fQbW8CGYiU3l5mLqWgBE&app_code=SYZXwjFBHSYi_1t1GNuHow', { json: true }, (err, res, body) => {
+	  if (err) { return console.log(err); }
+
+	  	const streetc = body.RWS[0].RW[11].DE;
+	  	const intc1 = body.RWS[0].RW[11].FIS[0].FI[0].TMC.DE;
+	  	const jfc1 = body.RWS[0].RW[11].FIS[0].FI[0].CF[0].JF;
+	  	
+	  	const intc2 = body.RWS[0].RW[11].FIS[0].FI[1].TMC.DE;
+	  	const jfc2 = body.RWS[0].RW[11].FIS[0].FI[1].CF[0].JF;
+
+	  	const intc3 = body.RWS[0].RW[11].FIS[0].FI[2].TMC.DE;
+	  	const jfc3 = body.RWS[0].RW[11].FIS[0].FI[2].CF[0].JF;
+
+	  	
+
+	  	var p = 3
+	  
+	  	var ecoplus = jfc1 + jfc2 + jfc3;
+
+	  	var ecolandplus = ecoplus/p;
+	  	
+	  	let analysis9 = "";
+	  	
+	  	if(ecolandplus == 0 || ecolandplus <= 4){
+	  		analysis9 = "Free flow of traffic";
+	  	}else if(ecolandplus == 4 || ecolandplus <= 8){
+	  		analysis9 = "Sluggish flow of traffic";
+	  	}else if(ecolandplus == 8 || ecolandplus <= 9){
+	  		analysis9 = "Slow flow of traffic";
+	  	}else if(ecolandplus == 10){
+	  		analysis9 = "Traffic stopped or Road closed"
+	  	}else{
+	  		analysis9 = "Cannot compute"
+	  	}
+
+	  	
+
+
+	  	_res.setHeader('Content-Type', 'application/json');
+    	_res.send(JSON.stringify({ street: streetc, intc1: intc1, jfc1: jfc1,  intc2: intc2, jfc2: jfc2, intc3: intc3, jfc3: jfc3, analysis9: analysis9 }));
+	
 
 
 
+	  
+	});
+
+
+});
+
+app.get('/tulipdr-',function(_req, _res){
+
+	request('https://traffic.api.here.com/traffic/6.1/flow.json?bbox=7.2598%2C125.0860%3B6.7670%2C125.6674&app_id=fQbW8CGYiU3l5mLqWgBE&app_code=SYZXwjFBHSYi_1t1GNuHow', { json: true }, (err, res, body) => {
+	  if (err) { return console.log(err); }
+
+	  	const streetc = body.RWS[0].RW[12].DE;
+	  	const intc1 = body.RWS[0].RW[12].FIS[0].FI[0].TMC.DE;
+	  	const jfc1 = body.RWS[0].RW[12].FIS[0].FI[0].CF[0].JF;
+	  	
+	  	const intc2 = body.RWS[0].RW[12].FIS[0].FI[1].TMC.DE;
+	  	const jfc2 = body.RWS[0].RW[12].FIS[0].FI[1].CF[0].JF;
+
+	  	const intc3 = body.RWS[0].RW[12].FIS[0].FI[2].TMC.DE;
+	  	const jfc3 = body.RWS[0].RW[12].FIS[0].FI[2].CF[0].JF;
+
+	  	
+
+	  	var p = 3
+	  
+	  	var tulip = jfc1 + jfc2 + jfc3 ;
+
+	  	var tulipdrive = tulip/p;
+	  	
+	  	let analysis10 = "";
+	  	
+	  	if(tulipdrive == 0 || tulipdrive <= 4){
+	  		analysis10 = "Free flow of traffic";
+	  	}else if(tulipdrive == 4 || tulipdrive <= 8){
+	  		analysis10 = "Sluggish flow of traffic";
+	  	}else if(tulipdrive == 8 || tulipdrive <= 9){
+	  		analysis10 = "Slow flow of traffic";
+	  	}else if(tulipdrive == 10){
+	  		analysis10 = "Traffic stopped or Road closed"
+	  	}else{
+	  		analysis10 = "Cannot compute"
+	  	}
+
+	  	
+
+	  	_res.setHeader('Content-Type', 'application/json');
+    	_res.send(JSON.stringify({ street: streetc, intc1: intc1, jfc1: jfc1,  intc2: intc2, jfc2: jfc2, intc3: intc3, jfc3: jfc3, analysis10: analysis10 }));
+	
+
+
+
+	  
+	});
+
+
+});
+app.get('/tulipdr',function(_req, _res){
+
+	request('https://traffic.api.here.com/traffic/6.1/flow.json?bbox=7.2598%2C125.0860%3B6.7670%2C125.6674&app_id=fQbW8CGYiU3l5mLqWgBE&app_code=SYZXwjFBHSYi_1t1GNuHow', { json: true }, (err, res, body) => {
+	  if (err) { return console.log(err); }
+
+	  	const streetc = body.RWS[0].RW[13].DE;
+	  	const intc1 = body.RWS[0].RW[13].FIS[0].FI[0].TMC.DE;
+	  	const jfc1 = body.RWS[0].RW[13].FIS[0].FI[0].CF[0].JF;
+	  	
+	  	const intc2 = body.RWS[0].RW[13].FIS[0].FI[1].TMC.DE;
+	  	const jfc2 = body.RWS[0].RW[13].FIS[0].FI[1].CF[0].JF;
+
+	  	const intc3 = body.RWS[0].RW[13].FIS[0].FI[2].TMC.DE;
+	  	const jfc3 = body.RWS[0].RW[13].FIS[0].FI[2].CF[0].JF;
+
+	  	
+
+	  	var p = 3
+	  
+	  	var tulipp = jfc1 + jfc2 + jfc3 ;
+
+	  	var tulippdrive = tulipp/p;
+	  	
+	  	let analysis11 = "";
+	  	
+	  	if(tulippdrive == 0 || tulippdrive <= 4){
+	  		analysis11 = "Free flow of traffic";
+	  	}else if(tulippdrive == 4 || tulippdrive <= 8){
+	  		analysis11 = "Sluggish flow of traffic";
+	  	}else if(tulippdrive == 8 || tulippdrive <= 9){
+	  		analysis11 = "Slow flow of traffic";
+	  	}else if(tulippdrive == 10){
+	  		analysis11 = "Traffic stopped or Road closed"
+	  	}else{
+	  		analysis11 = "Cannot compute"
+	  	}
+
+	  	
+
+
+	  	_res.setHeader('Content-Type', 'application/json');
+    	_res.send(JSON.stringify({ street: streetc, intc1: intc1, jfc1: jfc1,  intc2: intc2, jfc2: jfc2, intc3: intc3, jfc3: jfc3, analysis11: analysis11 }));
+	
+
+
+
+	  
+	});
+
+
+});
 
 
 
@@ -919,6 +1069,23 @@ app.get('/geo',function(req, res){
 	
 
 	axios.get(' https://cryptic-eyrie-21978.herokuapp.com/matinaaplaya-')
+	  .then(function (response) {
+	    console.log(response.data);
+	    //chatbotResponse = response.jf1;
+	    //sendText(sender, chatbotResponse)
+	  })
+	  .catch(function (error) {
+	    console.log(error);
+	    //chatbotResponse = "not ok";
+	    //sendText(sender, chatbotResponse)
+	  });
+
+})
+
+app.get('/geo',function(req, res){
+	
+
+	axios.get(' https://cryptic-eyrie-21978.herokuapp.com/ecoland')
 	  .then(function (response) {
 	    console.log(response.data);
 	    //chatbotResponse = response.jf1;
@@ -1140,6 +1307,27 @@ app.post('/webhook/', function(req, res) {
 
 				
 			}
+			if(text=='ecoland'){
+				let chatbotResponse = "";
+				
+				//source : https://www.npmjs.com/package/axios
+				axios.get(' https://cryptic-eyrie-21978.herokuapp.com/ecoland')
+				  .then(function (response) {
+				    //console.log(response);
+				    chatbotResponse = response.data.analysis6;
+				    sendText(sender, chatbotResponse)
+				  })
+				  .catch(function (error) {
+				    //console.log(error);
+				    chatbotResponse = "not ok";
+				    sendText(sender, chatbotResponse)
+				  });
+
+				
+			}
+			
+
+
 			
 		}
 	}
