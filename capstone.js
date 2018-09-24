@@ -3643,23 +3643,23 @@ app.get('/daangmaharlika-',function(_req, _res){
 
 	  	var davvva = davvv/p;
 	  	
-	  	let analysis76 = "";
+	  	let analysis77 = "";
 	  	
 	  	if(davvva == 0 || davvva <=4){
-	  		analysis76 = "Free flow of traffic";
+	  		analysis77 = "Free flow of traffic";
 	  	}else if(davvva == 4 || davvva <=8){
-	  		analysis76 = "Sluggish flow of traffic";
+	  		analysis77 = "Sluggish flow of traffic";
 	  	}else if(davvva == 8 || davvva <=9){
-	  		analysis76 = "Slow flow of traffic";
+	  		analysis77 = "Slow flow of traffic";
 	  	}else if(davvva == 10){
-	  		analysis76 = "Traffic stopped or Road closed"
+	  		analysis77 = "Traffic stopped or Road closed"
 	  	}else{
-	  		analysis76 = "Cannot compute"
+	  		analysis77 = "Cannot compute"
 	  	}
 
 	  	
 	  	_res.setHeader('Content-Type', 'application/json');
-    	_res.send(JSON.stringify({ street: streetc, intc1: intc1, jfc1: jfc1, intc2: intc2, jfc2: jfc2, intc3: intc3, jfc3: jfc3, intc4: intc4, jfc4:jfc4, analysis76: analysis76 }));
+    	_res.send(JSON.stringify({ street: streetc, intc1: intc1, jfc1: jfc1, intc2: intc2, jfc2: jfc2, intc3: intc3, jfc3: jfc3, intc4: intc4, jfc4:jfc4, analysis77: analysis77 }));
 	  
 	});
 
