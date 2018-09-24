@@ -68,7 +68,7 @@ app.get('/equirino',function(_req, _res){
 	  		analysis = "Free flow of traffic";
 	  	}else if(sum == 4 || sum <= 8){
 	  		analysis = "Sluggish flow of traffic";
-	  	}else if(sum == 8 || sum <= 10){
+	  	}else if(sum == 8 || sum <= 9){
 	  		analysis = "Slow flow of traffic";
 	  	}else if(sum == 10){
 	  		analysis = "Traffic stopped or Road closed"
@@ -128,7 +128,7 @@ app.get('/equirino-',function(_req, _res){
 	  		analysis = "Free flow of traffic";
 	  	}else if(aveq == 4 || aveq <= 8){
 	  		analysis = "Sluggish flow of traffic";
-	  	}else if(aveq == 8 || aveq <= 10){
+	  	}else if(aveq == 8 || aveq <= 9){
 	  		analysis = "Slow flow of traffic";
 	  	}else if(aveq == 10){
 	  		analysis = "Traffic stopped or Road closed"
@@ -179,39 +179,18 @@ app.get('/jplaurel',function(_req, _res){
 
 	  	
 	  	let analysis1 = "";
-	  	if(avejp1 <= 4){
-	  		analysis1 = "Free flow of traffic";
-	  	}else if(avejp1 <= 3){
-	  		analysis1 = "Free flow of traffic";
-	  	}else if(avejp1 <= 2){
-	  		analysis1 = "Free flow of traffic";
-	  	}else if(avejp1 <= 3){
-	  		analysis1 = "Free flow of traffic";
-	  	}else if(avejp1 <= 2){
-	  		analysis1 = "Free flow of traffic";
-	  	}else if(avejp1 <= 1){
-	  		analysis1 = "Free flow of traffic";
-	  	}else if(avejp1 <= 0){
-	  		analysis1 = "Free flow of traffic";
-	  	}else if(avejp1 <= 8){
-	  		analysis1 = "Sluggish flow of traffic";
-	  	}else if(avejp1 <= 7){
-	  		analysis1 = "Sluggish flow of traffic"
-	  	}else if(avejp1 <= 6){
-	  		analysis1 = "Sluggish flow of traffic"
-	  	}else if(avejp1 <= 5){
-	  		analysis1 = "Sluggish flow of traffic"
-	  	}else if(avejp1 <= 4){
-	  		analysis1 = "Sluggish flow of traffic"
-	  	}else if(avejp1 <= 8){
-	  		analysis1 = "Slow flow of traffic"
-	  	}else if(avejp1 <= 9){
-	  		analysis1 = "Slow flow of traffic"
-	  	}else if(avejp1 <= 10){
-	  		analysis1 = "Slow flow of traffic"
+	  	if(avejp1 <= 0 || avejp1 <= 4){
+	  	analysis = "Free flow of traffic";
+	  	}else if(avejp1 <= 4 || avejp1 <= 8){
+	  		analysis = "Sluggish flow of traffic";
+	  	}else if(avejp1 <= 8 || avejp1 <= 9){
+	  		analysis = "Slow flow of traffic";
+	  	}else if(avejp1 == 10){
+	  		analysis = "Traffic stopped or Road closed"
 	  	}else{
-	  		analysis1 = "dili nako ma computer"
+	  		analysis = "Cannot compute"
 	  	}
+
 
 
 
@@ -261,40 +240,17 @@ app.get('/jplaurel-',function(_req, _res){
 
 	  	
 	  	let analysis1 = "";
-	  	if(varjp <= 4){
-	  		analysis1 = "Free flow of traffic";
-	  	}else if(varjp <= 3){
-	  		analysis1 = "Free flow of traffic";
-	  	}else if(varjp <= 2){
-	  		analysis1 = "Free flow of traffic";
-	  	}else if(varjp <= 3){
-	  		analysis1 = "Free flow of traffic";
-	  	}else if(varjp <= 2){
-	  		analysis1 = "Free flow of traffic";
-	  	}else if(varjp <= 1){
-	  		analysis1 = "Free flow of traffic";
-	  	}else if(varjp <= 0){
-	  		analysis1 = "Free flow of traffic";
-	  	}else if(varjp <= 8){
-	  		analysis1 = "Sluggish flow of traffic";
-	  	}else if(varjp <= 7){
-	  		analysis1 = "Sluggish flow of traffic"
-	  	}else if(varjp <= 6){
-	  		analysis1 = "Sluggish flow of traffic"
-	  	}else if(varjp <= 5){
-	  		analysis1 = "Sluggish flow of traffic"
-	  	}else if(varjp <= 4){
-	  		analysis1 = "Sluggish flow of traffic"
-	  	}else if(varjp <= 8){
-	  		analysis1 = "Slow flow of traffic"
-	  	}else if(varjp <= 9){
-	  		analysis1 = "Slow flow of traffic"
-	  	}else if(varjp <= 10){
-	  		analysis1 = "Slow flow of traffic"
+	  	if(varjp <= 0 || varjp <= 4){
+	  	analysis = "Free flow of traffic";
+	  	}else if(varjp <= 4 || varjp <= 8){
+	  		analysis = "Sluggish flow of traffic";
+	  	}else if(varjp <= 8 || varjp <= 9){
+	  		analysis = "Slow flow of traffic";
+	  	}else if(varjp == 10){
+	  		analysis = "Traffic stopped or Road closed"
 	  	}else{
-	  		analysis1 = "dili nako ma computer"
+	  		analysis = "Cannot compute"
 	  	}
-
 
 
 	  	_res.setHeader('Content-Type', 'application/json');
@@ -364,40 +320,17 @@ app.get('/mcarthur',function(_req, _res){
 
 	  	
 	  	let analysis2 = "";
-	  	if(avemc <= 4){
-	  		analysis2 = "Free flow of traffic";
-	  	}else if(avemc <= 3){
-	  		analysis2 = "Free flow of traffic";
-	  	}else if(avemc <= 2){
-	  		analysis2 = "Free flow of traffic";
-	  	}else if(avemc <= 3){
-	  		analysis2 = "Free flow of traffic";
-	  	}else if(avemc <= 2){
-	  		analysis2 = "Free flow of traffic";
-	  	}else if(avemc <= 1){
-	  		analysis2 = "Free flow of traffic";
-	  	}else if(avemc <= 0){
-	  		analysis2 = "Free flow of traffic";
-	  	}else if(avemc <= 8){
-	  		analysis2 = "Sluggish flow of traffic";
-	  	}else if(avemc <= 7){
-	  		analysis2 = "Sluggish flow of traffic"
-	  	}else if(avemc <= 6){
-	  		analysis2 = "Sluggish flow of traffic"
-	  	}else if(avemc <= 5){
-	  		analysis2 = "Sluggish flow of traffic"
-	  	}else if(avemc <= 4){
-	  		analysis2 = "Sluggish flow of traffic"
-	  	}else if(avemc <= 8){
-	  		analysis2 = "Slow flow of traffic"
-	  	}else if(avemc <= 9){
-	  		analysis2 = "Slow flow of traffic"
-	  	}else if(avemc <= 10){
-	  		analysis2 = "Slow flow of traffic"
+	  	if(avemc <= 0 || avemc <= 4){
+	  	analysis = "Free flow of traffic";
+	  	}else if(avemc <= 4 || avemc <= 8){
+	  		analysis = "Sluggish flow of traffic";
+	  	}else if(avemc <= 8 || avemc <= 9){
+	  		analysis = "Slow flow of traffic";
+	  	}else if(avemc == 10){
+	  		analysis = "Traffic stopped or Road closed"
 	  	}else{
-	  		analysis2 = "dili nako ma computer"
+	  		analysis = "Cannot compute"
 	  	}
-
 
 
 	  	_res.setHeader('Content-Type', 'application/json');
@@ -475,38 +408,16 @@ app.get('/mcarthur-',function(_req, _res){
 
 	  	
 	  	let analysis3 = "";
-	  	if(avemcm <= 4){
-	  		analysis3 = "Free flow of traffic";
-	  	}else if(avemcm <= 3){
-	  		analysis3 = "Free flow of traffic";
-	  	}else if(avemcm <= 2){
-	  		analysis3 = "Free flow of traffic";
-	  	}else if(avemcm <= 3){
-	  		analysis3 = "Free flow of traffic";
-	  	}else if(avemcm <= 2){
-	  		analysis3 = "Free flow of traffic";
-	  	}else if(avemcm <= 1){
-	  		analysis3 = "Free flow of traffic";
-	  	}else if(avemcm <= 0){
-	  		analysis3 = "Free flow of traffic";
-	  	}else if(avemcm <= 8){
-	  		analysis3 = "Sluggish flow of traffic";
-	  	}else if(avemcm <= 7){
-	  		analysis3 = "Sluggish flow of traffic"
-	  	}else if(avemcm <= 6){
-	  		analysis3 = "Sluggish flow of traffic"
-	  	}else if(avemcm <= 5){
-	  		analysis3 = "Sluggish flow of traffic"
-	  	}else if(avemcm <= 4){
-	  		analysis3 = "Sluggish flow of traffic"
-	  	}else if(avemcm <= 8){
-	  		analysis3 = "Slow flow of traffic"
-	  	}else if(avemcm <= 9){
-	  		analysis3 = "Slow flow of traffic"
-	  	}else if(avemcm <= 10){
-	  		analysis3 = "Slow flow of traffic"
+	    if(avemcm <= 0 || avemcm <= 4){
+	  	analysis = "Free flow of traffic";
+	  	}else if(avemcm <= 4 || avemcm <= 8){
+	  		analysis = "Sluggish flow of traffic";
+	  	}else if(avemcm <= 8 || avemcm <= 9){
+	  		analysis = "Slow flow of traffic";
+	  	}else if(avemcm == 10){
+	  		analysis = "Traffic stopped or Road closed"
 	  	}else{
-	  		analysis3 = "dili nako ma computer"
+	  		analysis = "Cannot compute"
 	  	}
 
 
@@ -557,39 +468,19 @@ app.get('/ecowestdr',function(_req, _res){
 	  	var ecowest = eco/w;
 	  	
 	  	let analysis4 = "";
-	  	if(ecowest <= 4){
-	  		analysis4 = "Free flow of traffic";
-	  	}else if(ecowest <= 3){
-	  		analysis4 = "Free flow of traffic";
-	  	}else if(ecowest <= 2){
-	  		analysis4 = "Free flow of traffic";
-	  	}else if(ecowest <= 3){
-	  		analysis4 = "Free flow of traffic";
-	  	}else if(ecowest <= 2){
-	  		analysis4 = "Free flow of traffic";
-	  	}else if(ecowest <= 1){
-	  		analysis4 = "Free flow of traffic";
-	  	}else if(ecowest <= 0){
-	  		analysis4 = "Free flow of traffic";
-	  	}else if(ecowest <= 8){
-	  		analysis4 = "Sluggish flow of traffic";
-	  	}else if(ecowest <= 7){
-	  		analysis4 = "Sluggish flow of traffic"
-	  	}else if(ecowest <= 6){
-	  		analysis4 = "Sluggish flow of traffic"
-	  	}else if(ecowest <= 5){
-	  		analysis4 = "Sluggish flow of traffic"
-	  	}else if(ecowest <= 4){
-	  		analysis4 = "Sluggish flow of traffic"
-	  	}else if(ecowest <= 8){
-	  		analysis4 = "Slow flow of traffic"
-	  	}else if(ecowest <= 9){
-	  		analysis4 = "Slow flow of traffic"
-	  	}else if(ecowest <= 10){
-	  		analysis4 = "Slow flow of traffic"
+	  	if(ecowest <= 0 || ecowest <= 4){
+	  	analysis = "Free flow of traffic";
+	  	}else if(ecowest <= 4 || ecowest <= 8){
+	  		analysis = "Sluggish flow of traffic";
+	  	}else if(ecowest <= 8 || ecowest <= 9){
+	  		analysis = "Slow flow of traffic";
+	  	}else if(ecowest == 10){
+	  		analysis = "Traffic stopped or Road closed"
 	  	}else{
-	  		analysis = "traffi8c kaayo di makaya"
+	  		analysis = "Cannot compute"
 	  	}
+
+
 
 
 
@@ -635,38 +526,16 @@ app.get('/ecowestdr-',function(_req, _res){
 	  	var ecowestdr = ecoeco/z;
 	  	
 	  	let analysis5 = "";
-	  	if(ecowestdr <= 4){
-	  		analysis5 = "Free flow of traffic";
-	  	}else if(ecowestdr <= 3){
-	  		analysis5 = "Free flow of traffic";
-	  	}else if(ecowestdr <= 2){
-	  		analysis5 = "Free flow of traffic";
-	  	}else if(ecowestdr <= 3){
-	  		analysis5 = "Free flow of traffic";
-	  	}else if(ecowestdr <= 2){
-	  		analysis5 = "Free flow of traffic";
-	  	}else if(ecowestdr <= 1){
-	  		analysis5 = "Free flow of traffic";
-	  	}else if(ecowestdr <= 0){
-	  		analysis5 = "Free flow of traffic";
-	  	}else if(ecowestdr <= 8){
-	  		analysis5 = "Sluggish flow of traffic";
-	  	}else if(ecowestdr <= 7){
-	  		analysis5 = "Sluggish flow of traffic"
-	  	}else if(ecowestdr <= 6){
-	  		analysis5 = "Sluggish flow of traffic"
-	  	}else if(ecowestdr <= 5){
-	  		analysis5 = "Sluggish flow of traffic"
-	  	}else if(ecowestdr <= 4){
-	  		analysis5 = "Sluggish flow of traffic"
-	  	}else if(ecowestdr <= 8){
-	  		analysis5 = "Slow flow of traffic"
-	  	}else if(ecowestdr <= 9){
-	  		analysis5 = "Slow flow of traffic"
-	  	}else if(ecowestdr <= 10){
-	  		analysis5 = "Slow flow of traffic"
+	  	if(ecowestdr <= 0 || ecowestdr <= 4){
+	  	analysis = "Free flow of traffic";
+	  	}else if(ecowestdr <= 4 || ecowestdr <= 8){
+	  		analysis = "Sluggish flow of traffic";
+	  	}else if(ecowestdr <= 8 || ecowestdr <= 9){
+	  		analysis = "Slow flow of traffic";
+	  	}else if(ecowestdr == 10){
+	  		analysis = "Traffic stopped or Road closed"
 	  	}else{
-	  		analysis5 = "traffi8c kaayo di makaya"
+	  		analysis = "Cannot compute"
 	  	}
 
 
@@ -707,39 +576,18 @@ app.get('/ecoland',function(_req, _res){
 	  	var ecolands = ecoland/p;
 	  	
 	  	let analysis6 = "";
-	  	if(ecolands <= 4){
-	  		analysis6 = "Free flow of traffic";
-	  	}else if(ecolands <= 3){
-	  		analysis6 = "Free flow of traffic";
-	  	}else if(ecolands <= 2){
-	  		analysis6 = "Free flow of traffic";
-	  	}else if(ecolands <= 3){
-	  		analysis6 = "Free flow of traffic";
-	  	}else if(ecolands <= 2){
-	  		analysis6 = "Free flow of traffic";
-	  	}else if(ecolands <= 1){
-	  		analysis6 = "Free flow of traffic";
-	  	}else if(ecolands <= 0){
-	  		analysis6 = "Free flow of traffic";
-	  	}else if(ecolands <= 8){
-	  		analysis6 = "Sluggish flow of traffic";
-	  	}else if(ecolands <= 7){
-	  		analysis6 = "Sluggish flow of traffic"
-	  	}else if(ecolands <= 6){
-	  		analysis6 = "Sluggish flow of traffic"
-	  	}else if(ecolands <= 5){
-	  		analysis6 = "Sluggish flow of traffic"
-	  	}else if(ecolands <= 4){
-	  		analysis6 = "Sluggish flow of traffic"
-	  	}else if(ecolands <= 8){
-	  		analysis6 = "Slow flow of traffic"
-	  	}else if(ecolands <= 9){
-	  		analysis6 = "Slow flow of traffic"
-	  	}else if(ecolands <= 10){
-	  		analysis6 = "Slow flow of traffic"
+	  	if(ecolands <= 0 || ecolands <= 4){
+	  	analysis = "Free flow of traffic";
+	  	}else if(ecolands <= 4 || ecolands <= 8){
+	  		analysis = "Sluggish flow of traffic";
+	  	}else if(ecolands <= 8 || ecolands <= 9){
+	  		analysis = "Slow flow of traffic";
+	  	}else if(ecolands == 10){
+	  		analysis = "Traffic stopped or Road closed"
 	  	}else{
-	  		analysis6 = "traffi8c kaayo di makaya"
+	  		analysis = "Cannot compute"
 	  	}
+
 
 
 
@@ -782,38 +630,16 @@ app.get('/matinaaplaya',function(_req, _res){
 	  	var aplaya = matina/p;
 	  	
 	  	let analysis7 = "";
-	  	if(aplaya <= 4){
-	  		analysis7 = "Free flow of traffic";
-	  	}else if(aplaya <= 3){
-	  		analysis7 = "Free flow of traffic";
-	  	}else if(aplaya <= 2){
-	  		analysis7 = "Free flow of traffic";
-	  	}else if(aplaya <= 3){
-	  		analysis7 = "Free flow of traffic";
-	  	}else if(aplaya <= 2){
-	  		analysis7 = "Free flow of traffic";
-	  	}else if(aplaya <= 1){
-	  		analysis7 = "Free flow of traffic";
-	  	}else if(aplaya <= 0){
-	  		analysis7 = "Free flow of traffic";
-	  	}else if(aplaya <= 8){
-	  		analysis7 = "Sluggish flow of traffic";
-	  	}else if(aplaya <= 7){
-	  		analysis7 = "Sluggish flow of traffic"
-	  	}else if(aplaya <= 6){
-	  		analysis7 = "Sluggish flow of traffic"
-	  	}else if(aplaya <= 5){
-	  		analysis7 = "Sluggish flow of traffic"
-	  	}else if(aplaya <= 4){
-	  		analysis7 = "Sluggish flow of traffic"
-	  	}else if(aplaya <= 8){
-	  		analysis7 = "Slow flow of traffic"
-	  	}else if(aplaya <= 9){
-	  		analysis7 = "Slow flow of traffic"
-	  	}else if(aplaya <= 10){
-	  		analysis7 = "Slow flow of traffic"
+	  	if(aplaya <= 0 || aplaya <= 4){
+	  	analysis = "Free flow of traffic";
+	  	}else if(aplaya <= 4 || aplaya <= 8){
+	  		analysis = "Sluggish flow of traffic";
+	  	}else if(aplaya <= 8 || aplaya <= 9){
+	  		analysis = "Slow flow of traffic";
+	  	}else if(aplaya == 10){
+	  		analysis = "Traffic stopped or Road closed"
 	  	}else{
-	  		analysis7 = "traffi8c kaayo di makaya"
+	  		analysis = "Cannot compute"
 	  	}
 
 
