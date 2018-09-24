@@ -866,42 +866,59 @@ app.get('/tulipdr',function(_req, _res){
 
 });
 
+app.get('/sandawa-',function(_req, _res){
+
+	request('https://traffic.api.here.com/traffic/6.1/flow.json?bbox=7.2598%2C125.0860%3B6.7670%2C125.6674&app_id=fQbW8CGYiU3l5mLqWgBE&app_code=SYZXwjFBHSYi_1t1GNuHow', { json: true }, (err, res, body) => {
+	  if (err) { return console.log(err); }
+
+	  	const streetc = body.RWS[0].RW[14].DE;
+	  	const intc1 = body.RWS[0].RW[14].FIS[0].FI[0].TMC.DE;
+	  	const jfc1 = body.RWS[0].RW[14].FIS[0].FI[0].CF[0].JF;
+	  	
+	  	const intc2 = body.RWS[0].RW[14].FIS[0].FI[1].TMC.DE;
+	  	const jfc2 = body.RWS[0].RW[14].FIS[0].FI[1].CF[0].JF;
+	  	
+
+	  	var p = 2
+	  
+	  	var sandawaa = jfc1 + jfc2;
+
+	  	var sandawaas = sandawaa/p;
+	  	
+	  	let analysis12 = "";
+	  	
+	  	if(sandawaas == 0 || sandawaas <= 4){
+	  		analysis12 = "Free flow of traffic";
+	  	}else if(sandawaas == 4 || sandawaas <= 8){
+	  		analysis12 = "Sluggish flow of traffic";
+	  	}else if(sandawaas == 8 || sandawaas <= 9){
+	  		analysis12 = "Slow flow of traffic";
+	  	}else if(sandawaas == 10){
+	  		analysis12 = "Traffic stopped or Road closed"
+	  	}else{
+	  		analysis12 = "Cannot compute"
+	  	}
+
+	  	
+
+
+	  	_res.setHeader('Content-Type', 'application/json');
+    	_res.send(JSON.stringify({ street: streetc, intc1: intc1, jfc1: jfc1,  intc2: intc2, jfc2: jfc2, analysis12: analysis12 }));
+	
+
+
+
+	  
+	});
+
+
+});
 
 
 
 
 app.get('/geo',function(req, res){
-	// res.send('Hi geo');
-	// https.get('https://traffic.api.here.com/traffic/6.1/flow.json?bbox=7.2598%2C125.0860%3B6.7670%2C125.6674&app_id=fQbW8CGYiU3l5mLqWgBE&app_code=SYZXwjFBHSYi_1t1GNuHow', (resp) => {
-
-	// 	//console.log(resp);
-	//   let data = '';
-
-	//   // A chunk of data has been recieved.
-	//   resp.on('data', (chunk) => {
-	//     data += chunk;
-	//   });
-
-	//   // The whole response has been received. Print out the result.
-	//   resp.on('end', () => {
-	//     console.log(JSON.parse(data).explanation);
-	//   });
-
-	// }).on("error", (err) => {
-	//   console.log("Error: " + err.message);
-	// });
-
-	// request('https://traffic.api.here.com/traffic/6.1/flow.json?bbox=7.2598%2C125.0860%3B6.7670%2C125.6674&app_id=fQbW8CGYiU3l5mLqWgBE&app_code=SYZXwjFBHSYi_1t1GNuHow', { json: true }, (err, res, body) => {
-	//   if (err) { return console.log(err); }
-	//   // console.log(body.url);
-	//   // console.log(body.explanation);
-	//   console.log(body.RWS[0].RW);
-	//   console.log("###################");
-	//   console.log(body.RWS[0].RW[0].DE);
-	//   console.log(body.RWS[0].RW[0].FIS[0].FI[0].TMC.DE);
-	//   console.log(body.RWS[0].RW[0].FIS[0].FI[0].CF[0].JF);
-	// });
-
+	
 	axios.get(' https://cryptic-eyrie-21978.herokuapp.com/equirino')
 	  .then(function (response) {
 	    console.log(response.data);
@@ -1102,7 +1119,7 @@ app.get('/geo',function(req, res){
 app.get('/geo',function(req, res){
 	
 
-	axios.get('https://glacial-bastion-40512.herokuapp.com/tulipdr')
+	axios.get('https://cryptic-eyrie-21978.herokuapp.com/tulipdr')
 	  .then(function (response) {
 	    console.log(response.data);
 	    //chatbotResponse = response.jf1;
@@ -1118,7 +1135,24 @@ app.get('/geo',function(req, res){
 app.get('/geo',function(req, res){
 	
 
-	axios.get('https://glacial-bastion-40512.herokuapp.com/tulipdr-')
+	axios.get('https://cryptic-eyrie-21978.herokuapp.com/tulipdr-')
+	  .then(function (response) {
+	    console.log(response.data);
+	    //chatbotResponse = response.jf1;
+	    //sendText(sender, chatbotResponse)
+	  })
+	  .catch(function (error) {
+	    console.log(error);
+	    //chatbotResponse = "not ok";
+	    //sendText(sender, chatbotResponse)
+	  });
+
+})
+
+app.get('/geo',function(req, res){
+	
+
+	axios.get('https://cryptic-eyrie-21978.herokuapp.com/sandawa-')
 	  .then(function (response) {
 	    console.log(response.data);
 	    //chatbotResponse = response.jf1;
@@ -1365,7 +1399,7 @@ app.post('/webhook/', function(req, res) {
 				let chatbotResponse = "";
 				
 				//source : https://www.npmjs.com/package/axios
-				axios.get('https://glacial-bastion-40512.herokuapp.com/tulipdr-')
+				axios.get('https://cryptic-eyrie-21978.herokuapp.com/tulipdr-')
 				  .then(function (response) {
 				    //console.log(response);
 				    chatbotResponse = response.data.analysis10;
@@ -1385,10 +1419,31 @@ app.post('/webhook/', function(req, res) {
 				let chatbotResponse = "";
 				
 				//source : https://www.npmjs.com/package/axios
-				axios.get('https://glacial-bastion-40512.herokuapp.com/tulipdr')
+				axios.get('https://cryptic-eyrie-21978.herokuapp.com/tulipdr')
 				  .then(function (response) {
 				    //console.log(response);
 				    chatbotResponse = response.data.analysis11;
+				    sendText(sender, chatbotResponse)
+				  })
+				  .catch(function (error) {
+				    //console.log(error);
+				    chatbotResponse = "not ok";
+				    sendText(sender, chatbotResponse)
+				  });
+
+				
+			}
+
+			if(text=='sandawa-')
+			// if(text.includes("sandawa"))
+			{
+				let chatbotResponse = "";
+				
+				//source : https://www.npmjs.com/package/axios
+				axios.get('https://cryptic-eyrie-21978.herokuapp.com/sandawa-')
+				  .then(function (response) {
+				    //console.log(response);
+				    chatbotResponse = response.data.analysis12;
 				    sendText(sender, chatbotResponse)
 				  })
 				  .catch(function (error) {
