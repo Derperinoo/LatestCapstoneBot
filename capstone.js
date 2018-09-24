@@ -2299,7 +2299,7 @@ app.get('/geo',function(req, res){
 
 })
 
-pp.get('/geo',function(req, res){
+app.get('/geo',function(req, res){
 	
 
 	axios.get('https://cryptic-eyrie-21978.herokuapp.com/ftorresst-')
