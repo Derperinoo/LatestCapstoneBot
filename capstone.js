@@ -552,7 +552,7 @@ app.get('/ecowestdr-',function(_req, _res){
 
 });
 
-app.get('/ecoland',function(_req, _res){
+app.get('/ecoland-',function(_req, _res){
 
 	request('https://traffic.api.here.com/traffic/6.1/flow.json?bbox=7.2598%2C125.0860%3B6.7670%2C125.6674&app_id=fQbW8CGYiU3l5mLqWgBE&app_code=SYZXwjFBHSYi_1t1GNuHow', { json: true }, (err, res, body) => {
 	  if (err) { return console.log(err); }
@@ -710,6 +710,11 @@ app.get('/matinaaplaya-',function(_req, _res){
 
 
 });
+
+
+
+
+
 
 
 
@@ -1079,11 +1084,11 @@ app.post('/webhook/', function(req, res) {
 
 				
 			}
-			if(text.includes("ecoland")){
+			if(text.includes("ecoland-")){
 				let chatbotResponse = "";
 				
 				//source : https://www.npmjs.com/package/axios
-				axios.get(' https://cryptic-eyrie-21978.herokuapp.com/ecoland')
+				axios.get(' https://cryptic-eyrie-21978.herokuapp.com/ecoland-')
 				  .then(function (response) {
 				    //console.log(response);
 				    chatbotResponse = response.data.analysis6;
