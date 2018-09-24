@@ -1390,6 +1390,102 @@ app.get('/cabaguioave',function(_req, _res){
 
 });
 
+app.get('/dacudaoave-',function(_req, _res){
+
+	request('https://traffic.api.here.com/traffic/6.1/flow.json?bbox=7.2598%2C125.0860%3B6.7670%2C125.6674&app_id=fQbW8CGYiU3l5mLqWgBE&app_code=SYZXwjFBHSYi_1t1GNuHow', { json: true }, (err, res, body) => {
+	  if (err) { return console.log(err); }
+
+	  	const streetc = body.RWS[0].RW[24].DE;
+	  	const intc1 = body.RWS[0].RW[24].FIS[0].FI[0].TMC.DE;
+	  	const jfc1 = body.RWS[0].RW[24].FIS[0].FI[0].CF[0].JF;
+	  	
+	  	const intc2 = body.RWS[0].RW[24].FIS[0].FI[1].TMC.DE;
+	  	const jfc2 = body.RWS[0].RW[24].FIS[0].FI[1].CF[0].JF;
+
+
+	  	var p = 2
+	  
+	  	var dacudao = jfc1 + jfc2;
+
+	  	var dacudaoa = dacudao/p;
+	  	
+	  	let analysis22 = "";
+	  	
+	  	if(dacudaoa == 0 || dacudaoa <=4){
+	  		analysis22 = "Free flow of traffic";
+	  	}else if(dacudaoa == 4 || dacudaoa <=8){
+	  		analysis22 = "Sluggish flow of traffic";
+	  	}else if(dacudaoa == 8 || dacudaoa <=9){
+	  		analysis22 = "Slow flow of traffic";
+	  	}else if(dacudaoa == 10){
+	  		analysis22 = "Traffic stopped or Road closed"
+	  	}else{
+	  		analysis22 = "Cannot compute"
+	  	}
+
+	  	
+
+
+	  	_res.setHeader('Content-Type', 'application/json');
+    	_res.send(JSON.stringify({ street: streetc, intc1: intc1, jfc1: jfc1,  intc2: intc2, jfc2: jfc2, analysis22: analysis22 }));
+	
+
+
+
+	  
+	});
+
+
+});
+app.get('/dacudaoave',function(_req, _res){
+
+	request('https://traffic.api.here.com/traffic/6.1/flow.json?bbox=7.2598%2C125.0860%3B6.7670%2C125.6674&app_id=fQbW8CGYiU3l5mLqWgBE&app_code=SYZXwjFBHSYi_1t1GNuHow', { json: true }, (err, res, body) => {
+	  if (err) { return console.log(err); }
+
+	  	const streetc = body.RWS[0].RW[25].DE;
+	  	const intc1 = body.RWS[0].RW[25].FIS[0].FI[0].TMC.DE;
+	  	const jfc1 = body.RWS[0].RW[25].FIS[0].FI[0].CF[0].JF;
+	  	
+	  	const intc2 = body.RWS[0].RW[25].FIS[0].FI[1].TMC.DE;
+	  	const jfc2 = body.RWS[0].RW[25].FIS[0].FI[1].CF[0].JF;
+
+
+	  	var p = 2
+	  
+	  	var dacudaoo = jfc1 + jfc2;
+
+	  	var dacudaooa = dacudaoo/p;
+	  	
+	  	let analysis23 = "";
+	  	
+	  	if(dacudaooa == 0 || dacudaooa <=4){
+	  		analysis23 = "Free flow of traffic";
+	  	}else if(dacudaooa == 4 || dacudaooa <=8){
+	  		analysis23 = "Sluggish flow of traffic";
+	  	}else if(dacudaooa == 8 || dacudaooa <=9){
+	  		analysis23 = "Slow flow of traffic";
+	  	}else if(dacudaooa == 10){
+	  		analysis23 = "Traffic stopped or Road closed"
+	  	}else{
+	  		analysis23 = "Cannot compute"
+	  	}
+
+	  	
+
+
+	  	_res.setHeader('Content-Type', 'application/json');
+    	_res.send(JSON.stringify({ street: streetc, intc1: intc1, jfc1: jfc1,  intc2: intc2, jfc2: jfc2, analysis23: analysis23 }));
+	
+
+
+
+	  
+	});
+
+
+});
+
+
 app.get('/geo',function(req, res){
 	
 	axios.get(' https://cryptic-eyrie-21978.herokuapp.com/equirino')
@@ -1772,6 +1868,39 @@ app.get('/geo',function(req, res){
 	
 
 	axios.get('https://cryptic-eyrie-21978.herokuapp.com/cabaguioave-')
+	  .then(function (response) {
+	    console.log(response.data);
+	    //chatbotResponse = response.jf1;
+	    //sendText(sender, chatbotResponse)
+	  })
+	  .catch(function (error) {
+	    console.log(error);
+	    //chatbotResponse = "not ok";
+	    //sendText(sender, chatbotResponse)
+	  });
+
+})
+
+app.get('/geo',function(req, res){
+	
+
+	axios.get('https://cryptic-eyrie-21978.herokuapp.com/dacudaoave')
+	  .then(function (response) {
+	    console.log(response.data);
+	    //chatbotResponse = response.jf1;
+	    //sendText(sender, chatbotResponse)
+	  })
+	  .catch(function (error) {
+	    console.log(error);
+	    //chatbotResponse = "not ok";
+	    //sendText(sender, chatbotResponse)
+	  });
+
+})
+app.get('/geo',function(req, res){
+	
+
+	axios.get('https://cryptic-eyrie-21978.herokuapp.com/dacudaoave-')
 	  .then(function (response) {
 	    console.log(response.data);
 	    //chatbotResponse = response.jf1;
@@ -2256,6 +2385,50 @@ app.post('/webhook/', function(req, res) {
 
 				
 			}
+
+				if(text=='dacudao avenue-')
+			// if(text.includes("dacudao avenue"))
+			{
+				let chatbotResponse = "";
+				
+				//source : https://www.npmjs.com/package/axios
+				axios.get('https://cryptic-eyrie-21978.herokuapp.co/dacudaoave-')
+				  .then(function (response) {
+				    //console.log(response);
+				    chatbotResponse = response.data.analysis22;
+				    sendText(sender, chatbotResponse)
+				  })
+				  .catch(function (error) {
+				    //console.log(error);
+				    chatbotResponse = "not ok";
+				    sendText(sender, chatbotResponse)
+				  });
+
+				
+			}
+			if(text=='dacudao avenue')
+			// if(text.includes("dacudao avenue-"))
+			{
+				let chatbotResponse = "";
+				
+				//source : https://www.npmjs.com/package/axios
+				axios.get('https://cryptic-eyrie-21978.herokuapp.co/dacudaoave')
+				  .then(function (response) {
+				    //console.log(response);
+				    chatbotResponse = response.data.analysis23;
+				    sendText(sender, chatbotResponse)
+				  })
+				  .catch(function (error) {
+				    //console.log(error);
+				    chatbotResponse = "not ok";
+				    sendText(sender, chatbotResponse)
+				  });
+
+				
+			}
+
+
+
 
 
 
