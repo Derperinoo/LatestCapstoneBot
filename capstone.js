@@ -1314,7 +1314,7 @@ app.post('/webhook/', function(req, res) {
 				axios.get(' https://cryptic-eyrie-21978.herokuapp.com/ecoland')
 				  .then(function (response) {
 				    //console.log(response);
-				    chatbotResponse = response.data.analysis6;
+				    chatbotResponse = response.data.analysis9;
 				    sendText(sender, chatbotResponse)
 				  })
 				  .catch(function (error) {
@@ -1325,7 +1325,7 @@ app.post('/webhook/', function(req, res) {
 
 				
 			}
-			
+
 
 
 			
