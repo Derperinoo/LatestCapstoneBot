@@ -64,38 +64,16 @@ app.get('/equirino',function(_req, _res){
 	  	var sum = sum1/y;
 	  	
 	  	let analysis = "";
-	  	if(sum <= 4){
+	  	if(sum == 0 || sum <= 4){
 	  		analysis = "Free flow of traffic";
-	  	}else if(sum <= 3){
-	  		analysis = "Free flow of traffic";
-	  	}else if(sum <= 2){
-	  		analysis = "Free flow of traffic";
-	  	}else if(sum <= 3){
-	  		analysis = "Free flow of traffic";
-	  	}else if(sum <= 2){
-	  		analysis = "Free flow of traffic";
-	  	}else if(sum <= 1){
-	  		analysis = "Free flow of traffic";
-	  	}else if(sum <= 0){
-	  		analysis = "Free flow of traffic";
-	  	}else if(sum <= 8){
+	  	}else if(sum == 4 || sum <= 8){
 	  		analysis = "Sluggish flow of traffic";
-	  	}else if(sum <= 7){
-	  		analysis = "Sluggish flow of traffic"
-	  	}else if(sum <= 6){
-	  		analysis = "Sluggish flow of traffic"
-	  	}else if(sum <= 5){
-	  		analysis = "Sluggish flow of traffic"
-	  	}else if(sum <= 4){
-	  		analysis = "Sluggish flow of traffic"
-	  	}else if(sum <= 8){
-	  		analysis = "Slow flow of traffic"
-	  	}else if(sum <= 9){
-	  		analysis = "Slow flow of traffic"
-	  	}else if(sum <= 10){
-	  		analysis = "Slow flow of traffic"
+	  	}else if(sum == 8 || sum <= 10){
+	  		analysis = "Slow flow of traffic";
+	  	}else if(sum == 10){
+	  		analysis = "Traffic stopped or Road closed"
 	  	}else{
-	  		analysis = "traffi8c kaayo di makaya"
+	  		analysis = "Cannot compute"
 	  	}
 
 
@@ -146,38 +124,16 @@ app.get('/equirino-',function(_req, _res){
 
 	  	
 	  	let analysis = "";
-	  	if(aveq <= 4){
+	  	if(aveq == 0 || aveq <= 4){
 	  		analysis = "Free flow of traffic";
-	  	}else if(aveq <= 3){
-	  		analysis = "Free flow of traffic";
-	  	}else if(aveq <= 2){
-	  		analysis = "Free flow of traffic";
-	  	}else if(aveq <= 3){
-	  		analysis = "Free flow of traffic";
-	  	}else if(aveq <= 2){
-	  		analysis = "Free flow of traffic";
-	  	}else if(aveq <= 1){
-	  		analysis = "Free flow of traffic";
-	  	}else if(aveq <= 0){
-	  		analysis = "Free flow of traffic";
-	  	}else if(aveq <= 8){
+	  	}else if(aveq == 4 || aveq <= 8){
 	  		analysis = "Sluggish flow of traffic";
-	  	}else if(aveq <= 7){
-	  		analysis = "Sluggish flow of traffic"
-	  	}else if(aveq <= 6){
-	  		analysis = "Sluggish flow of traffic"
-	  	}else if(aveq <= 5){
-	  		analysis = "Sluggish flow of traffic"
-	  	}else if(aveq <= 4){
-	  		analysis = "Sluggish flow of traffic"
-	  	}else if(aveq <= 8){
-	  		analysis = "Slow flow of traffic"
-	  	}else if(aveq <= 9){
-	  		analysis = "Slow flow of traffic"
-	  	}else if(aveq <= 10){
-	  		analysis = "Slow flow of traffic"
+	  	}else if(aveq == 8 || aveq <= 10){
+	  		analysis = "Slow flow of traffic";
+	  	}else if(aveq == 10){
+	  		analysis = "Traffic stopped or Road closed"
 	  	}else{
-	  		analysis = "traffi8c kaayo di makaya"
+	  		analysis = "Cannot compute"
 	  	}
 
 
