@@ -1098,7 +1098,7 @@ app.post('/webhook/', function(req, res) {
 				
 			}
 
-			if(text.includes("matina aplaya")){
+			if(text=='matina aplaya'){
 				let chatbotResponse = "";
 				
 				//source : https://www.npmjs.com/package/axios
