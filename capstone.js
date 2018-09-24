@@ -1015,6 +1015,59 @@ app.get('/sandawa',function(_req, _res){
 
 });
 
+app.get('/quimpoblvd',function(_req, _res){
+
+	request('https://traffic.api.here.com/traffic/6.1/flow.json?bbox=7.2598%2C125.0860%3B6.7670%2C125.6674&app_id=fQbW8CGYiU3l5mLqWgBE&app_code=SYZXwjFBHSYi_1t1GNuHow', { json: true }, (err, res, body) => {
+	  if (err) { return console.log(err); }
+
+	  	const streetc = body.RWS[0].RW[17].DE;
+	  	const intc1 = body.RWS[0].RW[17].FIS[0].FI[0].TMC.DE;
+	  	const jfc1 = body.RWS[0].RW[17].FIS[0].FI[0].CF[0].JF;
+	  	
+	  	const intc2 = body.RWS[0].RW[17].FIS[0].FI[1].TMC.DE;
+	  	const jfc2 = body.RWS[0].RW[17].FIS[0].FI[1].CF[0].JF;
+
+	    const intc3 = body.RWS[0].RW[17].FIS[0].FI[2].TMC.DE;
+	  	const jfc3 = body.RWS[0].RW[17].FIS[0].FI[2].CF[0].JF;
+
+	  	const intc4 = body.RWS[0].RW[17].FIS[0].FI[3].TMC.DE;
+	  	const jfc4 = body.RWS[0].RW[17].FIS[0].FI[3].CF[0].JF;
+
+
+	  	var p = 4
+	  
+	  	var quimpoo = jfc1 + jfc2 + jfc3 + jfc4 ;
+
+	  	var quimpooo = quimpoo/p;
+
+	  	let analysis15 = "";
+	  	
+	  	if(quimpooo == 0 || quimpooo <= 4){
+	  		analysis15 = "Free flow of traffic";
+	  	}else if(quimpooo == 4 || quimpooo <= 8){
+	  		analysis15 = "Sluggish flow of traffic";
+	  	}else if(quimpooo == 8 || quimpooo <= 9){
+	  		analysis15 = "Slow flow of traffic";
+	  	}else if(quimpooo == 10){
+	  		analysis15 = "Traffic stopped or Road closed"
+	  	}else{
+	  		analysis15 = "Cannot compute"
+	  	}
+
+	  	
+
+	  	_res.setHeader('Content-Type', 'application/json');
+    	_res.send(JSON.stringify({ street: streetc, intc1: intc1, jfc1: jfc1,  intc2: intc2, jfc2: jfc2, intc3: intc3, jfc3: jfc3, intc4: intc4, jfc4: jfc4, analysis15: analysis15 }));
+	
+
+
+
+	  
+	});
+
+
+});
+
 
 
 app.get('/geo',function(req, res){
@@ -1618,6 +1671,26 @@ app.post('/webhook/', function(req, res) {
 				  .then(function (response) {
 				    //console.log(response);
 				    chatbotResponse = response.data.analysis14;
+				    sendText(sender, chatbotResponse)
+				  })
+				  .catch(function (error) {
+				    //console.log(error);
+				    chatbotResponse = "not ok";
+				    sendText(sender, chatbotResponse)
+				  });
+
+				
+			}
+			if(text=='quimpo boulevard')
+			// if(text.includes("quimpo boulevard-"))
+			{
+				let chatbotResponse = "";
+				
+				//source : https://www.npmjs.com/package/axios
+				axios.get('https://cryptic-eyrie-21978.herokuapp.com/quimpoblvd')
+				  .then(function (response) {
+				    //console.log(response);
+				    chatbotResponse = response.data.analysis15;
 				    sendText(sender, chatbotResponse)
 				  })
 				  .catch(function (error) {
