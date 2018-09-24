@@ -1178,6 +1178,218 @@ app.get('/quezonblvd',function(_req, _res){
 
 
 });
+
+app.get('/cabaguioave-',function(_req, _res){
+
+	request('https://traffic.api.here.com/traffic/6.1/flow.json?bbox=7.2598%2C125.0860%3B6.7670%2C125.6674&app_id=fQbW8CGYiU3l5mLqWgBE&app_code=SYZXwjFBHSYi_1t1GNuHow', { json: true }, (err, res, body) => {
+	  if (err) { return console.log(err); }
+
+	  	const streetc = body.RWS[0].RW[20].DE;
+	  	const intc1 = body.RWS[0].RW[20].FIS[0].FI[0].TMC.DE;
+	  	const jfc1 = body.RWS[0].RW[20].FIS[0].FI[0].CF[0].JF;
+	  	
+	  	const intc2 = body.RWS[0].RW[20].FIS[0].FI[1].TMC.DE;
+	  	const jfc2 = body.RWS[0].RW[20].FIS[0].FI[1].CF[0].JF;
+
+
+	  	var p = 2
+	  
+	  	var cabaguio = jfc1 + jfc2;
+
+	  	var cabaguioa = cabaguio/p;
+	  	
+	  	let analysis18 = "";
+	  	
+	  	if(cabaguioa == 0 || cabaguioa <=4){
+	  		analysis18 = "Free flow of traffic";
+	  	}else if(cabaguioa == 4 || cabaguioa <=8){
+	  		analysis18 = "Sluggish flow of traffic";
+	  	}else if(cabaguioa == 8 || cabaguioa <=9){
+	  		analysis18 = "Slow flow of traffic";
+	  	}else if(cabaguioa == 10){
+	  		analysis18 = "Traffic stopped or Road closed"
+	  	}else{
+	  		analysis18 = "Cannot compute"
+	  	}
+
+	  	
+	  	_res.setHeader('Content-Type', 'application/json');
+    	_res.send(JSON.stringify({ street: streetc, intc1: intc1, jfc1: jfc1,  intc2: intc2, jfc2: jfc2, analysis18: analysis18 }));
+	
+
+
+
+	  
+	});
+
+
+});
+app.get('/mlquezonblvd-',function(_req, _res){
+
+	request('https://traffic.api.here.com/traffic/6.1/flow.json?bbox=7.2598%2C125.0860%3B6.7670%2C125.6674&app_id=fQbW8CGYiU3l5mLqWgBE&app_code=SYZXwjFBHSYi_1t1GNuHow', { json: true }, (err, res, body) => {
+	  if (err) { return console.log(err); }
+
+	  	const streetc = body.RWS[0].RW[21].DE;
+	  	const intc1 = body.RWS[0].RW[21].FIS[0].FI[0].TMC.DE;
+	  	const jfc1 = body.RWS[0].RW[21].FIS[0].FI[0].CF[0].JF;
+	  	
+	  	const intc2 = body.RWS[0].RW[21].FIS[0].FI[1].TMC.DE;
+	  	const jfc2 = body.RWS[0].RW[21].FIS[0].FI[1].CF[0].JF;
+
+	  	const intc3 = body.RWS[0].RW[21].FIS[0].FI[2].TMC.DE;
+	  	const jfc3 = body.RWS[0].RW[21].FIS[0].FI[2].CF[0].JF;
+
+	  	const intc4 = body.RWS[0].RW[21].FIS[0].FI[3].TMC.DE;
+	  	const jfc4 = body.RWS[0].RW[21].FIS[0].FI[3].CF[0].JF;
+
+	  	const intc5 = body.RWS[0].RW[21].FIS[0].FI[4].TMC.DE;
+	  	const jfc5 = body.RWS[0].RW[21].FIS[0].FI[4].CF[0].JF;
+
+	  	const intc6 = body.RWS[0].RW[21].FIS[0].FI[5].TMC.DE;
+	  	const jfc6 = body.RWS[0].RW[21].FIS[0].FI[5].CF[0].JF;
+
+
+	  	var p = 6
+	  
+	  	var mlquezon = jfc1 + jfc2 + jfc3 + jfc4 + jfc5 + jfc6;
+
+	  	var mlquezonb = mlquezon/p;
+	  	
+	  	let analysis19 = "";
+	  	
+	  	if(mlquezonb == 0 || mlquezonb <=4){
+	  		analysis19 = "Free flow of traffic";
+	  	}else if(mlquezonb == 4 || mlquezonb <=8){
+	  		analysis19 = "Sluggish flow of traffic";
+	  	}else if(mlquezonb == 8 || mlquezonb <=9){
+	  		analysis19 = "Slow flow of traffic";
+	  	}else if(mlquezonb == 10){
+	  		analysis19 = "Traffic stopped or Road closed"
+	  	}else{
+	  		analysis19 = "Cannot compute"
+	  	}
+
+	  	
+
+
+	  	_res.setHeader('Content-Type', 'application/json');
+    	_res.send(JSON.stringify({ street: streetc, intc1: intc1, jfc1: jfc1,  intc2: intc2, jfc2: jfc2,  intc3: intc3, jfc3: jfc3,  intc4: intc4, jfc4: jfc4, intc5: intc5, jfc5: jfc5,  intc6: intc6, jfc6: jfc6, analysis19: analysis19 }));
+	
+
+
+
+	  
+	});
+
+
+});
+app.get('/mlquezonblvd',function(_req, _res){
+
+	request('https://traffic.api.here.com/traffic/6.1/flow.json?bbox=7.2598%2C125.0860%3B6.7670%2C125.6674&app_id=fQbW8CGYiU3l5mLqWgBE&app_code=SYZXwjFBHSYi_1t1GNuHow', { json: true }, (err, res, body) => {
+	  if (err) { return console.log(err); }
+
+	  	const streetc = body.RWS[0].RW[22].DE;
+	  	const intc1 = body.RWS[0].RW[22].FIS[0].FI[0].TMC.DE;
+	  	const jfc1 = body.RWS[0].RW[22].FIS[0].FI[0].CF[0].JF;
+	  	
+	  	const intc2 = body.RWS[0].RW[22].FIS[0].FI[1].TMC.DE;
+	  	const jfc2 = body.RWS[0].RW[22].FIS[0].FI[1].CF[0].JF;
+
+	  	const intc3 = body.RWS[0].RW[22].FIS[0].FI[2].TMC.DE;
+	  	const jfc3 = body.RWS[0].RW[22].FIS[0].FI[2].CF[0].JF;
+
+	  	const intc4 = body.RWS[0].RW[22].FIS[0].FI[3].TMC.DE;
+	  	const jfc4 = body.RWS[0].RW[22].FIS[0].FI[3].CF[0].JF;
+
+	  	const intc5 = body.RWS[0].RW[22].FIS[0].FI[4].TMC.DE;
+	  	const jfc5 = body.RWS[0].RW[22].FIS[0].FI[4].CF[0].JF;
+
+	  	const intc6 = body.RWS[0].RW[22].FIS[0].FI[5].TMC.DE;
+	  	const jfc6 = body.RWS[0].RW[22].FIS[0].FI[5].CF[0].JF;
+
+
+	  	var p = 6
+	  
+	  	var mlquezonn = jfc1 + jfc2 + jfc3 + jfc4 + jfc5 + jfc6;
+
+	  	var mlquezonnb = mlquezonn/p;
+	  	
+	  	let analysis20 = "";
+	  	
+	  	if(mlquezonnb == 0 || mlquezonnb <=4){
+	  		analysis20 = "Free flow of traffic";
+	  	}else if(mlquezonnb == 4 || mlquezonnb <=8){
+	  		analysis20 = "Sluggish flow of traffic";
+	  	}else if(mlquezonnb == 8 || mlquezonnb <=9){
+	  		analysis20 = "Slow flow of traffic";
+	  	}else if(mlquezonnb == 10){
+	  		analysis20 = "Traffic stopped or Road closed"
+	  	}else{
+	  		analysis20 = "Cannot compute"
+	  	}
+
+	  	
+
+
+	  	_res.setHeader('Content-Type', 'application/json');
+    	_res.send(JSON.stringify({ street: streetc, intc1: intc1, jfc1: jfc1,  intc2: intc2, jfc2: jfc2,  intc3: intc3, jfc3: jfc3,  intc4: intc4, jfc4: jfc4, intc5: intc5, jfc5: jfc5,  intc6: intc6, jfc6: jfc6, analysis20: analysis20 }));
+	
+
+
+
+	  
+	});
+
+
+});
+app.get('/cabaguioave',function(_req, _res){
+
+	request('https://traffic.api.here.com/traffic/6.1/flow.json?bbox=7.2598%2C125.0860%3B6.7670%2C125.6674&app_id=fQbW8CGYiU3l5mLqWgBE&app_code=SYZXwjFBHSYi_1t1GNuHow', { json: true }, (err, res, body) => {
+	  if (err) { return console.log(err); }
+
+	  	const streetc = body.RWS[0].RW[23].DE;
+	  	const intc1 = body.RWS[0].RW[23].FIS[0].FI[0].TMC.DE;
+	  	const jfc1 = body.RWS[0].RW[23].FIS[0].FI[0].CF[0].JF;
+	  	
+	  	const intc2 = body.RWS[0].RW[23].FIS[0].FI[1].TMC.DE;
+	  	const jfc2 = body.RWS[0].RW[23].FIS[0].FI[1].CF[0].JF;
+
+
+	  	var p = 2
+	  
+	  	var cabaguioo = jfc1 + jfc2;
+
+	  	var cabaguiooa = cabaguioo/p;
+	  	
+	  	let analysis21 = "";
+	  	
+	  	if(cabaguiooa == 0 || cabaguiooa <=4){
+	  		analysis21 = "Free flow of traffic";
+	  	}else if(cabaguiooa == 4 || cabaguiooa <=8){
+	  		analysis21 = "Sluggish flow of traffic";
+	  	}else if(cabaguiooa == 8 || cabaguiooa <= 9){
+	  		analysis21 = "Slow flow of traffic";
+	  	}else if(cabaguiooa == 10){
+	  		analysis21 = "Traffic stopped or Road closed"
+	  	}else{
+	  		analysis21 = "Cannot compute"
+	  	}
+
+	  	
+
+
+	  	_res.setHeader('Content-Type', 'application/json');
+    	_res.send(JSON.stringify({ street: streetc, intc1: intc1, jfc1: jfc1,  intc2: intc2, jfc2: jfc2, analysis21: analysis21 }));
+	
+
+
+
+	  
+	});
+
+
+});
+
 app.get('/geo',function(req, res){
 	
 	axios.get(' https://cryptic-eyrie-21978.herokuapp.com/equirino')
@@ -1496,6 +1708,70 @@ app.get('/geo',function(req, res){
 	
 
 	axios.get('https://cryptic-eyrie-21978.herokuapp.com/quezonblvd-')
+	  .then(function (response) {
+	    console.log(response.data);
+	    //chatbotResponse = response.jf1;
+	    //sendText(sender, chatbotResponse)
+	  })
+	  .catch(function (error) {
+	    console.log(error);
+	    //chatbotResponse = "not ok";
+	    //sendText(sender, chatbotResponse)
+	  });
+
+})
+app.get('/geo',function(req, res){
+	
+
+	axios.get('https://cryptic-eyrie-21978.herokuapp.com/cabaguioave')
+	  .then(function (response) {
+	    console.log(response.data);
+	    //chatbotResponse = response.jf1;
+	    //sendText(sender, chatbotResponse)
+	  })
+	  .catch(function (error) {
+	    console.log(error);
+	    //chatbotResponse = "not ok";
+	    //sendText(sender, chatbotResponse)
+	  });
+
+})
+app.get('/geo',function(req, res){
+	
+
+	axios.get('https://cryptic-eyrie-21978.herokuapp.com/mlquezonblvd')
+	  .then(function (response) {
+	    console.log(response.data);
+	    //chatbotResponse = response.jf1;
+	    //sendText(sender, chatbotResponse)
+	  })
+	  .catch(function (error) {
+	    console.log(error);
+	    //chatbotResponse = "not ok";
+	    //sendText(sender, chatbotResponse)
+	  });
+
+})
+app.get('/geo',function(req, res){
+	
+
+	axios.get('https://cryptic-eyrie-21978.herokuapp.com/mlquezonblvd-')
+	  .then(function (response) {
+	    console.log(response.data);
+	    //chatbotResponse = response.jf1;
+	    //sendText(sender, chatbotResponse)
+	  })
+	  .catch(function (error) {
+	    console.log(error);
+	    //chatbotResponse = "not ok";
+	    //sendText(sender, chatbotResponse)
+	  });
+
+})
+app.get('/geo',function(req, res){
+	
+
+	axios.get('https://cryptic-eyrie-21978.herokuapp.com/cabaguioave-')
 	  .then(function (response) {
 	    console.log(response.data);
 	    //chatbotResponse = response.jf1;
@@ -1889,6 +2165,87 @@ app.post('/webhook/', function(req, res) {
 				  .then(function (response) {
 				    //console.log(response);
 				    chatbotResponse = response.data.analysis17;
+				    sendText(sender, chatbotResponse)
+				  })
+				  .catch(function (error) {
+				    //console.log(error);
+				    chatbotResponse = "not ok";
+				    sendText(sender, chatbotResponse)
+				  });
+
+				
+			}
+
+			if(text=='cabaguio avenue-')
+			// if(text.includes("cabaguio avenue"))
+			{
+				let chatbotResponse = "";
+				
+				//source : https://www.npmjs.com/package/axios
+				axios.get('https://cryptic-eyrie-21978.herokuapp.com/cabaguioave-')
+				  .then(function (response) {
+				    //console.log(response);
+				    chatbotResponse = response.data.analysis18;
+				    sendText(sender, chatbotResponse)
+				  })
+				  .catch(function (error) {
+				    //console.log(error);
+				    chatbotResponse = "not ok";
+				    sendText(sender, chatbotResponse)
+				  });
+
+				
+			}
+			if(text=='ml quezon boulevard-')
+			// if(text.includes("ml quezon boulevard"))
+			{
+				let chatbotResponse = "";
+				
+				//source : https://www.npmjs.com/package/axios
+				axios.get('https://cryptic-eyrie-21978.herokuapp.com/mlquezonblvd-')
+				  .then(function (response) {
+				    //console.log(response);
+				    chatbotResponse = response.data.analysis19;
+				    sendText(sender, chatbotResponse)
+				  })
+				  .catch(function (error) {
+				    //console.log(error);
+				    chatbotResponse = "not ok";
+				    sendText(sender, chatbotResponse)
+				  });
+
+				
+			}
+			if(text=='ml quezon boulevard')
+			// if(text.includes("ml quezon boulevard-"))
+			{
+				let chatbotResponse = "";
+				
+				//source : https://www.npmjs.com/package/axios
+				axios.get('https://cryptic-eyrie-21978.herokuapp.com/mlquezonblvd')
+				  .then(function (response) {
+				    //console.log(response);
+				    chatbotResponse = response.data.analysis20;
+				    sendText(sender, chatbotResponse)
+				  })
+				  .catch(function (error) {
+				    //console.log(error);
+				    chatbotResponse = "not ok";
+				    sendText(sender, chatbotResponse)
+				  });
+
+				
+			}
+			if(text=='cabaguio avenue')
+			// if(text.includes("cabaguio avenue-"))
+			{
+				let chatbotResponse = "";
+				
+				//source : https://www.npmjs.com/package/axios
+				axios.get('https://cryptic-eyrie-21978.herokuapp.com/cabaguioave')
+				  .then(function (response) {
+				    //console.log(response);
+				    chatbotResponse = response.data.analysis21;
 				    sendText(sender, chatbotResponse)
 				  })
 				  .catch(function (error) {
