@@ -661,18 +661,18 @@ app.get('/matinaaplaya-',function(_req, _res){
 	request('https://traffic.api.here.com/traffic/6.1/flow.json?bbox=7.2598%2C125.0860%3B6.7670%2C125.6674&app_id=fQbW8CGYiU3l5mLqWgBE&app_code=SYZXwjFBHSYi_1t1GNuHow', { json: true }, (err, res, body) => {
 	  if (err) { return console.log(err); }
 
-	  	const streetm = body.RWS[0].RW[9].DE;
-	  	const intm1 = body.RWS[0].RW[9].FIS[0].FI[0].TMC.DE;
-	  	const jfm1 = body.RWS[0].RW[9].FIS[0].FI[0].CF[0].JF;
+	  	const streetm = body.RWS[0].RW[10].DE;
+	  	const intm1 = body.RWS[0].RW[10].FIS[0].FI[0].TMC.DE;
+	  	const jfm1 = body.RWS[0].RW[10].FIS[0].FI[0].CF[0].JF;
 	  	
-	  	const intm2 = body.RWS[0].RW[9].FIS[0].FI[1].TMC.DE;
-	  	const jfm2 = body.RWS[0].RW[9].FIS[0].FI[1].CF[0].JF;
+	  	const intm2 = body.RWS[0].RW[10].FIS[0].FI[1].TMC.DE;
+	  	const jfm2 = body.RWS[0].RW[10].FIS[0].FI[1].CF[0].JF;
 
-	  	const intm3 = body.RWS[0].RW[9].FIS[0].FI[2].TMC.DE;
-	  	const jfm3 = body.RWS[0].RW[9].FIS[0].FI[2].CF[0].JF;
+	  	const intm3 = body.RWS[0].RW[10].FIS[0].FI[2].TMC.DE;
+	  	const jfm3 = body.RWS[0].RW[10].FIS[0].FI[2].CF[0].JF;
 
-	  	const intm4 = body.RWS[0].RW[9].FIS[0].FI[3].TMC.DE;
-	  	const jfm4 = body.RWS[0].RW[9].FIS[0].FI[3].CF[0].JF;
+	  	const intm4 = body.RWS[0].RW[10].FIS[0].FI[3].TMC.DE;
+	  	const jfm4 = body.RWS[0].RW[10].FIS[0].FI[3].CF[0].JF;
 
 	  	
 
@@ -680,17 +680,17 @@ app.get('/matinaaplaya-',function(_req, _res){
 	  
 	  	var matina2 = jfm1 + jfm2 + jfm3+ jfm4;
 
-	  	var aplaya2 = matina/p;
+	  	var aplaya2 = matina2/p;
 	  	
 	  	let analysis8 = "";
 
-	  	if(aplaya == 0 || aplaya < 4){
+	  	if(aplaya2 == 0 || aplaya2 < 4){
 	  		analysis8 = "Free flow of traffic";
-	  	}else if(aplaya == 4 || aplaya < 8){
+	  	}else if(aplaya2 == 4 || aplaya2 < 8){
 	  		analysis8 = "Sluggish flow of traffic";
-	  	}else if(aplaya == 8 || aplaya < 10){
+	  	}else if(aplaya2 == 8 || aplaya2 < 10){
 	  		analysis8 = "Slow flow of traffic";
-	  	}else if(aplaya == 10){
+	  	}else if(aplaya2 == 10){
 	  		analysis8 = "Traffic stopped or Road closed"
 	  	}else{
 	  		analysis8 = "Cannot compute"
