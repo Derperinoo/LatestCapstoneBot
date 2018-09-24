@@ -2392,7 +2392,7 @@ app.post('/webhook/', function(req, res) {
 				let chatbotResponse = "";
 				
 				//source : https://www.npmjs.com/package/axios
-				axios.get('https://cryptic-eyrie-21978.herokuapp.co/dacudaoave-')
+				axios.get('https://cryptic-eyrie-21978.herokuapp.com/dacudaoave-')
 				  .then(function (response) {
 				    //console.log(response);
 				    chatbotResponse = response.data.analysis22;
@@ -2412,7 +2412,7 @@ app.post('/webhook/', function(req, res) {
 				let chatbotResponse = "";
 				
 				//source : https://www.npmjs.com/package/axios
-				axios.get('https://cryptic-eyrie-21978.herokuapp.co/dacudaoave')
+				axios.get('https://cryptic-eyrie-21978.herokuapp.com/dacudaoave')
 				  .then(function (response) {
 				    //console.log(response);
 				    chatbotResponse = response.data.analysis23;
