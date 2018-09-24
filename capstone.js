@@ -910,7 +910,7 @@ app.get('/geo',function(req, res){
 	//   console.log(body.RWS[0].RW[0].FIS[0].FI[0].CF[0].JF);
 	// });
 
-	axios.get('https://polar-castle-83452.herokuapp.com/equirino')
+	axios.get(' https://cryptic-eyrie-21978.herokuapp.com/equirino')
 	  .then(function (response) {
 	    console.log(response.data);
 	    //chatbotResponse = response.jf1;
@@ -927,7 +927,7 @@ app.get('/geo',function(req, res){
 app.get('/geo',function(req, res){
 	
 
-	axios.get('https://polar-castle-83452.herokuapp.com/equirino-')
+	axios.get(' https://cryptic-eyrie-21978.herokuapp.com/equirino-')
 	  .then(function (response) {
 	    console.log(response.data);
 	    //chatbotResponse = response.jf1;
@@ -944,7 +944,7 @@ app.get('/geo',function(req, res){
 app.get('/geo',function(req, res){
 	
 
-	axios.get('https://polar-castle-83452.herokuapp.com/mcarthur')
+	axios.get(' https://cryptic-eyrie-21978.herokuapp.com/mcarthur')
 	  .then(function (response) {
 	    console.log(response.data);
 	    //chatbotResponse = response.jf1;
@@ -961,7 +961,7 @@ app.get('/geo',function(req, res){
 app.get('/geo',function(req, res){
 	
 
-	axios.get('https://polar-castle-83452.herokuapp.com/mcarthur-')
+	axios.get(' https://cryptic-eyrie-21978.herokuapp.com/mcarthur-')
 	  .then(function (response) {
 	    console.log(response.data);
 	    //chatbotResponse = response.jf1;
@@ -978,7 +978,7 @@ app.get('/geo',function(req, res){
 app.get('/geo',function(req, res){
 	
 
-	axios.get('https://polar-castle-83452.herokuapp.com/jplaurel')
+	axios.get(' https://cryptic-eyrie-21978.herokuapp.com/jplaurel')
 	  .then(function (response) {
 	    console.log(response.data);
 	    //chatbotResponse = response.jf1;
@@ -994,24 +994,7 @@ app.get('/geo',function(req, res){
 app.get('/geo',function(req, res){
 	
 
-	axios.get('https://polar-castle-83452.herokuapp.com/jplaurel-')
-	  .then(function (response) {
-	    console.log(response.data);
-	    //chatbotResponse = response.jf1;
-	    //sendText(sender, chatbotResponse)
-	  })
-	  .catch(function (error) {
-	    console.log(error);
-	    //chatbotResponse = "not ok";
-	    //sendText(sender, chatbotResponse)
-	  });
-
-})
-
-app.get('/geo',function(req, res){
-	
-
-	axios.get('https://polar-castle-83452.herokuapp.com/ecowestdr')
+	axios.get(' https://cryptic-eyrie-21978.herokuapp.com/jplaurel-')
 	  .then(function (response) {
 	    console.log(response.data);
 	    //chatbotResponse = response.jf1;
@@ -1028,7 +1011,24 @@ app.get('/geo',function(req, res){
 app.get('/geo',function(req, res){
 	
 
-	axios.get('https://polar-castle-83452.herokuapp.com/ecowestdr-')
+	axios.get(' https://cryptic-eyrie-21978.herokuapp.com/ecowestdr')
+	  .then(function (response) {
+	    console.log(response.data);
+	    //chatbotResponse = response.jf1;
+	    //sendText(sender, chatbotResponse)
+	  })
+	  .catch(function (error) {
+	    console.log(error);
+	    //chatbotResponse = "not ok";
+	    //sendText(sender, chatbotResponse)
+	  });
+
+})
+
+app.get('/geo',function(req, res){
+	
+
+	axios.get(' https://cryptic-eyrie-21978.herokuapp.com/ecowestdr-')
 	  .then(function (response) {
 	    console.log(response.data);
 	    //chatbotResponse = response.jf1;
@@ -1044,7 +1044,7 @@ app.get('/geo',function(req, res){
 app.get('/geo',function(req, res){
 	
 
-	axios.get('https://polar-castle-83452.herokuapp.com/ecoland')
+	axios.get(' https://cryptic-eyrie-21978.herokuapp.com/ecoland')
 	  .then(function (response) {
 	    console.log(response.data);
 	    //chatbotResponse = response.jf1;
@@ -1060,7 +1060,7 @@ app.get('/geo',function(req, res){
 app.get('/geo',function(req, res){
 	
 
-	axios.get('https://polar-castle-83452.herokuapp.com/matinaaplaya')
+	axios.get(' https://cryptic-eyrie-21978.herokuapp.com/matinaaplaya')
 	  .then(function (response) {
 	    console.log(response.data);
 	    //chatbotResponse = response.jf1;
@@ -1121,7 +1121,7 @@ app.post('/webhook/', function(req, res) {
 				let chatbotResponse = "";
 				
 				//source : https://www.npmjs.com/package/axios
-				axios.get('https://polar-castle-83452.herokuapp.com/equirino')
+				axios.get(' https://cryptic-eyrie-21978.herokuapp.com/equirino')
 				  .then(function (response) {
 				    //console.log(response);
 				    chatbotResponse = response.data.analysis;
@@ -1139,7 +1139,7 @@ app.post('/webhook/', function(req, res) {
 				let chatbotResponse = "";
 				
 				//source : https://www.npmjs.com/package/axios
-				axios.get('https://polar-castle-83452.herokuapp.com/jplaurel')
+				axios.get(' https://cryptic-eyrie-21978.herokuapp.com/jplaurel')
 				  .then(function (response) {
 				    //console.log(response);
 				    chatbotResponse = response.data.analysis1;
@@ -1157,7 +1157,7 @@ app.post('/webhook/', function(req, res) {
 				let chatbotResponse = "";
 				
 				//source : https://www.npmjs.com/package/axios
-				axios.get('https://polar-castle-83452.herokuapp.com/mcarthur')
+				axios.get(' https://cryptic-eyrie-21978.herokuapp.com/mcarthur')
 				  .then(function (response) {
 				    //console.log(response);
 				    chatbotResponse = response.data.analysis2;
@@ -1175,7 +1175,7 @@ app.post('/webhook/', function(req, res) {
 				let chatbotResponse = "";
 				
 				//source : https://www.npmjs.com/package/axios
-				axios.get('https://polar-castle-83452.herokuapp.com/mcarthur-')
+				axios.get(' https://cryptic-eyrie-21978.herokuapp.com/mcarthur-')
 				  .then(function (response) {
 				    //console.log(response);
 				    chatbotResponse = response.data.analysis3;
@@ -1194,7 +1194,7 @@ app.post('/webhook/', function(req, res) {
 				let chatbotResponse = "";
 				
 				//source : https://www.npmjs.com/package/axios
-				axios.get('https://polar-castle-83452.herokuapp.com/ecowestdr')
+				axios.get(' https://cryptic-eyrie-21978.herokuapp.com/ecowestdr')
 				  .then(function (response) {
 				    //console.log(response);
 				    chatbotResponse = response.data.analysis4;
@@ -1212,7 +1212,7 @@ app.post('/webhook/', function(req, res) {
 				let chatbotResponse = "";
 				
 				//source : https://www.npmjs.com/package/axios
-				axios.get('https://polar-castle-83452.herokuapp.com/ecowestdr-')
+				axios.get(' https://cryptic-eyrie-21978.herokuapp.com/ecowestdr-')
 				  .then(function (response) {
 				    //console.log(response);
 				    chatbotResponse = response.data.analysis5;
@@ -1230,7 +1230,7 @@ app.post('/webhook/', function(req, res) {
 				let chatbotResponse = "";
 				
 				//source : https://www.npmjs.com/package/axios
-				axios.get('https://polar-castle-83452.herokuapp.com/ecoland')
+				axios.get(' https://cryptic-eyrie-21978.herokuapp.com/ecoland')
 				  .then(function (response) {
 				    //console.log(response);
 				    chatbotResponse = response.data.analysis6;
@@ -1249,7 +1249,7 @@ app.post('/webhook/', function(req, res) {
 				let chatbotResponse = "";
 				
 				//source : https://www.npmjs.com/package/axios
-				axios.get('https://polar-castle-83452.herokuapp.com/matinaaplaya')
+				axios.get(' https://cryptic-eyrie-21978.herokuapp.com/matinaaplaya')
 				  .then(function (response) {
 				    //console.log(response);
 				    chatbotResponse = response.data.analysis7;
