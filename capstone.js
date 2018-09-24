@@ -886,7 +886,7 @@ app.get('/geo',function(req, res){
 app.get('/geo',function(req, res){
 	
 
-	axios.get(' https://cryptic-eyrie-21978.herokuapp.com/ecoland')
+	axios.get(' https://cryptic-eyrie-21978.herokuapp.com/ecoland-')
 	  .then(function (response) {
 	    console.log(response.data);
 	    //chatbotResponse = response.jf1;
