@@ -4956,7 +4956,7 @@ app.post('/webhook/', function(req, res) {
 				sendText(sender, "whats up ? how may I help you")
 			}
 
-			if(text.includes("equirino")){
+			if(text=='equirino'){
 				let chatbotResponse = "";
 				
 				//source : https://www.npmjs.com/package/axios
@@ -4974,7 +4974,7 @@ app.post('/webhook/', function(req, res) {
 
 				
 			}
-			if(text.includes("equirino")){
+			if(text=='equirino-'){
 				let chatbotResponse = "";
 				
 				//source : https://www.npmjs.com/package/axios
