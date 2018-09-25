@@ -1132,15 +1132,15 @@ app.get('/ecowestdr',function(_req, _res){
 
 	  	let analysis6 = "";
 	  	if(jfe2 == 0 || jfe2 <= 4){
-	  	    analysis5 = "Ecoland Dr/Ecoland: Free flow of traffic";
+	  	    analysis6 = "Ecoland Dr/Ecoland: Free flow of traffic";
 	  	}else if(jfe2 > 4 || jfe2 <= 8){
-	  		analysis5 = "Ecoland Dr/Ecoland: Sluggish flow of traffic";
+	  		analysis6 = "Ecoland Dr/Ecoland: Sluggish flow of traffic";
 	  	}else if(jfe2 > 8 || jfe2 >= 9){
-	  		analysis5 = "Ecoland Dr/Ecoland: Slow flow of traffic";
+	  		analysis6 = "Ecoland Dr/Ecoland: Slow flow of traffic";
 	  	}else if(jfe2 == 10){
-	  		analysis5 = "Ecoland Dr/Ecoland: Traffic stopped or Road closed"
+	  		analysis6 = "Ecoland Dr/Ecoland: Traffic stopped or Road closed"
 	  	}else{
-	  		analysis5 = "Cannot compute"
+	  		analysis6 = "Cannot compute"
 	  	}
 
 
@@ -6153,7 +6153,7 @@ app.post('/webhook/', function(req, res) {
 				
 				
 				//source : https://www.npmjs.com/package/axios
-				axios.get(' https://cryptic-eyrie-21978.herokuapp.com/ecowestdr')
+				   axios.get(' https://cryptic-eyrie-21978.herokuapp.com/ecowestdr')
 				  .then(function (response) {
 				
 
