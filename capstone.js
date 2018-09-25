@@ -90,7 +90,7 @@ app.get('/equirino',function(_req, _res){
 
 	  	_res.setHeader('Content-Type', 'application/json');
     	_res.send(JSON.stringify({ street: street, int1: int1, jf1: jf1,  int2: int2, jf2: jf2,  int3: int3, jf3: jf3, 
-    		int4: int4, jf4: jf4,  int5: int5, jf5: jf5,  analysis: analysis }));
+    		int4: int4, jf4: jf4,  int5: int5, jf5: jf5, analysisjf1: analysisjf1, analysis: analysis }));
 	
 
 
