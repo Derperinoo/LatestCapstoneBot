@@ -874,78 +874,78 @@ app.get('/mcarthur-',function(_req, _res){
 
 		let analysis22 = "";
 	  	if(jf02 == 0 || jf02 <= 4){
-	  	analysis22 = "Generoso I Brg: Free flow of traffic";
+	  	analysis22 = "Santa Cruz/Davao City Border: Free flow of traffic";
 	  	}else if(jf02 > 4 || jf02 <= 8){
-	  		analysis22 = "Generoso I Brg: Sluggish flow of traffic";
+	  		analysis22 = "Santa Cruz/Davao City Border: Sluggish flow of traffic";
 	  	}else if(jf02 > 8 || jf02 >= 9){
-	  		analysis22 = "Generoso I Brg: Slow flow of traffic";
+	  		analysis22 = "Santa Cruz/Davao City Border: Slow flow of traffic";
 	  	}else if(jf02 == 10){
-	  		analysis22 = "Generoso I Brg: Traffic stopped or Road closed"
+	  		analysis22 = "GSanta Cruz/Davao City Border: Traffic stopped or Road closed"
 	  	}else{
 	  		analysis22 = "Cannot compute"
 	  	}
 
 	  	let analysis23 = "";
 	  	if(jfm2 == 0 || jfm2 <= 4){
-	  	analysis23 = "Sandawa Rd: Free flow of traffic";
+	  	analysis23 = "Agton/Manggahan: Free flow of traffic";
 	  	}else if(jfm2 > 4 || jfm2 <= 8){
-	  		analysis23 = "Sandawa Rd: Sluggish flow of traffic";
+	  		analysis23 = "Agton/Manggahan: Sluggish flow of traffic";
 	  	}else if(jfm2 > 8 || jfm2 >= 9){
-	  		analysis23 = "Sandawa Rd: Slow flow of traffic";
+	  		analysis23 = "Agton/Manggahan: Slow flow of traffic";
 	  	}else if(jfm2 == 10){
-	  		analysis23 = "Sandawa Rd: Traffic stopped or Road closed"
+	  		analysis23 = "Agton/Manggahan: Traffic stopped or Road closed"
 	  	}else{
 	  		analysis23 = "Cannot compute"
 	  	}
 	  	
 	  	let analysis24 = "";
 	  	if(jfm3 == 0 || jfm3 <= 4){
-	  	analysis24 = "Ma-A Rd: Free flow of traffic";
+	  	analysis24 = "Libby Rd: Free flow of traffic";
 	  	}else if(jfm3 > 4 || jfm3 <= 8){
-	  		analysis24 = "Ma-A Rd: Sluggish flow of traffic";
+	  		analysis24 = "Libby Rd: Sluggish flow of traffic";
 	  	}else if(jfm3 > 8 || jfm3 >= 9){
-	  		analysis24 = "Ma-A Rd: Slow flow of traffic";
+	  		analysis24 = "Libby Rd: Slow flow of traffic";
 	  	}else if(jfm3 == 10){
-	  		analysis24 = "Ma-A Rd: Traffic stopped or Road closed"
+	  		analysis24 = "Libby Rd: Traffic stopped or Road closed"
 	  	}else{
 	  		analysis24 = "Cannot compute"
 	  	}
 	  	
 	  	let analysis25 = "";
 	  	if(jfm4 == 0 || jfm4 <= 4){
-	  	analysis25 = "Tulip Dr: Free flow of traffic";
+	  	analysis25 = "Davao Bukidnon Rd: Free flow of traffic";
 	  	}else if(jfm4 > 4 || jfm4 <= 8){
-	  		analysis25 = "Tulip Dr: Sluggish flow of traffic";
+	  		analysis25 = "Davao Bukidnon Rd: Sluggish flow of traffic";
 	  	}else if(jfm4 > 8 || jfm4 >= 9){
-	  		analysis25 = "Tulip Dr: Slow flow of traffic";
+	  		analysis25 = "Davao Bukidnon Rd: Slow flow of traffic";
 	  	}else if(jfm4 == 10){
-	  		analysis25 = "Tulip Dr: Traffic stopped or Road closed"
+	  		analysis25 = "Davao Bukidnon Rd: Traffic stopped or Road closed"
 	  	}else{
 	  		analysis25 = "Cannot compute"
 	  	}
 	  	
 	  	let analysis26 = "";
 	  	if(jfm5 == 0 || jfm5 <= 4){
-	  	analysis26 = "S Cuyugan/Shrine Hills Rd: Free flow of traffic";
+	  	analysis26 = "Tolomo Ii Brg/Tolomo I Brg: Free flow of traffic";
 	  	}else if(jfm5 > 4 || jfm5 <= 8){
-	  		analysis26 = "S Cuyugan/Shrine Hills Rd: Sluggish flow of traffic";
+	  		analysis26 = "Tolomo Ii Brg/Tolomo I Brg: Sluggish flow of traffic";
 	  	}else if(jfm5 > 8 || jfm5 >= 9){
-	  		analysis26 = "S Cuyugan/Shrine Hills Rd :Slow flow of traffic";
+	  		analysis26 = "Tolomo Ii Brg/Tolomo I Brg :Slow flow of traffic";
 	  	}else if(jfm5 == 10){
-	  		analysis26 = "S Cuyugan/Shrine Hills Rd: Traffic stopped or Road closed"
+	  		analysis26 = "Tolomo Ii Brg/Tolomo I Brg: Traffic stopped or Road closed"
 	  	}else{
 	  		analysis26 = "Cannot compute"
 	  	}
 
 	  	let analysis27 = "";
 	  	if(jfm6 == 0 || jfm6 <= 4){
-	  	analysis27 = "Quimpo Blvd: Free flow of traffic";
+	  	analysis27 = "Diversion Rd: Free flow of traffic";
 	  	}else if(jfm6 > 4 || jfm6 <= 8){
-	  		analysis27 = "Quimpo Blvd: Sluggish flow of traffic";
+	  		analysis27 = "Diversion Rd: Sluggish flow of traffic";
 	  	}else if(jfm6 > 8 || jfm6 >= 9){
-	  		analysis27 = "Quimpo Blvd: Slow flow of traffic";
+	  		analysis27 = "Diversion Rd: Slow flow of traffic";
 	  	}else if(jfm6 == 10){
-	  		analysis27 = "Quimpo Blvd: Traffic stopped or Road closed"
+	  		analysis27 = "Diversion Rd: Traffic stopped or Road closed"
 	  	}else{
 	  		analysis27 = "Cannot compute"
 	  	}
@@ -965,78 +965,78 @@ app.get('/mcarthur-',function(_req, _res){
 
 	  	let analysis29 = "";
 	  	if(jfm8 == 0 || jfm8 <= 4){
-	  	analysis29 = "Diversion Rd: Free flow of traffic";
+	  	analysis29 = "Quimpo Blvd: Free flow of traffic";
 	  	}else if(jfm8 > 4 || jfm8 <= 8){
-	  		analysis29 = "Diversion Rd: Sluggish flow of traffic";
+	  		analysis29 = "Quimpo Blvd: Sluggish flow of traffic";
 	  	}else if(jfm8 > 8 || jfm8 >= 9){
-	  		analysis29 = "Diversion Rd: Slow flow of traffic";
+	  		analysis29 = "Quimpo Blvd: Slow flow of traffic";
 	  	}else if(jfm8 == 10){
-	  		analysis29 = "Diversion Rd: Traffic stopped or Road closed"
+	  		analysis29 = "Quimpo Blvd: Traffic stopped or Road closed"
 	  	}else{
 	  		analysis29 = "Cannot compute"
 	  	}
 
 	  	let analysis30 = "";
 	  	if(jfm9 == 0 || jfm9 <= 4){
-	  	analysis30 = "Tolomo Ii Brg/Tolomo I Brg: Free flow of traffic";
+	  	analysis30 = "S Cuyugan/Shrine Hills Rd: Free flow of traffic";
 	  	}else if(jfm9 > 4 || jfm9 <= 8){
-	  		analysis30 = "Tolomo Ii Brg/Tolomo I Brg: Sluggish flow of traffic";
+	  		analysis30 = "S Cuyugan/Shrine Hills Rd: Sluggish flow of traffic";
 	  	}else if(jfm9 > 8 || jfm9 >= 9){
-	  		analysis30 = "Tolomo Ii Brg/Tolomo I Brg: Slow flow of traffic";
+	  		analysis30 = "S Cuyugan/Shrine Hills Rd: Slow flow of traffic";
 	  	}else if(jfm9 == 10){
-	  		analysis30 = "Tolomo Ii Brg/Tolomo I Brg: Traffic stopped or Road closed"
+	  		analysis30 = "S Cuyugan/Shrine Hills Rd: Traffic stopped or Road closed"
 	  	}else{
 	  		analysis30 = "Cannot compute"
 	  	}
 
 	  	let analysis31 = "";
 	  	if(jfm10 == 0 || jfm10 <= 4){
-	  	analysis31 = "Davao Bukidnon Rd: Free flow of traffic";
+	  	analysis31 = "Tulip Dr: Free flow of traffic";
 	  	}else if(jfm10 > 4 || jfm10 <= 8){
-	  		analysis31 = "Davao Bukidnon Rd: Sluggish flow of traffic";
+	  		analysis31 = "Tulip Dr: Sluggish flow of traffic";
 	  	}else if(jfm10 > 8 || jfm10 >= 9){
-	  		analysis31 = "Davao Bukidnon Rd: Slow flow of traffic";
+	  		analysis31 = "Tulip Dr: Slow flow of traffic";
 	  	}else if(jfm10 == 10){
-	  		analysis31 = "Davao Bukidnon Rd: Traffic stopped or Road closed"
+	  		analysis31 = "Tulip Dr: Traffic stopped or Road closed"
 	  	}else{
 	  		analysis31 = "Cannot compute"
 	  	}
 
 	  	let analysis32 = "";
 	  	if(jfm11 == 0 || jfm11 <= 4){
-	  	analysis32 = "Libby Rd: Free flow of traffic";
+	  	analysis32 = "Ma-A Rd: Free flow of traffic";
 	  	}else if(jfm11 > 4 || jfm11 <= 8){
-	  		analysis32 = "Libby Rd: Sluggish flow of traffic";
+	  		analysis32 = "Ma-A Rd: Sluggish flow of traffic";
 	  	}else if(jfm11 > 8 || jfm11 >= 9){
-	  		analysis32 = "Libby Rd: Slow flow of traffic";
+	  		analysis32 = "Ma-A Rd: Slow flow of traffic";
 	  	}else if(jfm11 == 10){
-	  		analysis32 = "Libby Rd: Traffic stopped or Road closed"
+	  		analysis32 = "Ma-A Rd: Traffic stopped or Road closed"
 	  	}else{
-	  		analysis32 = "Libby Rd"
+	  		analysis32 = "Cannot compute"
 	  	}
 
 	  	let analysis33 = "";
 	  	if(jfm12 == 0 || jfm12 <= 4){
-	  	analysis33 = "Agton/Manggahan: Free flow of traffic";
+	  	analysis33 = "Sandawa Rd: Free flow of traffic";
 	  	}else if(jfm12 > 4 || jfm12 <= 8){
-	  		analysis33 = "Agton/Manggahan: Sluggish flow of traffic";
+	  		analysis33 = "Sandawa Rd: Sluggish flow of traffic";
 	  	}else if(jfm12 > 8 || jfm12 >= 9){
-	  		analysis33 = "Agton/Manggahan: Slow flow of traffic";
+	  		analysis33 = "Sandawa Rd: Slow flow of traffic";
 	  	}else if(jfm12 == 10){
-	  		analysis33 = "Agton/Manggahan: Traffic stopped or Road closed"
+	  		analysis33 = "Sandawa Rd: Traffic stopped or Road closed"
 	  	}else{
 	  		analysis33 = "Cannot compute"
 	  	}
 
 	  	let analysis34 = "";
 	  	if(jfm13 == 0 || jfm13 <= 4){
-	  	analysis34 = "Santa Cruz/Davao City Border: Free flow of traffic";
+	  	analysis34 = "Generoso I Brg: Free flow of traffic";
 	  	}else if(jfm13 > 4 || jfm13 <= 8){
-	  		analysis34 = "Santa Cruz/Davao City Border: Sluggish flow of traffic";
+	  		analysis34 = "Generoso I Brg: Sluggish flow of traffic";
 	  	}else if(jfm13 > 8 || jfm13 >= 9){
-	  		analysis34 = "Santa Cruz/Davao City Border: Slow flow of traffic";
+	  		analysis34 = "Generoso I Brg: Slow flow of traffic";
 	  	}else if(jfm13 == 10){
-	  		analysis34 = "Santa Cruz/Davao City Border: Traffic stopped or Road closed"
+	  		analysis34 = "Generoso I Brg: Traffic stopped or Road closed"
 	  	}else{
 	  		analysis34 = "Cannot compute"
 	  	}
