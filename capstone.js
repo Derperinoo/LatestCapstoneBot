@@ -5531,7 +5531,7 @@ app.post('/webhook/', function(req, res) {
 			}
 
 
-			if(text.includes("jplaurel")){
+			if(text=='jplaurel'){
 				let chatbotResponse = "";
 				
 				//source : https://www.npmjs.com/package/axios
@@ -5549,7 +5549,7 @@ app.post('/webhook/', function(req, res) {
 
 				
 			}
-			if(text.includes("jplaurel-")){
+			if(text=='jplaure-'){
 				let chatbotResponse = "";
 				
 				//source : https://www.npmjs.com/package/axios
@@ -5699,6 +5699,16 @@ app.post('/webhook/', function(req, res) {
 				let chatbotResponse2 = "";
 				let chatbotResponse3 = "";
 				let chatbotResponse4 = "";
+				let chatbotResponse5 = "";
+				let chatbotResponse6 = "";
+				let chatbotResponse7 = "";
+				let chatbotResponse8 = "";
+				let chatbotResponse9 = "";
+				let chatbotResponse10 = "";
+				let chatbotResponse11 = "";
+				let chatbotResponse12 = "";
+				let chatbotResponse13 = "";
+				let chatbotResponse14 = "";
 				
 				//source : https://www.npmjs.com/package/axios
 				axios.get(' https://cryptic-eyrie-21978.herokuapp.com/mcarthur')
