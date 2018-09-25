@@ -5018,6 +5018,7 @@ app.post('/webhook/', function(req, res) {
 			}
 			if(text=='equirino intersections'){
 				let chatbotResponse = "";
+				let chatbotResponse1 = "";
 				
 				//source : https://www.npmjs.com/package/axios
 				axios.get(' https://cryptic-eyrie-21978.herokuapp.com/equirino')
@@ -5025,6 +5026,7 @@ app.post('/webhook/', function(req, res) {
 				    //console.log(response);
 				    chatbotResponse = response.data.analysisjf1;
 				    sendText(sender,  chatbotResponse)
+				    
 				    chatbotResponse1 = response.data.analysisjf2;
 				    sendText(sender,  chatbotResponse1)
 				  })
@@ -5032,6 +5034,7 @@ app.post('/webhook/', function(req, res) {
 				    //console.log(error);
 				    chatbotResponse = "not ok";
 				    chatbotResponse1 = "not ok";
+				    
 				    sendText(sender, chatbotResponse)
 				    sendText(sender, chatbotResponse1)
 				  });
