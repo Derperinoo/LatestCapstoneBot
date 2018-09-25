@@ -1364,9 +1364,9 @@ app.get('/matinaaplaya',function(_req, _res){
 	  	let analysis7 = "";
 	  	if(aplaya == 0 || aplaya <= 4){
 	  	analysis7 = "Free flow of traffic";
-	  	}else if(aplaya <= 4 || aplaya <= 8){
+	  	}else if(aplaya > 4 || aplaya <= 8){
 	  		analysis7 = "Sluggish flow of traffic";
-	  	}else if(aplaya <= 8 || aplaya >= 9){
+	  	}else if(aplaya > 8 || aplaya >= 9){
 	  		analysis7 = "Slow flow of traffic";
 	  	}else if(aplaya == 10){
 	  		analysis7 = "Traffic stopped or Road closed"
@@ -1374,10 +1374,64 @@ app.get('/matinaaplaya',function(_req, _res){
 	  		analysis7 = "Cannot compute"
 	  	}
 
+	  	let analysis8 = "";
+	  	if(jfm1 == 0 || jfm1 <= 4){
+	  	analysis8 = "Mac Arthur Hwy: Free flow of traffic";
+	  	}else if(jfm1 > 4 || jfm1 <= 8){
+	  		analysis8 = "Mac Arthur Hwy: Sluggish flow of traffic";
+	  	}else if(jfm1 > 8 || jfm1 >= 9){
+	  		analysis8 = "Mac Arthur Hwy: Slow flow of traffic";
+	  	}else if(jfm1 == 10){
+	  		analysis8 = "Mac Arthur Hwy: Traffic stopped or Road closed"
+	  	}else{
+	  		analysis8 = "Cannot compute"
+	  	}
+
+		let analysis9 = "";
+	  	if(jfm2 == 0 || jfm2 <= 4){
+	  	analysis9 = "Jasmine St: Free flow of traffic";
+	  	}else if(jfm2 > 4 || jfm2 <= 8){
+	  		analysis9 = "Jasmine St: Sluggish flow of traffic";
+	  	}else if(jfm2 > 8 || jfm2 >= 9){
+	  		analysis9 = "Jasmine St: Slow flow of traffic";
+	  	}else if(jfm2 == 10){
+	  		analysis9 = "Jasmine St: Traffic stopped or Road closed"
+	  	}else{
+	  		analysis9 = "Cannot compute"
+	  	}
+
+		let analysis10 = "";
+	  	if(jfm3 == 0 || jfm3 <= 4){
+	  	analysis10 = "Punta Dumalag Rd: Free flow of traffic";
+	  	}else if(jfm3 > 4 || jfm3 <= 8){
+	  		analysis10 = "Punta Dumalag Rd: Sluggish flow of traffic";
+	  	}else if(jfm3 > 8 || jfm3 >= 9){
+	  		analysis10 = "Punta Dumalag Rd: Slow flow of traffic";
+	  	}else if(jfm3 == 10){
+	  		analysis10 = "Punta Dumalag Rd: Traffic stopped or Road closed"
+	  	}else{
+	  		analysis10 = "Cannot compute"
+	  	}
+
+		let analysis11 = "";
+	  	if(jfm4 == 0 || jfm4 <= 4){
+	  	analysis11 = "Eco West Dr: Free flow of traffic";
+	  	}else if(jfm4 > 4 || jfm4 <= 8){
+	  		analysis11 = "Eco West Dr: Sluggish flow of traffic";
+	  	}else if(jfm4 > 8 || jfm4 >= 9){
+	  		analysis11 = "Eco West Dr: Slow flow of traffic";
+	  	}else if(jfm4 == 10){
+	  		analysis11 = "Eco West Dr: Traffic stopped or Road closed"
+	  	}else{
+	  		analysis11 = "Cannot compute"
+	  	}
+
+
 
 
 	  	_res.setHeader('Content-Type', 'application/json');
-    	_res.send(JSON.stringify({ street: streetm, intm1: intm1, jfm1: jfm1,  intm2: intm2, jfm2: jfm2, intm3: intm3, jfm3: jfm3, intm4:intm4, jfm4:jfm4, analysis7: analysis7 }));
+    	_res.send(JSON.stringify({ street: streetm, intm1: intm1, jfm1: jfm1,  intm2: intm2, jfm2: jfm2, intm3: intm3, jfm3: jfm3, intm4:intm4, jfm4:jfm4, 
+    		analysis8:analysis8, analysis9:analysis9, analysis10: analysis10, analysis11: analysis11, analysis7: analysis7 }));
 	
 
 
@@ -6394,6 +6448,51 @@ app.post('/webhook/', function(req, res) {
 				    sendText(sender, chatbotResponse)
 				  });
 
+				
+			}
+
+			if(text=='matina aplaya intersections'){
+				
+				let chatbotResponse1 = "";
+				let chatbotResponse2 = "";
+				let chatbotResponse3 = "";
+				let chatbotResponse4 = "";
+				
+				//source : https://www.npmjs.com/package/axios
+				   axios.get(' https://cryptic-eyrie-21978.herokuapp.com/matinaaplaya')
+				  .then(function (response) {
+				
+
+				    chatbotResponse1 = response.data.analysis8;
+				    sendText(sender, chatbotResponse1)
+
+				    chatbotResponse2 = response.data.analysis9;
+				    sendText(sender, chatbotResponse2)
+
+				     chatbotResponse3 = response.data.analysis10;
+				    sendText(sender, chatbotResponse3)
+
+				     chatbotResponse4 = response.data.analysis11;
+				    sendText(sender, chatbotResponse4)
+
+
+				   
+				  })
+				  .catch(function (error) {
+				    //console.log(error);
+				     chatbotResponse1 = "not ok";
+				     chatbotResponse2 = "not ok";
+				     chatbotResponse3 = "not ok";
+				     chatbotResponse4 = "not ok";
+
+				    sendText(sender, chatbotResponse1)
+				    sendText(sender, chatbotResponse2)
+				    sendText(sender, chatbotResponse3)
+				     sendText(sender, chatbotResponse4)
+				    
+				  });
+
+				
 				
 			}
 
