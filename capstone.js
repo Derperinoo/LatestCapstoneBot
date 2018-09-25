@@ -5427,11 +5427,11 @@ app.post('/webhook/', function(req, res) {
 			}
 			if(text.includes("jplaurel intersections-")){
 				let chatbotResponse = "";
-				let chatbotResponse1 = "";
-				let chatbotResponse2 = "";
-				let chatbotResponse3 = "";
-				let chatbotResponse4 = "";
-				let chatbotResponse5 = "";
+				let chatbotResponse01 = "";
+				let chatbotResponse02 = "";
+				let chatbotResponse03 = "";
+				let chatbotResponse04 = "";
+				let chatbotResponse05 = "";
 				
 				//source : https://www.npmjs.com/package/axios
 				axios.get(' https://cryptic-eyrie-21978.herokuapp.com/jplaurel-')
@@ -5440,30 +5440,30 @@ app.post('/webhook/', function(req, res) {
 				    chatbotResponse = response.data.analysis1;
 				    sendText(sender, chatbotResponse)
 
-				    chatbotResponse1 = response.data.analysisjp01;
-				    sendText(sender, chatbotResponse1)
+				    chatbotResponse01 = response.data.analysisjp01;
+				    sendText(sender, chatbotResponse01)
 
-				    chatbotResponse2 = response.data.analysisjp02;
-				    sendText(sender, chatbotResponse2)
+				    chatbotResponse02 = response.data.analysisjp02;
+				    sendText(sender, chatbotResponse02)
 
-				    chatbotResponse3 = response.data.analysisjp03;
-				    sendText(sender, chatbotResponse3)
+				    chatbotResponse03 = response.data.analysisjp03;
+				    sendText(sender, chatbotResponse03)
 
-				    chatbotResponse4 = response.data.analysisjp04;
-				    sendText(sender, chatbotResponse4)
+				    chatbotResponse04 = response.data.analysisjp04;
+				    sendText(sender, chatbotResponse04)
 
-				    chatbotResponse5 = response.data.analysisjp05;
-				    sendText(sender, chatbotResponse5)
+				    chatbotResponse05 = response.data.analysisjp05;
+				    sendText(sender, chatbotResponse05)
 				  })
 				  .catch(function (error) {
 				    //console.log(error);
 				    chatbotResponse = "not ok";
 				    sendText(sender, chatbotResponse)
-				    sendText(sender, chatbotResponse1)
-				    sendText(sender, chatbotResponse2)
-				    sendText(sender, chatbotResponse3)
-				    sendText(sender, chatbotResponse4)
-				    sendText(sender, chatbotResponse5)
+				    sendText(sender, chatbotResponse01)
+				    sendText(sender, chatbotResponse02)
+				    sendText(sender, chatbotResponse03)
+				    sendText(sender, chatbotResponse04)
+				    sendText(sender, chatbotResponse05)
 				  });
 
 				
