@@ -85,12 +85,26 @@ app.get('/equirino',function(_req, _res){
 	  		analysisjf1 = "Cannot compute"
 	  	}
 
+	  	let analysisjf2 = "";
+	  	if(jf2 == 0 || jf2 <= 4){
+	  		analysisjf2 = "Pichon St: Free flow of traffic";
+	  	}else if(jf2 == 4 || jf2 <= 8){
+	  		analysisjf2 = "Pichon St: Sluggish flow of traffic";
+	  	}else if(jf2 == 8 || jf2 <= 9){
+	  		analysisjf2 = "Pichon St: Slow flow of traffic";
+	  	}else if(jf2 == 10){
+	  		analysisjf2 = "Pichon St: Traffic stopped or Road closed"
+	  	}else{
+	  		analysisjf2 = "Cannot compute"
+	  	}
+
+
 
 
 
 	  	_res.setHeader('Content-Type', 'application/json');
     	_res.send(JSON.stringify({ street: street, int1: int1, jf1: jf1,  int2: int2, jf2: jf2,  int3: int3, jf3: jf3, 
-    		int4: int4, jf4: jf4,  int5: int5, jf5: jf5, analysisjf1: analysisjf1, analysis: analysis }));
+    		int4: int4, jf4: jf4,  int5: int5, jf5: jf5, analysisjf1: analysisjf1, analysisjf2: analysisjf2, analysis: analysis }));
 	
 
 
@@ -5011,11 +5025,14 @@ app.post('/webhook/', function(req, res) {
 				    //console.log(response);
 				    chatbotResponse = response.data.analysisjf1;
 				    sendText(sender,  chatbotResponse)
+				    chatbotResponse1 = response.data.analysisjf2;
+				    sendText(sender,  chatbotResponse1)
 				  })
 				  .catch(function (error) {
 				    //console.log(error);
 				    chatbotResponse = "not ok";
 				    sendText(sender, chatbotResponse)
+				    sendText(sender, chatbotResponse1)
 				  });
 
 				
