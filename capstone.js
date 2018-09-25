@@ -36,11 +36,7 @@ app.get('/equirino',function(_req, _res){
 	  	console.log("###################");
 	  	console.log(body.RWS[0].RW[0].DE);
 	  	console.log(body.RWS[0].RW[0].FIS[0].FI[0].TMC.DE);
-	  	
-
-	  	
-	  	
-
+	
 	  	const street = body.RWS[0].RW[0].DE;
 	  	const int1 = body.RWS[0].RW[0].FIS[0].FI[0].TMC.DE;
 	  	const jf1 = body.RWS[0].RW[0].FIS[0].FI[0].CF[0].JF;
@@ -75,6 +71,20 @@ app.get('/equirino',function(_req, _res){
 	  	}else{
 	  		analysis = "Cannot compute"
 	  	}
+
+	  	let analysisjf1 = "";
+	  	if(jf1 == 0 || jf1 <= 4){
+	  		analysisjf1 = "Free flow of traffic";
+	  	}else if(jf1 == 4 || jf1 <= 8){
+	  		analysisjf1 = "Sluggish flow of traffic";
+	  	}else if(jf1 == 8 || jf1 <= 9){
+	  		analysisjf1 = "Slow flow of traffic";
+	  	}else if(jf1 == 10){
+	  		analysisjf1 = "Traffic stopped or Road closed"
+	  	}else{
+	  		analysisjf1 = "Cannot compute"
+	  	}
+
 
 
 
@@ -4992,6 +5002,25 @@ app.post('/webhook/', function(req, res) {
 
 				
 			}
+			if(text=='equirino intersections'){
+				let chatbotResponse = "";
+				
+				//source : https://www.npmjs.com/package/axios
+				axios.get(' https://cryptic-eyrie-21978.herokuapp.com/equirino-')
+				  .then(function (response) {
+				    //console.log(response);
+				    chatbotResponse = response.data.analysisjf1;
+				    sendText(sender, "Mac Arthur Hwy:" chatbotResponse)
+				  })
+				  .catch(function (error) {
+				    //console.log(error);
+				    chatbotResponse = "not ok";
+				    sendText(sender, chatbotResponse)
+				  });
+
+				
+			}
+
 			if(text.includes("jplaurel")){
 				let chatbotResponse = "";
 				
