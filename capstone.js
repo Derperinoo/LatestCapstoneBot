@@ -807,79 +807,265 @@ app.get('/mcarthur-',function(_req, _res){
 	  	
 	  	
 
-	  	const streetmmm = body.RWS[0].RW[5].DE;
-	  	const intmm = body.RWS[0].RW[5].FIS[0].FI[0].TMC.DE;
-	  	const jfmm = body.RWS[0].RW[5].FIS[0].FI[0].CF[0].JF;
+	  const streetmm = body.RWS[0].RW[4].DE;
+	  	const intm = body.RWS[0].RW[4].FIS[0].FI[0].TMC.DE;
+	  	const jfm = body.RWS[0].RW[4].FIS[0].FI[0].CF[0].JF;
 	  	
-	  	const intmm1 = body.RWS[0].RW[5].FIS[0].FI[1].TMC.DE;
-	  	const jfm02 = body.RWS[0].RW[5].FIS[0].FI[1].CF[0].JF;
+	  	const intm1 = body.RWS[0].RW[4].FIS[0].FI[1].TMC.DE;
+	  	const jf02 = body.RWS[0].RW[4].FIS[0].FI[1].CF[0].JF;
 
-	  	const intmm2 = body.RWS[0].RW[5].FIS[0].FI[2].TMC.DE;
-	  	const jfmm2 = body.RWS[0].RW[5].FIS[0].FI[2].CF[0].JF;
+	  	const intm2 = body.RWS[0].RW[4].FIS[0].FI[2].TMC.DE;
+	  	const jfm2 = body.RWS[0].RW[4].FIS[0].FI[2].CF[0].JF;
 
-	  	const intmm3 = body.RWS[0].RW[5].FIS[0].FI[3].TMC.DE;
-	  	const jfmm3 = body.RWS[0].RW[5].FIS[0].FI[3].CF[0].JF;
+	  	const intm3 = body.RWS[0].RW[4].FIS[0].FI[3].TMC.DE;
+	  	const jfm3 = body.RWS[0].RW[4].FIS[0].FI[3].CF[0].JF;
 
-	  	const intmm4 = body.RWS[0].RW[5].FIS[0].FI[4].TMC.DE;
-	  	const jfmm4 = body.RWS[0].RW[5].FIS[0].FI[4].CF[0].JF;
+	  	const intm4 = body.RWS[0].RW[4].FIS[0].FI[4].TMC.DE;
+	  	const jfm4 = body.RWS[0].RW[4].FIS[0].FI[4].CF[0].JF;
 
-	  	const intmm5 = body.RWS[0].RW[5].FIS[0].FI[5].TMC.DE;
-	  	const jfmm5 = body.RWS[0].RW[5].FIS[0].FI[5].CF[0].JF;
+	  	const intm5 = body.RWS[0].RW[4].FIS[0].FI[5].TMC.DE;
+	  	const jfm5 = body.RWS[0].RW[4].FIS[0].FI[5].CF[0].JF;
 
-	  	const intmm6 = body.RWS[0].RW[5].FIS[0].FI[6].TMC.DE;
-	  	const jfmm6 = body.RWS[0].RW[5].FIS[0].FI[6].CF[0].JF;
+	  	const intm6 = body.RWS[0].RW[4].FIS[0].FI[6].TMC.DE;
+	  	const jfm6 = body.RWS[0].RW[4].FIS[0].FI[6].CF[0].JF;
 
-	  	const intmm7 = body.RWS[0].RW[5].FIS[0].FI[7].TMC.DE;
-	  	const jfmm7 = body.RWS[0].RW[5].FIS[0].FI[7].CF[0].JF;
+	  	const intm7 = body.RWS[0].RW[4].FIS[0].FI[7].TMC.DE;
+	  	const jfm7 = body.RWS[0].RW[4].FIS[0].FI[7].CF[0].JF;
 
-	  	const intmm8 = body.RWS[0].RW[5].FIS[0].FI[8].TMC.DE;
-	  	const jfmm8 = body.RWS[0].RW[5].FIS[0].FI[8].CF[0].JF;
+	  	const intm8 = body.RWS[0].RW[4].FIS[0].FI[8].TMC.DE;
+	  	const jfm8 = body.RWS[0].RW[4].FIS[0].FI[8].CF[0].JF;
 
-	  	const intmm9 = body.RWS[0].RW[5].FIS[0].FI[9].TMC.DE;
-	  	const jfmm9 = body.RWS[0].RW[5].FIS[0].FI[9].CF[0].JF;
+	  	const intm9 = body.RWS[0].RW[4].FIS[0].FI[9].TMC.DE;
+	  	const jfm9 = body.RWS[0].RW[4].FIS[0].FI[9].CF[0].JF;
 
-	  	const intmm10 = body.RWS[0].RW[5].FIS[0].FI[10].TMC.DE;
-	  	const jfmm10  = body.RWS[0].RW[5].FIS[0].FI[10].CF[0].JF;
+	  	const intm10 = body.RWS[0].RW[4].FIS[0].FI[10].TMC.DE;
+	  	const jfm10  = body.RWS[0].RW[4].FIS[0].FI[10].CF[0].JF;
 	  		
-	  	const intmm11 = body.RWS[0].RW[5].FIS[0].FI[11].TMC.DE;
-	  	const jfmm11 = body.RWS[0].RW[5].FIS[0].FI[11].CF[0].JF;
+	  	const intm11 = body.RWS[0].RW[4].FIS[0].FI[11].TMC.DE;
+	  	const jfm11 = body.RWS[0].RW[4].FIS[0].FI[11].CF[0].JF;
 	  	
-	  	const intmm12 = body.RWS[0].RW[5].FIS[0].FI[12].TMC.DE;
-	  	const jfmm12 = body.RWS[0].RW[5].FIS[0].FI[12].CF[0].JF;
+	  	const intm12 = body.RWS[0].RW[4].FIS[0].FI[12].TMC.DE;
+	  	const jfm12 = body.RWS[0].RW[4].FIS[0].FI[12].CF[0].JF;
 	  	
-	  	const intmm13 = body.RWS[0].RW[5].FIS[0].FI[13].TMC.DE;
-	  	const jfmm13 = body.RWS[0].RW[5].FIS[0].FI[13].CF[0].JF;
+	  	const intm13 = body.RWS[0].RW[4].FIS[0].FI[13].TMC.DE;
+	  	const jfm13 = body.RWS[0].RW[4].FIS[0].FI[13].CF[0].JF;
 
-	  	const xm = 14
+
+	  	const x = 14
 	  
-	  	var avemm = jfmm + jfm02 + jfmm2 + jfmm3 + jfmm4 + jfmm5 + jfmm6 + jfmm7+ jfmm8
-	  	+ jfmm9 + jfmm10 + jfmm11 + jfmm12 + jfmm13  ;
+	  	var avem = jfm + jf02 + jfm2 + jfm3 + jfm4 + jfm5 + jfm6 +jfm7 + jfm8
+	  	+ jfm9 + jfm10 + jfm11 + jfm12 + jfm13  ;
 
-	  	var avemcm = avemm/xm;
+	  	var avemc = avem/x;
 
 	  	
-	  	let analysis3 = "";
-	    if(avemcm == 0 || avemcm <= 4){
-	  	analysis3 = "Free flow of traffic";
-	  	}else if(avemcm <= 4 || avemcm <= 8){
-	  		analysis3 = "Sluggish flow of traffic";
-	  	}else if(avemcm <= 8 || avemcm >= 9){
-	  		analysis3 = "Slow flow of traffic";
-	  	}else if(avemcm == 10){
-	  		analysis3 = "Traffic stopped or Road closed"
+	  	let analysis2 = "";
+	  	if(avemc == 0 || avemc <= 4){
+	  	analysis2 = "Free flow of traffic";
+	  	}else if(avemc > 4 || avemc <= 8){
+	  		analysis2 = "Sluggish flow of traffic";
+	  	}else if(avemc > 8 || avemc >= 9){
+	  		analysis2 = "Slow flow of traffic";
+	  	}else if(avemc == 10){
+	  		analysis2 = "Traffic stopped or Road closed"
 	  	}else{
-	  		analysis3 = "Cannot compute"
+	  		analysis2 = "Cannot compute"
+	  	}
+
+		let analysis22 = "";
+	  	if(jf02 == 0 || jf02 <= 4){
+	  	analysis22 = "Generoso I Brg: Free flow of traffic";
+	  	}else if(jf02 > 4 || jf02 <= 8){
+	  		analysis22 = "Generoso I Brg: Sluggish flow of traffic";
+	  	}else if(jf02 > 8 || jf02 >= 9){
+	  		analysis22 = "Generoso I Brg: Slow flow of traffic";
+	  	}else if(jf02 == 10){
+	  		analysis22 = "Generoso I Brg: Traffic stopped or Road closed"
+	  	}else{
+	  		analysis22 = "Cannot compute"
+	  	}
+
+	  	let analysis23 = "";
+	  	if(jfm2 == 0 || jfm2 <= 4){
+	  	analysis23 = "Sandawa Rd: Free flow of traffic";
+	  	}else if(jfm2 > 4 || jfm2 <= 8){
+	  		analysis23 = "Sandawa Rd: Sluggish flow of traffic";
+	  	}else if(jfm2 > 8 || jfm2 >= 9){
+	  		analysis23 = "Sandawa Rd: Slow flow of traffic";
+	  	}else if(jfm2 == 10){
+	  		analysis23 = "Sandawa Rd: Traffic stopped or Road closed"
+	  	}else{
+	  		analysis23 = "Cannot compute"
+	  	}
+	  	
+	  	let analysis24 = "";
+	  	if(jfm3 == 0 || jfm3 <= 4){
+	  	analysis24 = "Ma-A Rd: Free flow of traffic";
+	  	}else if(jfm3 > 4 || jfm3 <= 8){
+	  		analysis24 = "Ma-A Rd: Sluggish flow of traffic";
+	  	}else if(jfm3 > 8 || jfm3 >= 9){
+	  		analysis24 = "Ma-A Rd: Slow flow of traffic";
+	  	}else if(jfm3 == 10){
+	  		analysis24 = "Ma-A Rd: Traffic stopped or Road closed"
+	  	}else{
+	  		analysis24 = "Cannot compute"
+	  	}
+	  	
+	  	let analysis25 = "";
+	  	if(jfm4 == 0 || jfm4 <= 4){
+	  	analysis25 = "Tulip Dr: Free flow of traffic";
+	  	}else if(jfm4 > 4 || jfm4 <= 8){
+	  		analysis25 = "Tulip Dr: Sluggish flow of traffic";
+	  	}else if(jfm4 > 8 || jfm4 >= 9){
+	  		analysis25 = "Tulip Dr: Slow flow of traffic";
+	  	}else if(jfm4 == 10){
+	  		analysis25 = "Tulip Dr: Traffic stopped or Road closed"
+	  	}else{
+	  		analysis25 = "Cannot compute"
+	  	}
+	  	
+	  	let analysis26 = "";
+	  	if(jfm5 == 0 || jfm5 <= 4){
+	  	analysis26 = "S Cuyugan/Shrine Hills Rd: Free flow of traffic";
+	  	}else if(jfm5 > 4 || jfm5 <= 8){
+	  		analysis26 = "S Cuyugan/Shrine Hills Rd: Sluggish flow of traffic";
+	  	}else if(jfm5 > 8 || jfm5 >= 9){
+	  		analysis26 = "S Cuyugan/Shrine Hills Rd :Slow flow of traffic";
+	  	}else if(jfm5 == 10){
+	  		analysis26 = "S Cuyugan/Shrine Hills Rd: Traffic stopped or Road closed"
+	  	}else{
+	  		analysis26 = "Cannot compute"
+	  	}
+
+	  	let analysis27 = "";
+	  	if(jfm6 == 0 || jfm6 <= 4){
+	  	analysis27 = "Quimpo Blvd: Free flow of traffic";
+	  	}else if(jfm6 > 4 || jfm6 <= 8){
+	  		analysis27 = "Quimpo Blvd: Sluggish flow of traffic";
+	  	}else if(jfm6 > 8 || jfm6 >= 9){
+	  		analysis27 = "Quimpo Blvd: Slow flow of traffic";
+	  	}else if(jfm6 == 10){
+	  		analysis27 = "Quimpo Blvd: Traffic stopped or Road closed"
+	  	}else{
+	  		analysis27 = "Cannot compute"
+	  	}
+
+	  	let analysis28 = "";
+	  	if(jfm7 == 0 || jfm7 <= 4){
+	  	analysis28 = "Matina Pangi/Aplaya: Free flow of traffic";
+	  	}else if(jfm7 > 4 || jfm7 <= 8){
+	  		analysis28 = "Matina Pangi/Aplaya: Sluggish flow of traffic";
+	  	}else if(jfm7 > 8 || jfm7 >= 9){
+	  		analysis28 = "Matina Pangi/Aplaya: Slow flow of traffic";
+	  	}else if(jfm7 == 10){
+	  		analysis28 = "Matina Pangi/Aplaya: Traffic stopped or Road closed"
+	  	}else{
+	  		analysis28 = "Cannot compute"
+	  	}
+
+	  	let analysis29 = "";
+	  	if(jfm8 == 0 || jfm8 <= 4){
+	  	analysis29 = "Diversion Rd: Free flow of traffic";
+	  	}else if(jfm8 > 4 || jfm8 <= 8){
+	  		analysis29 = "Diversion Rd: Sluggish flow of traffic";
+	  	}else if(jfm8 > 8 || jfm8 >= 9){
+	  		analysis29 = "Diversion Rd: Slow flow of traffic";
+	  	}else if(jfm8 == 10){
+	  		analysis29 = "Diversion Rd: Traffic stopped or Road closed"
+	  	}else{
+	  		analysis29 = "Cannot compute"
+	  	}
+
+	  	let analysis30 = "";
+	  	if(jfm9 == 0 || jfm9 <= 4){
+	  	analysis30 = "Tolomo Ii Brg/Tolomo I Brg: Free flow of traffic";
+	  	}else if(jfm9 > 4 || jfm9 <= 8){
+	  		analysis30 = "Tolomo Ii Brg/Tolomo I Brg: Sluggish flow of traffic";
+	  	}else if(jfm9 > 8 || jfm9 >= 9){
+	  		analysis30 = "Tolomo Ii Brg/Tolomo I Brg: Slow flow of traffic";
+	  	}else if(jfm9 == 10){
+	  		analysis30 = "Tolomo Ii Brg/Tolomo I Brg: Traffic stopped or Road closed"
+	  	}else{
+	  		analysis30 = "Cannot compute"
+	  	}
+
+	  	let analysis31 = "";
+	  	if(jfm10 == 0 || jfm10 <= 4){
+	  	analysis31 = "Davao Bukidnon Rd: Free flow of traffic";
+	  	}else if(jfm10 > 4 || jfm10 <= 8){
+	  		analysis31 = "Davao Bukidnon Rd: Sluggish flow of traffic";
+	  	}else if(jfm10 > 8 || jfm10 >= 9){
+	  		analysis31 = "Davao Bukidnon Rd: Slow flow of traffic";
+	  	}else if(jfm10 == 10){
+	  		analysis31 = "Davao Bukidnon Rd: Traffic stopped or Road closed"
+	  	}else{
+	  		analysis31 = "Cannot compute"
+	  	}
+
+	  	let analysis32 = "";
+	  	if(jfm11 == 0 || jfm11 <= 4){
+	  	analysis32 = "Libby Rd: Free flow of traffic";
+	  	}else if(jfm11 > 4 || jfm11 <= 8){
+	  		analysis32 = "Libby Rd: Sluggish flow of traffic";
+	  	}else if(jfm11 > 8 || jfm11 >= 9){
+	  		analysis32 = "Libby Rd: Slow flow of traffic";
+	  	}else if(jfm11 == 10){
+	  		analysis32 = "Libby Rd: Traffic stopped or Road closed"
+	  	}else{
+	  		analysis32 = "Libby Rd"
+	  	}
+
+	  	let analysis33 = "";
+	  	if(jfm12 == 0 || jfm12 <= 4){
+	  	analysis33 = "Agton/Manggahan: Free flow of traffic";
+	  	}else if(jfm12 > 4 || jfm12 <= 8){
+	  		analysis33 = "Agton/Manggahan: Sluggish flow of traffic";
+	  	}else if(jfm12 > 8 || jfm12 >= 9){
+	  		analysis33 = "Agton/Manggahan: Slow flow of traffic";
+	  	}else if(jfm12 == 10){
+	  		analysis33 = "Agton/Manggahan: Traffic stopped or Road closed"
+	  	}else{
+	  		analysis33 = "Cannot compute"
+	  	}
+
+	  	let analysis34 = "";
+	  	if(jfm13 == 0 || jfm13 <= 4){
+	  	analysis34 = "Santa Cruz/Davao City Border: Free flow of traffic";
+	  	}else if(jfm13 > 4 || jfm13 <= 8){
+	  		analysis34 = "Santa Cruz/Davao City Border: Sluggish flow of traffic";
+	  	}else if(jfm13 > 8 || jfm13 >= 9){
+	  		analysis34 = "Santa Cruz/Davao City Border: Slow flow of traffic";
+	  	}else if(jfm13 == 10){
+	  		analysis34 = "Santa Cruz/Davao City Border: Traffic stopped or Road closed"
+	  	}else{
+	  		analysis34 = "Cannot compute"
+	  	}
+
+	  	let analysis35 = "";
+	  	if(jfm == 0 || jfm <= 4){
+	  	analysis35 = "E. Quirino Ave: Free flow of traffic";
+	  	}else if(jfm > 4 || jfm <= 8){
+	  		analysis35 = "E. Quirino Ave: Sluggish flow of traffic";
+	  	}else if(jfm > 8 || jfm >= 9){
+	  		analysis35 = "E. Quirino Ave: Slow flow of traffic";
+	  	}else if(jfm == 10){
+	  		analysis35 = "E. Quirino Ave: Traffic stopped or Road closed"
+	  	}else{
+	  		analysis35 = "Cannot compute"
 	  	}
 
 
 
 	  	_res.setHeader('Content-Type', 'application/json');
-    	_res.send(JSON.stringify({ streetmmm: streetmmm,  intmm1: intmm1, jfm02: jfm02,  intmm2: intmm2, jfmm2: jfmm2,  intmm3: intmm3, 
-    		jfmm3: jfmm3, intmm4: intmm4, jfmm4: jfmm4,  intmm5: intmm5, jfmm5: jfmm5,  intmm6: intmm6, jfmm6: jfmm6,  intmm7: intmm7, 
-    		jfmm7: jfmm7,  intmm8: intmm8, jfmm8: jfmm8,  intmm9: intmm9, jfmm9: jfmm9, intmm10: intmm10, jfmm10: jfmm10, 
-    		intmm11: intmm11, jfmm11: jfmm11, intmm12: intmm12, jfmm12: jfmm12,  intmm13: intmm13, jfmm13: jfmm13, analysis3: analysis3 }));
+    	_res.send(JSON.stringify({ streetmm: streetmm,  intm: intm, jfm:jfm, intm1: intm1, jf02: jf02, intm2: intm2, jfm2: jfm2,  intm3: intm3, 
+    		jfm3: jfm3,  
+    		intm4: intm4, jfm4: jfm4,  intm5: intm5, jfm5: jfm5,  intm6: intm6, jfm6: jfm6,  intm7: intm7, 
+    		jfm7: jfm7,  intm8: intm8, jfm8: jfm8,  intm9: intm9, jfm9: jfm9, intm10: intm10, jfm10: jfm10, 
+    		intm11: intm11, jfm11: jfm11, intm12: intm12, jfm12: jfm12,  intm13: intm13, jfm13: jfm13, analysis2: analysis2, analysis22: analysis22,
+    		analysis23: analysis23, analysis24: analysis24, analysis25: analysis25, analysis26: analysis26, 
+    		analysis27: analysis27, analysis28: analysis28, analysis29: analysis29, analysis30: analysis30, analysis31: analysis31,
+    		analysis32: analysis32, analysis33: analysis33, analysis34: analysis34, analysis35: analysis35 }));
 	
-
 
 
 	  
@@ -5792,6 +5978,110 @@ app.post('/webhook/', function(req, res) {
 
 				
 			}
+
+			if(text=='mcarthur intersections-'){
+				
+				let chatbotResponse1 = "";
+				let chatbotResponse2 = "";
+				let chatbotResponse3 = "";
+				let chatbotResponse4 = "";
+				let chatbotResponse5 = "";
+				let chatbotResponse6 = "";
+				let chatbotResponse7 = "";
+				let chatbotResponse8 = "";
+				let chatbotResponse9 = "";
+				let chatbotResponse10 = "";
+				let chatbotResponse11 = "";
+				let chatbotResponse12 = "";
+				let chatbotResponse13 = "";
+				let chatbotResponse14 = "";
+				
+				//source : https://www.npmjs.com/package/axios
+				axios.get(' https://cryptic-eyrie-21978.herokuapp.com/mcarthur-')
+				  .then(function (response) {
+				    //console.log(response);
+				  
+				    
+				    chatbotResponse1 = response.data.analysis22;
+				    sendText(sender,  chatbotResponse1)
+
+				    chatbotResponse2 = response.data.analysis23;
+				    sendText(sender,  chatbotResponse2)
+
+				    chatbotResponse3 = response.data.analysis24;
+				    sendText(sender,  chatbotResponse3)
+
+				    chatbotResponse4 = response.data.analysis25;
+				    sendText(sender,  chatbotResponse4)
+
+				    chatbotResponse5 = response.data.analysis26;
+				    sendText(sender,  chatbotResponse5)
+
+				    chatbotResponse6 = response.data.analysis27;
+				    sendText(sender,  chatbotResponse6)
+
+				    chatbotResponse7 = response.data.analysis28;
+				    sendText(sender,  chatbotResponse7)
+
+					chatbotResponse8 = response.data.analysis29;
+				    sendText(sender,  chatbotResponse8)
+
+				    chatbotResponse9 = response.data.analysis30;
+				    sendText(sender,  chatbotResponse9)
+
+				    chatbotResponse10 = response.data.analysis31;
+				    sendText(sender,  chatbotResponse10)
+
+				    chatbotResponse11 = response.data.analysis32;
+				    sendText(sender,  chatbotResponse11)
+
+				    chatbotResponse12 = response.data.analysis33;
+				    sendText(sender,  chatbotResponse12)
+
+				    chatbotResponse13 = response.data.analysis34;
+				    sendText(sender,  chatbotResponse13)
+
+				    chatbotResponse14 = response.data.analysis35;
+				    sendText(sender,  chatbotResponse14)
+				  })
+				  .catch(function (error) {
+				    //console.log(error);
+				   
+				    chatbotResponse1 = "not ok";
+				    chatbotResponse2 = "not ok";
+				    chatbotResponse3 = "not ok"
+				    chatbotResponse4 = "not ok"
+				    chatbotResponse5 = "not ok"
+				    chatbotResponse6 = "not ok"
+				    chatbotResponse7 = "not ok"
+				    chatbotResponse8 = "not ok"
+				    chatbotResponse9 = "not ok"
+				    chatbotResponse10 = "not ok"
+				    chatbotResponse11 = "not ok"
+				    chatbotResponse12 = "not ok"
+				    chatbotResponse13 = "not ok"
+				    chatbotResponse14 = "not ok"
+
+				    
+				    sendText(sender, chatbotResponse1)
+				    sendText(sender, chatbotResponse2)
+				    sendText(sender, chatbotResponse3)
+				    sendText(sender, chatbotResponse4)
+				    sendText(sender, chatbotResponse5)
+				    sendText(sender, chatbotResponse6)
+				    sendText(sender, chatbotResponse7)
+				    sendText(sender, chatbotResponse8)
+				    sendText(sender, chatbotResponse9)
+				    sendText(sender, chatbotResponse10)
+				    sendText(sender, chatbotResponse11)
+				    sendText(sender, chatbotResponse12)
+				    sendText(sender, chatbotResponse13)
+				    sendText(sender, chatbotResponse14)
+				  });
+
+				
+			}
+
 
 			if(text.includes("ecowestdr")){
 				let chatbotResponse = "";
