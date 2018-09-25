@@ -5006,11 +5006,11 @@ app.post('/webhook/', function(req, res) {
 				let chatbotResponse = "";
 				
 				//source : https://www.npmjs.com/package/axios
-				axios.get(' https://cryptic-eyrie-21978.herokuapp.com/equirino-')
+				axios.get(' https://cryptic-eyrie-21978.herokuapp.com/equirino')
 				  .then(function (response) {
 				    //console.log(response);
 				    chatbotResponse = response.data.analysisjf1;
-				    sendText(sender, "Mac Arthur Hwy:" chatbotResponse)
+				    sendText(sender,  chatbotResponse)
 				  })
 				  .catch(function (error) {
 				    //console.log(error);
