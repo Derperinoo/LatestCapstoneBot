@@ -850,9 +850,9 @@ app.get('/mcarthur-',function(_req, _res){
 	  	const intmm13 = body.RWS[0].RW[5].FIS[0].FI[13].TMC.DE;
 	  	const jfmm13 = body.RWS[0].RW[5].FIS[0].FI[13].CF[0].JF;
 
-	  	const xm = 13
+	  	const xm = 14
 	  
-	  	var avemm = jfmm + jfm02 + jfmm2 + jfmm3 + jfmm4 + jfmm5 + jfmm6 + jfmm8
+	  	var avemm = jfmm + jfm02 + jfmm2 + jfmm3 + jfmm4 + jfmm5 + jfmm6 + jfmm7+ jfmm8
 	  	+ jfmm9 + jfmm10 + jfmm11 + jfmm12 + jfmm13  ;
 
 	  	var avemcm = avemm/xm;
@@ -5714,20 +5714,50 @@ app.post('/webhook/', function(req, res) {
 				axios.get(' https://cryptic-eyrie-21978.herokuapp.com/mcarthur')
 				  .then(function (response) {
 				    //console.log(response);
-				    chatbotResponse = response.data.analysisjf1;
+				    chatbotResponse = response.data.analysis2;
 				    sendText(sender,  chatbotResponse)
 				    
-				    chatbotResponse1 = response.data.analysisjf2;
+				    chatbotResponse1 = response.data.analysis22;
 				    sendText(sender,  chatbotResponse1)
 
-				    chatbotResponse2 = response.data.analysisjf3;
+				    chatbotResponse2 = response.data.analysis23;
 				    sendText(sender,  chatbotResponse2)
 
-				    chatbotResponse3 = response.data.analysisjf4;
+				    chatbotResponse3 = response.data.analysis24;
 				    sendText(sender,  chatbotResponse3)
 
-				    chatbotResponse4 = response.data.analysisjf5;
+				    chatbotResponse4 = response.data.analysis25;
 				    sendText(sender,  chatbotResponse4)
+
+				    chatbotResponse5 = response.data.analysis26;
+				    sendText(sender,  chatbotResponse5)
+
+				    chatbotResponse6 = response.data.analysis27;
+				    sendText(sender,  chatbotResponse6)
+
+				    chatbotResponse7 = response.data.analysis28;
+				    sendText(sender,  chatbotResponse7)
+
+					chatbotResponse8 = response.data.analysis29;
+				    sendText(sender,  chatbotResponse8)
+
+				    chatbotResponse9 = response.data.analysis30;
+				    sendText(sender,  chatbotResponse9)
+
+				    chatbotResponse10 = response.data.analysis31;
+				    sendText(sender,  chatbotResponse10)
+
+				    chatbotResponse11 = response.data.analysis32;
+				    sendText(sender,  chatbotResponse11)
+
+				    chatbotResponse12 = response.data.analysis33;
+				    sendText(sender,  chatbotResponse12)
+
+				    chatbotResponse13 = response.data.analysis34;
+				    sendText(sender,  chatbotResponse13)
+
+				    chatbotResponse14 = response.data.analysis35;
+				    sendText(sender,  chatbotResponse14)
 				  })
 				  .catch(function (error) {
 				    //console.log(error);
@@ -5736,12 +5766,32 @@ app.post('/webhook/', function(req, res) {
 				    chatbotResponse2 = "not ok";
 				    chatbotResponse3 = "not ok"
 				    chatbotResponse4 = "not ok"
-				    
+				    chatbotResponse5 = "not ok"
+				    chatbotResponse6 = "not ok"
+				    chatbotResponse7 = "not ok"
+				    chatbotResponse8 = "not ok"
+				    chatbotResponse9 = "not ok"
+				    chatbotResponse10 = "not ok"
+				    chatbotResponse11 = "not ok"
+				    chatbotResponse12 = "not ok"
+				    chatbotResponse13 = "not ok"
+				    chatbotResponse14 = "not ok"
+
 				    sendText(sender, chatbotResponse)
 				    sendText(sender, chatbotResponse1)
 				    sendText(sender, chatbotResponse2)
 				    sendText(sender, chatbotResponse3)
 				    sendText(sender, chatbotResponse4)
+				    sendText(sender, chatbotResponse5)
+				    sendText(sender, chatbotResponse6)
+				    sendText(sender, chatbotResponse7)
+				    sendText(sender, chatbotResponse8)
+				    sendText(sender, chatbotResponse9)
+				    sendText(sender, chatbotResponse10)
+				    sendText(sender, chatbotResponse11)
+				    sendText(sender, chatbotResponse12)
+				    sendText(sender, chatbotResponse13)
+				    sendText(sender, chatbotResponse14)
 				  });
 
 				
