@@ -5382,7 +5382,7 @@ app.post('/webhook/', function(req, res) {
 				
 			}
 
-			if(text.includes("jplaurel intersections")){
+			if(text=='jplaurel intersections'){
 				let chatbotResponse = "";
 				let chatbotResponse1 = "";
 				let chatbotResponse2 = "";
@@ -5425,7 +5425,7 @@ app.post('/webhook/', function(req, res) {
 
 				
 			}
-			if(text.includes("jplaurel intersections-")){
+			if(text=='jplaurel intersections-'){
 				let chatbotResponse = "";
 				let chatbotResponse1 = "";
 				let chatbotResponse2 = "";
