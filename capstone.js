@@ -1171,41 +1171,69 @@ app.get('/ecowestdr-',function(_req, _res){
 	  	console.log(body.RWS[0].RW[0].FIS[0].FI[0].TMC.DE);
 	  	
 
+	  	 	
+
+	  	const streetec = body.RWS[0].RW[6].DE;
+	  	const inte1 = body.RWS[0].RW[6].FIS[0].FI[0].TMC.DE;
+	  	const jfe1 = body.RWS[0].RW[6].FIS[0].FI[0].CF[0].JF;
 	  	
+	  	const inte2 = body.RWS[0].RW[6].FIS[0].FI[1].TMC.DE;
+	  	const jfe2 = body.RWS[0].RW[6].FIS[0].FI[1].CF[0].JF;
+
 	  	
 
-	  	const streeteec = body.RWS[0].RW[7].DE;
-	  	const intee1 = body.RWS[0].RW[7].FIS[0].FI[0].TMC.DE;
-	  	const jfee1 = body.RWS[0].RW[7].FIS[0].FI[0].CF[0].JF;
-	  	
-	  	const intee2 = body.RWS[0].RW[7].FIS[0].FI[1].TMC.DE;
-	  	const jfee2 = body.RWS[0].RW[7].FIS[0].FI[1].CF[0].JF;
-
-	  	
-
-	  	var z = 2
+	  	var w = 2
 	  
-	  	var ecoeco = jfee1 + jfee2 ;
+	  	var eco = jfe1 + jfe2 ;
 
-	  	var ecowestdr = ecoeco/z;
+	  	var ecowest = eco/w;
 	  	
+	  	let analysis4 = "";
+	  	if(ecowest == 0 || ecowest <= 4){
+	  	analysis4 = "Free flow of traffic";
+	  	}else if(ecowest > 4 || ecowest <= 8){
+	  		analysis4 = "Sluggish flow of traffic";
+	  	}else if(ecowest > 8 || ecowest >= 9){
+	  		analysis4 = "Slow flow of traffic";
+	  	}else if(ecowest == 10){
+	  		analysis4 = "Traffic stopped or Road closed"
+	  	}else{
+	  		analysis4 = "Cannot compute"
+	  	}
+
 	  	let analysis5 = "";
-	  	if(ecowestdr == 0 || ecowestdr <= 4){
-	  	analysis5 = "Free flow of traffic";
-	  	}else if(ecowestdr <= 4 || ecowestdr <= 8){
-	  		analysis5 = "Sluggish flow of traffic";
-	  	}else if(ecowestdr <= 8 || ecowestdr >= 9){
-	  		analysis5 = "Slow flow of traffic";
-	  	}else if(ecowestdr == 10){
-	  		analysis5 = "Traffic stopped or Road closed"
+	  	if(jfe1 == 0 || jfe1 <= 4){
+	  	analysis5 = "Ecoland Dr/Ecoland: Free flow of traffic";
+	  	}else if(jfe1 > 4 || jfe1 <= 8){
+	  		analysis5 = "Ecoland Dr/Ecoland: Sluggish flow of traffic";
+	  	}else if(jfe1 > 8 || jfe1 >= 9){
+	  		analysis5 = "Ecoland Dr/Ecoland: Slow flow of traffic";
+	  	}else if(jfe1 == 10){
+	  		analysis5 = "Ecoland Dr/Ecoland: Traffic stopped or Road closed"
 	  	}else{
 	  		analysis5 = "Cannot compute"
 	  	}
 
+	  	let analysis6 = "";
+	  	if(jfe2 == 0 || jfe2 <= 4){
+	  	    analysis6 = "Quimpo Blvd: Free flow of traffic";
+	  	}else if(jfe2 > 4 || jfe2 <= 8){
+	  		analysis6 = "Quimpo Blvd: Sluggish flow of traffic";
+	  	}else if(jfe2 > 8 || jfe2 >= 9){
+	  		analysis6 = "Quimpo Blvd: Slow flow of traffic";
+	  	}else if(jfe2 == 10){
+	  		analysis6 = "Quimpo Blvd: Traffic stopped or Road closed"
+	  	}else{
+	  		analysis6 = "Cannot compute"
+	  	}
+
+
+
 
 
 	  	_res.setHeader('Content-Type', 'application/json');
-    	_res.send(JSON.stringify({ street: streeteec, intee1: intee1, jfee1: jfee1,  intee2: intee2, jfee2: jfee2, analysis5: analysis5 }));
+    	_res.send(JSON.stringify({ street: streetec, inte1: inte1, jfe1: jfe1,  inte2: inte2, jfe2: jfe2, 
+    		analysis5:analysis5, analysis6:analysis6, analysis4: analysis4 }));
 	
 
 
@@ -6154,6 +6182,38 @@ app.post('/webhook/', function(req, res) {
 				
 				//source : https://www.npmjs.com/package/axios
 				   axios.get(' https://cryptic-eyrie-21978.herokuapp.com/ecowestdr')
+				  .then(function (response) {
+				
+
+				    chatbotResponse1 = response.data.analysis5;
+				    sendText(sender, chatbotResponse1)
+
+				    chatbotResponse2 = response.data.analysis6;
+				    sendText(sender, chatbotResponse2)
+
+				   
+				  })
+				  .catch(function (error) {
+				    //console.log(error);
+				     chatbotResponse1 = "not ok";
+				     chatbotResponse2 = "not ok";
+
+				    sendText(sender, chatbotResponse1)
+				    sendText(sender, chatbotResponse2)
+				    
+				  });
+
+				
+				
+			}
+			if(text=='ecowestdr intersections-'){
+				
+				let chatbotResponse1 = "";
+				let chatbotResponse2 = "";
+				
+				
+				//source : https://www.npmjs.com/package/axios
+				   axios.get(' https://cryptic-eyrie-21978.herokuapp.com/ecowestdr-')
 				  .then(function (response) {
 				
 
