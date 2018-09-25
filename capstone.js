@@ -2123,10 +2123,63 @@ app.get('/quimpoblvd',function(_req, _res){
 	  		analysis15 = "Cannot compute"
 	  	}
 
+	  	let analysis14 = "";
+	  	if(jfc1 == 0 || jfc1 <=4){
+	  		analysis14 = "Ecoland: Free flow of traffic";
+	  	}else if(jfc1 > 4 || jfc1 <=8){
+	  		analysis14 = "Ecoland: Sluggish flow of traffic";
+	  	}else if(jfc1 > 8 || jfc1 >=9){
+	  		analysis14 = "Ecoland: Slow flow of traffic";
+	  	}else if(jfc1 == 10){
+	  		analysis14 = "Ecoland: Traffic stopped or Road closed"
+	  	}else{
+	  		analysis14 = "Cannot compute"
+	  	}
+
+	  	let analysis15 = "";
+	  	if(jfc2 == 0 || jfc2 <=4){
+	  		analysis15 = "Tulip Dr: Free flow of traffic";
+	  	}else if(jfc2 > 4 || jfc2 <=8){
+	  		analysis15 = "Tulip Dr: Sluggish flow of traffic";
+	  	}else if(jfc2 > 8 || jfc2 >=9){
+	  		analysis15 = "Tulip Drr: Slow flow of traffic";
+	  	}else if(jfc2 == 10){
+	  		analysis15 = "Tulip Dr: Traffic stopped or Road closed"
+	  	}else{
+	  		analysis15 = "Cannot compute"
+	  	}
+
+	  	let analysis16 = "";
+	  	if(jfc3 == 0 || jfc3 <=4){
+	  		analysis16 = "Eco West Dr: Free flow of traffic";
+	  	}else if(jfc3 > 4 || jfc3 <=8){
+	  		analysis16 = "Eco West Dr: Sluggish flow of traffic";
+	  	}else if(jfc3 > 8 || jfc3 >=9){
+	  		analysis16 = "Eco West Dr: Slow flow of traffic";
+	  	}else if(jfc3 == 10){
+	  		analysis16 = "Eco West Dr: Traffic stopped or Road closed"
+	  	}else{
+	  		analysis16 = "Cannot compute"
+	  	}
+
+	  	let analysis17 = "";
+	  	if(jfc4 == 0 || jfc4 <=4){
+	  		analysis17 = "Mac Arthur Hwy: Free flow of traffic";
+	  	}else if(jfc4 > 4 || jfc4 <=8){
+	  		analysis17 = "Mac Arthur Hwy: Sluggish flow of traffic";
+	  	}else if(jfc4 > 8 || jfc4 >=9){
+	  		analysis17 = "Mac Arthur Hwy: Slow flow of traffic";
+	  	}else if(jfc4 == 10){
+	  		analysis17 = "Mac Arthur Hwy: Traffic stopped or Road closed"
+	  	}else{
+	  		analysis17 = "Cannot compute"
+	  	}
+
 	  	
 
 	  	_res.setHeader('Content-Type', 'application/json');
-    	_res.send(JSON.stringify({ street: streetc, intc1: intc1, jfc1: jfc1,  intc2: intc2, jfc2: jfc2, intc3: intc3, jfc3: jfc3, intc4: intc4, jfc4: jfc4, analysis15: analysis15 }));
+    	_res.send(JSON.stringify({ street: streetc, intc1: intc1, jfc1: jfc1,  intc2: intc2, jfc2: jfc2, intc3: intc3, jfc3: jfc3, intc4: intc4, jfc4: jfc4,
+    	analysis14:analysis14, analysis15:analysis15, analysis16:analysis16, analysis17:analysis17, analysis15: analysis15 }));
 	
 
 
@@ -6616,7 +6669,7 @@ app.post('/webhook/', function(req, res) {
 				
 			}
 
-			if(text.includes("ecoland-")){
+			if(text=='ecoland-'){
 				let chatbotResponse = "";
 				
 				//source : https://www.npmjs.com/package/axios
@@ -7163,6 +7216,47 @@ app.post('/webhook/', function(req, res) {
 				    //console.log(error);
 				    chatbotResponse = "not ok";
 				    sendText(sender, chatbotResponse)
+				  });
+
+				
+			}
+
+			if(text=='quimpo boulevard intersections')
+			// if(text.includes("sandawa-"))
+			{
+				let chatbotResponse = "";
+				let chatbotResponse1 = "";
+				let chatbotResponse2 = "";
+				let chatbotResponse3 = "";
+				
+				//source : https://www.npmjs.com/package/axios
+				axios.get('https://cryptic-eyrie-21978.herokuapp.com/quimpoblvd')
+				  .then(function (response) {
+				    //console.log(response);
+				    chatbotResponse = response.data.analysis14;
+				    sendText(sender, chatbotResponse)
+
+				    chatbotResponse1 = response.data.analysis15;
+				    sendText(sender, chatbotResponse1)
+
+				    chatbotResponse2 = response.data.analysis16;
+				    sendText(sender, chatbotResponse2)
+
+				    chatbotResponse3 = response.data.analysis17;
+				    sendText(sender, chatbotResponse3)
+
+
+				  })
+				  .catch(function (error) {
+				    //console.log(error);
+				    chatbotResponse = "not ok";
+				     chatbotResponse1 = "not ok";
+				     chatbotResponse2 = "not ok";
+				     chatbotResponse3 = "not ok";
+				    sendText(sender, chatbotResponse)
+				    sendText(sender, chatbotResponse1)
+				    sendText(sender, chatbotResponse2)
+				    sendText(sender, chatbotResponse3)
 				  });
 
 				
