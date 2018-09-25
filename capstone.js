@@ -1484,7 +1484,7 @@ app.get('/ecoland',function(_req, _res){
 
 	  	_res.setHeader('Content-Type', 'application/json');
     	_res.send(JSON.stringify({ street: streetc, intc1: intc1, jfc1: jfc1,  intc2: intc2, jfc2: jfc2, intc3: intc3, jfc3: jfc3,
-    	analysis10:analysis10, analysis11:analysis11, analysis12:analysis12 analysis9: analysis9 }));
+    	analysis10:analysis10, analysis11:analysis11, analysis12:analysis12 , analysis9: analysis9 }));
 	
 
 
