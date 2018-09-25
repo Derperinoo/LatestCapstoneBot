@@ -1270,9 +1270,9 @@ app.get('/ecoland-',function(_req, _res){
 	  	let analysis6 = "";
 	  	if(ecolands == 0 || ecolands <= 4){
 	  	analysis6 = "Free flow of traffic";
-	  	}else if(ecolands <= 4 || ecolands <= 8){
+	  	}else if(ecolands > 4 || ecolands <= 8){
 	  		analysis6 = "Sluggish flow of traffic";
-	  	}else if(ecolands <= 8 || ecolands >= 9){
+	  	}else if(ecolands > 8 || ecolands >= 9){
 	  		analysis6 = "Slow flow of traffic";
 	  	}else if(ecolands == 10){
 	  		analysis6 = "Traffic stopped or Road closed"
@@ -1280,11 +1280,51 @@ app.get('/ecoland-',function(_req, _res){
 	  		analysis6 = "Cannot compute"
 	  	}
 
+	  	let analysis7 = "";
+	  	if(jfc1 == 0 || jfc1 <= 4){
+	  	analysis7 = "Eco West D: Free flow of traffic";
+	  	}else if(jfc1 > 4 || jfc1 <= 8){
+	  		analysis7 = "Eco West D: Sluggish flow of traffic";
+	  	}else if(jfc1 > 8 || jfc1 >= 9){
+	  		analysis7 = "Eco West D: Slow flow of traffic";
+	  	}else if(jfc1 == 10){
+	  		analysis7 = "Eco West D: Traffic stopped or Road closed"
+	  	}else{
+	  		analysis7 = "Cannot compute"
+	  	}
+
+	  	let analysis8 = "";
+	  	if(jfc2 == 0 || jfc2 <= 4){
+	  	analysis8 = "Tulip Dr: Free flow of traffic";
+	  	}else if(jfc2 > 4 || jfc2 <= 8){
+	  		analysis8 = "Tulip Dr: Sluggish flow of traffic";
+	  	}else if(jfc2 > 8 || jfc2 >= 9){
+	  		analysis8 = "Tulip Dr: Slow flow of traffic";
+	  	}else if(jfc2 == 10){
+	  		analysis8 = "Tulip Dr: Traffic stopped or Road closed"
+	  	}else{
+	  		analysis8 = "Cannot compute"
+	  	}
+
+	  	let analysis9 = "";
+	  	if(jfc3 == 0 || jfc3 <= 4){
+	  	analysis9 = "Quimpo Blvd/Quezon Blvd: Free flow of traffic";
+	  	}else if(jfc3 > 4 || jfc3 <= 8){
+	  		analysis9 = "Quimpo Blvd/Quezon Blvd: Sluggish flow of traffic";
+	  	}else if(jfc3 > 8 || jfc3 >= 9){
+	  		analysis9 = "Quimpo Blvd/Quezon Blvd: Slow flow of traffic";
+	  	}else if(jfc3 == 10){
+	  		analysis9 = "Quimpo Blvd/Quezon Blvd: Traffic stopped or Road closed"
+	  	}else{
+	  		analysis9 = "Cannot compute"
+	  	}
+
 
 
 
 	  	_res.setHeader('Content-Type', 'application/json');
-    	_res.send(JSON.stringify({ street: streetc, intc1: intc1, jfc1: jfc1,  intc2: intc2, jfc2: jfc2, analysis6: analysis6 }));
+    	_res.send(JSON.stringify({ street: streetc, intc1: intc1, jfc1: jfc1,  intc2: intc2, jfc2: jfc2,
+    	analysis7:analysis7,analysis8:analysis8, analysis9:analysis9, analysis6: analysis6 }));
 	
 
 
@@ -6296,6 +6336,47 @@ app.post('/webhook/', function(req, res) {
 
 				
 			}
+
+			if(text=='ecoland intersections-'){
+				
+				let chatbotResponse1 = "";
+				let chatbotResponse2 = "";
+				let chatbotResponse3 = "";
+				
+				
+				//source : https://www.npmjs.com/package/axios
+				   axios.get(' https://cryptic-eyrie-21978.herokuapp.com/ecoland-')
+				  .then(function (response) {
+				
+
+				    chatbotResponse1 = response.data.analysis7;
+				    sendText(sender, chatbotResponse1)
+
+				    chatbotResponse2 = response.data.analysis8;
+				    sendText(sender, chatbotResponse2)
+
+				     chatbotResponse3 = response.data.analysis9;
+				    sendText(sender, chatbotResponse3)
+
+				   
+				  })
+				  .catch(function (error) {
+				    //console.log(error);
+				     chatbotResponse1 = "not ok";
+				     chatbotResponse2 = "not ok";
+				     chatbotResponse3 = "not ok";
+
+
+				    sendText(sender, chatbotResponse1)
+				    sendText(sender, chatbotResponse2)
+				    sendText(sender, chatbotResponse3)
+				    
+				  });
+
+				
+				
+			}
+
 
 			if(text=='matina aplaya'){
 				let chatbotResponse = "";
