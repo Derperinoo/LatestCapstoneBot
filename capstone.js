@@ -5549,7 +5549,7 @@ app.post('/webhook/', function(req, res) {
 
 				
 			}
-			if(text=='jplaure-'){
+			if(text=='jplaurel-'){
 				let chatbotResponse = "";
 				
 				//source : https://www.npmjs.com/package/axios
