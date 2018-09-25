@@ -1107,9 +1107,9 @@ app.get('/ecowestdr',function(_req, _res){
 	  	let analysis4 = "";
 	  	if(ecowest == 0 || ecowest <= 4){
 	  	analysis4 = "Free flow of traffic";
-	  	}else if(ecowest <= 4 || ecowest <= 8){
+	  	}else if(ecowest > 4 || ecowest <= 8){
 	  		analysis4 = "Sluggish flow of traffic";
-	  	}else if(ecowest <= 8 || ecowest >= 9){
+	  	}else if(ecowest > 8 || ecowest >= 9){
 	  		analysis4 = "Slow flow of traffic";
 	  	}else if(ecowest == 10){
 	  		analysis4 = "Traffic stopped or Road closed"
@@ -1117,12 +1117,39 @@ app.get('/ecowestdr',function(_req, _res){
 	  		analysis4 = "Cannot compute"
 	  	}
 
+	  	let analysis5 = "";
+	  	if(jfe1 == 0 || jfe1 <= 4){
+	  	analysis5 = "Quimpo Blvd: Free flow of traffic";
+	  	}else if(jfe1 > 4 || jfe1 <= 8){
+	  		analysis5 = "Quimpo Blvd: Sluggish flow of traffic";
+	  	}else if(jfe1 > 8 || jfe1 >= 9){
+	  		analysis5 = "Quimpo Blvd: Slow flow of traffic";
+	  	}else if(jfe1 == 10){
+	  		analysis5 = "Quimpo Blvd: Traffic stopped or Road closed"
+	  	}else{
+	  		analysis5 = "Cannot compute"
+	  	}
+
+	  	let analysis6 = "";
+	  	if(jfe2 == 0 || jfe2 <= 4){
+	  	    analysis5 = "Ecoland Dr/Ecoland: Free flow of traffic";
+	  	}else if(jfe2 > 4 || jfe2 <= 8){
+	  		analysis5 = "Ecoland Dr/Ecoland: Sluggish flow of traffic";
+	  	}else if(jfe2 > 8 || jfe2 >= 9){
+	  		analysis5 = "Ecoland Dr/Ecoland: Slow flow of traffic";
+	  	}else if(jfe2 == 10){
+	  		analysis5 = "Ecoland Dr/Ecoland: Traffic stopped or Road closed"
+	  	}else{
+	  		analysis5 = "Cannot compute"
+	  	}
+
 
 
 
 
 	  	_res.setHeader('Content-Type', 'application/json');
-    	_res.send(JSON.stringify({ street: streetec, inte1: inte1, jfe1: jfe1,  inte2: inte2, jfe2: jfe2, analysis4: analysis4 }));
+    	_res.send(JSON.stringify({ street: streetec, inte1: inte1, jfe1: jfe1,  inte2: inte2, jfe2: jfe2, 
+    		analysis5:analysis5, analysis6:analysis6, analysis4: analysis4 }));
 	
 
 
@@ -5839,7 +5866,7 @@ app.post('/webhook/', function(req, res) {
 				
 			}
 
-			if(text.includes("mcarthur")){
+			if(text=='mcarthur'){
 				let chatbotResponse = "";
 				
 				//source : https://www.npmjs.com/package/axios
@@ -5857,7 +5884,7 @@ app.post('/webhook/', function(req, res) {
 
 				
 			}
-			if(text.includes("mcarthur-")){
+			if(text=='mcarthur-'){
 				let chatbotResponse = "";
 				
 				//source : https://www.npmjs.com/package/axios
@@ -5997,7 +6024,7 @@ app.post('/webhook/', function(req, res) {
 				let chatbotResponse14 = "";
 				
 				//source : https://www.npmjs.com/package/axios
-				axios.get(' https://cryptic-eyrie-21978.herokuapp.com/mcarthur-')
+				axios.get('https://cryptic-eyrie-21978.herokuapp.com/mcarthur-')
 				  .then(function (response) {
 				    //console.log(response);
 				  
@@ -6083,7 +6110,7 @@ app.post('/webhook/', function(req, res) {
 			}
 
 
-			if(text.includes("ecowestdr")){
+			if(text=='ecowestdr'){
 				let chatbotResponse = "";
 				
 				//source : https://www.npmjs.com/package/axios
@@ -6101,7 +6128,7 @@ app.post('/webhook/', function(req, res) {
 
 				
 			}
-			if(text.includes("ecowestdr-")){
+			if(text=='ecowestdr-'){
 				let chatbotResponse = "";
 				
 				//source : https://www.npmjs.com/package/axios
@@ -6119,6 +6146,39 @@ app.post('/webhook/', function(req, res) {
 
 				
 			}
+			if(text=='ecowestdr intersections'){
+				
+				let chatbotResponse1 = "";
+				let chatbotResponse2 = "";
+				
+				
+				//source : https://www.npmjs.com/package/axios
+				axios.get(' https://cryptic-eyrie-21978.herokuapp.com/ecowestdr')
+				  .then(function (response) {
+				
+
+				    chatbotResponse1 = response.data.analysis5;
+				    sendText(sender, chatbotResponse1)
+
+				    chatbotResponse2 = response.data.analysis6;
+				    sendText(sender, chatbotResponse2)
+
+				   
+				  })
+				  .catch(function (error) {
+				    //console.log(error);
+				     chatbotResponse1 = "not ok";
+				     chatbotResponse2 = "not ok";
+
+				    sendText(sender, chatbotResponse1)
+				    sendText(sender, chatbotResponse2)
+				    
+				  });
+
+				
+				
+			}
+
 			if(text.includes("ecoland-")){
 				let chatbotResponse = "";
 				
