@@ -74,13 +74,13 @@ app.get('/equirino',function(_req, _res){
 
 	  	let analysisjf1 = "";
 	  	if(jf1 == 0 || jf1 <= 4){
-	  		analysisjf1 = "Free flow of traffic";
+	  		analysisjf1 = "Mac Arthur Hwy: Free flow of traffic";
 	  	}else if(jf1 == 4 || jf1 <= 8){
-	  		analysisjf1 = "Sluggish flow of traffic";
+	  		analysisjf1 = "Mac Arthur Hwy: Sluggish flow of traffic";
 	  	}else if(jf1 == 8 || jf1 <= 9){
-	  		analysisjf1 = "Slow flow of traffic";
+	  		analysisjf1 = "Mac Arthur Hwy: Slow flow of traffic";
 	  	}else if(jf1 == 10){
-	  		analysisjf1 = "Traffic stopped or Road closed"
+	  		analysisjf1 = "Mac Arthur Hwy: Traffic stopped or Road closed"
 	  	}else{
 	  		analysisjf1 = "Cannot compute"
 	  	}
