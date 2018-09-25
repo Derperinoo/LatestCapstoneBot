@@ -1760,7 +1760,6 @@ app.get('/tulipdr',function(_req, _res){
 	  	var tulippdrive = tulipp/p;
 	  	
 	  	let analysis11 = "";
-	  	
 	  	if(tulippdrive == 0 || tulippdrive <= 4){
 	  		analysis11 = "Free flow of traffic";
 	  	}else if(tulippdrive > 4 || tulippdrive <= 8){
@@ -1773,11 +1772,54 @@ app.get('/tulipdr',function(_req, _res){
 	  		analysis11 = "Cannot compute"
 	  	}
 
+	  	let analysis12 = "";
+	  	if(jfc1 == 0 || jfc1 <= 4){
+	  		analysis12 = "Mac Arthur Hwy: Free flow of traffic";
+	  	}else if(jfc1 > 4 || jfc1 <= 8){
+	  		analysis12 = "Mac Arthur Hwy: Sluggish flow of traffic";
+	  	}else if(jfc1 > 8 || jfc1 >= 9){
+	  		analysis12 = "Mac Arthur Hwy: Slow flow of traffic";
+	  	}else if(jfc1 == 10){
+	  		analysis12 = "Mac Arthur Hwy: Traffic stopped or Road closed"
+	  	}else{
+	  		analysis12 = "Cannot compute"
+	  	}
+
+
+		let analysis13 = "";
+	  	if(jfc2 == 0 || jfc2 <= 4){
+	  		analysis13 = "Quimpo Blvd: Free flow of traffic";
+	  	}else if(jfc2 > 4 || jfc2 <= 8){
+	  		analysis13 = "Quimpo Blvd: Sluggish flow of traffic";
+	  	}else if(jfc2 > 8 || jfc2 >= 9){
+	  		analysis13 = "Quimpo Blvd: Slow flow of traffic";
+	  	}else if(jfc2 == 10){
+	  		analysis13 = "Quimpo Blvd: Traffic stopped or Road closed"
+	  	}else{
+	  		analysis13 = "Cannot compute"
+	  	}
+
+
+		let analysis14 = "";
+	  	if(jfc3 == 0 || jfc3 <= 4){
+	  		analysis14 = "Ecoland: Free flow of traffic";
+	  	}else if(jfc3 > 4 || jfc3 <= 8){
+	  		analysis14 = "Ecoland: Sluggish flow of traffic";
+	  	}else if(jfc3 > 8 || jfc3 >= 9){
+	  		analysis14 = "Ecoland: Slow flow of traffic";
+	  	}else if(jfc3 == 10){
+	  		analysis14 = "Ecoland: Traffic stopped or Road closed"
+	  	}else{
+	  		analysis14 = "Cannot compute"
+	  	}
+
+
 	  	
 
 
 	  	_res.setHeader('Content-Type', 'application/json');
-    	_res.send(JSON.stringify({ street: streetc, intc1: intc1, jfc1: jfc1,  intc2: intc2, jfc2: jfc2, intc3: intc3, jfc3: jfc3, analysis11: analysis11 }));
+    	_res.send(JSON.stringify({ street: streetc, intc1: intc1, jfc1: jfc1,  intc2: intc2, jfc2: jfc2, intc3: intc3, jfc3: jfc3,
+    	analysis12:analysis12, analysis13:analysis13, analysis14:analysis14, analysis11: analysis11 }));
 	
 
 
@@ -6795,6 +6837,47 @@ app.post('/webhook/', function(req, res) {
 				    sendText(sender, chatbotResponse)
 				  });
 
+				
+			}
+
+			if(text=='tulip drive intersections'){
+				
+				let chatbotResponse1 = "";
+				let chatbotResponse2 = "";
+				let chatbotResponse3 = "";
+				
+				
+				//source : https://www.npmjs.com/package/axios
+				   axios.get(' https://cryptic-eyrie-21978.herokuapp.com/tulipdr')
+				  .then(function (response) {
+				
+
+				    chatbotResponse1 = response.data.analysis12;
+				    sendText(sender, chatbotResponse1)
+
+				    chatbotResponse2 = response.data.analysis13;
+				    sendText(sender, chatbotResponse2)
+
+				    chatbotResponse3 = response.data.analysis14;
+				    sendText(sender, chatbotResponse3)
+
+				   
+
+				   
+				  })
+				  .catch(function (error) {
+				    //console.log(error);
+				     chatbotResponse1 = "not ok";
+				     chatbotResponse2 = "not ok";
+				     chatbotResponse3 = "not ok";
+
+				    sendText(sender, chatbotResponse1)
+				    sendText(sender, chatbotResponse2)
+				     sendText(sender, chatbotResponse3)
+				    
+				  });
+
+				
 				
 			}
 
