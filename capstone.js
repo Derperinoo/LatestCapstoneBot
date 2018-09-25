@@ -1952,7 +1952,6 @@ app.get('/sandawa',function(_req, _res){
 	  	var sandawaaas = sandawaaa/p;
 	  	
 	  	let analysis14 = "";
-	  	
 	  	if(sandawaaas == 0 || sandawaaas <= 4){
 	  		analysis14 = "Free flow of traffic";
 	  	}else if(sandawaaas > 4 || sandawaaas <= 8){
@@ -1965,10 +1964,37 @@ app.get('/sandawa',function(_req, _res){
 	  		analysis14 = "Cannot compute"
 	  	}
 
+	  	let analysis15 = "";
+	  	if(jfc1 == 0 || jfc1 <= 4){
+	  		analysis15 = "Mac Arthur Hwy: Free flow of traffic";
+	  	}else if(jfc1 > 4 || jfc1 <= 8){
+	  		analysis15 = "Mac Arthur Hwy: Sluggish flow of traffic";
+	  	}else if(jfc1 > 8 || jfc1 >= 9){
+	  		analysis15 = "Mac Arthur Hwy: Slow flow of traffic";
+	  	}else if(jfc1 == 10){
+	  		analysis15 = "Mac Arthur Hwy: Traffic stopped or Road closed"
+	  	}else{
+	  		analysis15 = "Cannot compute"
+	  	}
+
+	  	let analysis16 = "";
+	  	if(jfc2 == 0 || jfc2 <= 4){
+	  		analysis16 = "Quezon Blvd: Free flow of traffic";
+	  	}else if(jfc2 > 4 || jfc2 <= 8){
+	  		analysis16 = "Quezon Blvd: Sluggish flow of traffic";
+	  	}else if(jfc2 > 8 || jfc2 >= 9){
+	  		analysis16 = "Quezon Blvd: Slow flow of traffic";
+	  	}else if(jfc2 == 10){
+	  		analysis16 = "Quezon Blvd: Traffic stopped or Road closed"
+	  	}else{
+	  		analysis16 = "Cannot compute"
+	  	}
+
 	  	
 
 	  	_res.setHeader('Content-Type', 'application/json');
-    	_res.send(JSON.stringify({ street: streetc, intc1: intc1, jfc1: jfc1,  intc2: intc2, jfc2: jfc2, analysis14: analysis14 }));
+    	_res.send(JSON.stringify({ street: streetc, intc1: intc1, jfc1: jfc1,  intc2: intc2, jfc2: jfc2, 
+    		analysis15:analysis15, analysis16:analysis16, analysis14: analysis14 }));
 	
 
 
@@ -6942,6 +6968,35 @@ app.post('/webhook/', function(req, res) {
 
 				
 			}
+			if(text=='sandawa intersections')
+			// if(text.includes("sandawa-"))
+			{
+				let chatbotResponse = "";
+				let chatbotResponse1 = "";
+				
+				//source : https://www.npmjs.com/package/axios
+				axios.get('https://cryptic-eyrie-21978.herokuapp.com/sandawa')
+				  .then(function (response) {
+				    //console.log(response);
+				    chatbotResponse = response.data.analysis15;
+				    sendText(sender, chatbotResponse)
+
+				    chatbotResponse1 = response.data.analysis16;
+				    sendText(sender, chatbotResponse1)
+
+				  })
+				  .catch(function (error) {
+				    //console.log(error);
+				    chatbotResponse = "not ok";
+				     chatbotResponse1 = "not ok";
+				    sendText(sender, chatbotResponse)
+				    sendText(sender, chatbotResponse1)
+				  });
+
+				
+			}
+
+
 			if(text=='quimpo boulevard')
 			// if(text.includes("quimpo boulevard-"))
 			{
