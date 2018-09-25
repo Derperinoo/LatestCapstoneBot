@@ -2110,7 +2110,6 @@ app.get('/quimpoblvd',function(_req, _res){
 	  	var quimpooo = quimpoo/p;
 
 	  	let analysis15 = "";
-	  	
 	  	if(quimpooo == 0 || quimpooo <= 4){
 	  		analysis15 = "Free flow of traffic";
 	  	}else if(quimpooo > 4 || quimpooo <= 8){
@@ -2123,63 +2122,63 @@ app.get('/quimpoblvd',function(_req, _res){
 	  		analysis15 = "Cannot compute"
 	  	}
 
-	  	let analysis14 = "";
-	  	if(jfc1 == 0 || jfc1 <=4){
-	  		analysis14 = "Ecoland: Free flow of traffic";
-	  	}else if(jfc1 > 4 || jfc1 <=8){
-	  		analysis14 = "Ecoland: Sluggish flow of traffic";
-	  	}else if(jfc1 > 8 || jfc1 >=9){
-	  		analysis14 = "Ecoland: Slow flow of traffic";
-	  	}else if(jfc1 == 10){
-	  		analysis14 = "Ecoland: Traffic stopped or Road closed"
-	  	}else{
-	  		analysis14 = "Cannot compute"
-	  	}
-
-	  	let analysis15 = "";
-	  	if(jfc2 == 0 || jfc2 <=4){
-	  		analysis15 = "Tulip Dr: Free flow of traffic";
-	  	}else if(jfc2 > 4 || jfc2 <=8){
-	  		analysis15 = "Tulip Dr: Sluggish flow of traffic";
-	  	}else if(jfc2 > 8 || jfc2 >=9){
-	  		analysis15 = "Tulip Drr: Slow flow of traffic";
-	  	}else if(jfc2 == 10){
-	  		analysis15 = "Tulip Dr: Traffic stopped or Road closed"
-	  	}else{
-	  		analysis15 = "Cannot compute"
-	  	}
-
 	  	let analysis16 = "";
-	  	if(jfc3 == 0 || jfc3 <=4){
-	  		analysis16 = "Eco West Dr: Free flow of traffic";
-	  	}else if(jfc3 > 4 || jfc3 <=8){
-	  		analysis16 = "Eco West Dr: Sluggish flow of traffic";
-	  	}else if(jfc3 > 8 || jfc3 >=9){
-	  		analysis16 = "Eco West Dr: Slow flow of traffic";
-	  	}else if(jfc3 == 10){
-	  		analysis16 = "Eco West Dr: Traffic stopped or Road closed"
+	  	if(jfc1 == 0 || jfc1 <=4){
+	  		analysis16 = "Ecoland: Free flow of traffic";
+	  	}else if(jfc1 > 4 || jfc1 <=8){
+	  		analysis16 = "Ecoland: Sluggish flow of traffic";
+	  	}else if(jfc1 > 8 || jfc1 >=9){
+	  		analysis16 = "Ecoland: Slow flow of traffic";
+	  	}else if(jfc1 == 10){
+	  		analysis16 = "Ecoland: Traffic stopped or Road closed"
 	  	}else{
 	  		analysis16 = "Cannot compute"
 	  	}
 
 	  	let analysis17 = "";
-	  	if(jfc4 == 0 || jfc4 <=4){
-	  		analysis17 = "Mac Arthur Hwy: Free flow of traffic";
-	  	}else if(jfc4 > 4 || jfc4 <=8){
-	  		analysis17 = "Mac Arthur Hwy: Sluggish flow of traffic";
-	  	}else if(jfc4 > 8 || jfc4 >=9){
-	  		analysis17 = "Mac Arthur Hwy: Slow flow of traffic";
-	  	}else if(jfc4 == 10){
-	  		analysis17 = "Mac Arthur Hwy: Traffic stopped or Road closed"
+	  	if(jfc2 == 0 || jfc2 <=4){
+	  		analysis17 = "Tulip Dr: Free flow of traffic";
+	  	}else if(jfc2 > 4 || jfc2 <=8){
+	  		analysis17 = "Tulip Dr: Sluggish flow of traffic";
+	  	}else if(jfc2 > 8 || jfc2 >=9){
+	  		analysis17 = "Tulip Drr: Slow flow of traffic";
+	  	}else if(jfc2 == 10){
+	  		analysis17 = "Tulip Dr: Traffic stopped or Road closed"
 	  	}else{
 	  		analysis17 = "Cannot compute"
+	  	}
+
+	  	let analysis18 = "";
+	  	if(jfc3 == 0 || jfc3 <=4){
+	  		analysis18 = "Eco West Dr: Free flow of traffic";
+	  	}else if(jfc3 > 4 || jfc3 <=8){
+	  		analysis18 = "Eco West Dr: Sluggish flow of traffic";
+	  	}else if(jfc3 > 8 || jfc3 >=9){
+	  		analysis18 = "Eco West Dr: Slow flow of traffic";
+	  	}else if(jfc3 == 10){
+	  		analysis18 = "Eco West Dr: Traffic stopped or Road closed"
+	  	}else{
+	  		analysis18 = "Cannot compute"
+	  	}
+
+	  	let analysis19 = "";
+	  	if(jfc4 == 0 || jfc4 <=4){
+	  		analysis19 = "Mac Arthur Hwy: Free flow of traffic";
+	  	}else if(jfc4 > 4 || jfc4 <=8){
+	  		analysis19 = "Mac Arthur Hwy: Sluggish flow of traffic";
+	  	}else if(jfc4 > 8 || jfc4 >=9){
+	  		analysis19 = "Mac Arthur Hwy: Slow flow of traffic";
+	  	}else if(jfc4 == 10){
+	  		analysis19 = "Mac Arthur Hwy: Traffic stopped or Road closed"
+	  	}else{
+	  		analysis19 = "Cannot compute"
 	  	}
 
 	  	
 
 	  	_res.setHeader('Content-Type', 'application/json');
     	_res.send(JSON.stringify({ street: streetc, intc1: intc1, jfc1: jfc1,  intc2: intc2, jfc2: jfc2, intc3: intc3, jfc3: jfc3, intc4: intc4, jfc4: jfc4,
-    	analysis14:analysis14, analysis15:analysis15, analysis16:analysis16, analysis17:analysis17, analysis15: analysis15 }));
+    	analysis16:analysis16, analysis17:analysis17, analysis18:analysis18, analysis19:analysis19, analysis15: analysis15 }));
 	
 
 
@@ -7233,16 +7232,16 @@ app.post('/webhook/', function(req, res) {
 				axios.get('https://cryptic-eyrie-21978.herokuapp.com/quimpoblvd')
 				  .then(function (response) {
 				    //console.log(response);
-				    chatbotResponse = response.data.analysis14;
+				    chatbotResponse = response.data.analysis16;
 				    sendText(sender, chatbotResponse)
 
-				    chatbotResponse1 = response.data.analysis15;
+				    chatbotResponse1 = response.data.analysis17;
 				    sendText(sender, chatbotResponse1)
 
-				    chatbotResponse2 = response.data.analysis16;
+				    chatbotResponse2 = response.data.analysis18;
 				    sendText(sender, chatbotResponse2)
 
-				    chatbotResponse3 = response.data.analysis17;
+				    chatbotResponse3 = response.data.analysis19;
 				    sendText(sender, chatbotResponse3)
 
 
