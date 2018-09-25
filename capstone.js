@@ -1474,7 +1474,7 @@ app.get('/matinaaplaya-',function(_req, _res){
 	  		analysis8 = "Free flow of traffic";
 	  	}else if(aplaya2 > 4 || aplaya2 <=8){
 	  		analysis8 = "Sluggish flow of traffic";
-	  	}else if(aplaya2 > 8 || aplaya2 <=9){
+	  	}else if(aplaya2 > 8 || aplaya2 >=9){
 	  		analysis8 = "Slow flow of traffic";
 	  	}else if(aplaya2 == 10){
 	  		analysis8 = "Traffic stopped or Road closed"
@@ -1668,7 +1668,6 @@ app.get('/tulipdr-',function(_req, _res){
 	  	var tulipdrive = tulip/p;
 	  	
 	  	let analysis10 = "";
-	  	
 	  	if(tulipdrive == 0 || tulipdrive <= 4){
 	  		analysis10 = "Free flow of traffic";
 	  	}else if(tulipdrive > 4 || tulipdrive <= 8){
@@ -1681,10 +1680,53 @@ app.get('/tulipdr-',function(_req, _res){
 	  		analysis10 = "Cannot compute"
 	  	}
 
+	  	let analysis11 = "";
+	  	if(jfc1 == 0 || jfc1 <= 4){
+	  		analysis11 = "Ecoland: Free flow of traffic";
+	  	}else if(jfc1 > 4 || jfc1 <= 8){
+	  		analysis11 = "Ecoland: Sluggish flow of traffic";
+	  	}else if(jfc1 > 8 || jfc1 >= 9){
+	  		analysis11 = "Ecoland: Slow flow of traffic";
+	  	}else if(jfc1 == 10){
+	  		analysis11 = "Ecoland: Traffic stopped or Road closed"
+	  	}else{
+	  		analysis11 = "Cannot compute"
+	  	}
+
+
+		let analysis12 = "";
+	  	if(jfc2 == 0 || jfc2 <= 4){
+	  		analysis12 = "Quimpo Blvd: Free flow of traffic";
+	  	}else if(jfc2 > 4 || jfc2 <= 8){
+	  		analysis12 = "Quimpo Blvd: Sluggish flow of traffic";
+	  	}else if(jfc2 > 8 || jfc2 >= 9){
+	  		analysis12 = "Quimpo Blvd: Slow flow of traffic";
+	  	}else if(jfc2 == 10){
+	  		analysis12 = "Quimpo Blvd: Traffic stopped or Road closed"
+	  	}else{
+	  		analysis12 = "Cannot compute"
+	  	}
+
+
+		let analysis13 = "";
+	  	if(jfc3 == 0 || jfc3 <= 4){
+	  		analysis13 = "Mac Arthur Hwy: Free flow of traffic";
+	  	}else if(jfc3 > 4 || jfc3 <= 8){
+	  		analysis13 = "Mac Arthur Hwy: Sluggish flow of traffic";
+	  	}else if(jfc3 > 8 || jfc3 >= 9){
+	  		analysis13 = "Mac Arthur Hwy: Slow flow of traffic";
+	  	}else if(jfc3 == 10){
+	  		analysis13 = "Mac Arthur Hwy: Traffic stopped or Road closed"
+	  	}else{
+	  		analysis13 = "Cannot compute"
+	  	}
+
+
 	  	
 
 	  	_res.setHeader('Content-Type', 'application/json');
-    	_res.send(JSON.stringify({ street: streetc, intc1: intc1, jfc1: jfc1,  intc2: intc2, jfc2: jfc2, intc3: intc3, jfc3: jfc3, analysis10: analysis10 }));
+    	_res.send(JSON.stringify({ street: streetc, intc1: intc1, jfc1: jfc1,  intc2: intc2, jfc2: jfc2, intc3: intc3, jfc3: jfc3, 
+    		analysis11:analysis11, analysis12:analysis12, analysis13:analysis13, analysis10: analysis10 }));
 	
 
 
@@ -1825,7 +1867,7 @@ app.get('/quimpoblvd-',function(_req, _res){
 	  		analysis13 = "Free flow of traffic";
 	  	}else if(quimpoo > 4 || quimpoo <=8){
 	  		analysis13 = "Sluggish flow of traffic";
-	  	}else if(quimpoo > 8 || quimpoo <=9){
+	  	}else if(quimpoo > 8 || quimpoo >=9){
 	  		analysis13 = "Slow flow of traffic";
 	  	}else if(quimpoo == 10){
 	  		analysis13 = "Traffic stopped or Road closed"
@@ -1983,7 +2025,7 @@ app.get('/quezonblvd-',function(_req, _res){
 	  		analysis16 = "Free flow of traffic";
 	  	}else if(quezonb > 4 || quezonb <= 8){
 	  		analysis16 = "Sluggish flow of traffic";
-	  	}else if(quezonb > 8 || quezonb <=9){
+	  	}else if(quezonb > 8 || quezonb >=9){
 	  		analysis16 = "Slow flow of traffic";
 	  	}else if(quezonb == 10){
 	  		analysis16 = "Traffic stopped or Road closed"
@@ -2038,7 +2080,7 @@ app.get('/quezonblvd',function(_req, _res){
 	  		analysis17 = "Free flow of traffic";
 	  	}else if(quezonnb > 4 || quezonnb <=8){
 	  		analysis17 = "Sluggish flow of traffic";
-	  	}else if(quezonnb > 8 || quezonnb <=9){
+	  	}else if(quezonnb > 8 || quezonnb >=9){
 	  		analysis17 = "Slow flow of traffic";
 	  	}else if(quezonnb == 10){
 	  		analysis17 = "Traffic stopped or Road closed"
@@ -2084,7 +2126,7 @@ app.get('/cabaguioave-',function(_req, _res){
 	  		analysis18 = "Free flow of traffic";
 	  	}else if(cabaguioa > 4 || cabaguioa <=8){
 	  		analysis18 = "Sluggish flow of traffic";
-	  	}else if(cabaguioa > 8 || cabaguioa <=9){
+	  	}else if(cabaguioa > 8 || cabaguioa >=9){
 	  		analysis18 = "Slow flow of traffic";
 	  	}else if(cabaguioa == 10){
 	  		analysis18 = "Traffic stopped or Road closed"
@@ -2141,7 +2183,7 @@ app.get('/mlquezonblvd-',function(_req, _res){
 	  		analysis19 = "Free flow of traffic";
 	  	}else if(mlquezonb > 4 || mlquezonb <=8){
 	  		analysis19 = "Sluggish flow of traffic";
-	  	}else if(mlquezonb > 8 || mlquezonb <=9){
+	  	}else if(mlquezonb > 8 || mlquezonb >=9){
 	  		analysis19 = "Slow flow of traffic";
 	  	}else if(mlquezonb == 10){
 	  		analysis19 = "Traffic stopped or Road closed"
@@ -2200,7 +2242,7 @@ app.get('/mlquezonblvd',function(_req, _res){
 	  		analysis20 = "Free flow of traffic";
 	  	}else if(mlquezonnb > 4 || mlquezonnb <=8){
 	  		analysis20 = "Sluggish flow of traffic";
-	  	}else if(mlquezonnb > 8 || mlquezonnb <=9){
+	  	}else if(mlquezonnb > 8 || mlquezonnb >=9){
 	  		analysis20 = "Slow flow of traffic";
 	  	}else if(mlquezonnb == 10){
 	  		analysis20 = "Traffic stopped or Road closed"
@@ -2295,7 +2337,7 @@ app.get('/dacudaoave-',function(_req, _res){
 	  		analysis22 = "Free flow of traffic";
 	  	}else if(dacudaoa > 4 || dacudaoa <=8){
 	  		analysis22 = "Sluggish flow of traffic";
-	  	}else if(dacudaoa > 8 || dacudaoa <=9){
+	  	}else if(dacudaoa > 8 || dacudaoa >=9){
 	  		analysis22 = "Slow flow of traffic";
 	  	}else if(dacudaoa == 10){
 	  		analysis22 = "Traffic stopped or Road closed"
@@ -2342,7 +2384,7 @@ app.get('/dacudaoave',function(_req, _res){
 	  		analysis23 = "Free flow of traffic";
 	  	}else if(dacudaooa > 4 || dacudaooa <=8){
 	  		analysis23 = "Sluggish flow of traffic";
-	  	}else if(dacudaooa > 8 || dacudaooa <=9){
+	  	}else if(dacudaooa > 8 || dacudaooa >=9){
 	  		analysis23 = "Slow flow of traffic";
 	  	}else if(dacudaooa == 10){
 	  		analysis23 = "Traffic stopped or Road closed"
@@ -2386,7 +2428,7 @@ app.get('/pichonst',function(_req, _res){
 	  		analysis24 = "Free flow of traffic";
 	  	}else if(pichons > 4 || pichons <=8){
 	  		analysis24 = "Sluggish flow of traffic";
-	  	}else if(pichons > 8 || pichons <=9){
+	  	}else if(pichons > 8 || pichons >=9){
 	  		analysis24 = "Slow flow of traffic";
 	  	}else if(pichons == 10){
 	  		analysis24 = "Traffic stopped or Road closed"
@@ -2440,7 +2482,7 @@ app.get('/sanpedro',function(_req, _res){
 	  		analysis26 = "Free flow of traffic";
 	  	}else if(sanpedroo > 4 || sanpedroo <=8){
 	  		analysis26 = "Sluggish flow of traffic";
-	  	}else if(sanpedroo > 8 || sanpedroo <=9){
+	  	}else if(sanpedroo > 8 || sanpedroo >=9){
 	  		analysis26 = "Slow flow of traffic";
 	  	}else if(sanpedroo == 10){
 	  		analysis26 = "Traffic stopped or Road closed"
@@ -2488,7 +2530,7 @@ app.get('/ftorresst-',function(_req, _res){
 	  		analysis28 = "Free flow of traffic";
 	  	}else if(torress > 4 || torress <=8){
 	  		analysis28 = "Sluggish flow of traffic";
-	  	}else if(torress > 8 || torress <=9){
+	  	}else if(torress > 8 || torress >=9){
 	  		analysis28 = "Slow flow of traffic";
 	  	}else if(torress == 10){
 	  		analysis28 = "Traffic stopped or Road closed"
@@ -2538,7 +2580,7 @@ app.get('/abonifaciost-',function(_req, _res){
 	  		analysis29 = "Free flow of traffic";
 	  	}else if(bonifac > 4 || bonifac <=8){
 	  		analysis29 = "Sluggish flow of traffic";
-	  	}else if(bonifac > 8 || bonifac <=9){
+	  	}else if(bonifac > 8 || bonifac >=9){
 	  		analysis29 = "Slow flow of traffic";
 	  	}else if(bonifac == 10){
 	  		analysis29 = "Traffic stopped or Road closed"
@@ -2584,7 +2626,7 @@ app.get('/ftorresst',function(_req, _res){
 	  		analysis30 = "Free flow of traffic";
 	  	}else if(torresss > 4 || torresss <=8){
 	  		analysis30 = "Sluggish flow of traffic";
-	  	}else if(torresss > 8 || torresss <=9){
+	  	}else if(torresss > 8 || torresss >=9){
 	  		analysis30 = "Slow flow of traffic";
 	  	}else if(torresss == 10){
 	  		analysis30 = "Traffic stopped or Road closed"
@@ -2627,7 +2669,7 @@ app.get('/abonifaciost',function(_req, _res){
 	  		analysis31 = "Free flow of traffic";
 	  	}else if(bonifacioo > 4 || bonifacioo <=8){
 	  		analysis31 = "Sluggish flow of traffic";
-	  	}else if(bonifacioo > 8 || bonifacioo <=9){
+	  	}else if(bonifacioo > 8 || bonifacioo >=9){
 	  		analysis31 = "Slow flow of traffic";
 	  	}else if(bonifacioo == 10){
 	  		analysis31 = "Traffic stopped or Road closed"
@@ -2678,7 +2720,7 @@ app.get('/pichonst-',function(_req, _res){
 	  		analysis25 = "Free flow of traffic";
 	  	}else if(pichonns > 4 || pichonns <=8){
 	  		analysis25 = "Sluggish flow of traffic";
-	  	}else if(pichonns > 8 || pichonns <=9){
+	  	}else if(pichonns > 8 || pichonns >=9){
 	  		analysis25 = "Slow flow of traffic";
 	  	}else if(pichonns == 10){
 	  		analysis25 = "Traffic stopped or Road closed"
@@ -2727,7 +2769,7 @@ app.get('/mroxas',function(_req, _res){
 	  		analysis32 = "Free flow of traffic";
 	  	}else if(roxa > 4 || roxa <=8){
 	  		analysis32 = "Sluggish flow of traffic";
-	  	}else if(roxa > 8 || roxa <=9){
+	  	}else if(roxa > 8 || roxa >=9){
 	  		analysis32 = "Slow flow of traffic";
 	  	}else if(roxa == 10){
 	  		analysis32 = "Traffic stopped or Road closed"
@@ -2770,7 +2812,7 @@ app.get('/mroxas-',function(_req, _res){
 	  		analysis33 = "Free flow of traffic";
 	  	}else if(roxxas > 4 || roxxas <=8){
 	  		analysis33 = "Sluggish flow of traffic";
-	  	}else if(roxxas > 8 || roxxas <=9){
+	  	}else if(roxxas > 8 || roxxas >=9){
 	  		analysis33 = "Slow flow of traffic";
 	  	}else if(roxxas == 10){
 	  		analysis33 = "Traffic stopped or Road closed"
@@ -2811,7 +2853,7 @@ app.get('/jplaureloutgmall-',function(_req, _res){
 	  		analysis34 = "Free flow of traffic";
 	  	}else if(jplaur > 4 || jplaur <=8){
 	  		analysis34 = "Sluggish flow of traffic";
-	  	}else if(jplaur > 8 || jplaur <=9){
+	  	}else if(jplaur > 8 || jplaur >=9){
 	  		analysis34 = "Slow flow of traffic";
 	  	}else if(jplaur == 10){
 	  		analysis34 = "Traffic stopped or Road closed"
@@ -2851,7 +2893,7 @@ app.get('/jplaureloutgmall',function(_req, _res){
 	  		analysis35 = "Free flow of traffic";
 	  	}else if(jplaurell > 4 || jplaurell <=8){
 	  		analysis35 = "Sluggish flow of traffic";
-	  	}else if(jplaurell > 8 || jplaurell <=9){
+	  	}else if(jplaurell > 8 || jplaurell >=9){
 	  		analysis35 = "Slow flow of traffic";
 	  	}else if(jplaurell == 10){
 	  		analysis35 = "Traffic stopped or Road closed"
@@ -2901,7 +2943,7 @@ app.get('/cmrecto',function(_req, _res){
 	  		analysis36 = "Free flow of traffic";
 	  	}else if(cmrect > 4 || cmrect <=8){
 	  		analysis36 = "Sluggish flow of traffic";
-	  	}else if(cmrect > 8 || cmrect <=9){
+	  	}else if(cmrect > 8 || cmrect >=9){
 	  		analysis36 = "Slow flow of traffic";
 	  	}else if(cmrect == 10){
 	  		analysis36 = "Traffic stopped or Road closed"
@@ -2944,7 +2986,7 @@ app.get('/cbangoy-',function(_req, _res){
 	  		analysis37 = "Free flow of traffic";
 	  	}else if(cbango > 4 || cbango <=8){
 	  		analysis37 = "Sluggish flow of traffic";
-	  	}else if(cbango > 8 || cbango <=9){
+	  	}else if(cbango > 8 || cbango >=9){
 	  		analysis37 = "Slow flow of traffic";
 	  	}else if(cbango == 10){
 	  		analysis37 = "Traffic stopped or Road closed"
@@ -2982,7 +3024,7 @@ app.get('/cbangoy',function(_req, _res){
 	  		analysis38 = "Free flow of traffic";
 	  	}else if(cbanngoy > 4 || cbanngoy <=8){
 	  		analysis38 = "Sluggish flow of traffic";
-	  	}else if(cbanngoy > 8 || cbanngoy <=9){
+	  	}else if(cbanngoy > 8 || cbanngoy >=9){
 	  		analysis38 = "Slow flow of traffic";
 	  	}else if(cbanngoy == 10){
 	  		analysis38 = "Traffic stopped or Road closed"
@@ -3026,7 +3068,7 @@ app.get('/rmagsaysay-',function(_req, _res){
 	  		analysis39 = "Free flow of traffic";
 	  	}else if(rmagsay > 4 || rmagsay <=8){
 	  		analysis39 = "Sluggish flow of traffic";
-	  	}else if(rmagsay > 8 || rmagsay <=9){
+	  	}else if(rmagsay > 8 || rmagsay >=9){
 	  		analysis39 = "Slow flow of traffic";
 	  	}else if(rmagsay == 10){
 	  		analysis39 = "Traffic stopped or Road closed"
@@ -3070,7 +3112,7 @@ app.get('/rmagsaysay',function(_req, _res){
 	  		analysis40 = "Free flow of traffic";
 	  	}else if(rmagsaysa > 4 || rmagsaysa <=8){
 	  		analysis40 = "Sluggish flow of traffic";
-	  	}else if(rmagsaysa > 8 || rmagsaysa <=9){
+	  	}else if(rmagsaysa > 8 || rmagsaysa >=9){
 	  		analysis40 = "Slow flow of traffic";
 	  	}else if(rmagsaysa == 10){
 	  		analysis40 = "Traffic stopped or Road closed"
@@ -3114,7 +3156,7 @@ app.get('/staanaave-',function(_req, _res){
 	  		analysis41 = "Free flow of traffic";
 	  	}else if(staana > 4 || staana <=8){
 	  		analysis41 = "Sluggish flow of traffic";
-	  	}else if(staana > 8 || staana <=9){
+	  	}else if(staana > 8 || staana >=9){
 	  		analysis41 = "Slow flow of traffic";
 	  	}else if(staana == 10){
 	  		analysis41 = "Traffic stopped or Road closed"
@@ -3157,7 +3199,7 @@ app.get('/staanaave',function(_req, _res){
 	  		analysis42 = "Free flow of traffic";
 	  	}else if(staanaav > 4 || staanaav <=8){
 	  		analysis42 = "Sluggish flow of traffic";
-	  	}else if(staanaav > 8 || staanaav <=9){
+	  	}else if(staanaav > 8 || staanaav >=9){
 	  		analysis42 = "Slow flow of traffic";
 	  	}else if(staanaav == 10){
 	  		analysis42 = "Traffic stopped or Road closed"
@@ -3198,7 +3240,7 @@ app.get('/lapulapu-',function(_req, _res){
 	  		analysis43 = "Free flow of traffic";
 	  	}else if(lapu > 4 || lapu <=8){
 	  		analysis43 = "Sluggish flow of traffic";
-	  	}else if(lapu > 8 || lapu <=9){
+	  	}else if(lapu > 8 || lapu >=9){
 	  		analysis43 = "Slow flow of traffic";
 	  	}else if(lapu == 10){
 	  		analysis43 = "Traffic stopped or Road closed"
@@ -3243,7 +3285,7 @@ app.get('/agdaoflyover-',function(_req, _res){
 	  		analysis44 = "Free flow of traffic";
 	  	}else if(agda > 4 || agda <=8){
 	  		analysis44 = "Sluggish flow of traffic";
-	  	}else if(agda > 8 || agda <=9){
+	  	}else if(agda > 8 || agda >=9){
 	  		analysis44 = "Slow flow of traffic";
 	  	}else if(agda == 10){
 	  		analysis44 = "Traffic stopped or Road closed"
@@ -3284,7 +3326,7 @@ app.get('/lapulapu',function(_req, _res){
 	  		analysis45 = "Free flow of traffic";
 	  	}else if(lapuulap > 4 || lapuulap <=8){
 	  		analysis45 = "Sluggish flow of traffic";
-	  	}else if(lapuulap > 8 || lapuulap <=9){
+	  	}else if(lapuulap > 8 || lapuulap >=9){
 	  		analysis45 = "Slow flow of traffic";
 	  	}else if(lapuulap == 10){
 	  		analysis45 = "Traffic stopped or Road closed"
@@ -3329,7 +3371,7 @@ app.get('/agdaoflyover',function(_req, _res){
 	  		analysis46 = "Free flow of traffic";
 	  	}else if(agdaoofly > 4 || agdaoofly <=8){
 	  		analysis46 = "Sluggish flow of traffic";
-	  	}else if(agdaoofly > 8 || agdaoofly <=9){
+	  	}else if(agdaoofly > 8 || agdaoofly >=9){
 	  		analysis46 = "Slow flow of traffic";
 	  	}else if(agdaoofly == 10){
 	  		analysis46 = "Traffic stopped or Road closed"
@@ -3373,7 +3415,7 @@ app.get('/rcastillo-',function(_req, _res){
 	  		analysis47 = "Free flow of traffic";
 	  	}else if(rcast > 4 || rcast <=8){
 	  		analysis47 = "Sluggish flow of traffic";
-	  	}else if(rcast > 8 || rcast <=9){
+	  	}else if(rcast > 8 || rcast >=9){
 	  		analysis47 = "Slow flow of traffic";
 	  	}else if(rcast == 10){
 	  		analysis47 = "Traffic stopped or Road closed"
@@ -3417,7 +3459,7 @@ app.get('/rcastillo',function(_req, _res){
 	  		analysis48 = "Free flow of traffic";
 	  	}else if(rcastill > 4 || rcastill <=8){
 	  		analysis48 = "Sluggish flow of traffic";
-	  	}else if(rcastill > 8 || rcastill <=9){
+	  	}else if(rcastill > 8 || rcastill >=9){
 	  		analysis48 = "Slow flow of traffic";
 	  	}else if(rcastill == 10){
 	  		analysis48 = "Traffic stopped or Road closed"
@@ -3459,7 +3501,7 @@ app.get('/cpgarcia-',function(_req, _res){
 	  		analysis49 = "Free flow of traffic";
 	  	}else if(cpgarc > 4 || cpgarc <=8){
 	  		analysis49 = "Sluggish flow of traffic";
-	  	}else if(cpgarc > 8 || cpgarc <=9){
+	  	}else if(cpgarc > 8 || cpgarc >=9){
 	  		analysis49 = "Slow flow of traffic";
 	  	}else if(cpgarc == 10){
 	  		analysis49 = "Traffic stopped or Road closed"
@@ -3516,7 +3558,7 @@ app.get('/diversionroad-',function(_req, _res){
 	  		analysis50 = "Free flow of traffic";
 	  	}else if(divers > 4 || divers <=8){
 	  		analysis50 = "Sluggish flow of traffic";
-	  	}else if(divers > 8 || divers <=9){
+	  	}else if(divers > 8 || divers >=9){
 	  		analysis50 = "Slow flow of traffic";
 	  	}else if(divers == 10){
 	  		analysis50 = "Traffic stopped or Road closed"
@@ -3572,7 +3614,7 @@ app.get('/diversionroad',function(_req, _res){
 	  		analysis51 = "Free flow of traffic";
 	  	}else if(diversio > 4 || diversio <=8){
 	  		analysis51 = "Sluggish flow of traffic";
-	  	}else if(diversio > 8 || diversio <=9){
+	  	}else if(diversio > 8 || diversio >=9){
 	  		analysis51 = "Slow flow of traffic";
 	  	}else if(diversio == 10){
 	  		analysis51 = "Traffic stopped or Road closed"
@@ -3612,7 +3654,7 @@ app.get('/cpgarcia',function(_req, _res){
 	  		analysis52 = "Free flow of traffic";
 	  	}else if(cpgarcci > 4 || cpgarcci <=8){
 	  		analysis52 = "Sluggish flow of traffic";
-	  	}else if(cpgarcci > 8 || cpgarcci <=9){
+	  	}else if(cpgarcci > 8 || cpgarcci >=9){
 	  		analysis52 = "Slow flow of traffic";
 	  	}else if(cpgarcci == 10){
 	  		analysis52 = "Traffic stopped or Road closed"
@@ -3652,7 +3694,7 @@ app.get('/mquinonesrd',function(_req, _res){
 	  		analysis53 = "Free flow of traffic";
 	  	}else if(mquino > 4 || mquino <=8){
 	  		analysis53 = "Sluggish flow of traffic";
-	  	}else if(mquino > 8 || mquino <=9){
+	  	}else if(mquino > 8 || mquino >=9){
 	  		analysis53 = "Slow flow of traffic";
 	  	}else if(mquino == 10){
 	  		analysis53 = "Traffic stopped or Road closed"
@@ -3692,7 +3734,7 @@ app.get('/mquinonesrd-',function(_req, _res){
 	  		analysis54 = "Free flow of traffic";
 	  	}else if(mquinno > 4 || mquinno <=8){
 	  		analysis54 = "Sluggish flow of traffic";
-	  	}else if(mquinno > 8 || mquinno <=9){
+	  	}else if(mquinno > 8 || mquinno >=9){
 	  		analysis54 = "Slow flow of traffic";
 	  	}else if(mquinno == 10){
 	  		analysis54 = "Traffic stopped or Road closed"
@@ -3733,7 +3775,7 @@ app.get('/jrodriguezmaa-',function(_req, _res){
 	  		analysis55 = "Free flow of traffic";
 	  	}else if(jrodri > 4 || jrodri <=8){
 	  		analysis55 = "Sluggish flow of traffic";
-	  	}else if(jrodri > 8 || jrodri <=9){
+	  	}else if(jrodri > 8 || jrodri >=9){
 	  		analysis55 = "Slow flow of traffic";
 	  	}else if(jrodri == 10){
 	  		analysis55 = "Traffic stopped or Road closed"
@@ -3773,7 +3815,7 @@ app.get('/jrodriguezmaa',function(_req, _res){
 	  		analysis56 = "Free flow of traffic";
 	  	}else if(jroddri > 4 || jroddri <=8){
 	  		analysis56 = "Sluggish flow of traffic";
-	  	}else if(jroddri > 8 || jroddri <=9){
+	  	}else if(jroddri > 8 || jroddri >=9){
 	  		analysis56 = "Slow flow of traffic";
 	  	}else if(jroddri == 10){
 	  		analysis56 = "Traffic stopped or Road closed"
@@ -3817,7 +3859,7 @@ app.get('/maaroad-',function(_req, _res){
 	  		analysis57 = "Free flow of traffic";
 	  	}else if(maar > 4 || maar <=8){
 	  		analysis57 = "Sluggish flow of traffic";
-	  	}else if(maar > 8 || maar <=9){
+	  	}else if(maar > 8 || maar >=9){
 	  		analysis57 = "Slow flow of traffic";
 	  	}else if(maar == 10){
 	  		analysis57 = "Traffic stopped or Road closed"
@@ -3860,7 +3902,7 @@ app.get('/maaroad',function(_req, _res){
 	  		analysis58 = "Free flow of traffic";
 	  	}else if(maaar > 4 || maaar <=8){
 	  		analysis58 = "Sluggish flow of traffic";
-	  	}else if(maaar > 8 || maaar <=9){
+	  	}else if(maaar > 8 || maaar >=9){
 	  		analysis58 = "Slow flow of traffic";
 	  	}else if(maaar == 10){
 	  		analysis58 = "Traffic stopped or Road closed"
@@ -3901,7 +3943,7 @@ app.get('/shrinehillsrd-',function(_req, _res){
 	  		analysis59 = "Free flow of traffic";
 	  	}else if(shrin > 4 || shrin <=8){
 	  		analysis59 = "Sluggish flow of traffic";
-	  	}else if(shrin > 8 || shrin <=9){
+	  	}else if(shrin > 8 || shrin >=9){
 	  		analysis59 = "Slow flow of traffic";
 	  	}else if(shrin == 10){
 	  		analysis59 = "Traffic stopped or Road closed"
@@ -3941,7 +3983,7 @@ app.get('/shrinehillsrd',function(_req, _res){
 	  		analysis60 = "Free flow of traffic";
 	  	}else if(shriin > 4 || shriin <=8){
 	  		analysis60 = "Sluggish flow of traffic";
-	  	}else if(shriin > 8 || shriin <=9){
+	  	}else if(shriin > 8 || shriin >=9){
 	  		analysis60 = "Slow flow of traffic";
 	  	}else if(shriin == 10){
 	  		analysis60 = "Traffic stopped or Road closed"
@@ -3985,7 +4027,7 @@ app.get('/angliongto-',function(_req, _res){
 	  		analysis61 = "Free flow of traffic";
 	  	}else if(angli > 4 || angli <=8){
 	  		analysis61 = "Sluggish flow of traffic";
-	  	}else if(angli > 8 || angli <=9){
+	  	}else if(angli > 8 || angli >=9){
 	  		analysis61 = "Slow flow of traffic";
 	  	}else if(angli == 10){
 	  		analysis61 = "Traffic stopped or Road closed"
@@ -4026,7 +4068,7 @@ app.get('/buhangincabantianroad-',function(_req, _res){
 	  		analysis62 = "Free flow of traffic";
 	  	}else if(buhan > 4 || buhan <=8){
 	  		analysis62 = "Sluggish flow of traffic";
-	  	}else if(buhan > 8 || buhan <=9){
+	  	}else if(buhan > 8 || buhan >=9){
 	  		analysis62 = "Slow flow of traffic";
 	  	}else if(buhan == 10){
 	  		analysis62 = "Traffic stopped or Road closed"
@@ -4067,7 +4109,7 @@ app.get('/saintanthonysubd-',function(_req, _res){
 	  		analysis63 = "Free flow of traffic";
 	  	}else if(saint > 4 || saint <=8){
 	  		analysis63 = "Sluggish flow of traffic";
-	  	}else if(saint > 8 || saint <=9){
+	  	}else if(saint > 8 || saint >=9){
 	  		analysis63 = "Slow flow of traffic";
 	  	}else if(saint == 10){
 	  		analysis63 = "Traffic stopped or Road closed"
@@ -4111,7 +4153,7 @@ app.get('/angliongto',function(_req, _res){
 	  		analysis64 = "Free flow of traffic";
 	  	}else if(anglli > 4 || anglli <=8){
 	  		analysis64 = "Sluggish flow of traffic";
-	  	}else if(anglli > 8 || anglli <=9){
+	  	}else if(anglli > 8 || anglli >=9){
 	  		analysis64 = "Slow flow of traffic";
 	  	}else if(anglli == 10){
 	  		analysis64 = "Traffic stopped or Road closed"
@@ -4152,7 +4194,7 @@ app.get('/buhangincabantianroad',function(_req, _res){
 	  		analysis65 = "Free flow of traffic";
 	  	}else if(buhanngi > 4 || buhanngi <=8){
 	  		analysis65 = "Sluggish flow of traffic";
-	  	}else if(buhanngi > 8 || buhanngi <=9){
+	  	}else if(buhanngi > 8 || buhanngi >=9){
 	  		analysis65 = "Slow flow of traffic";
 	  	}else if(buhanngi == 10){
 	  		analysis65 = "Traffic stopped or Road closed"
@@ -4193,7 +4235,7 @@ app.get('/saintanthonysubd',function(_req, _res){
 	  		analysis66 = "Free flow of traffic";
 	  	}else if(saiint > 4 || saiint <=8){
 	  		analysis66 = "Sluggish flow of traffic";
-	  	}else if(saiint > 8 || saiint <=9){
+	  	}else if(saiint > 8 || saiint >=9){
 	  		analysis66 = "Slow flow of traffic";
 	  	}else if(saiint == 10){
 	  		analysis66 = "Traffic stopped or Road closed"
@@ -4234,7 +4276,7 @@ app.get('/cabantianroad-',function(_req, _res){
 	  		analysis67 = "Free flow of traffic";
 	  	}else if(caban > 4 || caban <=8){
 	  		analysis67 = "Sluggish flow of traffic";
-	  	}else if(caban > 8 || caban <=9){
+	  	}else if(caban > 8 || caban >=9){
 	  		analysis67 = "Slow flow of traffic";
 	  	}else if(caban == 10){
 	  		analysis67 = "Traffic stopped or Road closed"
@@ -4275,7 +4317,7 @@ app.get('/cabantianroad',function(_req, _res){
 	  		analysis68 = "Free flow of traffic";
 	  	}else if(cabaan > 4 || cabaan <=8){
 	  		analysis68 = "Sluggish flow of traffic";
-	  	}else if(cabaan > 8 || cabaan <=9){
+	  	}else if(cabaan > 8 || cabaan >=9){
 	  		analysis68 = "Slow flow of traffic";
 	  	}else if(cabaan == 10){
 	  		analysis68 = "Traffic stopped or Road closed"
@@ -4315,7 +4357,7 @@ app.get('/davaomaharlika-',function(_req, _res){
 	  		analysis69 = "Free flow of traffic";
 	  	}else if(mahark > 4 || mahark <=8){
 	  		analysis69 = "Sluggish flow of traffic";
-	  	}else if(mahark > 8 || mahark <=9){
+	  	}else if(mahark > 8 || mahark >=9){
 	  		analysis69 = "Slow flow of traffic";
 	  	}else if(mahark == 10){
 	  		analysis69 = "Traffic stopped or Road closed"
@@ -4355,7 +4397,7 @@ app.get('/davaomaharlika',function(_req, _res){
 	  		analysis70 = "Free flow of traffic";
 	  	}else if(maharrk > 4 || maharrk <=8){
 	  		analysis70 = "Sluggish flow of traffic";
-	  	}else if(maharrk > 8 || maharrk <=9){
+	  	}else if(maharrk > 8 || maharrk >=9){
 	  		analysis70 = "Slow flow of traffic";
 	  	}else if(maharrk == 10){
 	  		analysis70 = "Traffic stopped or Road closed"
@@ -4396,7 +4438,7 @@ app.get('/davaobukidnonroad-',function(_req, _res){
 	  		analysis71 = "Free flow of traffic";
 	  	}else if(davva > 4 || davva <=8){
 	  		analysis71 = "Sluggish flow of traffic";
-	  	}else if(davva > 8 || davva <=9){
+	  	}else if(davva > 8 || davva >=9){
 	  		analysis71 = "Slow flow of traffic";
 	  	}else if(davva == 10){
 	  		analysis71 = "Traffic stopped or Road closed"
@@ -4436,7 +4478,7 @@ app.get('/davaobukidnonroad',function(_req, _res){
 	  		analysis72 = "Free flow of traffic";
 	  	}else if(davvva > 4 || davvva <=8){
 	  		analysis72 = "Sluggish flow of traffic";
-	  	}else if(davvva > 8 || davvva <=9){
+	  	}else if(davvva > 8 || davvva >=9){
 	  		analysis72 = "Slow flow of traffic";
 	  	}else if(davvva == 10){
 	  		analysis72 = "Traffic stopped or Road closed"
@@ -4483,7 +4525,7 @@ app.get('/daangmaharlika',function(_req, _res){
 	  		analysis76 = "Free flow of traffic";
 	  	}else if(davvva > 4 || davvva <=8){
 	  		analysis76 = "Sluggish flow of traffic";
-	  	}else if(davvva > 8 || davvva <=9){
+	  	}else if(davvva > 8 || davvva >=9){
 	  		analysis76 = "Slow flow of traffic";
 	  	}else if(davvva == 10){
 	  		analysis76 = "Traffic stopped or Road closed"
@@ -4529,7 +4571,7 @@ app.get('/daangmaharlika-',function(_req, _res){
 	  		analysis77 = "Free flow of traffic";
 	  	}else if(davvva > 4 || davvva <=8){
 	  		analysis77 = "Sluggish flow of traffic";
-	  	}else if(davvva > 8 || davvva <=9){
+	  	}else if(davvva > 8 || davvva >=9){
 	  		analysis77 = "Slow flow of traffic";
 	  	}else if(davvva == 10){
 	  		analysis77 = "Traffic stopped or Road closed"
@@ -6693,6 +6735,48 @@ app.post('/webhook/', function(req, res) {
 
 				
 			}
+
+			if(text=='ecowestdr intersections'){
+				
+				let chatbotResponse1 = "";
+				let chatbotResponse2 = "";
+				let chatbotResponse3 = "";
+				
+				
+				//source : https://www.npmjs.com/package/axios
+				   axios.get(' https://cryptic-eyrie-21978.herokuapp.com/ecowestdr')
+				  .then(function (response) {
+				
+
+				    chatbotResponse1 = response.data.analysis11;
+				    sendText(sender, chatbotResponse1)
+
+				    chatbotResponse2 = response.data.analysis12;
+				    sendText(sender, chatbotResponse2)
+
+				    chatbotResponse3 = response.data.analysis13;
+				    sendText(sender, chatbotResponse3)
+
+				   
+
+				   
+				  })
+				  .catch(function (error) {
+				    //console.log(error);
+				     chatbotResponse1 = "not ok";
+				     chatbotResponse2 = "not ok";
+				     chatbotResponse3 = "not ok";
+
+				    sendText(sender, chatbotResponse1)
+				    sendText(sender, chatbotResponse2)
+				     sendText(sender, chatbotResponse3)
+				    
+				  });
+
+				
+				
+			}
+
 			if(text=='tulip drive')
 			// if(text.includes("tulip drive-"))
 			{
