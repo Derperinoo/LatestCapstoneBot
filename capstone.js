@@ -1864,26 +1864,26 @@ app.get('/sandawa-',function(_req, _res){
 
 	  	let analysis13 = "";
 	  	if(jfc1 == 0 || jfc1 <= 4){
-	  		analysis13 = "Mac Arthur Hwy: Free flow of traffic";
+	  		analysis13 = "Quezon Blvd: Free flow of traffic";
 	  	}else if(jfc1 > 4 || jfc1 <= 8){
-	  		analysis13 = "Mac Arthur Hwy: Sluggish flow of traffic";
+	  		analysis13 = "Quezon Blvd: Sluggish flow of traffic";
 	  	}else if(jfc1 > 8 || jfc1 >= 9){
-	  		analysis13 = "Mac Arthur Hwy: Slow flow of traffic";
+	  		analysis13 = "Quezon Blvd: Slow flow of traffic";
 	  	}else if(jfc1 == 10){
-	  		analysis13 = "Mac Arthur Hwy: Traffic stopped or Road closed"
+	  		analysis13 = "Quezon Blvd: Traffic stopped or Road closed"
 	  	}else{
 	  		analysis13 = "Cannot compute"
 	  	}
 
 	  	let analysis14 = "";
 	  	if(jfc2 == 0 || jfc2 <= 4){
-	  		analysis14 = "Quezon Blvd: Free flow of traffic";
+	  		analysis14 = "Mac Arthur Hwy: Free flow of traffic";
 	  	}else if(jfc2 > 4 || jfc2 <= 8){
-	  		analysis14 = "Quezon Blvd: Sluggish flow of traffic";
+	  		analysis14 = "Mac Arthur Hwy: Sluggish flow of traffic";
 	  	}else if(jfc2 > 8 || jfc2 >= 9){
-	  		analysis14 = "Quezon Blvd: Slow flow of traffic";
+	  		analysis14 = "Mac Arthur Hwy: Slow flow of traffic";
 	  	}else if(jfc2 == 10){
-	  		analysis14 = "Quezon Blvd: Traffic stopped or Road closed"
+	  		analysis14 = "Mac Arthur Hwy: Traffic stopped or Road closed"
 	  	}else{
 	  		analysis14 = "Cannot compute"
 	  	}
