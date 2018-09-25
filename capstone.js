@@ -449,77 +449,77 @@ app.get('/jplaurel-',function(_req, _res){
 	  		analysis1 = "Cannot compute"
 	  	}
 
-	  	let analysisjp1 = "";
+	  	let analysisjp01 = "";
 	  	if(jf01 <= 0 || jf01 <= 4){
-	  	analysisjp1 = "R. Castillo: Free flow of traffic";
+	  	analysisjp01 = "R. Castillo: Free flow of traffic";
 	  	}else if(jf01 <= 4 || jf01 <= 8){
-	  		analysisjp1 = "R. Castillo: Sluggish flow of traffic";
+	  		analysisjp01 = "R. Castillo: Sluggish flow of traffic";
 	  	}else if(jf01 <= 8 || jf01 <= 9){
-	  		analysisjp1 = "R. Castillo: Slow flow of traffic";
+	  		analysisjp01 = "R. Castillo: Slow flow of traffic";
 	  	}else if(jf01 == 10){
-	  		analysisjp1 = "R. Castillo: Traffic stopped or Road closed"
+	  		analysisjp01 = "R. Castillo: Traffic stopped or Road closed"
 	  	}else{
-	  		analysisjp1 = "Cannot compute"
+	  		analysisjp01 = "Cannot compute"
 	  	}
 
-	  	let analysisjp2 = "";
+	  	let analysisjp02 = "";
 	  	if(jf02 <= 0 || jf02 <= 4){
 	  	analysisjp2 = "Angliongto: Free flow of traffic";
 	  	}else if(jf02 <= 4 || jf02 <= 8){
-	  		analysisjp2 = "Angliongto: Sluggish flow of traffic";
+	  		analysisjp02 = "Angliongto: Sluggish flow of traffic";
 	  	}else if(jf02 <= 8 || jf02 <= 9){
-	  		analysisjp2 = "Angliongto: Slow flow of traffic";
+	  		analysisjp02 = "Angliongto: Slow flow of traffic";
 	  	}else if(jf02 == 10){
-	  		analysisjp2 = "Angliongto: Traffic stopped or Road closed"
+	  		analysisjp02 = "Angliongto: Traffic stopped or Road closed"
 	  	}else{
-	  		analysisjp2 = "Cannot compute"
+	  		analysisjp02 = "Cannot compute"
 	  	}
 
-	  	let analysisjp3 = "";
+	  	let analysisjp03 = "";
 	  	if(jf03 <= 0 || jf03 <= 4){
-	  	analysisjp3 = "Cabaguio: Free flow of traffic";
+	  	analysisjp03 = "Cabaguio: Free flow of traffic";
 	  	}else if(jf03 <= 4 || jf03 <= 8){
-	  		analysisjp3 = "Cabaguio: Sluggish flow of traffic";
+	  		analysisjp03 = "Cabaguio: Sluggish flow of traffic";
 	  	}else if(jf03 <= 8 || jf03 <= 9){
-	  		analysisjp3 = "Cabaguio: Slow flow of traffic";
+	  		analysisjp03 = "Cabaguio: Slow flow of traffic";
 	  	}else if(jf03 == 10){
-	  		analysisjp3 = "Cabaguio: Traffic stopped or Road closed"
+	  		analysisjp03 = "Cabaguio: Traffic stopped or Road closed"
 	  	}else{
-	  		analysisjp3 = "Cannot compute"
+	  		analysisjp03 = "Cannot compute"
 	  	}
 
-	  	let analysisjp4 = "";
+	  	let analysisjp04 = "";
 	  	if(jf04 <= 0 || jf04 <= 4){
-	  	analysisjp4 = "Dacudao Ave/Buhangin: Free flow of traffic";
+	  	analysisjp04 = "Dacudao Ave/Buhangin: Free flow of traffic";
 	  	}else if(jf04 <= 4 || jf04 <= 8){
-	  		analysisjp4 = "Dacudao Ave/Buhangin: Sluggish flow of traffic";
+	  		analysisjp04 = "Dacudao Ave/Buhangin: Sluggish flow of traffic";
 	  	}else if(jf04 <= 8 || jf04 <= 9){
-	  		analysisjp4 = "Dacudao Ave/Buhangin: Slow flow of traffic";
+	  		analysisjp04 = "Dacudao Ave/Buhangin: Slow flow of traffic";
 	  	}else if(jf04 == 10){
-	  		analysisjp4 = "Dacudao Ave/Buhangin: Traffic stopped or Road closed"
+	  		analysisjp04 = "Dacudao Ave/Buhangin: Traffic stopped or Road closed"
 	  	}else{
-	  		analysisjp4 = "Cannot compute"
+	  		analysisjp04 = "Cannot compute"
 	  	}
 
 
-	  	let analysisjp5 = "";
+	  	let analysisjp05 = "";
 	  	if(jf05 <= 0 || jf05 <= 4){
-	  	analysisjp5 = "F. Torres: Free flow of traffic";
+	  	analysisjp05 = "F. Torres: Free flow of traffic";
 	  	}else if(jf05 <= 4 || jf05 <= 8){
-	  		analysisjp5 = "F. Torres: Sluggish flow of traffic";
+	  		analysisjp05 = "F. Torres: Sluggish flow of traffic";
 	  	}else if(jf05 <= 8 || jf05 <= 9){
-	  		analysisjp5 = "F. Torres: Slow flow of traffic";
+	  		analysisjp05 = "F. Torres: Slow flow of traffic";
 	  	}else if(jf05 == 10){
-	  		analysisjp5 = "F. Torres: Traffic stopped or Road closed"
+	  		analysisjp05 = "F. Torres: Traffic stopped or Road closed"
 	  	}else{
-	  		analysisjp5 = "Cannot compute"
+	  		analysisjp05 = "Cannot compute"
 	  	}
 
 
 
 	  	_res.setHeader('Content-Type', 'application/json');
     	_res.send(JSON.stringify({ street1: street1,  int01: int01, jf01: jf01,  int02: int02, jf02:  jf02 ,int03: int03, jf03: jf03, int04: int04, jf04: jf04,  int05: int05, jf05: jf05,
-		analysisjp1:analysisjp1, analysisjp2:analysisjp2, analysisjp3:analysisjp3,analysisjp4:analysisjp4, analysisjp5:analysisjp5,  analysis1: analysis1 }));
+		analysisjp01:analysisjp01, analysisjp02:analysisjp02, analysisjp03:analysisjp03,analysisjp04:analysisjp04, analysisjp05:analysisjp05,  analysis1: analysis1 }));
 	});
 
 	});
@@ -5440,19 +5440,19 @@ app.post('/webhook/', function(req, res) {
 				    chatbotResponse = response.data.analysis1;
 				    sendText(sender, chatbotResponse)
 
-				    chatbotResponse1 = response.data.analysisjp1;
+				    chatbotResponse1 = response.data.analysisjp01;
 				    sendText(sender, chatbotResponse1)
 
-				    chatbotResponse2 = response.data.analysisjp2;
+				    chatbotResponse2 = response.data.analysisjp02;
 				    sendText(sender, chatbotResponse2)
 
-				    chatbotResponse3 = response.data.analysisjp3;
+				    chatbotResponse3 = response.data.analysisjp03;
 				    sendText(sender, chatbotResponse3)
 
-				    chatbotResponse4 = response.data.analysisjp4;
+				    chatbotResponse4 = response.data.analysisjp04;
 				    sendText(sender, chatbotResponse4)
 
-				    chatbotResponse5 = response.data.analysisjp5;
+				    chatbotResponse5 = response.data.analysisjp05;
 				    sendText(sender, chatbotResponse5)
 				  })
 				  .catch(function (error) {
