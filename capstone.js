@@ -5691,7 +5691,7 @@ app.post('/webhook/', function(req, res) {
 			}
 
 			if(text=='mcarthur intersections'){
-				let chatbotResponse = "";
+				
 				let chatbotResponse1 = "";
 				let chatbotResponse2 = "";
 				let chatbotResponse3 = "";
@@ -5711,8 +5711,7 @@ app.post('/webhook/', function(req, res) {
 				axios.get(' https://cryptic-eyrie-21978.herokuapp.com/mcarthur')
 				  .then(function (response) {
 				    //console.log(response);
-				    chatbotResponse = response.data.analysis2;
-				    sendText(sender,  chatbotResponse)
+				  
 				    
 				    chatbotResponse1 = response.data.analysis22;
 				    sendText(sender,  chatbotResponse1)
@@ -5758,7 +5757,7 @@ app.post('/webhook/', function(req, res) {
 				  })
 				  .catch(function (error) {
 				    //console.log(error);
-				    chatbotResponse = "not ok";
+				   
 				    chatbotResponse1 = "not ok";
 				    chatbotResponse2 = "not ok";
 				    chatbotResponse3 = "not ok"
@@ -5774,7 +5773,7 @@ app.post('/webhook/', function(req, res) {
 				    chatbotResponse13 = "not ok"
 				    chatbotResponse14 = "not ok"
 
-				    sendText(sender, chatbotResponse)
+				    
 				    sendText(sender, chatbotResponse1)
 				    sendText(sender, chatbotResponse2)
 				    sendText(sender, chatbotResponse3)
