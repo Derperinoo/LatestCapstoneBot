@@ -300,12 +300,10 @@ app.get('/jplaurel',function(_req, _res){
 	  	const int05 = body.RWS[0].RW[2].FIS[0].FI[4].TMC.DE;
 	  	const jf05 = body.RWS[0].RW[2].FIS[0].FI[4].CF[0].JF;
 
-	  	const int06 = body.RWS[0].RW[2].FIS[0].FI[5].TMC.DE;
-	  	const jf06 = body.RWS[0].RW[2].FIS[0].FI[5].CF[0].JF;
-
+	  
 	  	const x = 6
 	  
-	  	var avejp = jf01 + jf02 + jf03 + jf04 + jf05 + jf06;
+	  	var avejp = jf01 + jf02 + jf03 + jf04 + jf05 ;
 	  	var avejp1 = avejp/x;
 
 	  	
