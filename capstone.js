@@ -5031,6 +5031,7 @@ app.post('/webhook/', function(req, res) {
 				  .catch(function (error) {
 				    //console.log(error);
 				    chatbotResponse = "not ok";
+				    chatbotResponse1 = "not ok";
 				    sendText(sender, chatbotResponse)
 				    sendText(sender, chatbotResponse1)
 				  });
