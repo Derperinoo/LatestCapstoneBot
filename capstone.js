@@ -98,7 +98,7 @@ app.get('/equirino',function(_req, _res){
 	  		analysisjf2 = "Cannot compute"
 	  	}
 
-	  		let analysisjf3 = "";
+	  	let analysisjf3 = "";
 	  	if(jf3 == 0 || jf3 <= 4){
 	  		analysisjf3 = "San Pedro: Free flow of traffic";
 	  	}else if(jf3 == 4 || jf3 <= 8){
@@ -111,13 +111,40 @@ app.get('/equirino',function(_req, _res){
 	  		analysisjf3 = "Cannot compute"
 	  	}
 
+	  	let analysisjf4 = "";
+	  	if(jf4 == 0 || jf4 <= 4){
+	  		analysisjf4 = "C. Bangoy: Free flow of traffic";
+	  	}else if(jf4 == 4 || jf4 <= 8){
+	  		analysisjf4 = "C. Bangoy: Sluggish flow of traffic";
+	  	}else if(jf4 == 8 || jf4 <= 9){
+	  		analysisjf4 = "C. Bangoy: Slow flow of traffic";
+	  	}else if(jf4 == 10){
+	  		analysisjf4 = "C. Bangoy: Traffic stopped or Road closed"
+	  	}else{
+	  		analysisjf4 = "Cannot compute"
+	  	}
+
+	  	let analysisjf5 = "";
+	  	if(jf5 == 0 || jf5 <= 4){
+	  		analysisjf5 = "J.P Laurel Ave: Free flow of traffic";
+	  	}else if(jf5 == 4 || jf5 <= 8){
+	  		analysisjf5 = "J.P Laurel Ave: Sluggish flow of traffic";
+	  	}else if(jf5 == 8 || jf5 <= 9){
+	  		analysisjf5 = "J.P Laurel Ave: Slow flow of traffic";
+	  	}else if(jf5 == 10){
+	  		analysisjf5 = "J.P Laurel Ave: Traffic stopped or Road closed"
+	  	}else{
+	  		analysisjf5 = "Cannot compute"
+	  	}
+
 
 
 
 
 	  	_res.setHeader('Content-Type', 'application/json');
     	_res.send(JSON.stringify({ street: street, int1: int1, jf1: jf1,  int2: int2, jf2: jf2,  int3: int3, jf3: jf3, 
-    		int4: int4, jf4: jf4,  int5: int5, jf5: jf5, analysisjf1: analysisjf1, analysisjf2: analysisjf2, analysisjf3:analysisjf3, analysis: analysis }));
+    		int4: int4, jf4: jf4,  int5: int5, jf5: jf5, analysisjf1: analysisjf1, analysisjf2: analysisjf2, analysisjf3:analysisjf3, analysisjf4:analysisjf4, 
+    		analysisjf5:analysisjf5, analysis: analysis }));
 	
 
 
@@ -5033,6 +5060,8 @@ app.post('/webhook/', function(req, res) {
 				let chatbotResponse = "";
 				let chatbotResponse1 = "";
 				let chatbotResponse2 = "";
+				let chatbotResponse3 = "";
+				let chatbotResponse4 = "";
 				
 				//source : https://www.npmjs.com/package/axios
 				axios.get(' https://cryptic-eyrie-21978.herokuapp.com/equirino')
@@ -5046,16 +5075,26 @@ app.post('/webhook/', function(req, res) {
 
 				    chatbotResponse2 = response.data.analysisjf3;
 				    sendText(sender,  chatbotResponse2)
+
+				    chatbotResponse3 = response.data.analysisjf4;
+				    sendText(sender,  chatbotResponse3)
+
+				    chatbotResponse4 = response.data.analysisjf5;
+				    sendText(sender,  chatbotResponse4)
 				  })
 				  .catch(function (error) {
 				    //console.log(error);
 				    chatbotResponse = "not ok";
 				    chatbotResponse1 = "not ok";
-				     chatbotResponse2 = "not ok";
+				    chatbotResponse2 = "not ok";
+				    chatbotResponse3 = "not ok"
+				    chatbotResponse4 = "not ok"
 				    
 				    sendText(sender, chatbotResponse)
 				    sendText(sender, chatbotResponse1)
-				     sendText(sender, chatbotResponse2)
+				    sendText(sender, chatbotResponse2)
+				    sendText(sender, chatbotResponse3)
+				    sendText(sender, chatbotResponse4)
 				  });
 
 				
