@@ -98,13 +98,26 @@ app.get('/equirino',function(_req, _res){
 	  		analysisjf2 = "Cannot compute"
 	  	}
 
+	  		let analysisjf3 = "";
+	  	if(jf3 == 0 || jf3 <= 4){
+	  		analysisjf3 = "San Pedro: Free flow of traffic";
+	  	}else if(jf3 == 4 || jf3 <= 8){
+	  		analysisjf3 = "San Pedro: Sluggish flow of traffic";
+	  	}else if(jf3 == 8 || jf3 <= 9){
+	  		analysisjf3 = "San Pedro: Slow flow of traffic";
+	  	}else if(jf3 == 10){
+	  		analysisjf3 = "San Pedro: Traffic stopped or Road closed"
+	  	}else{
+	  		analysisjf3 = "Cannot compute"
+	  	}
+
 
 
 
 
 	  	_res.setHeader('Content-Type', 'application/json');
     	_res.send(JSON.stringify({ street: street, int1: int1, jf1: jf1,  int2: int2, jf2: jf2,  int3: int3, jf3: jf3, 
-    		int4: int4, jf4: jf4,  int5: int5, jf5: jf5, analysisjf1: analysisjf1, analysisjf2: analysisjf2, analysis: analysis }));
+    		int4: int4, jf4: jf4,  int5: int5, jf5: jf5, analysisjf1: analysisjf1, analysisjf2: analysisjf2, analysisjf3:analysisjf3, analysis: analysis }));
 	
 
 
@@ -5019,6 +5032,7 @@ app.post('/webhook/', function(req, res) {
 			if(text=='equirino intersections'){
 				let chatbotResponse = "";
 				let chatbotResponse1 = "";
+				let chatbotResponse2 = "";
 				
 				//source : https://www.npmjs.com/package/axios
 				axios.get(' https://cryptic-eyrie-21978.herokuapp.com/equirino')
@@ -5029,14 +5043,19 @@ app.post('/webhook/', function(req, res) {
 				    
 				    chatbotResponse1 = response.data.analysisjf2;
 				    sendText(sender,  chatbotResponse1)
+
+				    chatbotResponse2 = response.data.analysisjf3;
+				    sendText(sender,  chatbotResponse2)
 				  })
 				  .catch(function (error) {
 				    //console.log(error);
 				    chatbotResponse = "not ok";
 				    chatbotResponse1 = "not ok";
+				     chatbotResponse2 = "not ok";
 				    
 				    sendText(sender, chatbotResponse)
 				    sendText(sender, chatbotResponse1)
+				     sendText(sender, chatbotResponse2)
 				  });
 
 				
