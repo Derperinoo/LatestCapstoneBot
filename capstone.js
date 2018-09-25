@@ -200,11 +200,78 @@ app.get('/equirino-',function(_req, _res){
 	  		analysis = "Cannot compute"
 	  	}
 
+	  	let analysisjf1 = "";
+	  	if(jfe1 == 0 || jfe1 <= 4){
+	  		analysisjf1 = "Mac Arthur Hwy: Free flow of traffic";
+	  	}else if(jfe1 == 4 || jfe1 <= 8){
+	  		analysisjf1 = "Mac Arthur Hwy: Sluggish flow of traffic";
+	  	}else if(jfe1 == 8 || jfe1 <= 9){
+	  		analysisjf1 = "Mac Arthur Hwy: Slow flow of traffic";
+	  	}else if(jfe1 == 10){
+	  		analysisjf1 = "Mac Arthur Hwy: Traffic stopped or Road closed"
+	  	}else{
+	  		analysisjf1 = "Cannot compute"
+	  	}
+
+	  	let analysisjf2 = "";
+	  	if(jfe2 == 0 || jfe2 <= 4){
+	  		analysisjf2 = "Pichon St: Free flow of traffic";
+	  	}else if(jfe2 == 4 || jfe2 <= 8){
+	  		analysisjf2 = "Pichon St: Sluggish flow of traffic";
+	  	}else if(jfe2 == 8 || jfe2 <= 9){
+	  		analysisjf2 = "Pichon St: Slow flow of traffic";
+	  	}else if(jfe2 == 10){
+	  		analysisjf2 = "Pichon St: Traffic stopped or Road closed"
+	  	}else{
+	  		analysisjf2 = "Cannot compute"
+	  	}
+
+	  	let analysisjf3 = "";
+	  	if(jfe3 == 0 || jfe3 <= 4){
+	  		analysisjf3 = "San Pedro: Free flow of traffic";
+	  	}else if(jfe3 == 4 || jfe3 <= 8){
+	  		analysisjf3 = "San Pedro: Sluggish flow of traffic";
+	  	}else if(jfe3 == 8 || jfe3 <= 9){
+	  		analysisjf3 = "San Pedro: Slow flow of traffic";
+	  	}else if(jfe3 == 10){
+	  		analysisjf3 = "San Pedro: Traffic stopped or Road closed"
+	  	}else{
+	  		analysisjf3 = "Cannot compute"
+	  	}
+
+	  	let analysisjf4 = "";
+	  	if(jfe4 == 0 || jfe4 <= 4){
+	  		analysisjf4 = "C. Bangoy: Free flow of traffic";
+	  	}else if(jfe4 == 4 || jfe4 <= 8){
+	  		analysisjf4 = "C. Bangoy: Sluggish flow of traffic";
+	  	}else if(jfe4 == 8 || jfe4 <= 9){
+	  		analysisjf4 = "C. Bangoy: Slow flow of traffic";
+	  	}else if(jfe4 == 10){
+	  		analysisjf4 = "C. Bangoy: Traffic stopped or Road closed"
+	  	}else{
+	  		analysisjf4 = "Cannot compute"
+	  	}
+
+	  	let analysisjf5 = "";
+	  	if(jfe5 == 0 || jfe5 <= 4){
+	  		analysisjf5 = "J.P Laurel Ave: Free flow of traffic";
+	  	}else if(jfe5 == 4 || jfe5 <= 8){
+	  		analysisjf5 = "J.P Laurel Ave: Sluggish flow of traffic";
+	  	}else if(jfe5 == 8 || jfe5 <= 9){
+	  		analysisjf5 = "J.P Laurel Ave: Slow flow of traffic";
+	  	}else if(jfe5 == 10){
+	  		analysisjf5 = "J.P Laurel Ave: Traffic stopped or Road closed"
+	  	}else{
+	  		analysisjf5 = "Cannot compute"
+	  	}
+
+
 
 
 	  	_res.setHeader('Content-Type', 'application/json');
     	_res.send(JSON.stringify({ street: street, inte1: inte1, jfe1: jfe1,  inte2: inte2, jfe2: jfe2,  inte3: inte3, jfe3: jfe3, 
-    		inte4: inte4, jfe4: jfe4,  inte5: inte5, jfe5: jfe5,  analysis: analysis }));
+    		inte4: inte4, jfe4: jfe4,  inte5: inte5, jfe5: jfe5, analysisjf1: analysisjf1, analysisjf2: analysisjf2, analysisjf3:analysisjf3, analysisjf4:analysisjf4, 
+    		analysisjf5:analysisjf5,  analysis: analysis }));
 
 	  
 	});
@@ -5099,6 +5166,50 @@ app.post('/webhook/', function(req, res) {
 
 				
 			}
+			if(text=='equirino intersections-'){
+				let chatbotResponse = "";
+				let chatbotResponse1 = "";
+				let chatbotResponse2 = "";
+				let chatbotResponse3 = "";
+				let chatbotResponse4 = "";
+				
+				//source : https://www.npmjs.com/package/axios
+				axios.get(' https://cryptic-eyrie-21978.herokuapp.com/equirino-')
+				  .then(function (response) {
+				    //console.log(response);
+				    chatbotResponse = response.data.analysisjf1;
+				    sendText(sender,  chatbotResponse)
+				    
+				    chatbotResponse1 = response.data.analysisjf2;
+				    sendText(sender,  chatbotResponse1)
+
+				    chatbotResponse2 = response.data.analysisjf3;
+				    sendText(sender,  chatbotResponse2)
+
+				    chatbotResponse3 = response.data.analysisjf4;
+				    sendText(sender,  chatbotResponse3)
+
+				    chatbotResponse4 = response.data.analysisjf5;
+				    sendText(sender,  chatbotResponse4)
+				  })
+				  .catch(function (error) {
+				    //console.log(error);
+				    chatbotResponse = "not ok";
+				    chatbotResponse1 = "not ok";
+				    chatbotResponse2 = "not ok";
+				    chatbotResponse3 = "not ok"
+				    chatbotResponse4 = "not ok"
+				    
+				    sendText(sender, chatbotResponse)
+				    sendText(sender, chatbotResponse1)
+				    sendText(sender, chatbotResponse2)
+				    sendText(sender, chatbotResponse3)
+				    sendText(sender, chatbotResponse4)
+				  });
+
+				
+			}
+
 
 			if(text.includes("jplaurel")){
 				let chatbotResponse = "";
