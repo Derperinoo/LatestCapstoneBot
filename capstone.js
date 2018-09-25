@@ -301,7 +301,7 @@ app.get('/jplaurel',function(_req, _res){
 	  	const jf05 = body.RWS[0].RW[2].FIS[0].FI[4].CF[0].JF;
 
 	  
-	  	const x = 6
+	  	const x = 5
 	  
 	  	var avejp = jf01 + jf02 + jf03 + jf04 + jf05 ;
 	  	var avejp1 = avejp/x;
@@ -428,7 +428,7 @@ app.get('/jplaurel-',function(_req, _res){
 
 	  
 
-	  	const x = 6
+	  	const x = 5
 	  
 	  	var varj = jf01 + jf02 + jf03 + jf04 + jf05  ;
 	  	var varjp = varj/x;
