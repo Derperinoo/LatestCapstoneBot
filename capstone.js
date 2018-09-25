@@ -1173,12 +1173,12 @@ app.get('/ecowestdr-',function(_req, _res){
 
 	  	 	
 
-	  	const streetec = body.RWS[0].RW[6].DE;
-	  	const inte1 = body.RWS[0].RW[6].FIS[0].FI[0].TMC.DE;
-	  	const jfe1 = body.RWS[0].RW[6].FIS[0].FI[0].CF[0].JF;
+	  	const streetec = body.RWS[0].RW[7].DE;
+	  	const inte1 = body.RWS[0].RW[7].FIS[0].FI[0].TMC.DE;
+	  	const jfe1 = body.RWS[0].RW[7].FIS[0].FI[0].CF[0].JF;
 	  	
-	  	const inte2 = body.RWS[0].RW[6].FIS[0].FI[1].TMC.DE;
-	  	const jfe2 = body.RWS[0].RW[6].FIS[0].FI[1].CF[0].JF;
+	  	const inte2 = body.RWS[0].RW[7].FIS[0].FI[1].TMC.DE;
+	  	const jfe2 = body.RWS[0].RW[7].FIS[0].FI[1].CF[0].JF;
 
 	  	
 
