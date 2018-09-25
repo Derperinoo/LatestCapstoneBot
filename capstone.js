@@ -5569,7 +5569,7 @@ app.post('/webhook/', function(req, res) {
 			}
 
 			if(text=='jplaurel intersections'){
-				let chatbotResponse = "";
+				
 				let chatbotResponse1 = "";
 				let chatbotResponse2 = "";
 				let chatbotResponse3 = "";
@@ -5580,8 +5580,7 @@ app.post('/webhook/', function(req, res) {
 				axios.get(' https://cryptic-eyrie-21978.herokuapp.com/jplaurel')
 				  .then(function (response) {
 				    //console.log(response);
-				    chatbotResponse = response.data.analysis1;
-				    sendText(sender, chatbotResponse)
+			
 
 				    chatbotResponse1 = response.data.analysisjp1;
 				    sendText(sender, chatbotResponse1)
@@ -5601,7 +5600,7 @@ app.post('/webhook/', function(req, res) {
 				  .catch(function (error) {
 				    //console.log(error);
 				    chatbotResponse = "not ok";
-				    sendText(sender, chatbotResponse)
+				   
 				    sendText(sender, chatbotResponse1)
 				    sendText(sender, chatbotResponse2)
 				    sendText(sender, chatbotResponse3)
@@ -5612,7 +5611,7 @@ app.post('/webhook/', function(req, res) {
 				
 			}
 			if(text=='jplaurel intersections-'){
-				let chatbotResponse = "";
+				
 				let chatbotResponse1 = "";
 				let chatbotResponse2 = "";
 				let chatbotResponse3 = "";
@@ -5622,9 +5621,7 @@ app.post('/webhook/', function(req, res) {
 				//source : https://www.npmjs.com/package/axios
 				axios.get(' https://cryptic-eyrie-21978.herokuapp.com/jplaurel-')
 				  .then(function (response) {
-				    //console.log(response);
-				    chatbotResponse = response.data.analysis1;
-				    sendText(sender, chatbotResponse)
+				
 
 				    chatbotResponse1 = response.data.analysisjp1;
 				    sendText(sender, chatbotResponse1)
@@ -5644,7 +5641,7 @@ app.post('/webhook/', function(req, res) {
 				  .catch(function (error) {
 				    //console.log(error);
 				    chatbotResponse = "not ok";
-				    sendText(sender, chatbotResponse)
+				    
 				    sendText(sender, chatbotResponse1)
 				    sendText(sender, chatbotResponse2)
 				    sendText(sender, chatbotResponse3)
