@@ -308,7 +308,7 @@ app.get('/jplaurel',function(_req, _res){
 
 	  	
 	  	let analysis1 = "";
-	  	if(avejp1 <= 0 || avejp1 <= 4){
+	  	if(avejp1 == 0 || avejp1 <= 4){
 	  	analysis1 = "Free flow of traffic";
 	  	}else if(avejp1 > 4 || avejp1 <= 8){
 	  		analysis1 = "Sluggish flow of traffic";
@@ -321,7 +321,7 @@ app.get('/jplaurel',function(_req, _res){
 	  	}
 
 	  	let analysisjp1 = "";
-	  	if(jf01 <= 0 || jf01 <= 4){
+	  	if(jf01 == 0 || jf01 <= 4){
 	  	analysisjp1 = "R. Castillo: Free flow of traffic";
 	  	}else if(jf01 > 4 || jf01 <= 8){
 	  		analysisjp1 = "R. Castillo: Sluggish flow of traffic";
@@ -334,7 +334,7 @@ app.get('/jplaurel',function(_req, _res){
 	  	}
 
 	  	let analysisjp2 = "";
-	  	if(jf02 <= 0 || jf02 <= 4){
+	  	if(jf02 == 0 || jf02 <= 4){
 	  	analysisjp2 = "Angliongto: Free flow of traffic";
 	  	}else if(jf02 > 4 || jf02 <= 8){
 	  		analysisjp2 = "Angliongto: Sluggish flow of traffic";
@@ -347,7 +347,7 @@ app.get('/jplaurel',function(_req, _res){
 	  	}
 
 	  	let analysisjp3 = "";
-	  	if(jf03 <= 0 || jf03 <= 4){
+	  	if(jf03 == 0 || jf03 <= 4){
 	  	analysisjp3 = "Cabaguio: Free flow of traffic";
 	  	}else if(jf03 > 4 || jf03 <= 8){
 	  		analysisjp3 = "Cabaguio: Sluggish flow of traffic";
@@ -360,7 +360,7 @@ app.get('/jplaurel',function(_req, _res){
 	  	}
 
 	  	let analysisjp4 = "";
-	  	if(jf04 <= 0 || jf04 <= 4){
+	  	if(jf04 == 0 || jf04 <= 4){
 	  	analysisjp4 = "Dacudao Ave/Buhangin: Free flow of traffic";
 	  	}else if(jf04 > 4 || jf04 <= 8){
 	  		analysisjp4 = "Dacudao Ave/Buhangin: Sluggish flow of traffic";
@@ -374,7 +374,7 @@ app.get('/jplaurel',function(_req, _res){
 
 
 	  	let analysisjp5 = "";
-	  	if(jf05 <= 0 || jf05 <= 4){
+	  	if(jf05 == 0 || jf05 <= 4){
 	  	analysisjp5 = "F. Torres: Free flow of traffic";
 	  	}else if(jf05 > 4 || jf05 <= 8){
 	  		analysisjp5 = "F. Torres: Sluggish flow of traffic";
@@ -435,7 +435,7 @@ app.get('/jplaurel-',function(_req, _res){
 
 	  	
 	  	let analysis1 = "";
-	  	if(varjp <= 0 || varjp <= 4){
+	  	if(varjp == 0 || varjp <= 4){
 	  	analysis1 = "Free flow of traffic";
 	  	}else if(varjp > 4 || varjp <= 8){
 	  		analysis1 = "Sluggish flow of traffic";
@@ -448,7 +448,7 @@ app.get('/jplaurel-',function(_req, _res){
 	  	}
 
 	  let analysisjp1 = "";
-	  	if(jf01 <= 0 || jf01 <= 4){
+	  	if(jf01 == 0 || jf01 <= 4){
 	  	analysisjp1 = "R. Castillo: Free flow of traffic";
 	  	}else if(jf01 > 4 || jf01 <= 8){
 	  		analysisjp1 = "R. Castillo: Sluggish flow of traffic";
@@ -461,7 +461,7 @@ app.get('/jplaurel-',function(_req, _res){
 	  	}
 
 	  	let analysisjp2 = "";
-	  	if(jf02 <= 0 || jf02 <= 4){
+	  	if(jf02 == 0 || jf02 <= 4){
 	  	analysisjp2 = "Angliongto: Free flow of traffic";
 	  	}else if(jf02 > 4 || jf02 <= 8){
 	  		analysisjp2 = "Angliongto: Sluggish flow of traffic";
@@ -474,7 +474,7 @@ app.get('/jplaurel-',function(_req, _res){
 	  	}
 
 	  	let analysisjp3 = "";
-	  	if(jf03 <= 0 || jf03 <= 4){
+	  	if(jf03 == 0 || jf03 <= 4){
 	  	analysisjp3 = "Cabaguio: Free flow of traffic";
 	  	}else if(jf03 > 4 || jf03 <= 8){
 	  		analysisjp3 = "Cabaguio: Sluggish flow of traffic";
@@ -487,7 +487,7 @@ app.get('/jplaurel-',function(_req, _res){
 	  	}
 
 	  	let analysisjp4 = "";
-	  	if(jf04 <= 0 || jf04 <= 4){
+	  	if(jf04 == 0 || jf04 <= 4){
 	  	analysisjp4 = "Dacudao Ave/Buhangin: Free flow of traffic";
 	  	}else if(jf04 > 4 || jf04 <= 8){
 	  		analysisjp4 = "Dacudao Ave/Buhangin: Sluggish flow of traffic";
@@ -501,7 +501,7 @@ app.get('/jplaurel-',function(_req, _res){
 
 
 	  	let analysisjp5 = "";
-	  	if(jf05 <= 0 || jf05 <= 4){
+	  	if(jf05 == 0 || jf05 <= 4){
 	  	analysisjp5 = "F. Torres: Free flow of traffic";
 	  	}else if(jf05 > 4 || jf05 <= 8){
 	  		analysisjp5 = "F. Torres: Sluggish flow of traffic";
@@ -583,7 +583,7 @@ app.get('/mcarthur',function(_req, _res){
 
 	  	
 	  	let analysis2 = "";
-	  	if(avemc <= 0 || avemc <= 4){
+	  	if(avemc == 0 || avemc <= 4){
 	  	analysis2 = "Free flow of traffic";
 	  	}else if(avemc > 4 || avemc <= 8){
 	  		analysis2 = "Sluggish flow of traffic";
@@ -596,7 +596,7 @@ app.get('/mcarthur',function(_req, _res){
 	  	}
 
 	  	let analysis22 = "";
-	  	if(jfm <= 0 || jfm <= 4){
+	  	if(jfm == 0 || jfm <= 4){
 	  	analysis22 = "Generoso I Brg: Free flow of traffic";
 	  	}else if(jfm > 4 || jfm <= 8){
 	  		analysis22 = "Generoso I Brg: Sluggish flow of traffic";
@@ -609,7 +609,7 @@ app.get('/mcarthur',function(_req, _res){
 	  	}
 
 	  	let analysis23 = "";
-	  	if(jf02 <= 0 || jf02 <= 4){
+	  	if(jf02 == 0 || jf02 <= 4){
 	  	analysis23 = "Sandawa Rd: Free flow of traffic";
 	  	}else if(jf02 > 4 || jf02 <= 8){
 	  		analysis23 = "Sandawa Rd: Sluggish flow of traffic";
@@ -622,7 +622,7 @@ app.get('/mcarthur',function(_req, _res){
 	  	}
 	  	
 	  	let analysis24 = "";
-	  	if(jfm2 <= 0 || jfm2 <= 4){
+	  	if(jfm2 == 0 || jfm2 <= 4){
 	  	analysis24 = "Ma-A Rd: Free flow of traffic";
 	  	}else if(jfm2 > 4 || jfm2 <= 8){
 	  		analysis24 = "Ma-A Rd: Sluggish flow of traffic";
@@ -635,7 +635,7 @@ app.get('/mcarthur',function(_req, _res){
 	  	}
 	  	
 	  	let analysis25 = "";
-	  	if(jfm3 <= 0 || jfm3 <= 4){
+	  	if(jfm3 == 0 || jfm3 <= 4){
 	  	analysis25 = "Tulip Dr: Free flow of traffic";
 	  	}else if(jfm3 > 4 || jfm3 <= 8){
 	  		analysis25 = "Tulip Dr: Sluggish flow of traffic";
@@ -648,7 +648,7 @@ app.get('/mcarthur',function(_req, _res){
 	  	}
 	  	
 	  	let analysis26 = "";
-	  	if(jfm4 <= 0 || jfm4 <= 4){
+	  	if(jfm4 == 0 || jfm4 <= 4){
 	  	analysis26 = "S Cuyugan/Shrine Hills Rd: Free flow of traffic";
 	  	}else if(jfm4 > 4 || jfm4 <= 8){
 	  		analysis26 = "S Cuyugan/Shrine Hills Rd: Sluggish flow of traffic";
@@ -661,7 +661,7 @@ app.get('/mcarthur',function(_req, _res){
 	  	}
 
 	  	let analysis27 = "";
-	  	if(jfm5 <= 0 || jfm5 <= 4){
+	  	if(jfm5 == 0 || jfm5 <= 4){
 	  	analysis27 = "Quimpo Blvd: Free flow of traffic";
 	  	}else if(jfm5 > 4 || jfm5 <= 8){
 	  		analysis27 = "Quimpo Blvd: Sluggish flow of traffic";
@@ -674,7 +674,7 @@ app.get('/mcarthur',function(_req, _res){
 	  	}
 
 	  	let analysis28 = "";
-	  	if(jfm6 <= 0 || jfm6 <= 4){
+	  	if(jfm6 == 0 || jfm6 <= 4){
 	  	analysis28 = "Matina Pangi/Aplaya: Free flow of traffic";
 	  	}else if(jfm6 > 4 || jfm6 <= 8){
 	  		analysis28 = "Matina Pangi/Aplaya: Sluggish flow of traffic";
@@ -687,7 +687,7 @@ app.get('/mcarthur',function(_req, _res){
 	  	}
 
 	  	let analysis29 = "";
-	  	if(jfm7 <= 0 || jfm7 <= 4){
+	  	if(jfm7 == 0 || jfm7 <= 4){
 	  	analysis29 = "Diversion Rd: Free flow of traffic";
 	  	}else if(jfm7 > 4 || jfm7 <= 8){
 	  		analysis29 = "Diversion Rd: Sluggish flow of traffic";
@@ -700,7 +700,7 @@ app.get('/mcarthur',function(_req, _res){
 	  	}
 
 	  	let analysis30 = "";
-	  	if(jfm8 <= 0 || jfm8 <= 4){
+	  	if(jfm8 == 0 || jfm8 <= 4){
 	  	analysis30 = "Tolomo Ii Brg/Tolomo I Brg: Free flow of traffic";
 	  	}else if(jfm8 > 4 || jfm8 <= 8){
 	  		analysis30 = "Tolomo Ii Brg/Tolomo I Brg: Sluggish flow of traffic";
@@ -713,7 +713,7 @@ app.get('/mcarthur',function(_req, _res){
 	  	}
 
 	  	let analysis31 = "";
-	  	if(jfm9 <= 0 || jfm9 <= 4){
+	  	if(jfm9 == 0 || jfm9 <= 4){
 	  	analysis31 = "Davao Bukidnon Rd: Free flow of traffic";
 	  	}else if(jfm9 > 4 || jfm9 <= 8){
 	  		analysis31 = "Davao Bukidnon Rd: Sluggish flow of traffic";
@@ -726,7 +726,7 @@ app.get('/mcarthur',function(_req, _res){
 	  	}
 
 	  	let analysis32 = "";
-	  	if(jfm10 <= 0 || jfm10 <= 4){
+	  	if(jfm10 == 0 || jfm10 <= 4){
 	  	analysis32 = "Libby Rd: Free flow of traffic";
 	  	}else if(jfm10 > 4 || jfm10 <= 8){
 	  		analysis32 = "Libby Rd: Sluggish flow of traffic";
@@ -739,7 +739,7 @@ app.get('/mcarthur',function(_req, _res){
 	  	}
 
 	  	let analysis33 = "";
-	  	if(jfm11 <= 0 || jfm11 <= 4){
+	  	if(jfm11 == 0 || jfm11 <= 4){
 	  	analysis33 = "Agton/Manggahan: Free flow of traffic";
 	  	}else if(jfm11 > 4 || jfm11 <= 8){
 	  		analysis33 = "Agton/Manggahan: Sluggish flow of traffic";
@@ -752,7 +752,7 @@ app.get('/mcarthur',function(_req, _res){
 	  	}
 
 	  	let analysis34 = "";
-	  	if(jfm12 <= 0 || jfm12 <= 4){
+	  	if(jfm12 == 0 || jfm12 <= 4){
 	  	analysis34 = "Santa Cruz/Davao City Border: Free flow of traffic";
 	  	}else if(jfm12 > 4 || jfm12 <= 8){
 	  		analysis34 = "Santa Cruz/Davao City Border: Sluggish flow of traffic";
@@ -765,7 +765,7 @@ app.get('/mcarthur',function(_req, _res){
 	  	}
 
 	  	let analysis35 = "";
-	  	if(jfm13 <= 0 || jfm13 <= 4){
+	  	if(jfm13 == 0 || jfm13 <= 4){
 	  	analysis35 = "E. Quirino Ave: Free flow of traffic";
 	  	}else if(jfm13 > 4 || jfm13 <= 8){
 	  		analysis35 = "E. Quirino Ave: Sluggish flow of traffic";
@@ -859,7 +859,7 @@ app.get('/mcarthur-',function(_req, _res){
 
 	  	
 	  	let analysis3 = "";
-	    if(avemcm <= 0 || avemcm <= 4){
+	    if(avemcm == 0 || avemcm <= 4){
 	  	analysis3 = "Free flow of traffic";
 	  	}else if(avemcm <= 4 || avemcm <= 8){
 	  		analysis3 = "Sluggish flow of traffic";
@@ -919,7 +919,7 @@ app.get('/ecowestdr',function(_req, _res){
 	  	var ecowest = eco/w;
 	  	
 	  	let analysis4 = "";
-	  	if(ecowest <= 0 || ecowest <= 4){
+	  	if(ecowest == 0 || ecowest <= 4){
 	  	analysis4 = "Free flow of traffic";
 	  	}else if(ecowest <= 4 || ecowest <= 8){
 	  		analysis4 = "Sluggish flow of traffic";
@@ -977,7 +977,7 @@ app.get('/ecowestdr-',function(_req, _res){
 	  	var ecowestdr = ecoeco/z;
 	  	
 	  	let analysis5 = "";
-	  	if(ecowestdr <= 0 || ecowestdr <= 4){
+	  	if(ecowestdr == 0 || ecowestdr <= 4){
 	  	analysis5 = "Free flow of traffic";
 	  	}else if(ecowestdr <= 4 || ecowestdr <= 8){
 	  		analysis5 = "Sluggish flow of traffic";
@@ -1027,7 +1027,7 @@ app.get('/ecoland-',function(_req, _res){
 	  	var ecolands = ecoland/p;
 	  	
 	  	let analysis6 = "";
-	  	if(ecolands <= 0 || ecolands <= 4){
+	  	if(ecolands == 0 || ecolands <= 4){
 	  	analysis6 = "Free flow of traffic";
 	  	}else if(ecolands <= 4 || ecolands <= 8){
 	  		analysis6 = "Sluggish flow of traffic";
@@ -1081,7 +1081,7 @@ app.get('/matinaaplaya',function(_req, _res){
 	  	var aplaya = matina/p;
 	  	
 	  	let analysis7 = "";
-	  	if(aplaya <= 0 || aplaya <= 4){
+	  	if(aplaya == 0 || aplaya <= 4){
 	  	analysis7 = "Free flow of traffic";
 	  	}else if(aplaya <= 4 || aplaya <= 8){
 	  		analysis7 = "Sluggish flow of traffic";
