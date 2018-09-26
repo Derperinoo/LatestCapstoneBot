@@ -5933,13 +5933,13 @@ app.get('/angliongto',function(_req, _res){
 	  	}
 
 	  	let analysis64 = "";
-	  	if(jfc4 == 0 || jfc4 <=4){
+	  	if(jfc3 == 0 || jfc3 <=4){
 	  		analysis64 = "J. P. Laurel Ave: Free flow of traffic";
-	  	}else if(jfc4 > 4 || jfc4 <=8){
+	  	}else if(jfc3 > 4 || jfc3 <=8){
 	  		analysis64 = "J. P. Laurel Ave: Sluggish flow of traffic";
-	  	}else if(jfc4 > 8 || jfc4 >=9){
+	  	}else if(jfc3 > 8 || jfc3 >=9){
 	  		analysis64 = "J. P. Laurel Ave: Slow flow of traffic";
-	  	}else if(jfc4 == 10){
+	  	}else if(jfc3 == 10){
 	  		analysis64 = "J. P. Laurel Ave: Traffic stopped or Road closed"
 	  	}else{
 	  		analysis64 = "Cannot compute"
