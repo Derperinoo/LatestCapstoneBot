@@ -3287,39 +3287,39 @@ app.get('/abonifaciost-',function(_req, _res){
 
 	  	let analysis30 = "";
 	  	if(jfc1 == 0 || jfc1 <=4){
-	  		analysis30 = "Free flow of traffic";
+	  		analysis30 = "M. L. Quezon Blvd: Free flow of traffic";
 	  	}else if(jfc1 > 4 || jfc1 <=8){
-	  		analysis30 = "Sluggish flow of traffic";
+	  		analysis30 = "M. L. Quezon Blvd: Sluggish flow of traffic";
 	  	}else if(jfc1 > 8 || jfc1 >=9){
-	  		analysis30 = "Slow flow of traffic";
+	  		analysis30 = "M. L. Quezon Blvd: Slow flow of traffic";
 	  	}else if(jfc1 == 10){
-	  		analysis30 = "Traffic stopped or Road closed"
+	  		analysis30 = "M. L. Quezon Blvd: Traffic stopped or Road closed"
 	  	}else{
 	  		analysis30 = "Cannot compute"
 	  	}
 
 	  	let analysis31 = "";
 	  	if(jfc2 == 0 || jfc2 <=4){
-	  		analysis31 = "Free flow of traffic";
+	  		analysis31 = "C. M. Recto: Free flow of traffic";
 	  	}else if(jfc2 > 4 || jfc2 <=8){
-	  		analysis31 = "Sluggish flow of traffic";
+	  		analysis31 = "C. M. Recto: Sluggish flow of traffic";
 	  	}else if(jfc2 > 8 || jfc2 >=9){
-	  		analysis31 = "Slow flow of traffic";
+	  		analysis31 = "C. M. Recto: Slow flow of traffic";
 	  	}else if(jfc2 == 10){
-	  		analysis31 = "Traffic stopped or Road closed"
+	  		analysis31 = "C. M. Recto: Traffic stopped or Road closed"
 	  	}else{
 	  		analysis31 = "Cannot compute"
 	  	}
 
 	  	let analysis32 = "";
 	  	if(jfc3 == 0 || jfc3 <=4){
-	  		analysis32 = "Free flow of traffic";
+	  		analysis32 = "C. Bangoy: Free flow of traffic";
 	  	}else if(jfc3 > 4 || jfc3 <=8){
-	  		analysis32 = "Sluggish flow of traffic";
+	  		analysis32 = "C. Bangoy: Sluggish flow of traffic";
 	  	}else if(jfc3 > 8 || jfc3 >=9){
-	  		analysis32 = "Slow flow of traffic";
+	  		analysis32 = "C. Bangoy: Slow flow of traffic";
 	  	}else if(jfc3 == 10){
-	  		analysis32 = "Traffic stopped or Road closed"
+	  		analysis32 = "C. Bangoy: Traffic stopped or Road closed"
 	  	}else{
 	  		analysis32 = "Cannot compute"
 	  	}
