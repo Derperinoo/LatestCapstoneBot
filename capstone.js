@@ -6683,9 +6683,12 @@ app.get('/daangmaharlika-',function(_req, _res){
 	  	const intc4 = body.RWS[0].RW[76].FIS[0].FI[3].TMC.DE;
 	  	const jfc4 = body.RWS[0].RW[76].FIS[0].FI[3].CF[0].JF;
 
-	  	var p = 4
+	  	const intc5 = body.RWS[0].RW[76].FIS[0].FI[4].TMC.DE;
+	  	const jfc5 = body.RWS[0].RW[76].FIS[0].FI[4].CF[0].JF;
+
+	  	var p = 5
 	  
-	  	var davvv = jfc1 + jfc2 + jfc3 + jfc4;
+	  	var davvv = jfc1 + jfc2 + jfc3 + jfc4 + jfc5;
 
 	  	var davvva = davvv/p;
 	  	
@@ -6754,11 +6757,23 @@ app.get('/daangmaharlika-',function(_req, _res){
 	  		analysis81 = "Cannot compute"
 	  	}
 
+	  	let analysis82 = "";
+	  	if(jfc5 == 0 || jfc5 <=4){
+	  		analysis82 = "Tadeco Rd/Tagum-Panabo Circum Rd: Free flow of traffic";
+	  	}else if(jfc5 > 4 || jfc5 <=8){
+	  		analysis82 = "Tadeco Rd/Tagum-Panabo Circum Rd: Sluggish flow of traffic";
+	  	}else if(jfc5 > 8 || jfc5 >=9){
+	  		analysis82 = "Tadeco Rd/Tagum-Panabo Circum Rd: Slow flow of traffic";
+	  	}else if(jfc5 == 10){
+	  		analysis82 = "Tadeco Rd/Tagum-Panabo Circum Rd: Traffic stopped or Road closed"
+	  	}else{
+	  		analysis82 = "Cannot compute"
+	  	}
 
 	  	
 	  	_res.setHeader('Content-Type', 'application/json');
-    	_res.send(JSON.stringify({ street: streetc, intc1: intc1, jfc1: jfc1, intc2: intc2, jfc2: jfc2, intc3: intc3, jfc3: jfc3, intc4: intc4, jfc4:jfc4, 
-    		analysis78:analysis78, analysis79:analysis79, analysis80:analysis80, analysis81:analysis81, analysis77: analysis77 }));
+    	_res.send(JSON.stringify({ street: streetc, intc1: intc1, jfc1: jfc1, intc2: intc2, jfc2: jfc2, intc3: intc3, jfc3: jfc3, intc4: intc4, jfc4:jfc4, intc5:intc5,
+    	 jfc5:jfc5, analysis78:analysis78, analysis79:analysis79, analysis80:analysis80, analysis81:analysis81, analysis82:analysis82, analysis77: analysis77 }));
 	  
 	});
 
@@ -12390,6 +12405,45 @@ app.post('/webhook/', function(req, res) {
 
 				
 			}
+			if(text=='daang maharlika intersections'){
+				
+				let chatbotResponse1 = "";
+				let chatbotResponse2 = "";
+				let chatbotResponse3 = "";
+				let chatbotResponse4 = "";
+				
+				//source : https://www.npmjs.com/package/axios
+				   axios.get(' https://cryptic-eyrie-21978.herokuapp.com/ddaangmaharlika')
+				  .then(function (response) {
+				
+
+				    chatbotResponse1 = response.data.analysis77;
+				    sendText(sender, chatbotResponse1)
+				    chatbotResponse2 = response.data.analysis78;
+				    sendText(sender, chatbotResponse2)
+				    chatbotResponse3 = response.data.analysis79;
+				    sendText(sender, chatbotResponse3)
+				    chatbotResponse4 = response.data.analysis80;
+				    sendText(sender, chatbotResponse4)
+
+				   
+				  })
+				  .catch(function (error) {
+				    //console.log(error);
+				     chatbotResponse1 = "not ok";
+				     chatbotResponse2 = "not ok";
+				     chatbotResponse3 = "not ok";
+				     chatbotResponse4 = "not ok";
+				    sendText(sender, chatbotResponse1)
+				    sendText(sender, chatbotResponse2)
+				    sendText(sender, chatbotResponse3)
+				    sendText(sender, chatbotResponse4)
+				    
+				  });
+
+				
+				
+			}
 			if(text=='daang maharlika-')
 			// if(text.includes("pichon street-"))
 			{
@@ -12408,6 +12462,50 @@ app.post('/webhook/', function(req, res) {
 				    sendText(sender, chatbotResponse)
 				  });
 
+				
+			}
+
+			if(text=='daang maharlika intersections-'){
+				
+				let chatbotResponse1 = "";
+				let chatbotResponse2 = "";
+				let chatbotResponse3 = "";
+				let chatbotResponse4 = "";
+				let chatbotResponse5 = "";
+				//source : https://www.npmjs.com/package/axios
+				   axios.get(' https://cryptic-eyrie-21978.herokuapp.com/ddaangmaharlika-')
+				  .then(function (response) {
+				
+
+				    chatbotResponse1 = response.data.analysis78;
+				    sendText(sender, chatbotResponse1)
+				    chatbotResponse2 = response.data.analysis79;
+				    sendText(sender, chatbotResponse2)
+				    chatbotResponse3 = response.data.analysis80;
+				    sendText(sender, chatbotResponse3)
+				    chatbotResponse4 = response.data.analysis81;
+				    sendText(sender, chatbotResponse4)
+				    chatbotResponse5 = response.data.analysis82;
+				    sendText(sender, chatbotResponse5)
+
+				   
+				  })
+				  .catch(function (error) {
+				    //console.log(error);
+				     chatbotResponse1 = "not ok";
+				     chatbotResponse2 = "not ok";
+				     chatbotResponse3 = "not ok";
+				     chatbotResponse4 = "not ok";
+				     chatbotResponse5 = "not ok";
+				    sendText(sender, chatbotResponse1)
+				    sendText(sender, chatbotResponse2)
+				    sendText(sender, chatbotResponse3)
+				    sendText(sender, chatbotResponse4)
+				    sendText(sender, chatbotResponse5)
+				    
+				  });
+
+				
 				
 			}
 
