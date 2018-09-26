@@ -3783,12 +3783,12 @@ app.get('/jplaureloutgmall-',function(_req, _res){
 	request('https://traffic.api.here.com/traffic/6.1/flow.json?bbox=7.2598%2C125.0860%3B6.7670%2C125.6674&app_id=fQbW8CGYiU3l5mLqWgBE&app_code=SYZXwjFBHSYi_1t1GNuHow', { json: true }, (err, res, body) => {
 	  if (err) { return console.log(err); }
 
-	  	const streetc = body.RWS[0].RW[36].DE;
-	  	const intc1 = body.RWS[0].RW[36].FIS[0].FI[0].TMC.DE;
-	  	const jfc1 = body.RWS[0].RW[36].FIS[0].FI[0].CF[0].JF;
+	  	const streetc = body.RWS[0].RW[37].DE;
+	  	const intc1 = body.RWS[0].RW[37].FIS[0].FI[0].TMC.DE;
+	  	const jfc1 = body.RWS[0].RW[37].FIS[0].FI[0].CF[0].JF;
 
-	  	const intc2 = body.RWS[0].RW[36].FIS[0].FI[1].TMC.DE;
-	  	const jfc2 = body.RWS[0].RW[35].FIS[0].FI[1].CF[0].JF;
+	  	const intc2 = body.RWS[0].RW[37].FIS[0].FI[1].TMC.DE;
+	  	const jfc2 = body.RWS[0].RW[37].FIS[0].FI[1].CF[0].JF;
 	
 	  	var p = 2
 	  
@@ -3797,7 +3797,6 @@ app.get('/jplaureloutgmall-',function(_req, _res){
 	  	var jplaur = jplau/p;
 	  	
 	  	let analysis34 = "";
-	  	
 	  	if(jplaur == 0 || jplaur <=4){
 	  		analysis34 = "Free flow of traffic";
 	  	}else if(jplaur > 4 || jplaur <=8){
@@ -3810,9 +3809,36 @@ app.get('/jplaureloutgmall-',function(_req, _res){
 	  		analysis34 = "Cannot compute"
 	  	}
 
+	  	let analysis35 = "";
+	  	if(jfc1 == 0 || jfc1 <=4){
+	  		analysis35 = "R. Magsaysay Ave: Free flow of traffic";
+	  	}else if(jfc1 > 4 || jfc1 <=8){
+	  		analysis35 = "R. Magsaysay Ave: Sluggish flow of traffic";
+	  	}else if(jfc1 > 8 || jfc1 >=9){
+	  		analysis35 = "R. Magsaysay Ave: Slow flow of traffic";
+	  	}else if(jfc1 == 10){
+	  		analysis35 = "R. Magsaysay Ave: Traffic stopped or Road closed"
+	  	}else{
+	  		analysis35 = "Cannot compute"
+	  	}
+
+	  	let analysis36 = "";
+	  	if(jfc2 == 0 || jfc2 <=4){
+	  		analysis36 = "E. Quirino Ave/Sta. Ana Ave: Free flow of traffic";
+	  	}else if(jfc2 > 4 || jfc2 <=8){
+	  		analysis36 = "E. Quirino Ave/Sta. Ana Ave: Sluggish flow of traffic";
+	  	}else if(jfc2 > 8 || jfc2 >=9){
+	  		analysis36 = "E. Quirino Ave/Sta. Ana Ave: Slow flow of traffic";
+	  	}else if(jfc2 == 10){
+	  		analysis36 = "E. Quirino Ave/Sta. Ana Ave: Traffic stopped or Road closed"
+	  	}else{
+	  		analysis36 = "Cannot compute"
+	  	}
+
 	  	
 	  	_res.setHeader('Content-Type', 'application/json');
-    	_res.send(JSON.stringify({ street: streetc, intc1: intc1, jfc1: jfc1, intc2: intc2, jfc2: jfc2, analysis34: analysis34 }));
+    	_res.send(JSON.stringify({ street: streetc, intc1: intc1, jfc1: jfc1, intc2: intc2, jfc2: jfc2,
+    	analysis35:analysis35, analysis36:analysis36, analysis34: analysis34 }));
 	  
 	});
 
@@ -3823,12 +3849,12 @@ app.get('/jplaureloutgmall',function(_req, _res){
 	request('https://traffic.api.here.com/traffic/6.1/flow.json?bbox=7.2598%2C125.0860%3B6.7670%2C125.6674&app_id=fQbW8CGYiU3l5mLqWgBE&app_code=SYZXwjFBHSYi_1t1GNuHow', { json: true }, (err, res, body) => {
 	  if (err) { return console.log(err); }
 
-	  	const streetc = body.RWS[0].RW[37].DE;
-	  	const intc1 = body.RWS[0].RW[37].FIS[0].FI[0].TMC.DE;
-	  	const jfc1 = body.RWS[0].RW[37].FIS[0].FI[0].CF[0].JF;
+	  	const streetc = body.RWS[0].RW[36].DE;
+	  	const intc1 = body.RWS[0].RW[36].FIS[0].FI[0].TMC.DE;
+	  	const jfc1 = body.RWS[0].RW[36].FIS[0].FI[0].CF[0].JF;
 
-	  	const intc2 = body.RWS[0].RW[37].FIS[0].FI[1].TMC.DE;
-	  	const jfc2 = body.RWS[0].RW[37].FIS[0].FI[1].CF[0].JF;
+	  	const intc2 = body.RWS[0].RW[36].FIS[0].FI[1].TMC.DE;
+	  	const jfc2 = body.RWS[0].RW[36].FIS[0].FI[1].CF[0].JF;
 	
 	  	var p = 2
 	  
@@ -3850,9 +3876,38 @@ app.get('/jplaureloutgmall',function(_req, _res){
 	  		analysis35 = "Cannot compute"
 	  	}
 
+	  	let analysis36 = "";
+	  	if(jfc1 == 0 || jfc1 <=4){
+	  		analysis36 = "E. Quirino Ave/Sta. Ana Ave: Free flow of traffic";
+	  	}else if(jfc1 > 4 || jfc1 <=8){
+	  		analysis36 = "E. Quirino Ave/Sta. Ana Ave: Sluggish flow of traffic";
+	  	}else if(jfc1 > 8 || jfc1 >=9){
+	  		analysis36 = "E. Quirino Ave/Sta. Ana Ave: Slow flow of traffic";
+	  	}else if(jfc1 == 10){
+	  		analysis36 = "E. Quirino Ave/Sta. Ana Ave: Traffic stopped or Road closed"
+	  	}else{
+	  		analysis36 = "Cannot compute"
+	  	}
+
+
+	  	let analysis37 = "";
+	  	if(jfc2 == 0 || jfc2 <=4){
+	  		analysis37 = "R. Magsaysay Ave: Free flow of traffic";
+	  	}else if(jfc2 > 4 || jfc2 <=8){
+	  		analysis37 = "R. Magsaysay Ave: Sluggish flow of traffic";
+	  	}else if(jfc2 > 8 || jfc2 >=9){
+	  		analysis37 = "R. Magsaysay Ave: Slow flow of traffic";
+	  	}else if(jfc2 == 10){
+	  		analysis37 = "R. Magsaysay Ave: Traffic stopped or Road closed"
+	  	}else{
+	  		analysis37 = "Cannot compute"
+	  	}
+
+
 	  	
 	  	_res.setHeader('Content-Type', 'application/json');
-    	_res.send(JSON.stringify({ street: streetc, intc1: intc1, jfc1: jfc1, intc2: intc2, jfc2: jfc2, analysis35: analysis35 }));
+    	_res.send(JSON.stringify({ street: streetc, intc1: intc1, jfc1: jfc1, intc2: intc2, jfc2: jfc2, 
+    		analysis36:analysis36, analysis37:analysis37, analysis35: analysis35 }));
 	  
 	});
 
@@ -9042,6 +9097,39 @@ app.post('/webhook/', function(req, res) {
 
 				
 			}
+
+			if(text=='jplaurel gmall intersections-'){
+				
+				let chatbotResponse1 = "";
+				let chatbotResponse2 = "";
+				
+				
+				//source : https://www.npmjs.com/package/axios
+				   axios.get(' https://cryptic-eyrie-21978.herokuapp.com/jplaureloutgmall-')
+				  .then(function (response) {
+				
+
+				    chatbotResponse1 = response.data.analysis35;
+				    sendText(sender, chatbotResponse1)
+
+				    chatbotResponse2 = response.data.analysis36;
+				    sendText(sender, chatbotResponse2)
+
+				   
+				  })
+				  .catch(function (error) {
+				    //console.log(error);
+				     chatbotResponse1 = "not ok";
+				     chatbotResponse2 = "not ok";
+
+				    sendText(sender, chatbotResponse1)
+				    sendText(sender, chatbotResponse2)
+				    
+				  });
+
+				
+				
+			}
 			if(text=='jplaurel before gmall')
 			// if(text.includes("pichon street-"))
 			{
@@ -9060,6 +9148,39 @@ app.post('/webhook/', function(req, res) {
 				    sendText(sender, chatbotResponse)
 				  });
 
+				
+			}
+
+			if(text=='jplaurel gmall intersections'){
+				
+				let chatbotResponse1 = "";
+				let chatbotResponse2 = "";
+				
+				
+				//source : https://www.npmjs.com/package/axios
+				   axios.get(' https://cryptic-eyrie-21978.herokuapp.com/jplaureloutgmall')
+				  .then(function (response) {
+				
+
+				    chatbotResponse1 = response.data.analysis36;
+				    sendText(sender, chatbotResponse1)
+
+				    chatbotResponse2 = response.data.analysis37;
+				    sendText(sender, chatbotResponse2)
+
+				   
+				  })
+				  .catch(function (error) {
+				    //console.log(error);
+				     chatbotResponse1 = "not ok";
+				     chatbotResponse2 = "not ok";
+
+				    sendText(sender, chatbotResponse1)
+				    sendText(sender, chatbotResponse2)
+				    
+				  });
+
+				
 				
 			}
 			if(text=='cm recto')
