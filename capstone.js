@@ -6100,13 +6100,13 @@ app.get('/angliongto-',function(_req, _res){
 	  	}
 
 	  	let analysis67 = "";
-	  	if(jfc4 == 0 || jfc4 <=4){
+	  	if(jfc3 == 0 || jfc3 <=4){
 	  		analysis67 = "Saint Anthony Subd/Cabantian Rd: Free flow of traffic";
-	  	}else if(jfc4 > 4 || jfc4 <=8){
+	  	}else if(jfc3 > 4 || jfc3 <=8){
 	  		analysis67 = "Saint Anthony Subd/Cabantian Rd: Sluggish flow of traffic";
-	  	}else if(jfc4 > 8 || jfc4 >=9){
+	  	}else if(jfc3 > 8 || jfc3 >=9){
 	  		analysis67 = "Saint Anthony Subd/Cabantian Rd: Slow flow of traffic";
-	  	}else if(jfc4 == 10){
+	  	}else if(jfc3 == 10){
 	  		analysis67 = "Saint Anthony Subd/Cabantian Rd: Traffic stopped or Road closed"
 	  	}else{
 	  		analysis67 = "Cannot compute"
