@@ -4028,7 +4028,7 @@ app.get('/cmrecto',function(_req, _res){
 
 
 });
-app.get('/cbangoy-',function(_req, _res){
+app.get('/cbangoy',function(_req, _res){
 
 	request('https://traffic.api.here.com/traffic/6.1/flow.json?bbox=7.2598%2C125.0860%3B6.7670%2C125.6674&app_id=fQbW8CGYiU3l5mLqWgBE&app_code=SYZXwjFBHSYi_1t1GNuHow', { json: true }, (err, res, body) => {
 	  if (err) { return console.log(err); }
@@ -4050,7 +4050,6 @@ app.get('/cbangoy-',function(_req, _res){
 	  	var cbango = cban/p;
 	  	
 	  	let analysis37 = "";
-	  	
 	  	if(cbango == 0 || cbango <=4){
 	  		analysis37 = "Free flow of traffic";
 	  	}else if(cbango > 4 || cbango <=8){
@@ -4063,16 +4062,56 @@ app.get('/cbangoy-',function(_req, _res){
 	  		analysis37 = "Cannot compute"
 	  	}
 
+	  	let analysis38 = "";
+	  	if(jfc1 == 0 || jfc1 <=4){
+	  		analysis38 = "E. Quirino Ave: Free flow of traffic";
+	  	}else if(jfc1 > 4 || jfc1 <=8){
+	  		analysis38 = "E. Quirino Ave: Sluggish flow of traffic";
+	  	}else if(jfc1 > 8 || jfc1 >=9){
+	  		analysis38 = "E. Quirino Ave: Slow flow of traffic";
+	  	}else if(jfc1 == 10){
+	  		analysis38 = "E. Quirino Ave: Traffic stopped or Road closed"
+	  	}else{
+	  		analysis38 = "Cannot compute"
+	  	}
+
+	  	let analysis39 = "";
+	  	if(jfc2 == 0 || jfc2 <=4){
+	  		analysis39 = "M. Roxas/R. Magsaysay Ave: Free flow of traffic";
+	  	}else if(jfc2 > 4 || jfc2 <=8){
+	  		analysis39 = "M. Roxas/R. Magsaysay Ave: Sluggish flow of traffic";
+	  	}else if(jfc2 > 8 || jfc2 >=9){
+	  		analysis39 = "M. Roxas/R. Magsaysay Ave: Slow flow of traffic";
+	  	}else if(jfc2 == 10){
+	  		analysis39 = "M. Roxas/R. Magsaysay Ave: Traffic stopped or Road closed"
+	  	}else{
+	  		analysis39 = "Cannot compute"
+	  	}
+
+	  	let analysis40 = "";
+	  	if(jfc3 == 0 || jfc3 <=4){
+	  		analysis40 = "A. Bonifacio St: Free flow of traffic";
+	  	}else if(jfc3 > 4 || jfc3 <=8){
+	  		analysis40 = "A. Bonifacio St: Sluggish flow of traffic";
+	  	}else if(jfc3 > 8 || jfc3 >=9){
+	  		analysis40 = "A. Bonifacio St: Slow flow of traffic";
+	  	}else if(jfc3 == 10){
+	  		analysis40 = "A. Bonifacio St: Traffic stopped or Road closed"
+	  	}else{
+	  		analysis40 = "Cannot compute"
+	  	}
+
 	  	
 	  	_res.setHeader('Content-Type', 'application/json');
-    	_res.send(JSON.stringify({ street: streetc, intc1: intc1, jfc1: jfc1, intc2: intc2, jfc2: jfc2, intc3: intc3, jfc3: jfc3, analysis37: analysis37 }));
+    	_res.send(JSON.stringify({ street: streetc, intc1: intc1, jfc1: jfc1, intc2: intc2, jfc2: jfc2, intc3: intc3, jfc3: jfc3, 
+    		analysis38:analysis38, analysis39:analysis39, analysis40:analysis40, analysis37: analysis37 }));
 	  
 	});
 
 
 });
 
-app.get('/cbangoy',function(_req, _res){
+app.get('/cbangoy-',function(_req, _res){
 
 	request('https://traffic.api.here.com/traffic/6.1/flow.json?bbox=7.2598%2C125.0860%3B6.7670%2C125.6674&app_id=fQbW8CGYiU3l5mLqWgBE&app_code=SYZXwjFBHSYi_1t1GNuHow', { json: true }, (err, res, body) => {
 	  if (err) { return console.log(err); }
@@ -4088,7 +4127,6 @@ app.get('/cbangoy',function(_req, _res){
 	  	var cbanngoy = cbann/p;
 	  	
 	  	let analysis38 = "";
-	  	
 	  	if(cbanngoy == 0 || cbanngoy <=4){
 	  		analysis38 = "Free flow of traffic";
 	  	}else if(cbanngoy > 4 || cbanngoy <=8){
@@ -4101,9 +4139,23 @@ app.get('/cbangoy',function(_req, _res){
 	  		analysis38 = "Cannot compute"
 	  	}
 
+	  	let analysis39 = "";
+	  	if(jfc1 == 0 || jfc1 <=4){
+	  		analysis39 = "Free flow of traffic";
+	  	}else if(jfc1 > 4 || jfc1 <=8){
+	  		analysis39 = "Sluggish flow of traffic";
+	  	}else if(jfc1 > 8 || jfc1 >=9){
+	  		analysis39 = "Slow flow of traffic";
+	  	}else if(jfc1 == 10){
+	  		analysis39 = "Traffic stopped or Road closed"
+	  	}else{
+	  		analysis39 = "Cannot compute"
+	  	}
+
 	  	
 	  	_res.setHeader('Content-Type', 'application/json');
-    	_res.send(JSON.stringify({ street: streetc, intc1: intc1, jfc1: jfc1, analysis38: analysis38 }));
+    	_res.send(JSON.stringify({ street: streetc, intc1: intc1, jfc1: jfc1, 
+    		analysis39:analysis39, analysis38: analysis38 }));
 	  
 	});
 
@@ -9279,7 +9331,7 @@ app.post('/webhook/', function(req, res) {
 				
 				
 				//source : https://www.npmjs.com/package/axios
-				   axios.get(' https://cryptic-eyrie-21978.herokuapp.com/cmrecto')
+				   axios.get('https://cryptic-eyrie-21978.herokuapp.com/cmrecto')
 				  .then(function (response) {
 				
 
@@ -9339,6 +9391,37 @@ app.post('/webhook/', function(req, res) {
 
 				
 			}
+
+			if(text=='c bangoy intersections-'){
+				
+				let chatbotResponse1 = "";
+				
+				
+				
+				//source : https://www.npmjs.com/package/axios
+				   axios.get(' https://cryptic-eyrie-21978.herokuapp.com/cbangoy-')
+				  .then(function (response) {
+				
+
+				    chatbotResponse1 = response.data.analysis39;
+				    sendText(sender, chatbotResponse1)
+
+
+				   
+				  })
+				  .catch(function (error) {
+				    //console.log(error);
+				     chatbotResponse1 = "not ok";
+				     
+
+				    sendText(sender, chatbotResponse1)
+				    
+				    
+				  });
+
+				
+				
+			}
 			if(text=='c bangoy')
 			// if(text.includes("pichon street-"))
 			{
@@ -9357,6 +9440,44 @@ app.post('/webhook/', function(req, res) {
 				    sendText(sender, chatbotResponse)
 				  });
 
+				
+			}
+
+			if(text=='c bangoy intersections'){
+				
+				let chatbotResponse1 = "";
+				let chatbotResponse2 = "";
+				let chatbotResponse3 = "";
+				
+				
+				//source : https://www.npmjs.com/package/axios
+				   axios.get(' https://cryptic-eyrie-21978.herokuapp.com/cbangoy')
+				  .then(function (response) {
+				
+
+				    chatbotResponse1 = response.data.analysis38;
+				    sendText(sender, chatbotResponse1)
+				     chatbotResponse2 = response.data.analysis39;
+				    sendText(sender, chatbotResponse2)
+				     chatbotResponse3 = response.data.analysis40;
+				    sendText(sender, chatbotResponse3)
+
+
+				   
+				  })
+				  .catch(function (error) {
+				    //console.log(error);
+				     chatbotResponse1 = "not ok";
+				     chatbotResponse2 = "not ok";
+				     chatbotResponse3 = "not ok";
+				    sendText(sender, chatbotResponse1)
+				    sendText(sender, chatbotResponse2)
+				    sendText(sender, chatbotResponse3)
+				    
+				    
+				  });
+
+				
 				
 			}
 			if(text=='r magsaysay-')
