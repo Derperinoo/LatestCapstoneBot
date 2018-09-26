@@ -4801,7 +4801,7 @@ app.get('/agdaoflyover-',function(_req, _res){
 
 
 });
-app.get('/rcastillo-',function(_req, _res){
+app.get('/rcastillo',function(_req, _res){
 
 	request('https://traffic.api.here.com/traffic/6.1/flow.json?bbox=7.2598%2C125.0860%3B6.7670%2C125.6674&app_id=fQbW8CGYiU3l5mLqWgBE&app_code=SYZXwjFBHSYi_1t1GNuHow', { json: true }, (err, res, body) => {
 	  if (err) { return console.log(err); }
@@ -4810,21 +4810,17 @@ app.get('/rcastillo-',function(_req, _res){
 	  	const intc1 = body.RWS[0].RW[49].FIS[0].FI[0].TMC.DE;
 	  	const jfc1 = body.RWS[0].RW[49].FIS[0].FI[0].CF[0].JF;
 
-	  	const intc2 = body.RWS[0].RW[49].FIS[0].FI[1].TMC.DE;
-	  	const jfc2 = body.RWS[0].RW[49].FIS[0].FI[1].CF[0].JF;
-
-	  	const intc3 = body.RWS[0].RW[49].FIS[0].FI[2].TMC.DE;
-	  	const jfc3 = body.RWS[0].RW[49].FIS[0].FI[2].CF[0].JF;
+	  	const intc2 = body.RWS[0].RW[49].FIS[0].FI[2].TMC.DE;
+	  	const jfc2 = body.RWS[0].RW[49].FIS[0].FI[2].CF[0].JF;
 
 
-	  	var p = 3
+	  	var p = 2
 	  
-	  	var rcas = jfc1 + jfc2 + jfc3 ;
+	  	var rcas = jfc1 +  jfc2 ;
 
 	  	var rcast = rcas/p;
 	  	
 	  	let analysis47 = "";
-	  	
 	  	if(rcast == 0 || rcast <=4){
 	  		analysis47 = "Free flow of traffic";
 	  	}else if(rcast > 4 || rcast <=8){
@@ -4837,15 +4833,42 @@ app.get('/rcastillo-',function(_req, _res){
 	  		analysis47 = "Cannot compute"
 	  	}
 
+	  	let analysis48 = "";
+	  	if(jfc1 == 0 || jfc1 <=4){
+	  		analysis48 = "J. P. Laurel Ave: Free flow of traffic";
+	  	}else if(jfc1 > 4 || jfc1 <=8){
+	  		analysis48 = "J. P. Laurel Ave: Sluggish flow of traffic";
+	  	}else if(jfc1 > 8 || jfc1 >=9){
+	  		analysis48 = "J. P. Laurel Ave: Slow flow of traffic";
+	  	}else if(jfc1 == 10){
+	  		analysis48 = "J. P. Laurel Ave: Traffic stopped or Road closed"
+	  	}else{
+	  		analysis48 = "Cannot compute"
+	  	}
+
+	  	let analysis49 = "";
+	  	if(jfc2 == 0 || jfc2 <=4){
+	  		analysis49 = "Agdao Flyover/L. Garcia/Dacudao: Free flow of traffic";
+	  	}else if(jfc2 > 4 || jfc2 <=8){
+	  		analysis49 = "Agdao Flyover/L. Garcia/Dacudao: Sluggish flow of traffic";
+	  	}else if(jfc2 > 8 || jfc2 >=9){
+	  		analysis49 = "Agdao Flyover/L. Garcia/Dacudao: Slow flow of traffic";
+	  	}else if(jfc2 == 10){
+	  		analysis49 = "Agdao Flyover/L. Garcia/Dacudao: Traffic stopped or Road closed"
+	  	}else{
+	  		analysis49 = "Cannot compute"
+	  	}
+
 	  	
 	  	_res.setHeader('Content-Type', 'application/json');
-    	_res.send(JSON.stringify({ street: streetc, intc1: intc1, jfc1: jfc1, intc2: intc2, jfc2: jfc2, intc3: intc3, jfc3: jfc3, analysis47: analysis47 }));
+    	_res.send(JSON.stringify({ street: streetc, intc1: intc1, jfc1: jfc1, intc2: intc2, jfc2: jfc2, 
+    		analysis48:analysis48, analysis49:analysis49, analysis47: analysis47 }));
 	  
 	});
 
 
 });
-app.get('/rcastillo',function(_req, _res){
+app.get('/rcastillo-',function(_req, _res){
 
 	request('https://traffic.api.here.com/traffic/6.1/flow.json?bbox=7.2598%2C125.0860%3B6.7670%2C125.6674&app_id=fQbW8CGYiU3l5mLqWgBE&app_code=SYZXwjFBHSYi_1t1GNuHow', { json: true }, (err, res, body) => {
 	  if (err) { return console.log(err); }
@@ -4854,11 +4877,8 @@ app.get('/rcastillo',function(_req, _res){
 	  	const intc1 = body.RWS[0].RW[50].FIS[0].FI[0].TMC.DE;
 	  	const jfc1 = body.RWS[0].RW[50].FIS[0].FI[0].CF[0].JF;
 
-	  	const intc2 = body.RWS[0].RW[50].FIS[0].FI[1].TMC.DE;
-	  	const jfc2 = body.RWS[0].RW[50].FIS[0].FI[1].CF[0].JF;
-
-	  	const intc3 = body.RWS[0].RW[50].FIS[0].FI[2].TMC.DE;
-	  	const jfc3 = body.RWS[0].RW[50].FIS[0].FI[2].CF[0].JF;
+	  	const intc2 = body.RWS[0].RW[50].FIS[0].FI[2].TMC.DE;
+	  	const jfc2 = body.RWS[0].RW[50].FIS[0].FI[2].CF[0].JF;
 
 
 	  	var p = 3
@@ -4868,7 +4888,6 @@ app.get('/rcastillo',function(_req, _res){
 	  	var rcastill = rcasti/p;
 	  	
 	  	let analysis48 = "";
-	  	
 	  	if(rcastill == 0 || rcastill <=4){
 	  		analysis48 = "Free flow of traffic";
 	  	}else if(rcastill > 4 || rcastill <=8){
@@ -4881,9 +4900,37 @@ app.get('/rcastillo',function(_req, _res){
 	  		analysis48 = "Cannot compute"
 	  	}
 
+	  	let analysis49 = "";
+	  	if(jfc1 == 0 || jfc1 <=4){
+	  		analysis49 = "Agdao Flyover/L. Garcia/Dacudao: Free flow of traffic";
+	  	}else if(jfc1 > 4 || jfc1 <=8){
+	  		analysis49 = "Agdao Flyover/L. Garcia/Dacudao: Sluggish flow of traffic";
+	  	}else if(jfc1 > 8 || jfc1 >=9){
+	  		analysis49 = "Agdao Flyover/L. Garcia/Dacudao: Slow flow of traffic";
+	  	}else if(jfc1 == 10){
+	  		analysis49 = "Agdao Flyover/L. Garcia/Dacudao: Traffic stopped or Road closed"
+	  	}else{
+	  		analysis49 = "Cannot compute"
+	  	}
+
+	  	let analysis50 = "";
+	  	if(jfc2 == 0 || jfc2 <=4){
+	  		analysis50 = "J. P. Laurel Ave: Free flow of traffic";
+	  	}else if(jfc2 > 4 || jfc2 <=8){
+	  		analysis50 = "J. P. Laurel Ave: Sluggish flow of traffic";
+	  	}else if(jfc2 > 8 || jfc2 >=9){
+	  		analysis50 = "J. P. Laurel Ave: Slow flow of traffic";
+	  	}else if(jfc2 == 10){
+	  		analysis50 = "J. P. Laurel Ave: Traffic stopped or Road closed"
+	  	}else{
+	  		analysis50 = "Cannot compute"
+	  	}
+
+
 	  	
 	  	_res.setHeader('Content-Type', 'application/json');
-    	_res.send(JSON.stringify({ street: streetc, intc1: intc1, jfc1: jfc1, intc2: intc2, jfc2: jfc2, intc3: intc3, jfc3: jfc3, analysis48: analysis48 }));
+    	_res.send(JSON.stringify({ street: streetc, intc1: intc1, jfc1: jfc1, intc2: intc2, jfc2: jfc2, 
+    		analysis49:analysis49, analysis50:analysis50, analysis48: analysis48 }));
 	  
 	});
 
@@ -10253,6 +10300,41 @@ app.post('/webhook/', function(req, res) {
 
 				
 			}
+
+			if(text=='r castillo intersections-'){
+				
+				let chatbotResponse1 = "";
+				let chatbotResponse2 = "";
+				
+				
+				
+				//source : https://www.npmjs.com/package/axios
+				   axios.get(' https://cryptic-eyrie-21978.herokuapp.com/rcastillo-')
+				  .then(function (response) {
+				
+
+				    chatbotResponse1 = response.data.analysis49;
+				    sendText(sender, chatbotResponse1)
+
+				    chatbotResponse2 = response.data.analysis50;
+				    sendText(sender, chatbotResponse2)
+
+				   
+				   
+				  })
+				  .catch(function (error) {
+				    //console.log(error);
+				     chatbotResponse1 = "not ok";
+				     chatbotResponse2 = "not ok";
+				    
+				    sendText(sender, chatbotResponse1)
+				    sendText(sender, chatbotResponse2)
+				    
+				  });
+
+				
+				
+			}
 			if(text=='r castillo')
 			// if(text.includes("pichon street-"))
 			{
@@ -10271,6 +10353,41 @@ app.post('/webhook/', function(req, res) {
 				    sendText(sender, chatbotResponse)
 				  });
 
+				
+			}
+
+			if(text=='r castillo intersections'){
+				
+				let chatbotResponse1 = "";
+				let chatbotResponse2 = "";
+				
+				
+				
+				//source : https://www.npmjs.com/package/axios
+				   axios.get(' https://cryptic-eyrie-21978.herokuapp.com/rcastillo')
+				  .then(function (response) {
+				
+
+				    chatbotResponse1 = response.data.analysis48;
+				    sendText(sender, chatbotResponse1)
+
+				    chatbotResponse2 = response.data.analysis49;
+				    sendText(sender, chatbotResponse2)
+
+				   
+				   
+				  })
+				  .catch(function (error) {
+				    //console.log(error);
+				     chatbotResponse1 = "not ok";
+				     chatbotResponse2 = "not ok";
+				    
+				    sendText(sender, chatbotResponse1)
+				    sendText(sender, chatbotResponse2)
+				    
+				  });
+
+				
 				
 			}
 			if(text=='cp garcia-')
