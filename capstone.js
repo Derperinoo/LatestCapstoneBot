@@ -8635,7 +8635,7 @@ app.post('/webhook/', function(req, res) {
 				
 			}
 
-			if(text=='a bonifacio street intersections-'){
+			if(text=='a bonifacio st intersections-'){
 				
 				let chatbotResponse1 = "";
 				let chatbotResponse2 = "";
