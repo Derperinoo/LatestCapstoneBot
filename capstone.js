@@ -3182,12 +3182,12 @@ app.get('/ftorresst-',function(_req, _res){
 	request('https://traffic.api.here.com/traffic/6.1/flow.json?bbox=7.2598%2C125.0860%3B6.7670%2C125.6674&app_id=fQbW8CGYiU3l5mLqWgBE&app_code=SYZXwjFBHSYi_1t1GNuHow', { json: true }, (err, res, body) => {
 	  if (err) { return console.log(err); }
 
-	  	const streetc = body.RWS[0].RW[30].DE;
-	  	const intc1 = body.RWS[0].RW[30].FIS[0].FI[0].TMC.DE;
-	  	const jfc1 = body.RWS[0].RW[30].FIS[0].FI[0].CF[0].JF;
+	  	const streetc = body.RWS[0].RW[32].DE;
+	  	const intc1 = body.RWS[0].RW[32].FIS[0].FI[0].TMC.DE;
+	  	const jfc1 = body.RWS[0].RW[32].FIS[0].FI[0].CF[0].JF;
 
-	  	const intc2 = body.RWS[0].RW[30].FIS[0].FI[1].TMC.DE;
-	  	const jfc2 = body.RWS[0].RW[30].FIS[0].FI[1].CF[0].JF;
+	  	const intc2 = body.RWS[0].RW[32].FIS[0].FI[1].TMC.DE;
+	  	const jfc2 = body.RWS[0].RW[32].FIS[0].FI[1].CF[0].JF;
 
 	
 	  	var p = 2
@@ -3197,7 +3197,6 @@ app.get('/ftorresst-',function(_req, _res){
 	  	var torress = tor/p;
 	  	
 	  	let analysis28 = "";
-	  	
 	  	if(torress == 0 || torress <=4){
 	  		analysis28 = "Free flow of traffic";
 	  	}else if(torress > 4 || torress <=8){
@@ -3210,11 +3209,38 @@ app.get('/ftorresst-',function(_req, _res){
 	  		analysis28 = "Cannot compute"
 	  	}
 
+	  	let analysis29 = "";
+	  	if(jfc1 == 0 || jfc1 <=4){
+	  		analysis29 = "Father Selga St: Free flow of traffic";
+	  	}else if(jfc1 > 4 || jfc1 <=8){
+	  		analysis29 = "Father Selga St: Sluggish flow of traffic";
+	  	}else if(jfc1 > 8 || jfc1 >=9){
+	  		analysis29 = "Father Selga St: Slow flow of traffic";
+	  	}else if(jfc1 == 10){
+	  		analysis29 = "Father Selga St: Traffic stopped or Road closed"
+	  	}else{
+	  		analysis29 = "Cannot compute"
+	  	}
+
+		let analysis30 = "";
+	  	if(jfc2 == 0 || jfc2 <=4){
+	  		analysis30 = "J. P. Laurel Ave: Free flow of traffic";
+	  	}else if(jfc2 > 4 || jfc2 <=8){
+	  		analysis30 = "J. P. Laurel Ave: Sluggish flow of traffic";
+	  	}else if(jfc2 > 8 || jfc2 >=9){
+	  		analysis30 = "J. P. Laurel Ave: Slow flow of traffic";
+	  	}else if(jfc2 == 10){
+	  		analysis30 = "J. P. Laurel Ave: Traffic stopped or Road closed"
+	  	}else{
+	  		analysis30 = "Cannot compute"
+	  	}
+
 	  	
 
 
 	  	_res.setHeader('Content-Type', 'application/json');
-    	_res.send(JSON.stringify({ street: streetc, intc1: intc1, jfc1: jfc1, intc2: intc2, jfc2: jfc2, analysis28: analysis28 }));
+    	_res.send(JSON.stringify({ street: streetc, intc1: intc1, jfc1: jfc1, intc2: intc2, jfc2: jfc2, 
+    		analysis29:analysis29, analysis30:analysis30, analysis28: analysis28 }));
 	
 
 
@@ -3279,12 +3305,12 @@ app.get('/ftorresst',function(_req, _res){
 	request('https://traffic.api.here.com/traffic/6.1/flow.json?bbox=7.2598%2C125.0860%3B6.7670%2C125.6674&app_id=fQbW8CGYiU3l5mLqWgBE&app_code=SYZXwjFBHSYi_1t1GNuHow', { json: true }, (err, res, body) => {
 	  if (err) { return console.log(err); }
 
-	  	const streetc = body.RWS[0].RW[32].DE;
-	  	const intc1 = body.RWS[0].RW[32].FIS[0].FI[0].TMC.DE;
-	  	const jfc1 = body.RWS[0].RW[32].FIS[0].FI[0].CF[0].JF;
+	  	const streetc = body.RWS[0].RW[30].DE;
+	  	const intc1 = body.RWS[0].RW[30].FIS[0].FI[0].TMC.DE;
+	  	const jfc1 = body.RWS[0].RW[30].FIS[0].FI[0].CF[0].JF;
 
-	  	const intc2 = body.RWS[0].RW[32].FIS[0].FI[1].TMC.DE;
-	  	const jfc2 = body.RWS[0].RW[32].FIS[0].FI[1].CF[0].JF;
+	  	const intc2 = body.RWS[0].RW[30].FIS[0].FI[1].TMC.DE;
+	  	const jfc2 = body.RWS[0].RW[30].FIS[0].FI[1].CF[0].JF;
 	
 	  	var p = 2
 	  
@@ -8488,6 +8514,41 @@ app.post('/webhook/', function(req, res) {
 
 				
 			}
+
+
+			if(text=='f torres intersections-'){
+				
+				let chatbotResponse1 = "";
+				let chatbotResponse2 = "";
+				
+				
+				//source : https://www.npmjs.com/package/axios
+				   axios.get(' https://cryptic-eyrie-21978.herokuapp.com/ftorresst-')
+				  .then(function (response) {
+				
+
+				    chatbotResponse1 = response.data.analysis29;
+				    sendText(sender, chatbotResponse1)
+
+				    chatbotResponse2 = response.data.analysis30;
+				    sendText(sender, chatbotResponse2)
+
+				   
+				  })
+				  .catch(function (error) {
+				    //console.log(error);
+				     chatbotResponse1 = "not ok";
+				     chatbotResponse2 = "not ok";
+
+				    sendText(sender, chatbotResponse1)
+				    sendText(sender, chatbotResponse2)
+				    
+				  });
+
+				
+				
+			}
+
 			if(text=='a bonifacio street-')
 			// if(text.includes("pichon street-"))
 			{
