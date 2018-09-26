@@ -3942,7 +3942,6 @@ app.get('/cmrecto',function(_req, _res){
 	  	var cmrect = cmrec/p;
 	  	
 	  	let analysis36 = "";
-	  	
 	  	if(cmrect == 0 || cmrect <=4){
 	  		analysis36 = "Free flow of traffic";
 	  	}else if(cmrect > 4 || cmrect <=8){
@@ -3955,9 +3954,75 @@ app.get('/cmrecto',function(_req, _res){
 	  		analysis36 = "Cannot compute"
 	  	}
 
+	  	let analysis37 = "";
+	  	if(jfc1 == 0 || jfc1 <=4){
+	  		analysis37 = "Pichon St: Free flow of traffic";
+	  	}else if(jfc1 > 4 || jfc1 <=8){
+	  		analysis37 = "Pichon St: Sluggish flow of traffic";
+	  	}else if(jfc1 > 8 || jfc1 >=9){
+	  		analysis37 = "Pichon St: Slow flow of traffic";
+	  	}else if(jfc1 == 10){
+	  		analysis37 = "Pichon St: Traffic stopped or Road closed"
+	  	}else{
+	  		analysis37 = "Cannot compute"
+	  	}
+
+	  	let analysis38 = "";
+	  	if(jfc2 == 0 || jfc2 <=4){
+	  		analysis38 = "San Pedro St: Free flow of traffic";
+	  	}else if(jfc2 > 4 || jfc2 <=8){
+	  		analysis38 = "San Pedro St: Sluggish flow of traffic";
+	  	}else if(jfc2 > 8 || jfc2 >=9){
+	  		analysis38 = "San Pedro St: Slow flow of traffic";
+	  	}else if(jfc2 == 10){
+	  		analysis38 = "San Pedro St: Traffic stopped or Road closed"
+	  	}else{
+	  		analysis38 = "Cannot compute"
+	  	}
+
+	  	let analysis39 = "";
+	  	if(jfc3 == 0 || jfc3 <=4){
+	  		analysis39 = "A. Bonifacio St: Free flow of traffic";
+	  	}else if(jfc3 > 4 || jfc3 <=8){
+	  		analysis39 = "A. Bonifacio St: Sluggish flow of traffic";
+	  	}else if(jfc3 > 8 || jfc3 >=9){
+	  		analysis39 = "A. Bonifacio St: Slow flow of traffic";
+	  	}else if(jfc3 == 10){
+	  		analysis39 = "A. Bonifacio St: Traffic stopped or Road closed"
+	  	}else{
+	  		analysis39 = "Cannot compute"
+	  	}
+
+	  	let analysis40 = "";
+	  	if(jfc4 == 0 || jfc4 <=4){
+	  		analysis40 = "M. Roxas: Free flow of traffic";
+	  	}else if(jfc4 > 4 || jfc4 <=8){
+	  		analysis40 = "M. Roxas: Sluggish flow of traffic";
+	  	}else if(jfc4 > 8 || jfc4 >=9){
+	  		analysis40 = "M. Roxas: Slow flow of traffic";
+	  	}else if(jfc4 == 10){
+	  		analysis40 = "M. Roxas: Traffic stopped or Road closed"
+	  	}else{
+	  		analysis40 = "Cannot compute"
+	  	}
+
+	  	let analysis41 = "";
+	  	if(jfc5 == 0 || jfc5 <=4){
+	  		analysis41 = "R. Magsaysay Ave: Free flow of traffic";
+	  	}else if(jfc5 > 4 || jfc5 <=8){
+	  		analysis41 = "R. Magsaysay Ave: Sluggish flow of traffic";
+	  	}else if(jfc5 > 8 || jfc5 >=9){
+	  		analysis41 = "R. Magsaysay Ave: Slow flow of traffic";
+	  	}else if(jfc5 == 10){
+	  		analysis41 = "R. Magsaysay Ave: Traffic stopped or Road closed"
+	  	}else{
+	  		analysis41 = "Cannot compute"
+	  	}
+
 	  	
 	  	_res.setHeader('Content-Type', 'application/json');
-    	_res.send(JSON.stringify({ street: streetc, intc1: intc1, jfc1: jfc1, intc2: intc2, jfc2: jfc2, intc3: intc3, jfc3: jfc3, intc4: intc4, jfc4: jfc4, intc5: intc5, jfc5: jfc5, analysis36: analysis36 }));
+    	_res.send(JSON.stringify({ street: streetc, intc1: intc1, jfc1: jfc1, intc2: intc2, jfc2: jfc2, intc3: intc3, jfc3: jfc3, intc4: intc4, jfc4: jfc4, intc5: intc5, jfc5: jfc5,
+    	analysis37:analysis37,analysis38:analysis38,analysis39:analysis39,analysis40:analysis40, analysis41:analysis41, analysis36: analysis36 }));
 	  
 	});
 
@@ -9201,6 +9266,57 @@ app.post('/webhook/', function(req, res) {
 				    sendText(sender, chatbotResponse)
 				  });
 
+				
+			}
+
+				if(text=='cm recto intersections'){
+				
+				let chatbotResponse1 = "";
+				let chatbotResponse2 = "";
+				let chatbotResponse3 = "";
+				let chatbotResponse4 = "";
+				let chatbotResponse5 = "";
+				
+				
+				//source : https://www.npmjs.com/package/axios
+				   axios.get(' https://cryptic-eyrie-21978.herokuapp.com/cmrecto')
+				  .then(function (response) {
+				
+
+				    chatbotResponse1 = response.data.analysis37;
+				    sendText(sender, chatbotResponse1)
+
+				    chatbotResponse2 = response.data.analysis38;
+				    sendText(sender, chatbotResponse2)
+
+				    chatbotResponse3 = response.data.analysis39;
+				    sendText(sender, chatbotResponse3)
+
+				    chatbotResponse4 = response.data.analysis40;
+				    sendText(sender, chatbotResponse4)
+
+				    chatbotResponse5 = response.data.analysis41;
+				    sendText(sender, chatbotResponse5)
+
+				   
+				  })
+				  .catch(function (error) {
+				    //console.log(error);
+				     chatbotResponse1 = "not ok";
+				     chatbotResponse2 = "not ok";
+				     chatbotResponse3 = "not ok";
+				     chatbotResponse4 = "not ok";
+				     chatbotResponse5 = "not ok";
+
+				    sendText(sender, chatbotResponse1)
+				    sendText(sender, chatbotResponse2)
+				    sendText(sender, chatbotResponse3)
+				    sendText(sender, chatbotResponse4)
+				    sendText(sender, chatbotResponse5)
+				    
+				  });
+
+				
 				
 			}
 			if(text=='c bangoy-')
