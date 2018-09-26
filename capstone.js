@@ -6248,26 +6248,23 @@ app.get('/saintanthonysubd-',function(_req, _res){
 
 });
 
-app.get('/cabantianroad-',function(_req, _res){
+app.get('/cabantianroad',function(_req, _res){
 
 	request('https://traffic.api.here.com/traffic/6.1/flow.json?bbox=7.2598%2C125.0860%3B6.7670%2C125.6674&app_id=fQbW8CGYiU3l5mLqWgBE&app_code=SYZXwjFBHSYi_1t1GNuHow', { json: true }, (err, res, body) => {
 	  if (err) { return console.log(err); }
 
 	  	const streetc = body.RWS[0].RW[69].DE;
-	  	const intc1 = body.RWS[0].RW[69].FIS[0].FI[0].TMC.DE;
-	  	const jfc1 = body.RWS[0].RW[69].FIS[0].FI[0].CF[0].JF;
 
-	  	const intc2 = body.RWS[0].RW[69].FIS[0].FI[1].TMC.DE;
-	  	const jfc2 = body.RWS[0].RW[69].FIS[0].FI[1].CF[0].JF;
+	  	const intc1 = body.RWS[0].RW[69].FIS[0].FI[1].TMC.DE;
+	  	const jfc1 = body.RWS[0].RW[69].FIS[0].FI[1].CF[0].JF;
 
-	  	var p = 2
+	  	var p = 1
 	  
-	  	var caba = jfc1 + jfc2 ;
+	  	var caba = jfc1 ;
 
 	  	var caban = caba/p;
 	  	
 	  	let analysis67 = "";
-	  	
 	  	if(caban == 0 || caban <=4){
 	  		analysis67 = "Free flow of traffic";
 	  	}else if(caban > 4 || caban <=8){
@@ -6280,16 +6277,30 @@ app.get('/cabantianroad-',function(_req, _res){
 	  		analysis67 = "Cannot compute"
 	  	}
 
+	  	let analysis68 = "";
+	  	if(jfc1 == 0 || jfc1 <=4){
+	  		analysis68 = "Angliongto: Free flow of traffic";
+	  	}else if(jfc1 > 4 || jfc1 <=8){
+	  		analysis68 = "Angliongto: Sluggish flow of traffic";
+	  	}else if(jfc1 > 8 || jfc1 >=9){
+	  		analysis68 = "Angliongto: Slow flow of traffic";
+	  	}else if(jfc1 == 10){
+	  		analysis68 = "Angliongto: Traffic stopped or Road closed"
+	  	}else{
+	  		analysis68 = "Cannot compute"
+	  	}
+
 	  	
 	  	_res.setHeader('Content-Type', 'application/json');
-    	_res.send(JSON.stringify({ street: streetc, intc1: intc1, jfc1: jfc1, intc2: intc2, jfc2: jfc2, analysis67: analysis67 }));
+    	_res.send(JSON.stringify({ street: streetc, intc1: intc1, jfc1: jfc1, 
+    		analysis68:analysis68, analysis67: analysis67 }));
 	  
 	});
 
 
 });
 
-app.get('/cabantianroad',function(_req, _res){
+app.get('/cabantianroad-',function(_req, _res){
 
 	request('https://traffic.api.here.com/traffic/6.1/flow.json?bbox=7.2598%2C125.0860%3B6.7670%2C125.6674&app_id=fQbW8CGYiU3l5mLqWgBE&app_code=SYZXwjFBHSYi_1t1GNuHow', { json: true }, (err, res, body) => {
 	  if (err) { return console.log(err); }
@@ -6298,17 +6309,15 @@ app.get('/cabantianroad',function(_req, _res){
 	  	const intc1 = body.RWS[0].RW[70].FIS[0].FI[0].TMC.DE;
 	  	const jfc1 = body.RWS[0].RW[70].FIS[0].FI[0].CF[0].JF;
 
-	  	const intc2 = body.RWS[0].RW[70].FIS[0].FI[1].TMC.DE;
-	  	const jfc2 = body.RWS[0].RW[70].FIS[0].FI[1].CF[0].JF;
+	  	
 
-	  	var p = 2
+	  	var p = 1
 	  
-	  	var cabaa = jfc1 + jfc2 ;
+	  	var cabaa = jfc1;
 
 	  	var cabaan = cabaa/p;
 	  	
 	  	let analysis68 = "";
-	  	
 	  	if(cabaan == 0 || cabaan <=4){
 	  		analysis68 = "Free flow of traffic";
 	  	}else if(cabaan > 4 || cabaan <=8){
@@ -6321,9 +6330,23 @@ app.get('/cabantianroad',function(_req, _res){
 	  		analysis68 = "Cannot compute"
 	  	}
 
+	  	let analysis69 = "";
+	  	if(jfc1 == 0 || jfc1 <=4){
+	  		analysis69 = "Angliongto: Free flow of traffic";
+	  	}else if(jfc1 > 4 || jfc1 <=8){
+	  		analysis69 = "Angliongto: Sluggish flow of traffic";
+	  	}else if(jfc1 > 8 || jfc1 >=9){
+	  		analysis69 = "Angliongto: Slow flow of traffic";
+	  	}else if(jfc1 == 10){
+	  		analysis69 = "Angliongto: Traffic stopped or Road closed"
+	  	}else{
+	  		analysis69 = "Cannot compute"
+	  	}
+
 	  	
 	  	_res.setHeader('Content-Type', 'application/json');
-    	_res.send(JSON.stringify({ street: streetc, intc1: intc1, jfc1: jfc1, intc2: intc2, jfc2: jfc2, analysis68: analysis68 }));
+    	_res.send(JSON.stringify({ street: streetc, intc1: intc1, jfc1: jfc1, 
+    		analysis69:analysis69, analysis68: analysis68 }));
 	  
 	});
 
@@ -11950,7 +11973,7 @@ app.post('/webhook/', function(req, res) {
 				axios.get('https://cryptic-eyrie-21978.herokuapp.com/cabantianroad-')
 				  .then(function (response) {
 				    //console.log(response);
-				    chatbotResponse = response.data.analysis67;
+				    chatbotResponse = response.data.analysis68;
 				    sendText(sender, chatbotResponse)
 				  })
 				  .catch(function (error) {
@@ -11959,6 +11982,38 @@ app.post('/webhook/', function(req, res) {
 				    sendText(sender, chatbotResponse)
 				  });
 
+				
+			}
+
+			if(text=='cabantian road intersections-'){
+				
+				let chatbotResponse1 = "";
+			
+				
+				
+				//source : https://www.npmjs.com/package/axios
+				   axios.get(' https://cryptic-eyrie-21978.herokuapp.com/cabantianroad-')
+				  .then(function (response) {
+				
+
+				    chatbotResponse1 = response.data.analysis68;
+				    sendText(sender, chatbotResponse1)
+
+				 
+
+				   
+				  })
+				  .catch(function (error) {
+				    //console.log(error);
+				     chatbotResponse1 = "not ok";
+				     
+
+				    sendText(sender, chatbotResponse1)
+				    
+				    
+				  });
+
+				
 				
 			}
 			if(text=='cabantian road')
@@ -11970,7 +12025,7 @@ app.post('/webhook/', function(req, res) {
 				axios.get('https://cryptic-eyrie-21978.herokuapp.com/cabantianroad')
 				  .then(function (response) {
 				    //console.log(response);
-				    chatbotResponse = response.data.analysis68;
+				    chatbotResponse = response.data.analysis67;
 				    sendText(sender, chatbotResponse)
 				  })
 				  .catch(function (error) {
@@ -11979,6 +12034,38 @@ app.post('/webhook/', function(req, res) {
 				    sendText(sender, chatbotResponse)
 				  });
 
+				
+			}
+
+			if(text=='cabantian road intersections'){
+				
+				let chatbotResponse1 = "";
+			
+				
+				
+				//source : https://www.npmjs.com/package/axios
+				   axios.get(' https://cryptic-eyrie-21978.herokuapp.com/cabantianroad')
+				  .then(function (response) {
+				
+
+				    chatbotResponse1 = response.data.analysis67;
+				    sendText(sender, chatbotResponse1)
+
+				 
+
+				   
+				  })
+				  .catch(function (error) {
+				    //console.log(error);
+				     chatbotResponse1 = "not ok";
+				     
+
+				    sendText(sender, chatbotResponse1)
+				    
+				    
+				  });
+
+				
 				
 			}
 			if(text=='davao city maharlika-')
