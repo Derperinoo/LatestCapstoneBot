@@ -7575,7 +7575,7 @@ app.post('/webhook/', function(req, res) {
 
 				
 			}
-			if(text=='cabaguio intersections'){
+			if(text=='cabaguio intersections-'){
 				
 				let chatbotResponse1 = "";
 				let chatbotResponse2 = "";
