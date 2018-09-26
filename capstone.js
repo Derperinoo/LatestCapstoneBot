@@ -3011,7 +3011,7 @@ app.get('/dacudaoave',function(_req, _res){
 
 
 });
-app.get('/pichonst',function(_req, _res){
+app.get('/pichonst-',function(_req, _res){
 
 	request('https://traffic.api.here.com/traffic/6.1/flow.json?bbox=7.2598%2C125.0860%3B6.7670%2C125.6674&app_id=fQbW8CGYiU3l5mLqWgBE&app_code=SYZXwjFBHSYi_1t1GNuHow', { json: true }, (err, res, body) => {
 	  if (err) { return console.log(err); }
@@ -3041,11 +3041,26 @@ app.get('/pichonst',function(_req, _res){
 	  		analysis24 = "Cannot compute"
 	  	}
 
+	  	let analysis25 = "";
+	  	if(jfc1 == 0 || jfc1 <=4){
+	  		analysis25 = "F. Torres St: Free flow of traffic";
+	  	}else if(jfc1 > 4 || jfc1 <=8){
+	  		analysis25 = "F. Torres St: Sluggish flow of traffic";
+	  	}else if(jfc1 > 8 || jfc1 >=9){
+	  		analysis25 = "F. Torres St: Slow flow of traffic";
+	  	}else if(jfc1 == 10){
+	  		analysis25 = "F. Torres St: Traffic stopped or Road closed"
+	  	}else{
+	  		analysis25 = "Cannot compute"
+	  	}
+
+
 	  	
 
 
 	  	_res.setHeader('Content-Type', 'application/json');
-    	_res.send(JSON.stringify({ street: streetc, intc1: intc1, jfc1: jfc1, analysis24: analysis24 }));
+    	_res.send(JSON.stringify({ street: streetc, intc1: intc1, jfc1: jfc1, 
+    		analysis25:analysis25, analysis24: analysis24 }));
 	
 
 
@@ -3291,12 +3306,13 @@ app.get('/abonifaciost',function(_req, _res){
 
 });
 
-app.get('/pichonst-',function(_req, _res){
+app.get('/pichonst',function(_req, _res){
 
 	request('https://traffic.api.here.com/traffic/6.1/flow.json?bbox=7.2598%2C125.0860%3B6.7670%2C125.6674&app_id=fQbW8CGYiU3l5mLqWgBE&app_code=SYZXwjFBHSYi_1t1GNuHow', { json: true }, (err, res, body) => {
 	  if (err) { return console.log(err); }
 
 	  	const streetc = body.RWS[0].RW[27].DE;
+	  	
 	  	const intc1 = body.RWS[0].RW[27].FIS[0].FI[0].TMC.DE;
 	  	const jfc1 = body.RWS[0].RW[27].FIS[0].FI[0].CF[0].JF;
 
@@ -8200,6 +8216,25 @@ app.post('/webhook/', function(req, res) {
 				
 				//source : https://www.npmjs.com/package/axios
 				axios.get('https://cryptic-eyrie-21978.herokuapp.com/pichonst-')
+				  .then(function (response) {
+				    //console.log(response);
+				    chatbotResponse = response.data.analysis25;
+				    sendText(sender, chatbotResponse)
+				  })
+				  .catch(function (error) {
+				    //console.log(error);
+				    chatbotResponse = "not ok";
+				    sendText(sender, chatbotResponse)
+				  });
+
+				
+			}
+
+			if(text=='pichon st intersections-'){
+				let chatbotResponse = "";
+				
+				//source : https://www.npmjs.com/package/axios
+				axios.get(' https://cryptic-eyrie-21978.herokuapp.com/pichonst-')
 				  .then(function (response) {
 				    //console.log(response);
 				    chatbotResponse = response.data.analysis25;
