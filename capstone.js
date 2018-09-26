@@ -3319,7 +3319,6 @@ app.get('/ftorresst',function(_req, _res){
 	  	var torresss = torr/p;
 	  	
 	  	let analysis30 = "";
-	  	
 	  	if(torresss == 0 || torresss <=4){
 	  		analysis30 = "Free flow of traffic";
 	  	}else if(torresss > 4 || torresss <=8){
@@ -3332,9 +3331,38 @@ app.get('/ftorresst',function(_req, _res){
 	  		analysis30 = "Cannot compute"
 	  	}
 
+
+	  	let analysis31 = "";
+	  	if(jfc1 == 0 || jfc1 <=4){
+	  		analysis31 = "J. P. Laurel Ave: Free flow of traffic";
+	  	}else if(jfc1 > 4 || jfc1 <=8){
+	  		analysis31 = "J. P. Laurel Ave: Sluggish flow of traffic";
+	  	}else if(jfc1 > 8 || jfc1 >=9){
+	  		analysis31 = "J. P. Laurel Ave: Slow flow of traffic";
+	  	}else if(jfc1 == 10){
+	  		analysis31 = "J. P. Laurel Ave: Traffic stopped or Road closed"
+	  	}else{
+	  		analysis31 = "Cannot compute"
+	  	}
+
+		let analysis32 = "";
+	  	if(jfc2 == 0 || jfc2 <=4){
+	  		analysis32 = "Father Selga St: Free flow of traffic";
+	  	}else if(jfc2 > 4 || jfc2 <=8){
+	  		analysis32 = "Father Selga St: Sluggish flow of traffic";
+	  	}else if(jfc2 > 8 || jfc2 >=9){
+	  		analysis32 = "Father Selga St: Slow flow of traffic";
+	  	}else if(jfc2 == 10){
+	  		analysis32 = "Father Selga St: Traffic stopped or Road closed"
+	  	}else{
+	  		analysis32 = "Cannot compute"
+	  	}
+
+
 	  	
 	  	_res.setHeader('Content-Type', 'application/json');
-    	_res.send(JSON.stringify({ street: streetc, intc1: intc1, jfc1: jfc1, intc2: intc2, jfc2: jfc2, analysis30: analysis30 }));
+    	_res.send(JSON.stringify({ street: streetc, intc1: intc1, jfc1: jfc1, intc2: intc2, jfc2: jfc2, 
+    		analysis31:analysis31, analysis32:analysis32, analysis30: analysis30 }));
 	  
 	});
 
@@ -8514,8 +8542,6 @@ app.post('/webhook/', function(req, res) {
 
 				
 			}
-
-
 			if(text=='f torres intersections-'){
 				
 				let chatbotResponse1 = "";
@@ -8589,6 +8615,40 @@ app.post('/webhook/', function(req, res) {
 
 				
 			}
+
+				if(text=='f torres intersections'){
+				
+				let chatbotResponse1 = "";
+				let chatbotResponse2 = "";
+				
+				
+				//source : https://www.npmjs.com/package/axios
+				   axios.get(' https://cryptic-eyrie-21978.herokuapp.com/ftorresst')
+				  .then(function (response) {
+				
+
+				    chatbotResponse1 = response.data.analysis31;
+				    sendText(sender, chatbotResponse1)
+
+				    chatbotResponse2 = response.data.analysis32;
+				    sendText(sender, chatbotResponse2)
+
+				   
+				  })
+				  .catch(function (error) {
+				    //console.log(error);
+				     chatbotResponse1 = "not ok";
+				     chatbotResponse2 = "not ok";
+
+				    sendText(sender, chatbotResponse1)
+				    sendText(sender, chatbotResponse2)
+				    
+				  });
+
+				
+				
+			}
+
 			if(text=='a bonifacio street')
 			// if(text.includes("pichon street-"))
 			{
