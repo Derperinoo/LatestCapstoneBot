@@ -4881,9 +4881,9 @@ app.get('/rcastillo-',function(_req, _res){
 	  	const jfc2 = body.RWS[0].RW[50].FIS[0].FI[2].CF[0].JF;
 
 
-	  	var p = 3
+	  	var p = 2
 	  
-	  	var rcasti = jfc1 + jfc2 + jfc3 ;
+	  	var rcasti = jfc1 + jfc2  ;
 
 	  	var rcastill = rcasti/p;
 	  	
@@ -10364,7 +10364,7 @@ app.post('/webhook/', function(req, res) {
 				
 				
 				//source : https://www.npmjs.com/package/axios
-				   axios.get(' https://cryptic-eyrie-21978.herokuapp.com/rcastillo')
+				   axios.get('https://cryptic-eyrie-21978.herokuapp.com/rcastillo')
 				  .then(function (response) {
 				
 
