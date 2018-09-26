@@ -3255,15 +3255,15 @@ app.get('/abonifaciost-',function(_req, _res){
 	request('https://traffic.api.here.com/traffic/6.1/flow.json?bbox=7.2598%2C125.0860%3B6.7670%2C125.6674&app_id=fQbW8CGYiU3l5mLqWgBE&app_code=SYZXwjFBHSYi_1t1GNuHow', { json: true }, (err, res, body) => {
 	  if (err) { return console.log(err); }
 
-	  	const streetc = body.RWS[0].RW[31].DE;
-	  	const intc1 = body.RWS[0].RW[31].FIS[0].FI[0].TMC.DE;
-	  	const jfc1 = body.RWS[0].RW[31].FIS[0].FI[0].CF[0].JF;
+	  	const streetc = body.RWS[0].RW[33].DE;
+	  	const intc1 = body.RWS[0].RW[33].FIS[0].FI[0].TMC.DE;
+	  	const jfc1 = body.RWS[0].RW[33].FIS[0].FI[0].CF[0].JF;
 
-	  	const intc2 = body.RWS[0].RW[31].FIS[0].FI[1].TMC.DE;
-	  	const jfc2 = body.RWS[0].RW[31].FIS[0].FI[1].CF[0].JF;
+	  	const intc2 = body.RWS[0].RW[33].FIS[0].FI[1].TMC.DE;
+	  	const jfc2 = body.RWS[0].RW[33].FIS[0].FI[1].CF[0].JF;
 
-	  	const intc3 = body.RWS[0].RW[31].FIS[0].FI[2].TMC.DE;
-	  	const jfc3 = body.RWS[0].RW[31].FIS[0].FI[2].CF[0].JF;
+	  	const intc3 = body.RWS[0].RW[33].FIS[0].FI[2].TMC.DE;
+	  	const jfc3 = body.RWS[0].RW[33].FIS[0].FI[2].CF[0].JF;
 
 	
 	  	var p = 3
@@ -3273,7 +3273,6 @@ app.get('/abonifaciost-',function(_req, _res){
 	  	var bonifac = boni/p;
 	  	
 	  	let analysis29 = "";
-	  	
 	  	if(bonifac == 0 || bonifac <=4){
 	  		analysis29 = "Free flow of traffic";
 	  	}else if(bonifac > 4 || bonifac <=8){
@@ -3286,11 +3285,51 @@ app.get('/abonifaciost-',function(_req, _res){
 	  		analysis29 = "Cannot compute"
 	  	}
 
+	  	let analysis30 = "";
+	  	if(jfc1 == 0 || jfc1 <=4){
+	  		analysis30 = "Free flow of traffic";
+	  	}else if(jfc1 > 4 || jfc1 <=8){
+	  		analysis30 = "Sluggish flow of traffic";
+	  	}else if(jfc1 > 8 || jfc1 >=9){
+	  		analysis30 = "Slow flow of traffic";
+	  	}else if(jfc1 == 10){
+	  		analysis30 = "Traffic stopped or Road closed"
+	  	}else{
+	  		analysis30 = "Cannot compute"
+	  	}
+
+	  	let analysis31 = "";
+	  	if(jfc2 == 0 || jfc2 <=4){
+	  		analysis31 = "Free flow of traffic";
+	  	}else if(jfc2 > 4 || jfc2 <=8){
+	  		analysis31 = "Sluggish flow of traffic";
+	  	}else if(jfc2 > 8 || jfc2 >=9){
+	  		analysis31 = "Slow flow of traffic";
+	  	}else if(jfc2 == 10){
+	  		analysis31 = "Traffic stopped or Road closed"
+	  	}else{
+	  		analysis31 = "Cannot compute"
+	  	}
+
+	  	let analysis32 = "";
+	  	if(jfc3 == 0 || jfc3 <=4){
+	  		analysis32 = "Free flow of traffic";
+	  	}else if(jfc3 > 4 || jfc3 <=8){
+	  		analysis32 = "Sluggish flow of traffic";
+	  	}else if(jfc3 > 8 || jfc3 >=9){
+	  		analysis32 = "Slow flow of traffic";
+	  	}else if(jfc3 == 10){
+	  		analysis32 = "Traffic stopped or Road closed"
+	  	}else{
+	  		analysis32 = "Cannot compute"
+	  	}
+
 	  	
 
 
 	  	_res.setHeader('Content-Type', 'application/json');
-    	_res.send(JSON.stringify({ street: streetc, intc1: intc1, jfc1: jfc1, intc2: intc2, jfc2: jfc2, intc3: intc3, jfc3: jfc3, analysis29: analysis29 }));
+    	_res.send(JSON.stringify({ street: streetc, intc1: intc1, jfc1: jfc1, intc2: intc2, jfc2: jfc2, intc3: intc3, jfc3: jfc3,
+    	analysis30:analysis30, analysis31:analysis31, analysis32:analysis32, analysis29: analysis29 }));
 	
 
 
@@ -3373,15 +3412,15 @@ app.get('/abonifaciost',function(_req, _res){
 	request('https://traffic.api.here.com/traffic/6.1/flow.json?bbox=7.2598%2C125.0860%3B6.7670%2C125.6674&app_id=fQbW8CGYiU3l5mLqWgBE&app_code=SYZXwjFBHSYi_1t1GNuHow', { json: true }, (err, res, body) => {
 	  if (err) { return console.log(err); }
 
-	  	const streetc = body.RWS[0].RW[33].DE;
-	  	const intc1 = body.RWS[0].RW[33].FIS[0].FI[0].TMC.DE;
-	  	const jfc1 = body.RWS[0].RW[33].FIS[0].FI[0].CF[0].JF;
+	  	const streetc = body.RWS[0].RW[31].DE;
+	  	const intc1 = body.RWS[0].RW[31].FIS[0].FI[0].TMC.DE;
+	  	const jfc1 = body.RWS[0].RW[31].FIS[0].FI[0].CF[0].JF;
 
-	  	const intc2 = body.RWS[0].RW[33].FIS[0].FI[1].TMC.DE;
-	  	const jfc2 = body.RWS[0].RW[33].FIS[0].FI[1].CF[0].JF;
+	  	const intc2 = body.RWS[0].RW[31].FIS[0].FI[1].TMC.DE;
+	  	const jfc2 = body.RWS[0].RW[31].FIS[0].FI[1].CF[0].JF;
 
-	  	const intc3 = body.RWS[0].RW[33].FIS[0].FI[2].TMC.DE;
-	  	const jfc3 = body.RWS[0].RW[33].FIS[0].FI[2].CF[0].JF;
+	  	const intc3 = body.RWS[0].RW[31].FIS[0].FI[2].TMC.DE;
+	  	const jfc3 = body.RWS[0].RW[31].FIS[0].FI[2].CF[0].JF;
 	
 	  	var p = 3
 	  
@@ -8593,6 +8632,45 @@ app.post('/webhook/', function(req, res) {
 				    sendText(sender, chatbotResponse)
 				  });
 
+				
+			}
+
+			if(text=='a bonifacio street intersections-'){
+				
+				let chatbotResponse1 = "";
+				let chatbotResponse2 = "";
+				let chatbotResponse3 = "";
+				
+				
+				//source : https://www.npmjs.com/package/axios
+				   axios.get(' https://cryptic-eyrie-21978.herokuapp.com/abonifaciost-')
+				  .then(function (response) {
+				
+
+				    chatbotResponse1 = response.data.analysis30;
+				    sendText(sender, chatbotResponse1)
+
+				    chatbotResponse2 = response.data.analysis31;
+				    sendText(sender, chatbotResponse2)
+
+				    chatbotResponse3 = response.data.analysis32;
+				    sendText(sender, chatbotResponse3)
+
+				   
+				  })
+				  .catch(function (error) {
+				    //console.log(error);
+				     chatbotResponse1 = "not ok";
+				     chatbotResponse2 = "not ok";
+				     chatbotResponse3 = "not ok";
+
+				    sendText(sender, chatbotResponse1)
+				    sendText(sender, chatbotResponse2)
+				    sendText(sender, chatbotResponse3)
+				    
+				  });
+
+				
 				
 			}
 			if(text=='f torres street')
