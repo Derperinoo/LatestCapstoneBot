@@ -2195,21 +2195,22 @@ app.get('/quezonblvd-',function(_req, _res){
 	request('https://traffic.api.here.com/traffic/6.1/flow.json?bbox=7.2598%2C125.0860%3B6.7670%2C125.6674&app_id=fQbW8CGYiU3l5mLqWgBE&app_code=SYZXwjFBHSYi_1t1GNuHow', { json: true }, (err, res, body) => {
 	  if (err) { return console.log(err); }
 
-	  	const streetc = body.RWS[0].RW[18].DE;
-	  	const intc1 = body.RWS[0].RW[18].FIS[0].FI[0].TMC.DE;
-	  	const jfc1 = body.RWS[0].RW[18].FIS[0].FI[0].CF[0].JF;
+	  	const streetc = body.RWS[0].RW[19].DE;
 	  	
-	  	const intc2 = body.RWS[0].RW[18].FIS[0].FI[1].TMC.DE;
-	  	const jfc2 = body.RWS[0].RW[18].FIS[0].FI[1].CF[0].JF;
+	  	const intc1 = body.RWS[0].RW[19].FIS[0].FI[0].TMC.DE;
+	  	const jfc1 = body.RWS[0].RW[19].FIS[0].FI[0].CF[0].JF;
+	  	
+	  	const intc2 = body.RWS[0].RW[19].FIS[0].FI[1].TMC.DE;
+	  	const jfc2 = body.RWS[0].RW[19].FIS[0].FI[1].CF[0].JF;
 
-	    const intc3 = body.RWS[0].RW[18].FIS[0].FI[2].TMC.DE;
-	  	const jfc3 = body.RWS[0].RW[18].FIS[0].FI[2].CF[0].JF;
+	    const intc3 = body.RWS[0].RW[19].FIS[0].FI[2].TMC.DE;
+	  	const jfc3 = body.RWS[0].RW[19].FIS[0].FI[2].CF[0].JF;
 
-	  	const intc4 = body.RWS[0].RW[18].FIS[0].FI[3].TMC.DE;
-	  	const jfc4 = body.RWS[0].RW[18].FIS[0].FI[3].CF[0].JF;
+	  	const intc4 = body.RWS[0].RW[19].FIS[0].FI[3].TMC.DE;
+	  	const jfc4 = body.RWS[0].RW[19].FIS[0].FI[3].CF[0].JF;
 
-	  	const intc5 = body.RWS[0].RW[18].FIS[0].FI[4].TMC.DE;
-	  	const jfc5 = body.RWS[0].RW[18].FIS[0].FI[4].CF[0].JF;
+	  	const intc5 = body.RWS[0].RW[19].FIS[0].FI[4].TMC.DE;
+	  	const jfc5 = body.RWS[0].RW[19].FIS[0].FI[4].CF[0].JF;
 
 
 	  	var p = 5
@@ -2315,21 +2316,21 @@ app.get('/quezonblvd',function(_req, _res){
 	request('https://traffic.api.here.com/traffic/6.1/flow.json?bbox=7.2598%2C125.0860%3B6.7670%2C125.6674&app_id=fQbW8CGYiU3l5mLqWgBE&app_code=SYZXwjFBHSYi_1t1GNuHow', { json: true }, (err, res, body) => {
 	  if (err) { return console.log(err); }
 
-	  	const streetc = body.RWS[0].RW[19].DE;
-	  	const intc1 = body.RWS[0].RW[19].FIS[0].FI[0].TMC.DE;
+	  	const streetc = body.RWS[0].RW[18].DE;
+	  	const intc1 = body.RWS[0].RW[18].FIS[0].FI[0].TMC.DE;
 	  	const jfc1 = body.RWS[0].RW[19].FIS[0].FI[0].CF[0].JF;
 	  	
-	  	const intc2 = body.RWS[0].RW[19].FIS[0].FI[1].TMC.DE;
-	  	const jfc2 = body.RWS[0].RW[19].FIS[0].FI[1].CF[0].JF;
+	  	const intc2 = body.RWS[0].RW[18].FIS[0].FI[1].TMC.DE;
+	  	const jfc2 = body.RWS[0].RW[18].FIS[0].FI[1].CF[0].JF;
 
-	    const intc3 = body.RWS[0].RW[19].FIS[0].FI[2].TMC.DE;
-	  	const jfc3 = body.RWS[0].RW[19].FIS[0].FI[2].CF[0].JF;
+	    const intc3 = body.RWS[0].RW[18].FIS[0].FI[2].TMC.DE;
+	  	const jfc3 = body.RWS[0].RW[18].FIS[0].FI[2].CF[0].JF;
 
-	  	const intc4 = body.RWS[0].RW[19].FIS[0].FI[3].TMC.DE;
-	  	const jfc4 = body.RWS[0].RW[19].FIS[0].FI[3].CF[0].JF;
+	  	const intc4 = body.RWS[0].RW[18].FIS[0].FI[3].TMC.DE;
+	  	const jfc4 = body.RWS[0].RW[18].FIS[0].FI[3].CF[0].JF;
 
-	  	const intc5 = body.RWS[0].RW[19].FIS[0].FI[4].TMC.DE;
-	  	const jfc5 = body.RWS[0].RW[19].FIS[0].FI[4].CF[0].JF;
+	  	const intc5 = body.RWS[0].RW[18].FIS[0].FI[4].TMC.DE;
+	  	const jfc5 = body.RWS[0].RW[18].FIS[0].FI[4].CF[0].JF;
 
 
 	  	var p = 5
