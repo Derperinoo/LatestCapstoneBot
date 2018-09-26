@@ -2436,12 +2436,13 @@ app.get('/cabaguioave-',function(_req, _res){
 	request('https://traffic.api.here.com/traffic/6.1/flow.json?bbox=7.2598%2C125.0860%3B6.7670%2C125.6674&app_id=fQbW8CGYiU3l5mLqWgBE&app_code=SYZXwjFBHSYi_1t1GNuHow', { json: true }, (err, res, body) => {
 	  if (err) { return console.log(err); }
 
-	  	const streetc = body.RWS[0].RW[20].DE;
-	  	const intc1 = body.RWS[0].RW[20].FIS[0].FI[0].TMC.DE;
-	  	const jfc1 = body.RWS[0].RW[20].FIS[0].FI[0].CF[0].JF;
+	  	const streetc = body.RWS[0].RW[23].DE;
 	  	
-	  	const intc2 = body.RWS[0].RW[20].FIS[0].FI[1].TMC.DE;
-	  	const jfc2 = body.RWS[0].RW[20].FIS[0].FI[1].CF[0].JF;
+	  	const intc1 = body.RWS[0].RW[23].FIS[0].FI[0].TMC.DE;
+	  	const jfc1 = body.RWS[0].RW[23].FIS[0].FI[0].CF[0].JF;
+	  	
+	  	const intc2 = body.RWS[0].RW[23].FIS[0].FI[1].TMC.DE;
+	  	const jfc2 = body.RWS[0].RW[23].FIS[0].FI[1].CF[0].JF;
 
 
 	  	var p = 2
@@ -2451,7 +2452,6 @@ app.get('/cabaguioave-',function(_req, _res){
 	  	var cabaguioa = cabaguio/p;
 	  	
 	  	let analysis18 = "";
-	  	
 	  	if(cabaguioa == 0 || cabaguioa <=4){
 	  		analysis18 = "Free flow of traffic";
 	  	}else if(cabaguioa > 4 || cabaguioa <=8){
@@ -2464,9 +2464,36 @@ app.get('/cabaguioave-',function(_req, _res){
 	  		analysis18 = "Cannot compute"
 	  	}
 
+	  	let analysis19 = "";
+	  	if(jfc1 == 0 || jfc1 <=4){
+	  		analysis19 = "Lapu-Lapu/R. Castillo/Dacudao: Free flow of traffic";
+	  	}else if(jfc1 > 4 || jfc1 <=8){
+	  		analysis19 = "Lapu-Lapu/R. Castillo/Dacudao: Sluggish flow of traffic";
+	  	}else if(jfc1 > 8 || jfc1 >=9){
+	  		analysis19 = "Lapu-Lapu/R. Castillo/Dacudao: Slow flow of traffic";
+	  	}else if(jfc1 == 10){
+	  		analysis19 = "Lapu-Lapu/R. Castillo/Dacudao: Traffic stopped or Road closed"
+	  	}else{
+	  		analysis19 = "Cannot compute"
+	  	}
+
+	  	let analysis20 = "";
+	  	if(jfc2 == 0 || jfc2 <=4){
+	  		analysis20 = "J. P. Laurel Ave: Free flow of traffic";
+	  	}else if(jfc2 > 4 || jfc2 <=8){
+	  		analysis20 = "J. P. Laurel Ave: Sluggish flow of traffic";
+	  	}else if(jfc2 > 8 || jfc2 >=9){
+	  		analysis20 = "J. P. Laurel Ave: Slow flow of traffic";
+	  	}else if(jfc2 == 10){
+	  		analysis20 = "J. P. Laurel Ave: Traffic stopped or Road closed"
+	  	}else{
+	  		analysis20 = "Cannot compute"
+	  	}
+
 	  	
 	  	_res.setHeader('Content-Type', 'application/json');
-    	_res.send(JSON.stringify({ street: streetc, intc1: intc1, jfc1: jfc1,  intc2: intc2, jfc2: jfc2, analysis18: analysis18 }));
+    	_res.send(JSON.stringify({ street: streetc, intc1: intc1, jfc1: jfc1,  intc2: intc2, jfc2: jfc2, 
+    		analysis19:analysis19, analysis20:analysis20, analysis18: analysis18 }));
 	
 
 
@@ -2599,12 +2626,12 @@ app.get('/cabaguioave',function(_req, _res){
 	request('https://traffic.api.here.com/traffic/6.1/flow.json?bbox=7.2598%2C125.0860%3B6.7670%2C125.6674&app_id=fQbW8CGYiU3l5mLqWgBE&app_code=SYZXwjFBHSYi_1t1GNuHow', { json: true }, (err, res, body) => {
 	  if (err) { return console.log(err); }
 
-	  	const streetc = body.RWS[0].RW[23].DE;
-	  	const intc1 = body.RWS[0].RW[23].FIS[0].FI[0].TMC.DE;
-	  	const jfc1 = body.RWS[0].RW[23].FIS[0].FI[0].CF[0].JF;
+	  	const streetc = body.RWS[0].RW[20].DE;
+	  	const intc1 = body.RWS[0].RW[20].FIS[0].FI[0].TMC.DE;
+	  	const jfc1 = body.RWS[0].RW[20].FIS[0].FI[0].CF[0].JF;
 	  	
-	  	const intc2 = body.RWS[0].RW[23].FIS[0].FI[1].TMC.DE;
-	  	const jfc2 = body.RWS[0].RW[23].FIS[0].FI[1].CF[0].JF;
+	  	const intc2 = body.RWS[0].RW[20].FIS[0].FI[1].TMC.DE;
+	  	const jfc2 = body.RWS[0].RW[20].FIS[0].FI[1].CF[0].JF;
 
 
 	  	var p = 2
@@ -7546,6 +7573,38 @@ app.post('/webhook/', function(req, res) {
 				    sendText(sender, chatbotResponse)
 				  });
 
+				
+			}
+			if(text=='cabaguio intersections'){
+				
+				let chatbotResponse1 = "";
+				let chatbotResponse2 = "";
+				
+				
+				//source : https://www.npmjs.com/package/axios
+				   axios.get(' https://cryptic-eyrie-21978.herokuapp.com/cabaguioave-')
+				  .then(function (response) {
+				
+
+				    chatbotResponse1 = response.data.analysis19;
+				    sendText(sender, chatbotResponse1)
+
+				    chatbotResponse2 = response.data.analysis20;
+				    sendText(sender, chatbotResponse2)
+
+				   
+				  })
+				  .catch(function (error) {
+				    //console.log(error);
+				     chatbotResponse1 = "not ok";
+				     chatbotResponse2 = "not ok";
+
+				    sendText(sender, chatbotResponse1)
+				    sendText(sender, chatbotResponse2)
+				    
+				  });
+
+				
 				
 			}
 			if(text=='ml quezon boulevard-')
