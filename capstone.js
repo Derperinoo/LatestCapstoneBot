@@ -5129,7 +5129,7 @@ app.get('/diversionroad',function(_req, _res){
 
 	  	
 	  	_res.setHeader('Content-Type', 'application/json');
-    	_res.send(JSON.stringify({ street: streetc, intc1: intc1, jfc1: jfc1, intc2: intc2, jfc2: jfc2, intc3: intc3, jfc3: jfc3, intc4: intc4, jfc4: jfc4, intc5: intc5, jfc5: jfc5, intc6: intc6, jfc6: jfc6, intc7: intc7, jfc7: jfc7,
+    	_res.send(JSON.stringify({ street: streetc, intc1: intc1, jfc1: jfc1, intc2: intc2, jfc2: jfc2, intc3: intc3, jfc3: jfc3, intc4: intc4, jfc4: jfc4, intc5: intc5, jfc5: jfc5, intc6: intc6, jfc6: jfc6, 
     	analysis51:analysis51, analysis52:analysis52, analysis53:analysis53, analysis54:analysis54, analysis55:analysis55, analysis56:analysis56, analysis50: analysis50 }));
 	  
 	});
