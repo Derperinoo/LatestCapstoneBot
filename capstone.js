@@ -6683,12 +6683,10 @@ app.get('/daangmaharlika-',function(_req, _res){
 	  	const intc4 = body.RWS[0].RW[76].FIS[0].FI[3].TMC.DE;
 	  	const jfc4 = body.RWS[0].RW[76].FIS[0].FI[3].CF[0].JF;
 
-	  	const intc5 = body.RWS[0].RW[76].FIS[0].FI[4].TMC.DE;
-	  	const jfc5 = body.RWS[0].RW[76].FIS[0].FI[4].CF[0].JF;
-
-	  	var p = 5
 	  
-	  	var davvv = jfc1 + jfc2 + jfc3 + jfc4 + jfc5;
+	  	var p = 4
+	  
+	  	var davvv = jfc1 + jfc2 + jfc3 + jfc4 ;
 
 	  	var davvva = davvv/p;
 	  	
@@ -6757,23 +6755,11 @@ app.get('/daangmaharlika-',function(_req, _res){
 	  		analysis81 = "Cannot compute"
 	  	}
 
-	  	let analysis82 = "";
-	  	if(jfc5 == 0 || jfc5 <=4){
-	  		analysis82 = "Tadeco Rd/Tagum-Panabo Circum Rd: Free flow of traffic";
-	  	}else if(jfc5 > 4 || jfc5 <=8){
-	  		analysis82 = "Tadeco Rd/Tagum-Panabo Circum Rd: Sluggish flow of traffic";
-	  	}else if(jfc5 > 8 || jfc5 >=9){
-	  		analysis82 = "Tadeco Rd/Tagum-Panabo Circum Rd: Slow flow of traffic";
-	  	}else if(jfc5 == 10){
-	  		analysis82 = "Tadeco Rd/Tagum-Panabo Circum Rd: Traffic stopped or Road closed"
-	  	}else{
-	  		analysis82 = "Cannot compute"
-	  	}
+	 
 
 	  	
 	  	_res.setHeader('Content-Type', 'application/json');
-    	_res.send(JSON.stringify({ street: streetc, intc1: intc1, jfc1: jfc1, intc2: intc2, jfc2: jfc2, intc3: intc3, jfc3: jfc3, intc4: intc4, jfc4:jfc4, intc5:intc5,
-    	 jfc5:jfc5, analysis78:analysis78, analysis79:analysis79, analysis80:analysis80, analysis81:analysis81, analysis82:analysis82, analysis77: analysis77 }));
+    	_res.send(JSON.stringify({ street: streetc, intc1: intc1, jfc1: jfc1, intc2: intc2, jfc2: jfc2, intc3: intc3, jfc3: jfc3, intc4: intc4, jfc4:jfc4, analysis78:analysis78, analysis79:analysis79, analysis80:analysis80, analysis81:analysis81, analysis82:analysis82, analysis77: analysis77 }));
 	  
 	});
 
