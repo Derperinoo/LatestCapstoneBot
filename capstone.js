@@ -2318,7 +2318,7 @@ app.get('/quezonblvd',function(_req, _res){
 
 	  	const streetc = body.RWS[0].RW[18].DE;
 	  	const intc1 = body.RWS[0].RW[18].FIS[0].FI[0].TMC.DE;
-	  	const jfc1 = body.RWS[0].RW[19].FIS[0].FI[0].CF[0].JF;
+	  	const jfc1 = body.RWS[0].RW[18].FIS[0].FI[0].CF[0].JF;
 	  	
 	  	const intc2 = body.RWS[0].RW[18].FIS[0].FI[1].TMC.DE;
 	  	const jfc2 = body.RWS[0].RW[18].FIS[0].FI[1].CF[0].JF;
@@ -2340,7 +2340,6 @@ app.get('/quezonblvd',function(_req, _res){
 	  	var quezonnb = quezonn/p;
 	  	
 	  	let analysis17 = "";
-	  	
 	  	if(quezonnb == 0 || quezonnb <=4){
 	  		analysis17 = "Free flow of traffic";
 	  	}else if(quezonnb > 4 || quezonnb <=8){
@@ -2353,9 +2352,75 @@ app.get('/quezonblvd',function(_req, _res){
 	  		analysis17 = "Cannot compute"
 	  	}
 
+	  	let analysis18 = "";
+	  	if(jfc1 == 0 || jfc1 <=4){
+	  		analysis18 = "San Pedro St: Free flow of traffic";
+	  	}else if(jfc1 > 4 || jfc1 <=8){
+	  		analysis18 = "San Pedro St: Sluggish flow of traffic";
+	  	}else if(jfc1 > 8 || jfc1 >=9){
+	  		analysis18 = "San Pedro St: Slow flow of traffic";
+	  	}else if(jfc1 == 10){
+	  		analysis18 = "San Pedro St: Traffic stopped or Road closed"
+	  	}else{
+	  		analysis17 = "Cannot compute"
+	  	}
+
+	  	let analysis19 = "";
+	  	if(jfc2 == 0 || jfc2 <=4){
+	  		analysis19 = "Pichon St: Free flow of traffic";
+	  	}else if(jfc2 > 4 || jfc2 <=8){
+	  		analysis19 = "Pichon St: Sluggish flow of traffic";
+	  	}else if(jfc2 > 8 || jfc2 >=9){
+	  		analysis19 = "Pichon St: Slow flow of traffic";
+	  	}else if(jfc2 == 10){
+	  		analysis19 = "Pichon St: Traffic stopped or Road closed"
+	  	}else{
+	  		analysis19 = "Cannot compute"
+	  	}
+
+	  	let analysis20 = "";
+	  	if(jfc3 == 0 || jfc3 <=4){
+	  		analysis20 = "Bolton Brg: Free flow of traffic";
+	  	}else if(jfc3 > 4 || jfc3 <=8){
+	  		analysis20 = "Bolton Brg: Sluggish flow of traffic";
+	  	}else if(jfc3 > 8 || jfc3 >=9){
+	  		analysis20 = "Bolton Brg: Slow flow of traffic";
+	  	}else if(jfc3 == 10){
+	  		analysis20 = "Bolton Brg: Traffic stopped or Road closed"
+	  	}else{
+	  		analysis20 = "Cannot compute"
+	  	}
+
+	  	let analysis21 = "";
+	  	if(jfc4 == 0 || jfc4 <=4){
+	  		analysis21 = "G. Torres Ave Formerly Sandawa Rd: Free flow of traffic";
+	  	}else if(jfc4 > 4 || jfc4 <=8){
+	  		analysis21 = "G. Torres Ave Formerly Sandawa Rd: Sluggish flow of traffic";
+	  	}else if(jfc4 > 8 || jfc4 >=9){
+	  		analysis21 = "G. Torres Ave Formerly Sandawa Rd: Slow flow of traffic";
+	  	}else if(jfc4 == 10){
+	  		analysis21 = "G. Torres Ave Formerly Sandawa Rd: Traffic stopped or Road closed"
+	  	}else{
+	  		analysis17 = "Cannot compute"
+	  	}
+
+	  	let analysis22 = "";
+	  	if(jfc5 == 0 || jfc5 <=4){
+	  		analysis22 = "Ecoland: Free flow of traffic";
+	  	}else if(jfc5 > 4 || jfc5 <=8){
+	  		analysis22 = "Ecoland: Sluggish flow of traffic";
+	  	}else if(jfc5 > 8 || jfc5 >=9){
+	  		analysis22 = "Ecoland: Slow flow of traffic";
+	  	}else if(jfc5 == 10){
+	  		analysis22 = "Ecoland: Traffic stopped or Road closed"
+	  	}else{
+	  		analysis22 = "Cannot compute"
+	  	}
+
 
 	  	_res.setHeader('Content-Type', 'application/json');
-    	_res.send(JSON.stringify({ street: streetc, intc1: intc1, jfc1: jfc1,  intc2: intc2, jfc2: jfc2, intc3: intc3, jfc3: jfc3, intc4: intc4, jfc4: jfc4, intc5: intc5, jfc5:jfc5, analysis17: analysis17 }));
+    	_res.send(JSON.stringify({ street: streetc, intc1: intc1, jfc1: jfc1,  intc2: intc2, jfc2: jfc2, intc3: intc3, jfc3: jfc3, intc4: intc4, jfc4: jfc4, intc5: intc5, jfc5:jfc5, 
+    		analysis18:analysis18, analysis19:analysis19, analysis20:analysis20, analysis21:analysis21, analysis22:analysis22, analysis17: analysis17 }));
 	
 
 
@@ -7413,6 +7478,55 @@ app.post('/webhook/', function(req, res) {
 
 				
 			}
+
+			if(text=='quezon boulevard intersections')
+			// if(text.includes("sandawa-"))
+			{
+				let chatbotResponse = "";
+				let chatbotResponse1 = "";
+				let chatbotResponse2 = "";
+				let chatbotResponse3 = "";
+				let chatbotResponse4 = "";
+				
+				//source : https://www.npmjs.com/package/axios
+				axios.get('https://cryptic-eyrie-21978.herokuapp.com/quezonblvd')
+				  .then(function (response) {
+				    //console.log(response);
+				    chatbotResponse = response.data.analysis18;
+				    sendText(sender, chatbotResponse)
+
+				    chatbotResponse1 = response.data.analysis19;
+				    sendText(sender, chatbotResponse1)
+
+				    chatbotResponse2 = response.data.analysis20;
+				    sendText(sender, chatbotResponse2)
+
+				    chatbotResponse3 = response.data.analysis21;
+				    sendText(sender, chatbotResponse3)
+
+				    chatbotResponse4 = response.data.analysis22;
+				    sendText(sender, chatbotResponse4)
+
+
+				  })
+				  .catch(function (error) {
+				    //console.log(error);
+				    chatbotResponse = "not ok";
+				    chatbotResponse1 = "not ok";
+				    chatbotResponse2 = "not ok";
+				    chatbotResponse3 = "not ok";
+				    chatbotResponse4 = "not ok";
+				    sendText(sender, chatbotResponse)
+				    sendText(sender, chatbotResponse1)
+				    sendText(sender, chatbotResponse2)
+				    sendText(sender, chatbotResponse3)
+				    sendText(sender, chatbotResponse4)
+				  });
+
+				
+			}
+
+
 
 			if(text=='cabaguio avenue-')
 			// if(text.includes("cabaguio avenue"))
