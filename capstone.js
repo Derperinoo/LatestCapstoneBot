@@ -4331,7 +4331,7 @@ app.get('/rmagsaysay-',function(_req, _res){
 
 });
 
-app.get('/staanaave-',function(_req, _res){
+app.get('/staanaave',function(_req, _res){
 
 	request('https://traffic.api.here.com/traffic/6.1/flow.json?bbox=7.2598%2C125.0860%3B6.7670%2C125.6674&app_id=fQbW8CGYiU3l5mLqWgBE&app_code=SYZXwjFBHSYi_1t1GNuHow', { json: true }, (err, res, body) => {
 	  if (err) { return console.log(err); }
@@ -4353,7 +4353,6 @@ app.get('/staanaave-',function(_req, _res){
 	  	var staana = staa/p;
 	  	
 	  	let analysis41 = "";
-	  	
 	  	if(staana == 0 || staana <=4){
 	  		analysis41 = "Free flow of traffic";
 	  	}else if(staana > 4 || staana <=8){
@@ -4366,15 +4365,55 @@ app.get('/staanaave-',function(_req, _res){
 	  		analysis41 = "Cannot compute"
 	  	}
 
+	  	let analysis42 = "";
+	  	if(jfc1 == 0 || jfc1 <=4){
+	  		analysis42 = "L. Garcia: Free flow of traffic";
+	  	}else if(jfc1 > 4 || jfc1 <=8){
+	  		analysis42 = "L. Garcia: Sluggish flow of traffic";
+	  	}else if(jfc1 > 8 || jfc1 >=9){
+	  		analysis42 = "L. Garcia: Slow flow of traffic";
+	  	}else if(jfc1 == 10){
+	  		analysis42 = "L. Garcia: Traffic stopped or Road closed"
+	  	}else{
+	  		analysis42 = "Cannot compute"
+	  	}
+
+	  	let analysis43 = "";
+	  	if(jfc2 == 0 || jfc2 <=4){
+	  		analysis43 = "Lapu-Lapu: Free flow of traffic";
+	  	}else if(jfc2 > 4 || jfc2 <=8){
+	  		analysis43 = "Lapu-Lapu: Sluggish flow of traffic";
+	  	}else if(jfc2 > 8 || jfc2 >=9){
+	  		analysis43 = "Lapu-Lapu: Slow flow of traffic";
+	  	}else if(jfc2 == 10){
+	  		analysis43 = "Lapu-Lapu: Traffic stopped or Road closed"
+	  	}else{
+	  		analysis43 = "Cannot compute"
+	  	}
+
+	  	let analysis44 = "";
+	  	if(jfc3 == 0 || jfc3 <=4){
+	  		analysis44 = "J. P. Laurel Ave: Free flow of traffic";
+	  	}else if(jfc3 > 4 || jfc3 <=8){
+	  		analysis44 = "J. P. Laurel Ave: Sluggish flow of traffic";
+	  	}else if(jfc3 > 8 || jfc3 >=9){
+	  		analysis44 = "J. P. Laurel Ave: Slow flow of traffic";
+	  	}else if(jfc3 == 10){
+	  		analysis44 = "J. P. Laurel Ave: Traffic stopped or Road closed"
+	  	}else{
+	  		analysis44 = "Cannot compute"
+	  	}
+
 	  	
 	  	_res.setHeader('Content-Type', 'application/json');
-    	_res.send(JSON.stringify({ street: streetc, intc1: intc1, jfc1: jfc1, intc2: intc2, jfc2: jfc2, intc3: intc3, jfc3: jfc3, analysis41: analysis41 }));
+    	_res.send(JSON.stringify({ street: streetc, intc1: intc1, jfc1: jfc1, intc2: intc2, jfc2: jfc2, intc3: intc3, jfc3: jfc3, 
+    		analysis42:analysis42, analysis43:analysis43, analysis44:analysis44, analysis41: analysis41 }));
 	  
 	});
 
 
 });
-app.get('/staanaave',function(_req, _res){
+app.get('/staanaave-',function(_req, _res){
 
 	request('https://traffic.api.here.com/traffic/6.1/flow.json?bbox=7.2598%2C125.0860%3B6.7670%2C125.6674&app_id=fQbW8CGYiU3l5mLqWgBE&app_code=SYZXwjFBHSYi_1t1GNuHow', { json: true }, (err, res, body) => {
 	  if (err) { return console.log(err); }
@@ -4409,9 +4448,51 @@ app.get('/staanaave',function(_req, _res){
 	  		analysis42 = "Cannot compute"
 	  	}
 
+	  	let analysis43 = "";
+	  	if(jfc1 == 0 || jfc1 <=4){
+	  		analysis43 = "J. P. Laurel Ave: Free flow of traffic";
+	  	}else if(jfc1 > 4 || jfc1 <=8){
+	  		analysis43 = "J. P. Laurel Ave: Sluggish flow of traffic";
+	  	}else if(jfc1 > 8 || jfc1 >=9){
+	  		analysis43 = "J. P. Laurel Ave: Slow flow of traffic";
+	  	}else if(jfc1 == 10){
+	  		analysis43 = "J. P. Laurel Ave: Traffic stopped or Road closed"
+	  	}else{
+	  		analysis43 = "Cannot compute"
+	  	}
+
+	  	let analysis44 = "";
+	  	if(jfc2 == 0 || jfc2 <=4){
+	  		analysis44 = "Lapu-Lapu: Free flow of traffic";
+	  	}else if(jfc2 > 4 || jfc2 <=8){
+	  		analysis44 = "Lapu-Lapu: Sluggish flow of traffic";
+	  	}else if(jfc2 > 8 || jfc2 >=9){
+	  		analysis44 = "Lapu-Lapu: Slow flow of traffic";
+	  	}else if(jfc2 == 10){
+	  		analysis44 = "Lapu-Lapu: Traffic stopped or Road closed"
+	  	}else{
+	  		analysis44 = "Cannot compute"
+	  	}
+
+	  	let analysis45 = "";
+	  	if(jfc3 == 0 || jfc3 <=4){
+	  		analysis45 = "L. Garcia: Free flow of traffic";
+	  	}else if(jfc3 > 4 || jfc3 <=8){
+	  		analysis45 = "L. Garcia: Sluggish flow of traffic";
+	  	}else if(jfc3 > 8 || jfc3 >=9){
+	  		analysis45 = "L. Garcia: Slow flow of traffic";
+	  	}else if(jfc3 == 10){
+	  		analysis45 = "L. Garcia: Traffic stopped or Road closed"
+	  	}else{
+	  		analysis45 = "Cannot compute"
+	  	}
+
+	  	
+
 	  	
 	  	_res.setHeader('Content-Type', 'application/json');
-    	_res.send(JSON.stringify({ street: streetc, intc1: intc1, jfc1: jfc1, intc2: intc2, jfc2: jfc2, intc3: intc3, jfc3: jfc3, analysis42: analysis42 }));
+    	_res.send(JSON.stringify({ street: streetc, intc1: intc1, jfc1: jfc1, intc2: intc2, jfc2: jfc2, intc3: intc3, jfc3: jfc3, 
+    		analysis43:analysis43, analysis44:analysis44, analysis45:analysis45, analysis42: analysis42 }));
 	  
 	});
 
@@ -9679,7 +9760,7 @@ app.post('/webhook/', function(req, res) {
 				
 				
 			}
-			if(text=='sta ana avenue-')
+			if(text=='sta ana-')
 			// if(text.includes("pichon street-"))
 			{
 				let chatbotResponse = "";
@@ -9699,7 +9780,46 @@ app.post('/webhook/', function(req, res) {
 
 				
 			}
-			if(text=='sta ana avenue')
+
+			if(text=='sta ana intersections-'){
+				
+				let chatbotResponse1 = "";
+				let chatbotResponse2 = "";
+				let chatbotResponse3 = "";
+				
+				
+				//source : https://www.npmjs.com/package/axios
+				   axios.get(' https://cryptic-eyrie-21978.herokuapp.com/staanaave-')
+				  .then(function (response) {
+				
+
+				    chatbotResponse1 = response.data.analysis43;
+				    sendText(sender, chatbotResponse1)
+
+				    chatbotResponse2 = response.data.analysis44;
+				    sendText(sender, chatbotResponse2)
+
+				    chatbotResponse3 = response.data.analysis45;
+				    sendText(sender, chatbotResponse3)
+
+				   
+				  })
+				  .catch(function (error) {
+				    //console.log(error);
+				     chatbotResponse1 = "not ok";
+				     chatbotResponse2 = "not ok";
+				     chatbotResponse3 = "not ok";
+
+				    sendText(sender, chatbotResponse1)
+				    sendText(sender, chatbotResponse2)
+				    sendText(sender, chatbotResponse3)
+				    
+				  });
+
+				
+				
+			}
+			if(text=='sta ana')
 			// if(text.includes("pichon street-"))
 			{
 				let chatbotResponse = "";
@@ -9717,6 +9837,45 @@ app.post('/webhook/', function(req, res) {
 				    sendText(sender, chatbotResponse)
 				  });
 
+				
+			}
+
+			if(text=='sta ana intersections'){
+				
+				let chatbotResponse1 = "";
+				let chatbotResponse2 = "";
+				let chatbotResponse3 = "";
+				
+				
+				//source : https://www.npmjs.com/package/axios
+				   axios.get(' https://cryptic-eyrie-21978.herokuapp.com/staanaave')
+				  .then(function (response) {
+				
+
+				    chatbotResponse1 = response.data.analysis42;
+				    sendText(sender, chatbotResponse1)
+
+				    chatbotResponse2 = response.data.analysis43;
+				    sendText(sender, chatbotResponse2)
+
+				    chatbotResponse3 = response.data.analysis44;
+				    sendText(sender, chatbotResponse3)
+
+				   
+				  })
+				  .catch(function (error) {
+				    //console.log(error);
+				     chatbotResponse1 = "not ok";
+				     chatbotResponse2 = "not ok";
+				     chatbotResponse3 = "not ok";
+
+				    sendText(sender, chatbotResponse1)
+				    sendText(sender, chatbotResponse2)
+				    sendText(sender, chatbotResponse3)
+				    
+				  });
+
+				
 				
 			}
 			if(text=='lapu lapu-')
