@@ -2968,11 +2968,40 @@ app.get('/dacudaoave',function(_req, _res){
 	  		analysis23 = "Cannot compute"
 	  	}
 
+	  	let analysis24 = "";
+	  	if(jfc1 == 0 || jfc1 <=4){
+	  		analysis24 = "J. P. Laurel Ave: Free flow of traffic";
+	  	}else if(jfc1 > 4 || jfc1 <=8){
+	  		analysis24 = "J. P. Laurel Ave: Sluggish flow of traffic";
+	  	}else if(jfc1 > 8 || jfc1 >=9){
+	  		analysis24 = "J. P. Laurel Ave: Slow flow of traffic";
+	  	}else if(jfc1 == 10){
+	  		analysis24 = "J. P. Laurel Ave: Traffic stopped or Road closed"
+	  	}else{
+	  		analysis24 = "Cannot compute"
+	  	}
+
+
+
+	  	let analysis25 = "";
+	  	if(jfc2 == 0 || jfc2 <=4){
+	  		analysis25 = "Lapu-Lapu/R. Castillo/L. Garcia/Agdao Flyover: Free flow of traffic";
+	  	}else if(jfc2 > 4 || jfc2 <=8){
+	  		analysis25 = "Lapu-Lapu/R. Castillo/L. Garcia/Agdao Flyover: Sluggish flow of traffic";
+	  	}else if(jfc2 > 8 || jfc2 >=9){
+	  		analysis25 = "Lapu-Lapu/R. Castillo/L. Garcia/Agdao Flyover: Slow flow of traffic";
+	  	}else if(jfc2 == 10){
+	  		analysis25 = "Lapu-Lapu/R. Castillo/L. Garcia/Agdao Flyover: Traffic stopped or Road closed"
+	  	}else{
+	  		analysis25 = "Cannot compute"
+	  	}
+
 	  	
 
 
 	  	_res.setHeader('Content-Type', 'application/json');
-    	_res.send(JSON.stringify({ street: streetc, intc1: intc1, jfc1: jfc1,  intc2: intc2, jfc2: jfc2, analysis23: analysis23 }));
+    	_res.send(JSON.stringify({ street: streetc, intc1: intc1, jfc1: jfc1,  intc2: intc2, jfc2: jfc2, 
+    		analysis24:analysis24, analysis25:analysis25, analysis23: analysis23 }));
 	
 
 
@@ -8109,6 +8138,41 @@ app.post('/webhook/', function(req, res) {
 
 				
 			}
+
+			if(text=='dacudao intersections'){
+				
+				let chatbotResponse1 = "";
+				let chatbotResponse2 = "";
+				
+				
+				//source : https://www.npmjs.com/package/axios
+				   axios.get(' https://cryptic-eyrie-21978.herokuapp.com/dacudaoave')
+				  .then(function (response) {
+				
+
+				    chatbotResponse1 = response.data.analysis24;
+				    sendText(sender, chatbotResponse1)
+
+				    chatbotResponse2 = response.data.analysis25;
+				    sendText(sender, chatbotResponse2)
+
+				   
+				  })
+				  .catch(function (error) {
+				    //console.log(error);
+				     chatbotResponse1 = "not ok";
+				     chatbotResponse2 = "not ok";
+
+				    sendText(sender, chatbotResponse1)
+				    sendText(sender, chatbotResponse2)
+				    
+				  });
+
+				
+				
+			}
+
+
 			if(text=='pichon street')
 			// if(text.includes("pichon street"))
 			{
