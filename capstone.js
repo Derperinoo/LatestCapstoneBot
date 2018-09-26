@@ -6759,7 +6759,7 @@ app.get('/daangmaharlika-',function(_req, _res){
 
 	  	
 	  	_res.setHeader('Content-Type', 'application/json');
-    	_res.send(JSON.stringify({ street: streetc, intc1: intc1, jfc1: jfc1, intc2: intc2, jfc2: jfc2, intc3: intc3, jfc3: jfc3, intc4: intc4, jfc4:jfc4, analysis78:analysis78, analysis79:analysis79, analysis80:analysis80, analysis81:analysis81, analysis82:analysis82, analysis77: analysis77 }));
+    	_res.send(JSON.stringify({ street: streetc, intc1: intc1, jfc1: jfc1, intc2: intc2, jfc2: jfc2, intc3: intc3, jfc3: jfc3, intc4: intc4, jfc4:jfc4, analysis78:analysis78, analysis79:analysis79, analysis80:analysis80, analysis81:analysis81, analysis77: analysis77 }));
 	  
 	});
 
