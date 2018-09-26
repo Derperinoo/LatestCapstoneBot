@@ -6592,7 +6592,6 @@ app.get('/daangmaharlika',function(_req, _res){
 	  	var davvva = davvv/p;
 	  	
 	  	let analysis76 = "";
-	  	
 	  	if(davvva == 0 || davvva <=4){
 	  		analysis76 = "Free flow of traffic";
 	  	}else if(davvva > 4 || davvva <=8){
@@ -6605,9 +6604,62 @@ app.get('/daangmaharlika',function(_req, _res){
 	  		analysis76 = "Cannot compute"
 	  	}
 
+	  	let analysis77 = "";
+	  	if(jfc1 == 0 || jfc1 <=4){
+	  		analysis77 = "Davao City (North): Free flow of traffic";
+	  	}else if(jfc1 > 4 || jfc1 <=8){
+	  		analysis77 = "Davao City (North): Sluggish flow of traffic";
+	  	}else if(jfc1 > 8 || jfc1 >=9){
+	  		analysis77 = "Davao City (North): Slow flow of traffic";
+	  	}else if(jfc1 == 10){
+	  		analysis77 = "Davao City (North): Traffic stopped or Road closed"
+	  	}else{
+	  		analysis77 = "Cannot compute"
+	  	}
+
+	  	let analysis78 = "";
+	  	if(jfc2 == 0 || jfc2 <=4){
+	  		analysis78 = "Davao City (South): Free flow of traffic";
+	  	}else if(jfc2 > 4 || jfc2 <=8){
+	  		analysis78 = "Davao City (South): Sluggish flow of traffic";
+	  	}else if(jfc2 > 8 || jfc2 >=9){
+	  		analysis78 = "Davao City (South): Slow flow of traffic";
+	  	}else if(jfc2 == 10){
+	  		analysis78 = "Davao City (South): Traffic stopped or Road closed"
+	  	}else{
+	  		analysis78 = "Cannot compute"
+	  	}
+
+	  	let analysis79 = "";
+	  	if(jfc3 == 0 || jfc3 <=4){
+	  		analysis79 = "C. P. Garcia: Free flow of traffic";
+	  	}else if(jfc3 > 4 || jfc3 <=8){
+	  		analysis79 = "C. P. Garcia: Sluggish flow of traffic";
+	  	}else if(jfc3 > 8 || jfc3 >=9){
+	  		analysis79 = "C. P. Garcia: Slow flow of traffic";
+	  	}else if(jfc3 == 10){
+	  		analysis79 = "C. P. Garcia: Traffic stopped or Road closed"
+	  	}else{
+	  		analysis79 = "Cannot compute"
+	  	}
+
+	  	let analysis80 = "";
+	  	if(jfc4 == 0 || jfc4 <=4){
+	  		analysis80 = "J. P. Laurel Ave: Free flow of traffic";
+	  	}else if(jfc4 > 4 || jfc4 <=8){
+	  		analysis80 = "J. P. Laurel Ave: Sluggish flow of traffic";
+	  	}else if(jfc4 > 8 || jfc4 >=9){
+	  		analysis80 = "J. P. Laurel Ave: Slow flow of traffic";
+	  	}else if(jfc4 == 10){
+	  		analysis80 = "J. P. Laurel Ave: Traffic stopped or Road closed"
+	  	}else{
+	  		analysis80 = "Cannot compute"
+	  	}
+
 	  	
 	  	_res.setHeader('Content-Type', 'application/json');
-    	_res.send(JSON.stringify({ street: streetc, intc1: intc1, jfc1: jfc1, intc2: intc2, jfc2: jfc2, intc3: intc3, jfc3: jfc3, intc4: intc4, jfc4:jfc4, analysis76: analysis76 }));
+    	_res.send(JSON.stringify({ street: streetc, intc1: intc1, jfc1: jfc1, intc2: intc2, jfc2: jfc2, intc3: intc3, jfc3: jfc3, intc4: intc4, jfc4:jfc4,
+    	analysis77:analysis77, analysis78:analysis78, analysis79:analysis79, analysis80:analysis80, analysis76: analysis76 }));
 	  
 	});
 
@@ -6638,7 +6690,6 @@ app.get('/daangmaharlika-',function(_req, _res){
 	  	var davvva = davvv/p;
 	  	
 	  	let analysis77 = "";
-	  	
 	  	if(davvva == 0 || davvva <=4){
 	  		analysis77 = "Free flow of traffic";
 	  	}else if(davvva > 4 || davvva <=8){
@@ -6651,9 +6702,63 @@ app.get('/daangmaharlika-',function(_req, _res){
 	  		analysis77 = "Cannot compute"
 	  	}
 
+	  	let analysis78 = "";
+	  	if(jfc1 == 0 || jfc1 <=4){
+	  		analysis78 = "J. P. Laurel Ave: Free flow of traffic";
+	  	}else if(jfc1 > 4 || jfc1 <=8){
+	  		analysis78 = "J. P. Laurel Ave: Sluggish flow of traffic";
+	  	}else if(jfc1 > 8 || jfc1 >=9){
+	  		analysis78 = "J. P. Laurel Ave: Slow flow of traffic";
+	  	}else if(jfc1 == 10){
+	  		analysis78 = "J. P. Laurel Ave: Traffic stopped or Road closed"
+	  	}else{
+	  		analysis76 = "Cannot compute"
+	  	}
+
+	  	let analysis79 = "";
+	  	if(jfc2 == 0 || jfc2 <=4){
+	  		analysis79 = "C. P. Garcia: Free flow of traffic";
+	  	}else if(jfc2 > 4 || jfc2 <=8){
+	  		analysis79 = "C. P. Garcia: Sluggish flow of traffic";
+	  	}else if(jfc2 > 8 || jfc2 >=9){
+	  		analysis79 = "C. P. Garcia: Slow flow of traffic";
+	  	}else if(jfc2 == 10){
+	  		analysis79 = "C. P. Garcia: Traffic stopped or Road closed"
+	  	}else{
+	  		analysis79 = "Cannot compute"
+	  	}
+
+	  	let analysis80 = "";
+	  	if(jfc3 == 0 || jfc3 <=4){
+	  		analysis80 = "Davao City (South): Free flow of traffic";
+	  	}else if(jfc3 > 4 || jfc3 <=8){
+	  		analysis80 = "Davao City (North): Sluggish flow of traffic";
+	  	}else if(jfc3 > 8 || jfc3 >=9){
+	  		analysis80 = "Davao City (North): Slow flow of traffic";
+	  	}else if(jfc3 == 10){
+	  		analysis80 = "Davao City (North): Traffic stopped or Road closed"
+	  	}else{
+	  		analysis80 = "Cannot compute"
+	  	}
+
+	  	let analysis81 = "";
+	  	if(jfc4 == 0 || jfc4 <=4){
+	  		analysis81 = "Davao City (North): Free flow of traffic";
+	  	}else if(jfc4 > 4 || jfc4 <=8){
+	  		analysis81 = "Davao City (North): Sluggish flow of traffic";
+	  	}else if(jfc4 > 8 || jfc4 >=9){
+	  		analysis81 = "Davao City (North): Slow flow of traffic";
+	  	}else if(jfc4 == 10){
+	  		analysis81 = "Davao City (North): Traffic stopped or Road closed"
+	  	}else{
+	  		analysis81 = "Cannot compute"
+	  	}
+
+
 	  	
 	  	_res.setHeader('Content-Type', 'application/json');
-    	_res.send(JSON.stringify({ street: streetc, intc1: intc1, jfc1: jfc1, intc2: intc2, jfc2: jfc2, intc3: intc3, jfc3: jfc3, intc4: intc4, jfc4:jfc4, analysis77: analysis77 }));
+    	_res.send(JSON.stringify({ street: streetc, intc1: intc1, jfc1: jfc1, intc2: intc2, jfc2: jfc2, intc3: intc3, jfc3: jfc3, intc4: intc4, jfc4:jfc4, 
+    		analysis78:analysis78, analysis79:analysis79, analysis80:analysis80, analysis81:analysis81, analysis77: analysis77 }));
 	  
 	});
 
