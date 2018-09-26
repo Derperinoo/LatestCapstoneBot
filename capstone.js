@@ -65,7 +65,6 @@ app.get('/equirino',function(_req, _res){
 	  	let analysis = "";
 	  	if(sum == 0 || sum <= 4){
 	  		analysis = "Free flow of traffic";
-	  		analysis = result;
 	  	}else if(sum > 4 || sum <= 8){
 	  		analysis = "Sluggish flow of traffic";
 	  	}else if(sum > 8 || sum >= 9){
@@ -79,6 +78,7 @@ app.get('/equirino',function(_req, _res){
 	  	let analysisjf1 = "";
 	  	if(jf1 == 0 || jf1 <= 4){
 	  		analysisjf1 = "Mac Arthur Hwy: Free flow of traffic";
+	  		analysisjf1 = result;
 	  	}else if(jf1 > 4 || jf1 <= 8){
 	  		analysisjf1 = "Mac Arthur Hwy: Sluggish flow of traffic";
 	  	}else if(jf1 > 8 || jf1 >= 9){
