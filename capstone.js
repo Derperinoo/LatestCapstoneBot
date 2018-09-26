@@ -2866,12 +2866,12 @@ app.get('/dacudaoave-',function(_req, _res){
 	request('https://traffic.api.here.com/traffic/6.1/flow.json?bbox=7.2598%2C125.0860%3B6.7670%2C125.6674&app_id=fQbW8CGYiU3l5mLqWgBE&app_code=SYZXwjFBHSYi_1t1GNuHow', { json: true }, (err, res, body) => {
 	  if (err) { return console.log(err); }
 
-	  	const streetc = body.RWS[0].RW[24].DE;
-	  	const intc1 = body.RWS[0].RW[24].FIS[0].FI[0].TMC.DE;
-	  	const jfc1 = body.RWS[0].RW[24].FIS[0].FI[0].CF[0].JF;
+	  	const streetc = body.RWS[0].RW[25].DE;
+	  	const intc1 = body.RWS[0].RW[25].FIS[0].FI[0].TMC.DE;
+	  	const jfc1 = body.RWS[0].RW[25].FIS[0].FI[0].CF[0].JF;
 	  	
-	  	const intc2 = body.RWS[0].RW[24].FIS[0].FI[1].TMC.DE;
-	  	const jfc2 = body.RWS[0].RW[24].FIS[0].FI[1].CF[0].JF;
+	  	const intc2 = body.RWS[0].RW[25].FIS[0].FI[1].TMC.DE;
+	  	const jfc2 = body.RWS[0].RW[25].FIS[0].FI[1].CF[0].JF;
 
 
 	  	var p = 2
@@ -2881,7 +2881,6 @@ app.get('/dacudaoave-',function(_req, _res){
 	  	var dacudaoa = dacudao/p;
 	  	
 	  	let analysis22 = "";
-	  	
 	  	if(dacudaoa == 0 || dacudaoa <=4){
 	  		analysis22 = "Free flow of traffic";
 	  	}else if(dacudaoa > 4 || dacudaoa <=8){
@@ -2894,11 +2893,39 @@ app.get('/dacudaoave-',function(_req, _res){
 	  		analysis22 = "Cannot compute"
 	  	}
 
+	  	let analysis23 = "";
+	  	if(jfc1 == 0 || jfc1 <=4){
+	  		analysis23 = "Lapu-Lapu/R. Castillo/L. Garcia/Agdao Flyover: Free flow of traffic";
+	  	}else if(jfc1 > 4 || jfc1 <=8){
+	  		analysis23 = "Lapu-Lapu/R. Castillo/L. Garcia/Agdao Flyover: Sluggish flow of traffic";
+	  	}else if(jfc1 > 8 || jfc1 >=9){
+	  		analysis23 = "Lapu-Lapu/R. Castillo/L. Garcia/Agdao Flyover: Slow flow of traffic";
+	  	}else if(jfc1 == 10){
+	  		analysis23 = "Lapu-Lapu/R. Castillo/L. Garcia/Agdao Flyover: Traffic stopped or Road closed"
+	  	}else{
+	  		analysis23 = "Cannot compute"
+	  	}
+
+
+	  	let analysis24 = "";
+	  	if(jfc2 == 0 || jfc2 <=4){
+	  		analysis24 = "J. P. Laurel Ave: Free flow of traffic";
+	  	}else if(jfc2 > 4 || jfc2 <=8){
+	  		analysis24 = "J. P. Laurel Ave: Sluggish flow of traffic";
+	  	}else if(jfc2 > 8 || jfc2 >=9){
+	  		analysis24 = "J. P. Laurel Ave: Slow flow of traffic";
+	  	}else if(jfc2 == 10){
+	  		analysis24 = "J. P. Laurel Ave: Traffic stopped or Road closed"
+	  	}else{
+	  		analysis24 = "Cannot compute"
+	  	}
+
 	  	
 
 
 	  	_res.setHeader('Content-Type', 'application/json');
-    	_res.send(JSON.stringify({ street: streetc, intc1: intc1, jfc1: jfc1,  intc2: intc2, jfc2: jfc2, analysis22: analysis22 }));
+    	_res.send(JSON.stringify({ street: streetc, intc1: intc1, jfc1: jfc1,  intc2: intc2, jfc2: jfc2, 
+    		analysis23:analysis23, analysis24:analysis24, analysis22: analysis22 }));
 	
 
 
@@ -2913,12 +2940,12 @@ app.get('/dacudaoave',function(_req, _res){
 	request('https://traffic.api.here.com/traffic/6.1/flow.json?bbox=7.2598%2C125.0860%3B6.7670%2C125.6674&app_id=fQbW8CGYiU3l5mLqWgBE&app_code=SYZXwjFBHSYi_1t1GNuHow', { json: true }, (err, res, body) => {
 	  if (err) { return console.log(err); }
 
-	  	const streetc = body.RWS[0].RW[25].DE;
-	  	const intc1 = body.RWS[0].RW[25].FIS[0].FI[0].TMC.DE;
-	  	const jfc1 = body.RWS[0].RW[25].FIS[0].FI[0].CF[0].JF;
+	  	const streetc = body.RWS[0].RW[24].DE;
+	  	const intc1 = body.RWS[0].RW[24].FIS[0].FI[0].TMC.DE;
+	  	const jfc1 = body.RWS[0].RW[24].FIS[0].FI[0].CF[0].JF;
 	  	
-	  	const intc2 = body.RWS[0].RW[25].FIS[0].FI[1].TMC.DE;
-	  	const jfc2 = body.RWS[0].RW[25].FIS[0].FI[1].CF[0].JF;
+	  	const intc2 = body.RWS[0].RW[24].FIS[0].FI[1].TMC.DE;
+	  	const jfc2 = body.RWS[0].RW[24].FIS[0].FI[1].CF[0].JF;
 
 
 	  	var p = 2
@@ -8028,6 +8055,40 @@ app.post('/webhook/', function(req, res) {
 
 				
 			}
+
+			if(text=='dacudao intersections-'){
+				
+				let chatbotResponse1 = "";
+				let chatbotResponse2 = "";
+				
+				
+				//source : https://www.npmjs.com/package/axios
+				   axios.get(' https://cryptic-eyrie-21978.herokuapp.com/dacudaoave-')
+				  .then(function (response) {
+				
+
+				    chatbotResponse1 = response.data.analysis23;
+				    sendText(sender, chatbotResponse1)
+
+				    chatbotResponse2 = response.data.analysis24;
+				    sendText(sender, chatbotResponse2)
+
+				   
+				  })
+				  .catch(function (error) {
+				    //console.log(error);
+				     chatbotResponse1 = "not ok";
+				     chatbotResponse2 = "not ok";
+
+				    sendText(sender, chatbotResponse1)
+				    sendText(sender, chatbotResponse2)
+				    
+				  });
+
+				
+				
+			}
+
 			if(text=='dacudao avenue')
 			// if(text.includes("dacudao avenue-"))
 			{
