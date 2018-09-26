@@ -4435,7 +4435,6 @@ app.get('/staanaave-',function(_req, _res){
 	  	var staanaav = staan/p;
 	  	
 	  	let analysis42 = "";
-	  	
 	  	if(staanaav == 0 || staanaav <=4){
 	  		analysis42 = "Free flow of traffic";
 	  	}else if(staanaav > 4 || staanaav <=8){
@@ -9769,7 +9768,7 @@ app.post('/webhook/', function(req, res) {
 				axios.get('https://cryptic-eyrie-21978.herokuapp.com/staanaave-')
 				  .then(function (response) {
 				    //console.log(response);
-				    chatbotResponse = response.data.analysis41;
+				    chatbotResponse = response.data.analysis42;
 				    sendText(sender, chatbotResponse)
 				  })
 				  .catch(function (error) {
