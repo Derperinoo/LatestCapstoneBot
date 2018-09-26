@@ -9828,7 +9828,7 @@ app.post('/webhook/', function(req, res) {
 				axios.get('https://cryptic-eyrie-21978.herokuapp.com/staanaave')
 				  .then(function (response) {
 				    //console.log(response);
-				    chatbotResponse = response.data.analysis42;
+				    chatbotResponse = response.data.analysis41;
 				    sendText(sender, chatbotResponse)
 				  })
 				  .catch(function (error) {
