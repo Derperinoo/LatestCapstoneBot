@@ -3443,39 +3443,39 @@ app.get('/abonifaciost',function(_req, _res){
 
 	  	let analysis32 = "";
 	  	if(jfc1 == 0 || jfc1 <=4){
-	  		analysis32 = "Free flow of traffic";
+	  		analysis32 = "C. Bangoy: Free flow of traffic";
 	  	}else if(jfc1 > 4 || jfc1 <=8){
-	  		analysis32 = "Sluggish flow of traffic";
+	  		analysis32 = "C. Bangoy: Sluggish flow of traffic";
 	  	}else if(jfc1 > 8 || jfc1 >=9){
-	  		analysis32 = "Slow flow of traffic";
+	  		analysis32 = "C. Bangoy: Slow flow of traffic";
 	  	}else if(jfc1 == 10){
-	  		analysis32 = "Traffic stopped or Road closed"
+	  		analysis32 = "C. Bangoy: Traffic stopped or Road closed"
 	  	}else{
 	  		analysis32 = "Cannot compute"
 	  	}
 
 	  	let analysis33 = "";
 	  	if(jfc2 == 0 || jfc2 <=4){
-	  		analysis33 = "Free flow of traffic";
+	  		analysis33 = "C. M. Recto: Free flow of traffic";
 	  	}else if(jfc2 > 4 || jfc2 <=8){
-	  		analysis33 = "Sluggish flow of traffic";
+	  		analysis33 = "C. M. Recto: Sluggish flow of traffic";
 	  	}else if(jfc2 > 8 || jfc2 >=9){
-	  		analysis33 = "Slow flow of traffic";
+	  		analysis33 = "C. M. Recto: Slow flow of traffic";
 	  	}else if(jfc2 == 10){
-	  		analysis33 = "Traffic stopped or Road closed"
+	  		analysis33 = "C. M. Recto: Traffic stopped or Road closed"
 	  	}else{
 	  		analysis31 = "Cannot compute"
 	  	}
 
 	  	let analysis34 = "";
 	  	if(jfc3 == 0 || jfc3 <=4){
-	  		analysis34 = "Free flow of traffic";
+	  		analysis34 = "M. L. Quezon Blvd: Free flow of traffic";
 	  	}else if(jfc3 > 4 || jfc3 <=8){
-	  		analysis34 = "Sluggish flow of traffic";
+	  		analysis34 = "M. L. Quezon Blvd: Sluggish flow of traffic";
 	  	}else if(jfc3 > 8 || jfc3 >=9){
-	  		analysis34 = "Slow flow of traffic";
+	  		analysis34 = "M. L. Quezon Blvd: Slow flow of traffic";
 	  	}else if(jfc3 == 10){
-	  		analysis34 = "Traffic stopped or Road closed"
+	  		analysis34 = "M. L. Quezon Blvd: Traffic stopped or Road closed"
 	  	}else{
 	  		analysis34 = "Cannot compute"
 	  	}
@@ -8795,7 +8795,7 @@ app.post('/webhook/', function(req, res) {
 				
 				
 				//source : https://www.npmjs.com/package/axios
-				   axios.get(' https://cryptic-eyrie-21978.herokuapp.com/abonifaciost')
+				   axios.get('https://cryptic-eyrie-21978.herokuapp.com/abonifaciost')
 				  .then(function (response) {
 				
 
