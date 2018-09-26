@@ -4282,13 +4282,13 @@ app.get('/rmagsaysay-',function(_req, _res){
 
 	  	let analysis41 = "";
 	  	if(jfc1 == 0 || jfc1 <=4){
-	  		analysis41 = "M. L. Quezon Blvd: Free flow of traffic";
+	  		analysis41 = "C. Bangoy/M. Roxas: Free flow of traffic";
 	  	}else if(jfc1 > 4 || jfc1 <=8){
-	  		analysis41 = "M. L. Quezon Blvd: Sluggish flow of traffic";
+	  		analysis41 = "C. Bangoy/M. Roxas: Sluggish flow of traffic";
 	  	}else if(jfc1 > 8 || jfc1 >=9){
-	  		analysis41 = "M. L. Quezon Blvd: Slow flow of traffic";
+	  		analysis41 = "C. Bangoy/M. Roxas: Slow flow of traffic";
 	  	}else if(jfc1 == 10){
-	  		analysis41 = "M. L. Quezon Blvd: Traffic stopped or Road closed"
+	  		analysis41 = "C. Bangoy/M. Roxas: Traffic stopped or Road closed"
 	  	}else{
 	  		analysis41 = "Cannot compute"
 	  	}
@@ -4308,13 +4308,13 @@ app.get('/rmagsaysay-',function(_req, _res){
 
 	  	let analysis43 = "";
 	  	if(jfc3 == 0 || jfc3 <=4){
-	  		analysis43 = "C. Bangoy/M. Roxas: Free flow of traffic";
+	  		analysis43 = "M. L. Quezon Blvd: Free flow of traffic";
 	  	}else if(jfc3 > 4 || jfc3 <=8){
-	  		analysis43 = "C. Bangoy/M. Roxas: Sluggish flow of traffic";
+	  		analysis43 = "M. L. Quezon Blvd: Sluggish flow of traffic";
 	  	}else if(jfc3 > 8 || jfc3 >=9){
-	  		analysis43 = "C. Bangoy/M. Roxas: Slow flow of traffic";
+	  		analysis43 = "M. L. Quezon Blvd: Slow flow of traffic";
 	  	}else if(jfc3 == 10){
-	  		analysis43 = "C. Bangoy/M. Roxas: Traffic stopped or Road closed"
+	  		analysis43 = "M. L. Quezon Blvd: Traffic stopped or Road closed"
 	  	}else{
 	  		analysis43 = "Cannot compute"
 	  	}
