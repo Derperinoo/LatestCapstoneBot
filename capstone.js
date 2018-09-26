@@ -5956,26 +5956,23 @@ app.get('/angliongto',function(_req, _res){
 
 });
 
-app.get('/buhangincabantianroad-',function(_req, _res){
+app.get('/buhangincabantianroad',function(_req, _res){
 
 	request('https://traffic.api.here.com/traffic/6.1/flow.json?bbox=7.2598%2C125.0860%3B6.7670%2C125.6674&app_id=fQbW8CGYiU3l5mLqWgBE&app_code=SYZXwjFBHSYi_1t1GNuHow', { json: true }, (err, res, body) => {
 	  if (err) { return console.log(err); }
 
 	  	const streetc = body.RWS[0].RW[64].DE;
-	  	const intc1 = body.RWS[0].RW[64].FIS[0].FI[0].TMC.DE;
-	  	const jfc1 = body.RWS[0].RW[64].FIS[0].FI[0].CF[0].JF;
+	  	
+	  	const intc1 = body.RWS[0].RW[64].FIS[0].FI[1].TMC.DE;
+	  	const jfc1 = body.RWS[0].RW[64].FIS[0].FI[1].CF[0].JF;
 
-	  	const intc2 = body.RWS[0].RW[64].FIS[0].FI[1].TMC.DE;
-	  	const jfc2 = body.RWS[0].RW[64].FIS[0].FI[1].CF[0].JF;
-
-	  	var p = 2
+	  	var p = 1
 	  
-	  	var buha = jfc1 + jfc2 ;
+	  	var buha = jfc1  ;
 
 	  	var buhan = buha/p;
 	  	
 	  	let analysis62 = "";
-	  	
 	  	if(buhan == 0 || buhan <=4){
 	  		analysis62 = "Free flow of traffic";
 	  	}else if(buhan > 4 || buhan <=8){
@@ -5988,9 +5985,23 @@ app.get('/buhangincabantianroad-',function(_req, _res){
 	  		analysis62 = "Cannot compute"
 	  	}
 
+	  	let analysis63 = "";
+	  	if(jfc1 == 0 || jfc1 <=4){
+	  		analysis63 = "Diversion Rd/C. P. Garcia/C. P. Garcia East/C. P. Garcia West: Free flow of traffic";
+	  	}else if(jfc1 > 4 || jfc1 <=8){
+	  		analysis63 = "Diversion Rd/C. P. Garcia/C. P. Garcia East/C. P. Garcia West: Sluggish flow of traffic";
+	  	}else if(jfc1 > 8 || jfc1 >=9){
+	  		analysis63 = "Diversion Rd/C. P. Garcia/C. P. Garcia East/C. P. Garcia West: Slow flow of traffic";
+	  	}else if(jfc1 == 10){
+	  		analysis63 = "Diversion Rd/C. P. Garcia/C. P. Garcia East/C. P. Garcia West: Traffic stopped or Road closed"
+	  	}else{
+	  		analysis63 = "Cannot compute"
+	  	}
+
 	  	
 	  	_res.setHeader('Content-Type', 'application/json');
-    	_res.send(JSON.stringify({ street: streetc, intc1: intc1, jfc1: jfc1, intc2: intc2, jfc2: jfc2, analysis62: analysis62 }));
+    	_res.send(JSON.stringify({ street: streetc, intc1: intc1, jfc1: jfc1,
+    	analysis63:analysis63, analysis62: analysis62 }));
 	  
 	});
 
@@ -6122,7 +6133,7 @@ app.get('/angliongto-',function(_req, _res){
 
 });
 
-app.get('/buhangincabantianroad',function(_req, _res){
+app.get('/buhangincabantianroad-',function(_req, _res){
 
 	request('https://traffic.api.here.com/traffic/6.1/flow.json?bbox=7.2598%2C125.0860%3B6.7670%2C125.6674&app_id=fQbW8CGYiU3l5mLqWgBE&app_code=SYZXwjFBHSYi_1t1GNuHow', { json: true }, (err, res, body) => {
 	  if (err) { return console.log(err); }
@@ -6131,17 +6142,15 @@ app.get('/buhangincabantianroad',function(_req, _res){
 	  	const intc1 = body.RWS[0].RW[67].FIS[0].FI[0].TMC.DE;
 	  	const jfc1 = body.RWS[0].RW[67].FIS[0].FI[0].CF[0].JF;
 
-	  	const intc2 = body.RWS[0].RW[67].FIS[0].FI[1].TMC.DE;
-	  	const jfc2 = body.RWS[0].RW[67].FIS[0].FI[1].CF[0].JF;
+	
 
 	  	var p = 2
 	  
-	  	var buhann = jfc1 + jfc2 ;
+	  	var buhann = jfc1;
 
 	  	var buhanngi = buhann/p;
 	  	
 	  	let analysis65 = "";
-	  	
 	  	if(buhanngi == 0 || buhanngi <=4){
 	  		analysis65 = "Free flow of traffic";
 	  	}else if(buhanngi > 4 || buhanngi <=8){
@@ -6154,9 +6163,23 @@ app.get('/buhangincabantianroad',function(_req, _res){
 	  		analysis65 = "Cannot compute"
 	  	}
 
+	  	let analysis66 = "";
+	  	if(jfc1 == 0 || jfc1 <=4){
+	  		analysis66 = "Diversion Rd/C. P. Garcia/C. P. Garcia East/C. P. Garcia West: Free flow of traffic";
+	  	}else if(jfc1 > 4 || jfc1 <=8){
+	  		analysis66 = "Diversion Rd/C. P. Garcia/C. P. Garcia East/C. P. Garcia West: Sluggish flow of traffic";
+	  	}else if(jfc1 > 8 || jfc1 >=9){
+	  		analysis66 = "Diversion Rd/C. P. Garcia/C. P. Garcia East/C. P. Garcia West: Slow flow of traffic";
+	  	}else if(jfc1 == 10){
+	  		analysis66 = "Diversion Rd/C. P. Garcia/C. P. Garcia East/C. P. Garcia West: Traffic stopped or Road closed"
+	  	}else{
+	  		analysis66 = "Cannot compute"
+	  	}
+
 	  	
 	  	_res.setHeader('Content-Type', 'application/json');
-    	_res.send(JSON.stringify({ street: streetc, intc1: intc1, jfc1: jfc1, intc2: intc2, jfc2: jfc2, analysis65: analysis65 }));
+    	_res.send(JSON.stringify({ street: streetc, intc1: intc1, jfc1: jfc1, 
+    		analysis66:analysis66, analysis65: analysis65 }));
 	  
 	});
 
@@ -11640,7 +11663,7 @@ app.post('/webhook/', function(req, res) {
 				axios.get('https://cryptic-eyrie-21978.herokuapp.com/buhangincabantianroad-')
 				  .then(function (response) {
 				    //console.log(response);
-				    chatbotResponse = response.data.analysis62;
+				    chatbotResponse = response.data.analysis65;
 				    sendText(sender, chatbotResponse)
 				  })
 				  .catch(function (error) {
@@ -11649,6 +11672,35 @@ app.post('/webhook/', function(req, res) {
 				    sendText(sender, chatbotResponse)
 				  });
 
+				
+			}
+
+			if(text=='buhangin cabantian road intersections-'){
+				
+				let chatbotResponse1 = "";
+				
+				
+				
+				//source : https://www.npmjs.com/package/axios
+				   axios.get(' https://cryptic-eyrie-21978.herokuapp.com/buhangincabantianroad-')
+				  .then(function (response) {
+				
+
+				    chatbotResponse1 = response.data.analysis66;
+				    sendText(sender, chatbotResponse1)
+
+				   
+				  })
+				  .catch(function (error) {
+				    //console.log(error);
+				     chatbotResponse1 = "not ok";
+				    
+				    sendText(sender, chatbotResponse1)
+				   
+				    
+				  });
+
+				
 				
 			}
 			if(text=='saint anthony subd-')
@@ -11740,7 +11792,7 @@ app.post('/webhook/', function(req, res) {
 				axios.get('https://cryptic-eyrie-21978.herokuapp.com/buhangincabantianroad')
 				  .then(function (response) {
 				    //console.log(response);
-				    chatbotResponse = response.data.analysis65;
+				    chatbotResponse = response.data.analysis62;
 				    sendText(sender, chatbotResponse)
 				  })
 				  .catch(function (error) {
@@ -11749,6 +11801,37 @@ app.post('/webhook/', function(req, res) {
 				    sendText(sender, chatbotResponse)
 				  });
 
+				
+			}
+
+			if(text=='buhangin cabantian road intersections'){
+				
+				let chatbotResponse1 = "";
+				
+				
+				
+				//source : https://www.npmjs.com/package/axios
+				   axios.get(' https://cryptic-eyrie-21978.herokuapp.com/buhangincabantianroad')
+				  .then(function (response) {
+				
+
+				    chatbotResponse1 = response.data.analysis63;
+				    sendText(sender, chatbotResponse1)
+
+				   
+
+				   
+				  })
+				  .catch(function (error) {
+				    //console.log(error);
+				     chatbotResponse1 = "not ok";
+				    
+				    sendText(sender, chatbotResponse1)
+				   
+				    
+				  });
+
+				
 				
 			}
 			if(text=='saint anthony subd')
