@@ -4937,7 +4937,7 @@ app.get('/rcastillo-',function(_req, _res){
 
 });
 
-app.get('/cpgarcia-',function(_req, _res){
+app.get('/cpgarcia',function(_req, _res){
 
 	request('https://traffic.api.here.com/traffic/6.1/flow.json?bbox=7.2598%2C125.0860%3B6.7670%2C125.6674&app_id=fQbW8CGYiU3l5mLqWgBE&app_code=SYZXwjFBHSYi_1t1GNuHow', { json: true }, (err, res, body) => {
 	  if (err) { return console.log(err); }
@@ -4957,7 +4957,6 @@ app.get('/cpgarcia-',function(_req, _res){
 	  	var cpgarc = cpgar/p;
 	  	
 	  	let analysis49 = "";
-	  	
 	  	if(cpgarc == 0 || cpgarc <=4){
 	  		analysis49 = "Free flow of traffic";
 	  	}else if(cpgarc > 4 || cpgarc <=8){
@@ -4970,9 +4969,36 @@ app.get('/cpgarcia-',function(_req, _res){
 	  		analysis49 = "Cannot compute"
 	  	}
 
+	  	let analysis50 = "";
+	  	if(jfc1 == 0 || jfc1 <=4){
+	  		analysis50 = "Daang Maharlika: Free flow of traffic";
+	  	}else if(jfc1 > 4 || jfc1 <=8){
+	  		analysis50 = "Daang Maharlika: Sluggish flow of traffic";
+	  	}else if(jfc1 > 8 || jfc1 >=9){
+	  		analysis50 = "Daang Maharlika: Slow flow of traffic";
+	  	}else if(jfc1 == 10){
+	  		analysis50 = "Daang Maharlika: Traffic stopped or Road closed"
+	  	}else{
+	  		analysis50 = "Cannot compute"
+	  	}
+
+	  	let analysis51 = "";
+	  	if(jfc2 == 0 || jfc2 <=4){
+	  		analysis51 = "Angliongto: Free flow of traffic";
+	  	}else if(jfc2 > 4 || jfc2 <=8){
+	  		analysis51 = "Angliongto: Sluggish flow of traffic";
+	  	}else if(jfc2 > 8 || jfc2 >=9){
+	  		analysis51 = "Angliongto: Slow flow of traffic";
+	  	}else if(jfc2 == 10){
+	  		analysis51 = "Angliongto: Traffic stopped or Road closed"
+	  	}else{
+	  		analysis51 = "Cannot compute"
+	  	}
+
 	  	
 	  	_res.setHeader('Content-Type', 'application/json');
-    	_res.send(JSON.stringify({ street: streetc, intc1: intc1, jfc1: jfc1, intc2: intc2, jfc2: jfc2, analysis49: analysis49 }));
+    	_res.send(JSON.stringify({ street: streetc, intc1: intc1, jfc1: jfc1, intc2: intc2, jfc2: jfc2, 
+    		analysis50:analysis50, analysis51:analysis51, analysis49: analysis49 }));
 	  
 	});
 
@@ -5091,7 +5117,7 @@ app.get('/diversionroad',function(_req, _res){
 
 
 });
-app.get('/cpgarcia',function(_req, _res){
+app.get('/cpgarcia-',function(_req, _res){
 
 	request('https://traffic.api.here.com/traffic/6.1/flow.json?bbox=7.2598%2C125.0860%3B6.7670%2C125.6674&app_id=fQbW8CGYiU3l5mLqWgBE&app_code=SYZXwjFBHSYi_1t1GNuHow', { json: true }, (err, res, body) => {
 	  if (err) { return console.log(err); }
@@ -5110,7 +5136,6 @@ app.get('/cpgarcia',function(_req, _res){
 	  	var cpgarcci = cpgarcc/p;
 	  	
 	  	let analysis52 = "";
-	  	
 	  	if(cpgarcci == 0 || cpgarcci <=4){
 	  		analysis52 = "Free flow of traffic";
 	  	}else if(cpgarcci > 4 || cpgarcci <=8){
@@ -5123,9 +5148,36 @@ app.get('/cpgarcia',function(_req, _res){
 	  		analysis52 = "Cannot compute"
 	  	}
 
+	  	let analysis53 = "";
+	  	if(jfc1 == 0 || jfc1 <=4){
+	  		analysis53 = "Angliongto: Free flow of traffic";
+	  	}else if(jfc1 > 4 || jfc1 <=8){
+	  		analysis53 = "Angliongto: Sluggish flow of traffic";
+	  	}else if(jfc1 > 8 || jfc1 >=9){
+	  		analysis53 = "Angliongto: Slow flow of traffic";
+	  	}else if(jfc1 == 10){
+	  		analysis53 = "Angliongto: Traffic stopped or Road closed"
+	  	}else{
+	  		analysis53 = "Cannot compute"
+	  	}
+
+	  	let analysis54 = "";
+	  	if(jfc2 == 0 || jfc2 <=4){
+	  		analysis54 = "Daang Maharlika: Free flow of traffic";
+	  	}else if(jfc2 > 4 || jfc2 <=8){
+	  		analysis54 = "Daang Maharlika: Sluggish flow of traffic";
+	  	}else if(jfc2 > 8 || jfc2 >=9){
+	  		analysis54 = "Daang Maharlika: Slow flow of traffic";
+	  	}else if(jfc2 == 10){
+	  		analysis54 = "Daang Maharlika: Traffic stopped or Road closed"
+	  	}else{
+	  		analysis54 = "Cannot compute"
+	  	}
+
 	  	
 	  	_res.setHeader('Content-Type', 'application/json');
-    	_res.send(JSON.stringify({ street: streetc, intc1: intc1, jfc1: jfc1, intc2: intc2, jfc2: jfc2, analysis52: analysis52 }));
+    	_res.send(JSON.stringify({ street: streetc, intc1: intc1, jfc1: jfc1, intc2: intc2, jfc2: jfc2, 
+    		analysis53:analysis53, analysis54:analysis54, analysis52: analysis52 }));
 	  
 	});
 
@@ -10289,7 +10341,7 @@ app.post('/webhook/', function(req, res) {
 				axios.get('https://cryptic-eyrie-21978.herokuapp.com/rcastillo-')
 				  .then(function (response) {
 				    //console.log(response);
-				    chatbotResponse = response.data.analysis47;
+				    chatbotResponse = response.data.analysis48;
 				    sendText(sender, chatbotResponse)
 				  })
 				  .catch(function (error) {
@@ -10344,7 +10396,7 @@ app.post('/webhook/', function(req, res) {
 				axios.get('https://cryptic-eyrie-21978.herokuapp.com/rcastillo')
 				  .then(function (response) {
 				    //console.log(response);
-				    chatbotResponse = response.data.analysis48;
+				    chatbotResponse = response.data.analysis47;
 				    sendText(sender, chatbotResponse)
 				  })
 				  .catch(function (error) {
@@ -10410,6 +10462,40 @@ app.post('/webhook/', function(req, res) {
 
 				
 			}
+
+			if(text=='cp garcia intersections-'){
+				
+				let chatbotResponse1 = "";
+				let chatbotResponse2 = "";
+				
+				
+				
+				//source : https://www.npmjs.com/package/axios
+				   axios.get(' https://cryptic-eyrie-21978.herokuapp.com/cpgarcia-')
+				  .then(function (response) {
+				
+
+				    chatbotResponse1 = response.data.analysis53;
+				    sendText(sender, chatbotResponse1)
+				     chatbotResponse2 = response.data.analysis54;
+				    sendText(sender, chatbotResponse2)
+	  
+				  })
+				  .catch(function (error) {
+				    //console.log(error);
+				     chatbotResponse1 = "not ok";
+				     chatbotResponse2 = "not ok";
+				   
+				    sendText(sender, chatbotResponse1)
+				    sendText(sender, chatbotResponse2)
+				    
+				    
+				    
+				  });
+
+				
+				
+			}
 			if(text=='diversion road-')
 			// if(text.includes("pichon street-"))
 			{
@@ -10468,6 +10554,40 @@ app.post('/webhook/', function(req, res) {
 				    sendText(sender, chatbotResponse)
 				  });
 
+				
+			}
+
+			if(text=='cp garcia intersections'){
+				
+				let chatbotResponse1 = "";
+				let chatbotResponse2 = "";
+				
+				
+				
+				//source : https://www.npmjs.com/package/axios
+				   axios.get(' https://cryptic-eyrie-21978.herokuapp.com/cpgarcia')
+				  .then(function (response) {
+				
+
+				    chatbotResponse1 = response.data.analysis50;
+				    sendText(sender, chatbotResponse1)
+				     chatbotResponse2 = response.data.analysis51;
+				    sendText(sender, chatbotResponse2)
+	  
+				  })
+				  .catch(function (error) {
+				    //console.log(error);
+				     chatbotResponse1 = "not ok";
+				     chatbotResponse2 = "not ok";
+				   
+				    sendText(sender, chatbotResponse1)
+				    sendText(sender, chatbotResponse2)
+				    
+				    
+				    
+				  });
+
+				
 				
 			}
 			if(text=='m quinones road')
