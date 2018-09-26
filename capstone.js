@@ -3717,7 +3717,6 @@ app.get('/mroxas-',function(_req, _res){
 	  	var roxxas = roxx/p;
 	  	
 	  	let analysis33 = "";
-	  	
 	  	if(roxxas == 0 || roxxas <=4){
 	  		analysis33 = "Free flow of traffic";
 	  	}else if(roxxas > 4 || roxxas <=8){
@@ -3730,9 +3729,49 @@ app.get('/mroxas-',function(_req, _res){
 	  		analysis33 = "Cannot compute"
 	  	}
 
+	  	let analysis34 = "";
+	  	if(jfc1 == 0 || jfc1 <=4){
+	  		analysis34 = "M. L. Quezon Blvd: Free flow of traffic";
+	  	}else if(jfc1 > 4 || jfc1 <=8){
+	  		analysis34 = "M. L. Quezon Blvd: Sluggish flow of traffic";
+	  	}else if(jfc1 > 8 || jfc1 >=9){
+	  		analysis34 = "M. L. Quezon Blvd: Slow flow of traffic";
+	  	}else if(jfc1 == 10){
+	  		analysis34 = "M. L. Quezon Blvd: Traffic stopped or Road closed"
+	  	}else{
+	  		analysis34 = "Cannot compute"
+	  	}
+
+	  	let analysis35 = "";
+	  	if(jfc2 == 0 || jfc2 <=4){
+	  		analysis35 = "C. M. Recto: Free flow of traffic";
+	  	}else if(jfc2 > 4 || jfc2 <=8){
+	  		analysis35 = "C. M. Recto: Sluggish flow of traffic";
+	  	}else if(jfc2 > 8 || jfc2 >=9){
+	  		analysis35 = "C. M. Recto: Slow flow of traffic";
+	  	}else if(jfc2 == 10){
+	  		analysis35 = "C. M. Recto: Traffic stopped or Road closed"
+	  	}else{
+	  		analysis35 = "Cannot compute"
+	  	}
+
+	  	let analysis36 = "";
+	  	if(jfc3 == 0 || jfc3 <=4){
+	  		analysis36 = "R. Magsaysay Ave/C. Bangoy: Free flow of traffic";
+	  	}else if(jfc3 > 4 || jfc3 <=8){
+	  		analysis36 = "R. Magsaysay Ave/C. Bangoy: Sluggish flow of traffic";
+	  	}else if(jfc3 > 8 || jfc3 >=9){
+	  		analysis36 = "R. Magsaysay Ave/C. Bangoy: Slow flow of traffic";
+	  	}else if(jfc3 == 10){
+	  		analysis36 = "R. Magsaysay Ave/C. Bangoy: Traffic stopped or Road closed"
+	  	}else{
+	  		analysis36 = "Cannot compute"
+	  	}
+
 	  	
 	  	_res.setHeader('Content-Type', 'application/json');
-    	_res.send(JSON.stringify({ street: streetc, intc1: intc1, jfc1: jfc1, intc2: intc2, jfc2: jfc2, intc3: intc3, jfc3: jfc3, analysis33: analysis33 }));
+    	_res.send(JSON.stringify({ street: streetc, intc1: intc1, jfc1: jfc1, intc2: intc2, jfc2: jfc2, intc3: intc3, jfc3: jfc3, 
+    		analysis34:analysis34, analysis35:analysis35, analysis36:analysis36, analysis33: analysis33 }));
 	  
 	});
 
@@ -8942,6 +8981,45 @@ app.post('/webhook/', function(req, res) {
 				    sendText(sender, chatbotResponse)
 				  });
 
+				
+			}
+
+			if(text=='m roxas intersections-'){
+				
+				let chatbotResponse1 = "";
+				let chatbotResponse2 = "";
+				let chatbotResponse3 = "";
+				
+				
+				//source : https://www.npmjs.com/package/axios
+				   axios.get(' https://cryptic-eyrie-21978.herokuapp.com/mroxas-')
+				  .then(function (response) {
+				
+
+				    chatbotResponse1 = response.data.analysis34;
+				    sendText(sender, chatbotResponse1)
+
+				    chatbotResponse2 = response.data.analysis35;
+				    sendText(sender, chatbotResponse2)
+
+				    chatbotResponse3 = response.data.analysis36;
+				    sendText(sender, chatbotResponse3)
+
+				   
+				  })
+				  .catch(function (error) {
+				    //console.log(error);
+				     chatbotResponse1 = "not ok";
+				     chatbotResponse2 = "not ok";
+				     chatbotResponse3 = "not ok";
+
+				    sendText(sender, chatbotResponse1)
+				    sendText(sender, chatbotResponse2)
+				    sendText(sender, chatbotResponse3)
+				    
+				  });
+
+				
 				
 			}
 			if(text=='jplaurel before gmall-')
