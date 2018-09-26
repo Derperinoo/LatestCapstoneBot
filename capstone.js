@@ -4141,13 +4141,13 @@ app.get('/cbangoy-',function(_req, _res){
 
 	  	let analysis39 = "";
 	  	if(jfc1 == 0 || jfc1 <=4){
-	  		analysis39 = "Free flow of traffic";
+	  		analysis39 = "E. Quirino Ave: Free flow of traffic";
 	  	}else if(jfc1 > 4 || jfc1 <=8){
-	  		analysis39 = "Sluggish flow of traffic";
+	  		analysis39 = "E. Quirino Ave: Sluggish flow of traffic";
 	  	}else if(jfc1 > 8 || jfc1 >=9){
-	  		analysis39 = "Slow flow of traffic";
+	  		analysis39 = "E. Quirino Ave: Slow flow of traffic";
 	  	}else if(jfc1 == 10){
-	  		analysis39 = "Traffic stopped or Road closed"
+	  		analysis39 = "E. Quirino Ave: Traffic stopped or Road closed"
 	  	}else{
 	  		analysis39 = "Cannot compute"
 	  	}
