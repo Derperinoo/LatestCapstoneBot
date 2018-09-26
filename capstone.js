@@ -5603,7 +5603,7 @@ app.get('/jrodriguezmaa-',function(_req, _res){
 
 });
 
-app.get('/maaroad-',function(_req, _res){
+app.get('/maaroad',function(_req, _res){
 
 	request('https://traffic.api.here.com/traffic/6.1/flow.json?bbox=7.2598%2C125.0860%3B6.7670%2C125.6674&app_id=fQbW8CGYiU3l5mLqWgBE&app_code=SYZXwjFBHSYi_1t1GNuHow', { json: true }, (err, res, body) => {
 	  if (err) { return console.log(err); }
@@ -5612,20 +5612,16 @@ app.get('/maaroad-',function(_req, _res){
 	  	const intc1 = body.RWS[0].RW[59].FIS[0].FI[0].TMC.DE;
 	  	const jfc1 = body.RWS[0].RW[59].FIS[0].FI[0].CF[0].JF;
 
-	  	const intc2 = body.RWS[0].RW[59].FIS[0].FI[1].TMC.DE;
-	  	const jfc2 = body.RWS[0].RW[59].FIS[0].FI[1].CF[0].JF;
+	  	const intc2 = body.RWS[0].RW[59].FIS[0].FI[2].TMC.DE;
+	  	const jfc2 = body.RWS[0].RW[59].FIS[0].FI[2].CF[0].JF;
 
-	  	const intc3 = body.RWS[0].RW[59].FIS[0].FI[2].TMC.DE;
-	  	const jfc3 = body.RWS[0].RW[59].FIS[0].FI[2].CF[0].JF;
-
-	  	var p = 3
+	  	var p = 2
 	  
-	  	var maa = jfc1 + jfc2 + jfc3;
+	  	var maa = jfc1 + jfc2 ;
 
 	  	var maar = maa/p;
 	  	
 	  	let analysis57 = "";
-	  	
 	  	if(maar == 0 || maar <=4){
 	  		analysis57 = "Free flow of traffic";
 	  	}else if(maar > 4 || maar <=8){
@@ -5638,15 +5634,44 @@ app.get('/maaroad-',function(_req, _res){
 	  		analysis57 = "Cannot compute"
 	  	}
 
+	  	let analysis58 = "";
+	  	if(jfc1 == 0 || jfc1 <=4){
+	  		analysis58 = "Narra St: Free flow of traffic";
+	  	}else if(jfc1 > 4 || jfc1 <=8){
+	  		analysis58 = "Narra St: Sluggish flow of traffic";
+	  	}else if(jfc1 > 8 || jfc1 >=9){
+	  		analysis58 = "Narra St: Slow flow of traffic";
+	  	}else if(jfc1 == 10){
+	  		analysis58 = "Narra St: Traffic stopped or Road closed"
+	  	}else{
+	  		analysis58 = "Cannot compute"
+	  	}
+
+
+		let analysis59 = "";
+	  	if(jfc2 == 0 || jfc2 <=4){
+	  		analysis59 = "Mac Arthur Hwy: Free flow of traffic";
+	  	}else if(jfc2 > 4 || jfc2 <=8){
+	  		analysis59 = "Mac Arthur Hwy: Sluggish flow of traffic";
+	  	}else if(jfc2 > 8 || jfc2 >=9){
+	  		analysis59 = "Mac Arthur Hwy: Slow flow of traffic";
+	  	}else if(jfc2 == 10){
+	  		analysis59 = "Mac Arthur Hwy: Traffic stopped or Road closed"
+	  	}else{
+	  		analysis59 = "Cannot compute"
+	  	}
+
+
 	  	
 	  	_res.setHeader('Content-Type', 'application/json');
-    	_res.send(JSON.stringify({ street: streetc, intc1: intc1, jfc1: jfc1, intc2: intc2, jfc2: jfc2, intc3: intc3, jfc3: jfc3, analysis57: analysis57 }));
+    	_res.send(JSON.stringify({ street: streetc, intc1: intc1, jfc1: jfc1, intc2: intc2, jfc2: jfc2,
+    	analysis58:analysis58, analysis59:analysis59,  analysis57: analysis57 }));
 	  
 	});
 
 
 });
-app.get('/maaroad',function(_req, _res){
+app.get('/maaroad-',function(_req, _res){
 
 	request('https://traffic.api.here.com/traffic/6.1/flow.json?bbox=7.2598%2C125.0860%3B6.7670%2C125.6674&app_id=fQbW8CGYiU3l5mLqWgBE&app_code=SYZXwjFBHSYi_1t1GNuHow', { json: true }, (err, res, body) => {
 	  if (err) { return console.log(err); }
@@ -5655,20 +5680,16 @@ app.get('/maaroad',function(_req, _res){
 	  	const intc1 = body.RWS[0].RW[60].FIS[0].FI[0].TMC.DE;
 	  	const jfc1 = body.RWS[0].RW[60].FIS[0].FI[0].CF[0].JF;
 
-	  	const intc2 = body.RWS[0].RW[60].FIS[0].FI[1].TMC.DE;
-	  	const jfc2 = body.RWS[0].RW[60].FIS[0].FI[1].CF[0].JF;
+	  	const intc2 = body.RWS[0].RW[60].FIS[0].FI[2].TMC.DE;
+	  	const jfc2 = body.RWS[0].RW[60].FIS[0].FI[2].CF[0].JF;
 
-	  	const intc3 = body.RWS[0].RW[60].FIS[0].FI[2].TMC.DE;
-	  	const jfc3 = body.RWS[0].RW[60].FIS[0].FI[2].CF[0].JF;
-
-	  	var p = 3
+	  	var p = 2
 	  
-	  	var maaa = jfc1 + jfc2 + jfc3;
+	  	var maaa = jfc1 + jfc2 ;
 
 	  	var maaar = maaa/p;
 	  	
 	  	let analysis58 = "";
-	  	
 	  	if(maaar == 0 || maaar <=4){
 	  		analysis58 = "Free flow of traffic";
 	  	}else if(maaar > 4 || maaar <=8){
@@ -5681,9 +5702,36 @@ app.get('/maaroad',function(_req, _res){
 	  		analysis58 = "Cannot compute"
 	  	}
 
+	  	let analysis59 = "";
+	  	if(jfc1 == 0 || jfc1 <=4){
+	  		analysis59 = "Mac Arthur Hwy: Free flow of traffic";
+	  	}else if(jfc1 > 4 || jfc1 <=8){
+	  		analysis59 = "Mac Arthur Hwy: Sluggish flow of traffic";
+	  	}else if(jfc1 > 8 || jfc1 >=9){
+	  		analysis59 = "Mac Arthur Hwy: Slow flow of traffic";
+	  	}else if(jfc1 == 10){
+	  		analysis59 = "Mac Arthur Hwy: Traffic stopped or Road closed"
+	  	}else{
+	  		analysis59 = "Cannot compute"
+	  	}
+
+	  	let analysis60 = "";
+	  	if(jfc2 == 0 || jfc2 <=4){
+	  		analysis60 = "Narra St: Free flow of traffic";
+	  	}else if(jfc2 > 4 || jfc2 <=8){
+	  		analysis60 = "Narra St: Sluggish flow of traffic";
+	  	}else if(jfc2 > 8 || jfc2 >=9){
+	  		analysis60 = "Narra St: Slow flow of traffic";
+	  	}else if(jfc2 == 10){
+	  		analysis60 = "Narra St: Traffic stopped or Road closed"
+	  	}else{
+	  		analysis60 = "Cannot compute"
+	  	}
+
 	  	
 	  	_res.setHeader('Content-Type', 'application/json');
-    	_res.send(JSON.stringify({ street: streetc, intc1: intc1, jfc1: jfc1, intc2: intc2, jfc2: jfc2, intc3: intc3, jfc3: jfc3, analysis58: analysis58 }));
+    	_res.send(JSON.stringify({ street: streetc, intc1: intc1, jfc1: jfc1, intc2: intc2, jfc2: jfc2, 
+    	analysis59:analysis59, analysis60:analysis60, analysis58: analysis58 }));
 	  
 	});
 
@@ -11215,6 +11263,51 @@ app.post('/webhook/', function(req, res) {
 				axios.get('https://cryptic-eyrie-21978.herokuapp.com/maaroad-')
 				  .then(function (response) {
 				    //console.log(response);
+				    chatbotResponse = response.data.analysis58;
+				    sendText(sender, chatbotResponse)
+				  })
+				  .catch(function (error) {
+				    //console.log(error);
+				    chatbotResponse = "not ok";
+				    sendText(sender, chatbotResponse)
+				  });
+
+				
+			}
+
+			if(text=='maa road intersections-'){
+				let chatbotResponse1 = "";
+				let chatbotResponse2 = "";
+				
+				//source : https://www.npmjs.com/package/axios
+				axios.get(' https://cryptic-eyrie-21978.herokuapp.com/maaroad-')
+				  .then(function (response) {
+				    //console.log(response);
+				    chatbotResponse1 = response.data.analysis59;
+				    sendText(sender, chatbotResponse1)
+				    chatbotResponse2 = response.data.analysis60;
+				    sendText(sender, chatbotResponse2)
+				  })
+				  .catch(function (error) {
+				    //console.log(error);
+				    chatbotResponse1 = "not ok";
+				    chatbotResponse2 = "not ok";
+				    sendText(sender, chatbotResponse1)
+				    sendText(sender, chatbotResponse2)
+				  });
+
+				
+			}
+
+			if(text=='maa road')
+			// if(text.includes("pichon street-"))
+			{
+				let chatbotResponse = "";
+				
+				//source : https://www.npmjs.com/package/axios
+				axios.get('https://cryptic-eyrie-21978.herokuapp.com/maaroad')
+				  .then(function (response) {
+				    //console.log(response);
 				    chatbotResponse = response.data.analysis57;
 				    sendText(sender, chatbotResponse)
 				  })
@@ -11226,22 +11319,25 @@ app.post('/webhook/', function(req, res) {
 
 				
 			}
-			if(text=='maa road')
-			// if(text.includes("pichon street-"))
-			{
-				let chatbotResponse = "";
+			if(text=='maa road intersections'){
+				let chatbotResponse1 = "";
+				let chatbotResponse2 = "";
 				
 				//source : https://www.npmjs.com/package/axios
-				axios.get('https://cryptic-eyrie-21978.herokuapp.com/maaroad')
+				axios.get(' https://cryptic-eyrie-21978.herokuapp.com/maaroad')
 				  .then(function (response) {
 				    //console.log(response);
-				    chatbotResponse = response.data.analysis58;
-				    sendText(sender, chatbotResponse)
+				    chatbotResponse1 = response.data.analysis58;
+				    sendText(sender, chatbotResponse1)
+				    chatbotResponse2 = response.data.analysis69;
+				    sendText(sender, chatbotResponse2)
 				  })
 				  .catch(function (error) {
 				    //console.log(error);
-				    chatbotResponse = "not ok";
-				    sendText(sender, chatbotResponse)
+				    chatbotResponse1 = "not ok";
+				    chatbotResponse2 = "not ok";
+				    sendText(sender, chatbotResponse1)
+				    sendText(sender, chatbotResponse2)
 				  });
 
 				
