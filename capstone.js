@@ -3097,7 +3097,6 @@ app.get('/sanpedro',function(_req, _res){
 	  	var sanpedroo = sanped/p;
 	  	
 	  	let analysis26 = "";
-	  	
 	  	if(sanpedroo == 0 || sanpedroo <=4){
 	  		analysis26 = "Free flow of traffic";
 	  	}else if(sanpedroo > 4 || sanpedroo <=8){
@@ -3110,11 +3109,64 @@ app.get('/sanpedro',function(_req, _res){
 	  		analysis26 = "Cannot compute"
 	  	}
 
+	  	let analysis27 = "";
+	  	if(jfc1 == 0 || jfc1 <=4){
+	  		analysis27 = "M. L. Quezon Blvd/Quezon Blvd: Free flow of traffic";
+	  	}else if(jfc1 > 4 || jfc1 <=8){
+	  		analysis27 = "M. L. Quezon Blvd/Quezon Blvd: Sluggish flow of traffic";
+	  	}else if(jfc1 > 8 || jfc1 >=9){
+	  		analysis27 = "M. L. Quezon Blvd/Quezon Blvd: Slow flow of traffic";
+	  	}else if(jfc1 == 10){
+	  		analysis27 = "M. L. Quezon Blvd/Quezon Blvd: Traffic stopped or Road closed"
+	  	}else{
+	  		analysis27 = "Cannot compute"
+	  	}
+
+	  	let analysis28 = "";
+	  	if(jfc2 == 0 || jfc2 <=4){
+	  		analysis28 = "C. M. Recto: Free flow of traffic";
+	  	}else if(jfc2 > 4 || jfc2 <=8){
+	  		analysis28 = "C. M. Recto: Sluggish flow of traffic";
+	  	}else if(jfc2 > 8 || jfc2 >=9){
+	  		analysis28 = "C. M. Recto: Slow flow of traffic";
+	  	}else if(jfc2 == 10){
+	  		analysis28 = "C. M. Recto: Traffic stopped or Road closed"
+	  	}else{
+	  		analysis28 = "Cannot compute"
+	  	}
+
+	  	let analysis29 = "";
+	  	if(jfc3 == 0 || jfc3 <=4){
+	  		analysis29 = "E. Quirino Ave: Free flow of traffic";
+	  	}else if(jfc3 > 4 || jfc3 <=8){
+	  		analysis29 = "E. Quirino Ave: Sluggish flow of traffic";
+	  	}else if(jfc3 > 8 || jfc3 >=9){
+	  		analysis29 = "E. Quirino Ave: Slow flow of traffic";
+	  	}else if(jfc3 == 10){
+	  		analysis29 = "E. Quirino Ave: Traffic stopped or Road closed"
+	  	}else{
+	  		analysis29 = "Cannot compute"
+	  	}
+
+	  	let analysis30 = "";
+	  	if(jfc4 == 0 || jfc4 <=4){
+	  		analysis30 = "Free flow of traffic";
+	  	}else if(jfc4 > 4 || jfc4 <=8){
+	  		analysis30 = "Sluggish flow of traffic";
+	  	}else if(jfc4 > 8 || jfc4 >=9){
+	  		analysis30 = "Slow flow of traffic";
+	  	}else if(jfc4 == 10){
+	  		analysis30 = "Traffic stopped or Road closed"
+	  	}else{
+	  		analysis30 = "Cannot compute"
+	  	}
+
 	  	
 
 
 	  	_res.setHeader('Content-Type', 'application/json');
-    	_res.send(JSON.stringify({ street: streetc, intc1: intc1, jfc1: jfc1, intc2: intc2, jfc2: jfc2, intc3: intc3, jfc3: jfc3, intc4: intc4, jfc4: jfc4, analysis26: analysis26 }));
+    	_res.send(JSON.stringify({ street: streetc, intc1: intc1, jfc1: jfc1, intc2: intc2, jfc2: jfc2, intc3: intc3, jfc3: jfc3, intc4: intc4, jfc4: jfc4, 
+    		analysis27:analysis27, analysis28:analysis28, analysis29:analysis29, analysis26: analysis26 }));
 	
 
 
@@ -8375,6 +8427,47 @@ app.post('/webhook/', function(req, res) {
 
 				
 			}
+
+			if(text=='san pedro intersections-'){
+				
+				let chatbotResponse1 = "";
+				let chatbotResponse2 = "";
+				let chatbotResponse3 = "";
+				
+				
+				//source : https://www.npmjs.com/package/axios
+				   axios.get(' https://cryptic-eyrie-21978.herokuapp.com/sanpedro')
+				  .then(function (response) {
+				
+
+				    chatbotResponse1 = response.data.analysis27;
+				    sendText(sender, chatbotResponse1)
+
+				    chatbotResponse2 = response.data.analysis28;
+				    sendText(sender, chatbotResponse2)
+
+				     chatbotResponse3 = response.data.analysis29;
+				    sendText(sender, chatbotResponse3)
+
+				   
+				  })
+				  .catch(function (error) {
+				    //console.log(error);
+				     chatbotResponse1 = "not ok";
+				     chatbotResponse2 = "not ok";
+				     chatbotResponse3 = "not ok";
+
+
+				    sendText(sender, chatbotResponse1)
+				    sendText(sender, chatbotResponse2)
+				    sendText(sender, chatbotResponse3)
+				    
+				  });
+
+				
+				
+			}
+
 			if(text=='f torres street-')
 			// if(text.includes("pichon street-"))
 			{
