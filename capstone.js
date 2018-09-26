@@ -6008,7 +6008,7 @@ app.get('/buhangincabantianroad',function(_req, _res){
 
 });
 
-app.get('/saintanthonysubd-',function(_req, _res){
+app.get('/saintanthonysubd',function(_req, _res){
 
 	request('https://traffic.api.here.com/traffic/6.1/flow.json?bbox=7.2598%2C125.0860%3B6.7670%2C125.6674&app_id=fQbW8CGYiU3l5mLqWgBE&app_code=SYZXwjFBHSYi_1t1GNuHow', { json: true }, (err, res, body) => {
 	  if (err) { return console.log(err); }
@@ -6017,17 +6017,13 @@ app.get('/saintanthonysubd-',function(_req, _res){
 	  	const intc1 = body.RWS[0].RW[65].FIS[0].FI[0].TMC.DE;
 	  	const jfc1 = body.RWS[0].RW[65].FIS[0].FI[0].CF[0].JF;
 
-	  	const intc2 = body.RWS[0].RW[65].FIS[0].FI[1].TMC.DE;
-	  	const jfc2 = body.RWS[0].RW[65].FIS[0].FI[1].CF[0].JF;
-
-	  	var p = 2
+	  	var p = 1
 	  
-	  	var sain = jfc1 + jfc2 ;
+	  	var sain = jfc1 ;
 
 	  	var saint = sain/p;
 	  	
 	  	let analysis63 = "";
-	  	
 	  	if(saint == 0 || saint <=4){
 	  		analysis63 = "Free flow of traffic";
 	  	}else if(saint > 4 || saint <=8){
@@ -6040,9 +6036,23 @@ app.get('/saintanthonysubd-',function(_req, _res){
 	  		analysis63 = "Cannot compute"
 	  	}
 
+	  	let analysis64 = "";
+	  	if(jfc1 == 0 || jfc1 <=4){
+	  		analysis64 = "Angliongto: Free flow of traffic";
+	  	}else if(jfc1 > 4 || jfc1 <=8){
+	  		analysis64 = "Angliongto: Sluggish flow of traffic";
+	  	}else if(jfc1 > 8 || jfc1 >=9){
+	  		analysis64 = "Angliongto: Slow flow of traffic";
+	  	}else if(jfc1 == 10){
+	  		analysis64 = "Angliongto: Traffic stopped or Road closed"
+	  	}else{
+	  		analysis64 = "Cannot compute"
+	  	}
+
 	  	
 	  	_res.setHeader('Content-Type', 'application/json');
-    	_res.send(JSON.stringify({ street: streetc, intc1: intc1, jfc1: jfc1, intc2: intc2, jfc2: jfc2, analysis63: analysis63 }));
+    	_res.send(JSON.stringify({ street: streetc, intc1: intc1, jfc1: jfc1,
+    	analysis64:analysis64, analysis63: analysis63 }));
 	  
 	});
 
@@ -6186,26 +6196,23 @@ app.get('/buhangincabantianroad-',function(_req, _res){
 
 });
 
-app.get('/saintanthonysubd',function(_req, _res){
+app.get('/saintanthonysubd-',function(_req, _res){
 
 	request('https://traffic.api.here.com/traffic/6.1/flow.json?bbox=7.2598%2C125.0860%3B6.7670%2C125.6674&app_id=fQbW8CGYiU3l5mLqWgBE&app_code=SYZXwjFBHSYi_1t1GNuHow', { json: true }, (err, res, body) => {
 	  if (err) { return console.log(err); }
 
 	  	const streetc = body.RWS[0].RW[68].DE;
-	  	const intc1 = body.RWS[0].RW[68].FIS[0].FI[0].TMC.DE;
-	  	const jfc1 = body.RWS[0].RW[68].FIS[0].FI[0].CF[0].JF;
 
-	  	const intc2 = body.RWS[0].RW[68].FIS[0].FI[1].TMC.DE;
-	  	const jfc2 = body.RWS[0].RW[68].FIS[0].FI[1].CF[0].JF;
+	  	const intc1 = body.RWS[0].RW[68].FIS[0].FI[1].TMC.DE;
+	  	const jfc1 = body.RWS[0].RW[68].FIS[0].FI[1].CF[0].JF;
 
-	  	var p = 2
+	  	var p = 1
 	  
-	  	var saiin = jfc1 + jfc2 ;
+	  	var saiin = jfc1 ;
 
 	  	var saiint = saiin/p;
 	  	
 	  	let analysis66 = "";
-	  	
 	  	if(saiint == 0 || saiint <=4){
 	  		analysis66 = "Free flow of traffic";
 	  	}else if(saiint > 4 || saiint <=8){
@@ -6218,9 +6225,23 @@ app.get('/saintanthonysubd',function(_req, _res){
 	  		analysis66 = "Cannot compute"
 	  	}
 
+	  	let analysis67 = "";
+	  	if(jfc1 == 0 || jfc1 <=4){
+	  		analysis67 = "Angliongto: Free flow of traffic";
+	  	}else if(jfc1 > 4 || jfc1 <=8){
+	  		analysis67 = "Angliongto: Sluggish flow of traffic";
+	  	}else if(jfc1 > 8 || jfc1 >=9){
+	  		analysis67 = "Angliongto: Slow flow of traffic";
+	  	}else if(jfc1 == 10){
+	  		analysis67 = "Angliongto: Traffic stopped or Road closed"
+	  	}else{
+	  		analysis67 = "Cannot compute"
+	  	}
+
 	  	
 	  	_res.setHeader('Content-Type', 'application/json');
-    	_res.send(JSON.stringify({ street: streetc, intc1: intc1, jfc1: jfc1, intc2: intc2, jfc2: jfc2, analysis66: analysis66 }));
+    	_res.send(JSON.stringify({ street: streetc, intc1: intc1, jfc1: jfc1,  
+    		analysis67:analysis67, analysis66: analysis66 }));
 	  
 	});
 
@@ -11712,7 +11733,7 @@ app.post('/webhook/', function(req, res) {
 				axios.get('https://cryptic-eyrie-21978.herokuapp.com/saintanthonysubd-')
 				  .then(function (response) {
 				    //console.log(response);
-				    chatbotResponse = response.data.analysis63;
+				    chatbotResponse = response.data.analysis66;
 				    sendText(sender, chatbotResponse)
 				  })
 				  .catch(function (error) {
@@ -11721,6 +11742,39 @@ app.post('/webhook/', function(req, res) {
 				    sendText(sender, chatbotResponse)
 				  });
 
+				
+			}
+
+			if(text=='saint anthony subd intersections-'){
+				
+				let chatbotResponse1 = "";
+				
+				
+				
+				
+				//source : https://www.npmjs.com/package/axios
+				   axios.get(' https://cryptic-eyrie-21978.herokuapp.com/saintanthonysubd-')
+				  .then(function (response) {
+				
+
+				    chatbotResponse1 = response.data.analysis67;
+				    sendText(sender, chatbotResponse1)
+				    
+	  
+				  })
+				  .catch(function (error) {
+				    //console.log(error);
+				     chatbotResponse1 = "not ok";
+				    
+				   
+				    sendText(sender, chatbotResponse1)
+				  
+				    
+				    
+				    
+				  });
+
+				
 				
 			}
 			if(text=='angliongto')
@@ -11843,7 +11897,7 @@ app.post('/webhook/', function(req, res) {
 				axios.get('https://cryptic-eyrie-21978.herokuapp.com/saintanthonysubd')
 				  .then(function (response) {
 				    //console.log(response);
-				    chatbotResponse = response.data.analysis66;
+				    chatbotResponse = response.data.analysis63;
 				    sendText(sender, chatbotResponse)
 				  })
 				  .catch(function (error) {
@@ -11852,6 +11906,39 @@ app.post('/webhook/', function(req, res) {
 				    sendText(sender, chatbotResponse)
 				  });
 
+				
+			}
+
+				if(text=='saint anthony subd intersections'){
+				
+				let chatbotResponse1 = "";
+				
+				
+				
+				
+				//source : https://www.npmjs.com/package/axios
+				   axios.get(' https://cryptic-eyrie-21978.herokuapp.com/saintanthonysubd')
+				  .then(function (response) {
+				
+
+				    chatbotResponse1 = response.data.analysis64;
+				    sendText(sender, chatbotResponse1)
+				    
+	  
+				  })
+				  .catch(function (error) {
+				    //console.log(error);
+				     chatbotResponse1 = "not ok";
+				    
+				   
+				    sendText(sender, chatbotResponse1)
+				  
+				    
+				    
+				    
+				  });
+
+				
 				
 			}
 			if(text=='cabantian road-')
