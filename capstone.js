@@ -5738,7 +5738,7 @@ app.get('/maaroad-',function(_req, _res){
 
 });
 
-app.get('/shrinehillsrd-',function(_req, _res){
+app.get('/shrinehillsrd',function(_req, _res){
 
 	request('https://traffic.api.here.com/traffic/6.1/flow.json?bbox=7.2598%2C125.0860%3B6.7670%2C125.6674&app_id=fQbW8CGYiU3l5mLqWgBE&app_code=SYZXwjFBHSYi_1t1GNuHow', { json: true }, (err, res, body) => {
 	  if (err) { return console.log(err); }
@@ -5757,7 +5757,6 @@ app.get('/shrinehillsrd-',function(_req, _res){
 	  	var shrin = shri/p;
 	  	
 	  	let analysis59 = "";
-	  	
 	  	if(shrin == 0 || shrin <=4){
 	  		analysis59 = "Free flow of traffic";
 	  	}else if(shrin > 4 || shrin <=8){
@@ -5770,15 +5769,42 @@ app.get('/shrinehillsrd-',function(_req, _res){
 	  		analysis59 = "Cannot compute"
 	  	}
 
+	  	let analysis60 = "";
+	  	if(jfc1 == 0 || jfc1 <=4){
+	  		analysis60 = "Diversion Rd: Free flow of traffic";
+	  	}else if(jfc1 > 4 || jfc1 <=8){
+	  		analysis60 = "Diversion Rd: Sluggish flow of traffic";
+	  	}else if(jfc1 > 8 || jfc1 >=9){
+	  		analysis60 = "Diversion Rd: Slow flow of traffic";
+	  	}else if(jfc1 == 10){
+	  		analysis60 = "Diversion Rd: Traffic stopped or Road closed"
+	  	}else{
+	  		analysis60 = "Cannot compute"
+	  	}
+
+	  	let analysis61 = "";
+	  	if(jfc2 == 0 || jfc2 <=4){
+	  		analysis61 = "Mac Arthur Hwy: Free flow of traffic";
+	  	}else if(jfc2 > 4 || jfc2 <=8){
+	  		analysis61 = "Mac Arthur Hwy: Sluggish flow of traffic";
+	  	}else if(jfc2 > 8 || jfc2 >=9){
+	  		analysis61 = "Mac Arthur Hwy: Slow flow of traffic";
+	  	}else if(jfc2 == 10){
+	  		analysis61 = "Mac Arthur Hwy: Traffic stopped or Road closed"
+	  	}else{
+	  		analysis61 = "Cannot compute"
+	  	}
+
 	  	
 	  	_res.setHeader('Content-Type', 'application/json');
-    	_res.send(JSON.stringify({ street: streetc, intc1: intc1, jfc1: jfc1, intc2: intc2, jfc2: jfc2, analysis59: analysis59 }));
+    	_res.send(JSON.stringify({ street: streetc, intc1: intc1, jfc1: jfc1, intc2: intc2, jfc2: jfc2, 
+    		analysis60:analysis60, analysis61:analysis61, analysis59: analysis59 }));
 	  
 	});
 
 
 });
-app.get('/shrinehillsrd',function(_req, _res){
+app.get('/shrinehillsrd-',function(_req, _res){
 
 	request('https://traffic.api.here.com/traffic/6.1/flow.json?bbox=7.2598%2C125.0860%3B6.7670%2C125.6674&app_id=fQbW8CGYiU3l5mLqWgBE&app_code=SYZXwjFBHSYi_1t1GNuHow', { json: true }, (err, res, body) => {
 	  if (err) { return console.log(err); }
@@ -5797,7 +5823,6 @@ app.get('/shrinehillsrd',function(_req, _res){
 	  	var shriin = shrii/p;
 	  	
 	  	let analysis60 = "";
-	  	
 	  	if(shriin == 0 || shriin <=4){
 	  		analysis60 = "Free flow of traffic";
 	  	}else if(shriin > 4 || shriin <=8){
@@ -5810,9 +5835,36 @@ app.get('/shrinehillsrd',function(_req, _res){
 	  		analysis60 = "Cannot compute"
 	  	}
 
+	  	let analysis61 = "";
+	  	if(jfc1 == 0 || jfc1 <=4){
+	  		analysis61 = "Mac Arthur Hwy: Free flow of traffic";
+	  	}else if(jfc1 > 4 || jfc1 <=8){
+	  		analysis61 = "Mac Arthur Hwy: Sluggish flow of traffic";
+	  	}else if(jfc1 > 8 || jfc1 >=9){
+	  		analysis61 = "Mac Arthur Hwy: Slow flow of traffic";
+	  	}else if(jfc1 == 10){
+	  		analysis61 = "Mac Arthur Hwy: Traffic stopped or Road closed"
+	  	}else{
+	  		analysis61 = "Cannot compute"
+	  	}
+
+	  	let analysis62 = "";
+	  	if(jfc2 == 0 || jfc2 <=4){
+	  		analysis62 = "Diversion Rd: Free flow of traffic";
+	  	}else if(jfc2 > 4 || jfc2 <=8){
+	  		analysis62 = "Diversion Rd: Sluggish flow of traffic";
+	  	}else if(jfc2 > 8 || jfc2 >=9){
+	  		analysis62 = "Diversion Rd: Slow flow of traffic";
+	  	}else if(jfc2 == 10){
+	  		analysis62 = "Diversion Rd: Traffic stopped or Road closed"
+	  	}else{
+	  		analysis62 = "Cannot compute"
+	  	}
+
 	  	
 	  	_res.setHeader('Content-Type', 'application/json');
-    	_res.send(JSON.stringify({ street: streetc, intc1: intc1, jfc1: jfc1, intc2: intc2, jfc2: jfc2, analysis60: analysis60 }));
+    	_res.send(JSON.stringify({ street: streetc, intc1: intc1, jfc1: jfc1, intc2: intc2, jfc2: jfc2, 
+    		analysis61:analysis61, analysis62:analysis62, analysis60: analysis60 }));
 	  
 	});
 
@@ -11351,13 +11403,41 @@ app.post('/webhook/', function(req, res) {
 				axios.get('https://cryptic-eyrie-21978.herokuapp.com/shrinehillsrd-')
 				  .then(function (response) {
 				    //console.log(response);
-				    chatbotResponse = response.data.analysis59;
+				    chatbotResponse = response.data.analysis60;
 				    sendText(sender, chatbotResponse)
 				  })
 				  .catch(function (error) {
 				    //console.log(error);
 				    chatbotResponse = "not ok";
 				    sendText(sender, chatbotResponse)
+				  });
+
+				
+			}
+
+			if(text=='shrine hills road intersections-')
+			// if(text.includes("sandawa-"))
+			{
+				let chatbotResponse = "";
+				let chatbotResponse1 = "";
+				
+				//source : https://www.npmjs.com/package/axios
+				axios.get('https://cryptic-eyrie-21978.herokuapp.com/shrinehillsrd-')
+				  .then(function (response) {
+				    //console.log(response);
+				    chatbotResponse = response.data.analysis61;
+				    sendText(sender, chatbotResponse)
+
+				    chatbotResponse1 = response.data.analysis62;
+				    sendText(sender, chatbotResponse1)
+
+				  })
+				  .catch(function (error) {
+				    //console.log(error);
+				    chatbotResponse = "not ok";
+				     chatbotResponse1 = "not ok";
+				    sendText(sender, chatbotResponse)
+				    sendText(sender, chatbotResponse1)
 				  });
 
 				
@@ -11371,13 +11451,41 @@ app.post('/webhook/', function(req, res) {
 				axios.get('https://cryptic-eyrie-21978.herokuapp.com/shrinehillsrd')
 				  .then(function (response) {
 				    //console.log(response);
-				    chatbotResponse = response.data.analysis60;
+				    chatbotResponse = response.data.analysis59;
 				    sendText(sender, chatbotResponse)
 				  })
 				  .catch(function (error) {
 				    //console.log(error);
 				    chatbotResponse = "not ok";
 				    sendText(sender, chatbotResponse)
+				  });
+
+				
+			}
+
+			if(text=='shrine hills road intersections')
+			// if(text.includes("sandawa-"))
+			{
+				let chatbotResponse = "";
+				let chatbotResponse1 = "";
+				
+				//source : https://www.npmjs.com/package/axios
+				axios.get('https://cryptic-eyrie-21978.herokuapp.com/shrinehillsrd')
+				  .then(function (response) {
+				    //console.log(response);
+				    chatbotResponse = response.data.analysis60;
+				    sendText(sender, chatbotResponse)
+
+				    chatbotResponse1 = response.data.analysis61;
+				    sendText(sender, chatbotResponse1)
+
+				  })
+				  .catch(function (error) {
+				    //console.log(error);
+				    chatbotResponse = "not ok";
+				     chatbotResponse1 = "not ok";
+				    sendText(sender, chatbotResponse)
+				    sendText(sender, chatbotResponse1)
 				  });
 
 				
