@@ -2641,7 +2641,6 @@ app.get('/cabaguioave',function(_req, _res){
 	  	var cabaguiooa = cabaguioo/p;
 	  	
 	  	let analysis21 = "";
-	  	
 	  	if(cabaguiooa == 0 || cabaguiooa <=4){
 	  		analysis21 = "Free flow of traffic";
 	  	}else if(cabaguiooa > 4 || cabaguiooa <=8){
@@ -2654,11 +2653,39 @@ app.get('/cabaguioave',function(_req, _res){
 	  		analysis21 = "Cannot compute"
 	  	}
 
+	  	let analysis22 = "";
+	  	if(jfc1 == 0 || jfc1 <=4){
+	  		analysis22 = "J. P. Laurel Ave: Free flow of traffic";
+	  	}else if(jfc1 > 4 || jfc1 <=8){
+	  		analysis22 = "J. P. Laurel Ave: Sluggish flow of traffic";
+	  	}else if(jfc1 > 8 || jfc1 >=9){
+	  		analysis22 = "J. P. Laurel Ave: Slow flow of traffic";
+	  	}else if(jfc1 == 10){
+	  		analysis22 = "J. P. Laurel Ave: Traffic stopped or Road closed"
+	  	}else{
+	  		analysis22 = "Cannot compute"
+	  	}
+
+	  	let analysis23 = "";
+	  	if(jfc2 == 0 || jfc2 <=4){
+	  		analysis23 = "Lapu-Lapu/R. Castillo/Dacudao: Free flow of traffic";
+	  	}else if(jfc2 > 4 || jfc2 <=8){
+	  		analysis23 = "Lapu-Lapu/R. Castillo/Dacudao: Sluggish flow of traffic";
+	  	}else if(jfc2 > 8 || jfc2 >=9){
+	  		analysis23 = "Lapu-Lapu/R. Castillo/Dacudao: Slow flow of traffic";
+	  	}else if(jfc2 == 10){
+	  		analysis23 = "Lapu-Lapu/R. Castillo/Dacudao: Traffic stopped or Road closed"
+	  	}else{
+	  		analysis23 = "Cannot compute"
+	  	}
+
+
 	  	
 
 
 	  	_res.setHeader('Content-Type', 'application/json');
-    	_res.send(JSON.stringify({ street: streetc, intc1: intc1, jfc1: jfc1,  intc2: intc2, jfc2: jfc2, analysis21: analysis21 }));
+    	_res.send(JSON.stringify({ street: streetc, intc1: intc1, jfc1: jfc1,  intc2: intc2, jfc2: jfc2, 
+    		analysis22:analysis22, analysis23:analysis23, analysis21: analysis21 }));
 	
 
 
@@ -7665,6 +7692,39 @@ app.post('/webhook/', function(req, res) {
 				    sendText(sender, chatbotResponse)
 				  });
 
+				
+			}
+
+			if(text=='cabaguio intersections'){
+				
+				let chatbotResponse1 = "";
+				let chatbotResponse2 = "";
+				
+				
+				//source : https://www.npmjs.com/package/axios
+				   axios.get(' https://cryptic-eyrie-21978.herokuapp.com/cabaguioave')
+				  .then(function (response) {
+				
+
+				    chatbotResponse1 = response.data.analysis22;
+				    sendText(sender, chatbotResponse1)
+
+				    chatbotResponse2 = response.data.analysis23;
+				    sendText(sender, chatbotResponse2)
+
+				   
+				  })
+				  .catch(function (error) {
+				    //console.log(error);
+				     chatbotResponse1 = "not ok";
+				     chatbotResponse2 = "not ok";
+
+				    sendText(sender, chatbotResponse1)
+				    sendText(sender, chatbotResponse2)
+				    
+				  });
+
+				
 				
 			}
 
