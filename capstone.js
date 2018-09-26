@@ -11329,7 +11329,7 @@ app.post('/webhook/', function(req, res) {
 				    //console.log(response);
 				    chatbotResponse1 = response.data.analysis58;
 				    sendText(sender, chatbotResponse1)
-				    chatbotResponse2 = response.data.analysis69;
+				    chatbotResponse2 = response.data.analysis59;
 				    sendText(sender, chatbotResponse2)
 				  })
 				  .catch(function (error) {
