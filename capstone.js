@@ -4497,7 +4497,7 @@ app.get('/staanaave-',function(_req, _res){
 
 
 });
-app.get('/lapulapu-',function(_req, _res){
+app.get('/lapulapu',function(_req, _res){
 
 	request('https://traffic.api.here.com/traffic/6.1/flow.json?bbox=7.2598%2C125.0860%3B6.7670%2C125.6674&app_id=fQbW8CGYiU3l5mLqWgBE&app_code=SYZXwjFBHSYi_1t1GNuHow', { json: true }, (err, res, body) => {
 	  if (err) { return console.log(err); }
@@ -4517,7 +4517,6 @@ app.get('/lapulapu-',function(_req, _res){
 	  	var lapu = lap/p;
 	  	
 	  	let analysis43 = "";
-	  	
 	  	if(lapu == 0 || lapu <=4){
 	  		analysis43 = "Free flow of traffic";
 	  	}else if(lapu > 4 || lapu <=8){
@@ -4530,9 +4529,36 @@ app.get('/lapulapu-',function(_req, _res){
 	  		analysis43 = "Cannot compute"
 	  	}
 
+	  	let analysis44 = "";
+	  	if(jfc1 == 0 || jfc1 <=4){
+	  		analysis44 = "Dacudao/L. Garcia/Agdao Flyover: Free flow of traffic";
+	  	}else if(jfc1 > 4 || jfc1 <=8){
+	  		analysis44 = "Dacudao/L. Garcia/Agdao Flyover: Sluggish flow of traffic";
+	  	}else if(jfc1 > 8 || jfc1 >=9){
+	  		analysis44 = "Dacudao/L. Garcia/Agdao Flyover: Slow flow of traffic";
+	  	}else if(jfc1 == 10){
+	  		analysis44 = "Dacudao/L. Garcia/Agdao Flyover: Traffic stopped or Road closed"
+	  	}else{
+	  		analysis44 = "Cannot compute"
+	  	}
+
+	  	let analysis45 = "";
+	  	if(jfc2 == 0 || jfc2 <=4){
+	  		analysis45 = "Sta. Ana Ave: Free flow of traffic";
+	  	}else if(jfc2 > 4 || jfc2 <=8){
+	  		analysis45 = "Sta. Ana Ave: Sluggish flow of traffic";
+	  	}else if(jfc2 > 8 || jfc2 >=9){
+	  		analysis45 = "Sta. Ana Ave: Slow flow of traffic";
+	  	}else if(jfc2 == 10){
+	  		analysis45 = "Sta. Ana Ave: Traffic stopped or Road closed"
+	  	}else{
+	  		analysis45 = "Cannot compute"
+	  	}
+
 	  	
 	  	_res.setHeader('Content-Type', 'application/json');
-    	_res.send(JSON.stringify({ street: streetc, intc1: intc1, jfc1: jfc1, intc2: intc2, jfc2: jfc2, analysis43: analysis43 }));
+    	_res.send(JSON.stringify({ street: streetc, intc1: intc1, jfc1: jfc1, intc2: intc2, jfc2: jfc2,
+    	analysis44:analysis44, analysis45:analysis45, analysis43: analysis43 }));
 	  
 	});
 
@@ -4583,7 +4609,7 @@ app.get('/agdaoflyover-',function(_req, _res){
 
 
 });
-app.get('/lapulapu',function(_req, _res){
+app.get('/lapulapu-',function(_req, _res){
 
 	request('https://traffic.api.here.com/traffic/6.1/flow.json?bbox=7.2598%2C125.0860%3B6.7670%2C125.6674&app_id=fQbW8CGYiU3l5mLqWgBE&app_code=SYZXwjFBHSYi_1t1GNuHow', { json: true }, (err, res, body) => {
 	  if (err) { return console.log(err); }
@@ -4603,7 +4629,6 @@ app.get('/lapulapu',function(_req, _res){
 	  	var lapuulap = lapuu/p;
 	  	
 	  	let analysis45 = "";
-	  	
 	  	if(lapuulap == 0 || lapuulap <=4){
 	  		analysis45 = "Free flow of traffic";
 	  	}else if(lapuulap > 4 || lapuulap <=8){
@@ -4616,9 +4641,37 @@ app.get('/lapulapu',function(_req, _res){
 	  		analysis45 = "Cannot compute"
 	  	}
 
+	  	let analysis46 = "";
+	  	if(jfc1 == 0 || jfc1 <=4){
+	  		analysis46 = "Sta. Ana Ave: Free flow of traffic";
+	  	}else if(jfc1 > 4 || jfc1 <=8){
+	  		analysis46 = "Sta. Ana Ave: Sluggish flow of traffic";
+	  	}else if(jfc1 > 8 || jfc1 >=9){
+	  		analysis46 = "Sta. Ana Ave: Slow flow of traffic";
+	  	}else if(jfc1 == 10){
+	  		analysis46 = "Sta. Ana Ave: Traffic stopped or Road closed"
+	  	}else{
+	  		analysis46 = "Cannot compute"
+	  	}
+
+	  	let analysis47 = "";
+	  	if(jfc2 == 0 || jfc2 <=4){
+	  		analysis47 = "Dacudao/L. Garcia/Agdao Flyover: Free flow of traffic";
+	  	}else if(jfc2 > 4 || jfc2 <=8){
+	  		analysis47 = "Dacudao/L. Garcia/Agdao Flyover: Sluggish flow of traffic";
+	  	}else if(jfc2 > 8 || jfc2 >=9){
+	  		analysis47 = "Dacudao/L. Garcia/Agdao Flyover: Slow flow of traffic";
+	  	}else if(jfc2 == 10){
+	  		analysis47 = "Dacudao/L. Garcia/Agdao Flyover: Traffic stopped or Road closed"
+	  	}else{
+	  		analysis47 = "Cannot compute"
+	  	}
+
+
 	  	
 	  	_res.setHeader('Content-Type', 'application/json');
-    	_res.send(JSON.stringify({ street: streetc, intc1: intc1, jfc1: jfc1, intc2: intc2, jfc2: jfc2, analysis45: analysis45 }));
+    	_res.send(JSON.stringify({ street: streetc, intc1: intc1, jfc1: jfc1, intc2: intc2, jfc2: jfc2, 
+    		analysis46:analysis46, analysis47:analysis47, analysis45: analysis45 }));
 	  
 	});
 
@@ -9897,6 +9950,41 @@ app.post('/webhook/', function(req, res) {
 
 				
 			}
+
+			if(text=='lapu lapu intersections-'){
+				
+				let chatbotResponse1 = "";
+				let chatbotResponse2 = "";
+				
+				
+				
+				//source : https://www.npmjs.com/package/axios
+				   axios.get(' https://cryptic-eyrie-21978.herokuapp.com/lapulapu-')
+				  .then(function (response) {
+				
+
+				    chatbotResponse1 = response.data.analysis46;
+				    sendText(sender, chatbotResponse1)
+
+				    chatbotResponse2 = response.data.analysis47;
+				    sendText(sender, chatbotResponse2)
+
+				   
+				  })
+				  .catch(function (error) {
+				    //console.log(error);
+				     chatbotResponse1 = "not ok";
+				     chatbotResponse2 = "not ok";
+				    sendText(sender, chatbotResponse1)
+				    sendText(sender, chatbotResponse2)
+				    
+				    
+				  });
+
+				
+				
+			}
+
 			if(text=='agdao flyover-')
 			// if(text.includes("pichon street-"))
 			{
@@ -9935,6 +10023,40 @@ app.post('/webhook/', function(req, res) {
 				    sendText(sender, chatbotResponse)
 				  });
 
+				
+			}
+
+			if(text=='lapu lapu intersections'){
+				
+				let chatbotResponse1 = "";
+				let chatbotResponse2 = "";
+				
+				
+				
+				//source : https://www.npmjs.com/package/axios
+				   axios.get(' https://cryptic-eyrie-21978.herokuapp.com/lapulapu')
+				  .then(function (response) {
+				
+
+				    chatbotResponse1 = response.data.analysis44;
+				    sendText(sender, chatbotResponse1)
+
+				    chatbotResponse2 = response.data.analysis45;
+				    sendText(sender, chatbotResponse2)
+
+				   
+				  })
+				  .catch(function (error) {
+				    //console.log(error);
+				     chatbotResponse1 = "not ok";
+				     chatbotResponse2 = "not ok";
+				    sendText(sender, chatbotResponse1)
+				    sendText(sender, chatbotResponse2)
+				    
+				    
+				  });
+
+				
 				
 			}
 			if(text=='agdao flyover')
