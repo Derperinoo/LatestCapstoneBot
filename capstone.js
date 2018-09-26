@@ -8428,7 +8428,7 @@ app.post('/webhook/', function(req, res) {
 				
 			}
 
-			if(text=='san pedro intersections-'){
+			if(text=='san pedro intersections'){
 				
 				let chatbotResponse1 = "";
 				let chatbotResponse2 = "";
