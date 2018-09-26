@@ -5333,7 +5333,7 @@ app.get('/cpgarcia-',function(_req, _res){
 
 
 });
-app.get('/mquinonesrd',function(_req, _res){
+app.get('/mquinonesrd-',function(_req, _res){
 
 	request('https://traffic.api.here.com/traffic/6.1/flow.json?bbox=7.2598%2C125.0860%3B6.7670%2C125.6674&app_id=fQbW8CGYiU3l5mLqWgBE&app_code=SYZXwjFBHSYi_1t1GNuHow', { json: true }, (err, res, body) => {
 	  if (err) { return console.log(err); }
@@ -5352,7 +5352,6 @@ app.get('/mquinonesrd',function(_req, _res){
 	  	var mquino = mquin/p;
 	  	
 	  	let analysis53 = "";
-	  	
 	  	if(mquino == 0 || mquino <=4){
 	  		analysis53 = "Free flow of traffic";
 	  	}else if(mquino > 4 || mquino <=8){
@@ -5365,15 +5364,42 @@ app.get('/mquinonesrd',function(_req, _res){
 	  		analysis53 = "Cannot compute"
 	  	}
 
+	  	let analysis54 = "";
+	  	if(jfc1 == 0 || jfc1 <=4){
+	  		analysis54 = "J. P. Laurel Ave: Free flow of traffic";
+	  	}else if(jfc1 > 4 || jfc1 <=8){
+	  		analysis54 = "J. P. Laurel Ave: Sluggish flow of traffic";
+	  	}else if(jfc1 > 8 || jfc1 >=9){
+	  		analysis54 = "J. P. Laurel Ave: Slow flow of traffic";
+	  	}else if(jfc1 == 10){
+	  		analysis54 = "J. P. Laurel Ave: Traffic stopped or Road closed"
+	  	}else{
+	  		analysis54 = "Cannot compute"
+	  	}
+
+	  	let analysis55 = "";
+	  	if(jfc2 == 0 || jfc2 <=4){
+	  		analysis55 = "C. P. Garcia/Diversion Rd/C. P. Garcia East/C. P. Garcia West: Free flow of traffic";
+	  	}else if(jfc2 > 4 || jfc2 <=8){
+	  		analysis55 = "C. P. Garcia/Diversion Rd/C. P. Garcia East/C. P. Garcia West: Sluggish flow of traffic";
+	  	}else if(jfc2 > 8 || jfc2 >=9){
+	  		analysis55 = "C. P. Garcia/Diversion Rd/C. P. Garcia East/C. P. Garcia West: Slow flow of traffic";
+	  	}else if(jfc2 == 10){
+	  		analysis55 = "C. P. Garcia/Diversion Rd/C. P. Garcia East/C. P. Garcia West: Traffic stopped or Road closed"
+	  	}else{
+	  		analysis55 = "Cannot compute"
+	  	}
+
 	  	
 	  	_res.setHeader('Content-Type', 'application/json');
-    	_res.send(JSON.stringify({ street: streetc, intc1: intc1, jfc1: jfc1, intc2: intc2, jfc2: jfc2, analysis53: analysis53 }));
+    	_res.send(JSON.stringify({ street: streetc, intc1: intc1, jfc1: jfc1, intc2: intc2, jfc2: jfc2, 
+    		analysis54:analysis54, analysis55:analysis55, analysis53: analysis53 }));
 	  
 	});
 
 
 });
-app.get('/mquinonesrd-',function(_req, _res){
+app.get('/mquinonesrd',function(_req, _res){
 
 	request('https://traffic.api.here.com/traffic/6.1/flow.json?bbox=7.2598%2C125.0860%3B6.7670%2C125.6674&app_id=fQbW8CGYiU3l5mLqWgBE&app_code=SYZXwjFBHSYi_1t1GNuHow', { json: true }, (err, res, body) => {
 	  if (err) { return console.log(err); }
@@ -5405,9 +5431,37 @@ app.get('/mquinonesrd-',function(_req, _res){
 	  		analysis54 = "Cannot compute"
 	  	}
 
+	  	let analysis55 = "";
+	  	if(jfc1 == 0 || jfc1 <=4){
+	  		analysis55 = "C. P. Garcia/Diversion Rd/C. P. Garcia East/C. P. Garcia West: Free flow of traffic";
+	  	}else if(jfc1 > 4 || jfc1 <=8){
+	  		analysis55 = "C. P. Garcia/Diversion Rd/C. P. Garcia East/C. P. Garcia West: Sluggish flow of traffic";
+	  	}else if(jfc1 > 8 || jfc1 >=9){
+	  		analysis55 = "C. P. Garcia/Diversion Rd/C. P. Garcia East/C. P. Garcia West: Slow flow of traffic";
+	  	}else if(jfc1 == 10){
+	  		analysis55 = "C. P. Garcia/Diversion Rd/C. P. Garcia East/C. P. Garcia West: Traffic stopped or Road closed"
+	  	}else{
+	  		analysis55 = "Cannot compute"
+	  	}
+
+	  	let analysis56 = "";
+	  	if(jfc2 == 0 || jfc2 <=4){
+	  		analysis56 = "J. P. Laurel Ave: Free flow of traffic";
+	  	}else if(jfc2 > 4 || jfc2 <=8){
+	  		analysis56 = "J. P. Laurel Ave: Sluggish flow of traffic";
+	  	}else if(jfc2 > 8 || jfc2 >=9){
+	  		analysis56 = "J. P. Laurel Ave: Slow flow of traffic";
+	  	}else if(jfc2 == 10){
+	  		analysis56 = "J. P. Laurel Ave: Traffic stopped or Road closed"
+	  	}else{
+	  		analysis55 = "Cannot compute"
+	  	}
+
+
 	  	
 	  	_res.setHeader('Content-Type', 'application/json');
-    	_res.send(JSON.stringify({ street: streetc, intc1: intc1, jfc1: jfc1, intc2: intc2, jfc2: jfc2, analysis54: analysis54 }));
+    	_res.send(JSON.stringify({ street: streetc, intc1: intc1, jfc1: jfc1, intc2: intc2, jfc2: jfc2, 
+    		analysis55:analysis55, analysis56:analysis56, analysis54: analysis54 }));
 	  
 	});
 
@@ -10922,6 +10976,40 @@ app.post('/webhook/', function(req, res) {
 
 				
 			}
+
+			if(text=='m quinones road intersections'){
+				
+				let chatbotResponse1 = "";
+				let chatbotResponse2 = "";
+				
+				
+				
+				//source : https://www.npmjs.com/package/axios
+				   axios.get(' https://cryptic-eyrie-21978.herokuapp.com/mquinonesrd')
+				  .then(function (response) {
+				
+
+				    chatbotResponse1 = response.data.analysis55;
+				    sendText(sender, chatbotResponse1)
+
+				    chatbotResponse2 = response.data.analysis56;
+				    sendText(sender, chatbotResponse2)
+
+				   
+				  })
+				  .catch(function (error) {
+				    //console.log(error);
+				     chatbotResponse1 = "not ok";
+				     chatbotResponse2 = "not ok";
+				    sendText(sender, chatbotResponse1)
+				    sendText(sender, chatbotResponse2)
+				    
+				    
+				  });
+
+				
+				
+			}
 			if(text=='m quinones road-')
 			// if(text.includes("pichon street-"))
 			{
@@ -10940,6 +11028,40 @@ app.post('/webhook/', function(req, res) {
 				    sendText(sender, chatbotResponse)
 				  });
 
+				
+			}
+
+			if(text=='m quinones road intersections-'){
+				
+				let chatbotResponse1 = "";
+				let chatbotResponse2 = "";
+				
+				
+				
+				//source : https://www.npmjs.com/package/axios
+				   axios.get(' https://cryptic-eyrie-21978.herokuapp.com/mquinonesrd-')
+				  .then(function (response) {
+				
+
+				    chatbotResponse1 = response.data.analysis54;
+				    sendText(sender, chatbotResponse1)
+
+				    chatbotResponse2 = response.data.analysis55;
+				    sendText(sender, chatbotResponse2)
+
+				   
+				  })
+				  .catch(function (error) {
+				    //console.log(error);
+				     chatbotResponse1 = "not ok";
+				     chatbotResponse2 = "not ok";
+				    sendText(sender, chatbotResponse1)
+				    sendText(sender, chatbotResponse2)
+				    
+				    
+				  });
+
+				
 				
 			}
 			if(text=='j rodriguez maa')
