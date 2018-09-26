@@ -10846,62 +10846,8 @@ app.post('/webhook/', function(req, res) {
 				
 				
 			}
-			if(text=='diversion road intersections'){
-				
-				let chatbotResponse1 = "";
-				let chatbotResponse2 = "";
-				let chatbotResponse3 = "";
-				let chatbotResponse4 = "";
-				let chatbotResponse5 = "";
-				let chatbotResponse6 = "";
-				
-				
-				//source : https://www.npmjs.com/package/axios
-				   axios.get('https://cryptic-eyrie-21978.herokuapp.com/diversionroad')
-				  .then(function (response) {
-				
 
-				    chatbotResponse1 = response.data.analysis51;
-				    sendText(sender, chatbotResponse1)
-
-				    chatbotResponse2 = response.data.analysis52;
-				    sendText(sender, chatbotResponse2)
-
-				    chatbotResponse3 = response.data.analysis53;
-				    sendText(sender, chatbotResponse3)
-
-				    chatbotResponse4 = response.data.analysis54;
-				    sendText(sender, chatbotResponse4)
-
-				    chatbotResponse5 = response.data.analysis55;
-				    sendText(sender, chatbotResponse5)
-
-				    hatbotResponse6 = response.data.analysis56;
-				    sendText(sender, chatbotResponse6)
-
-				   
-				  })
-				  .catch(function (error) {
-				    //console.log(error);
-				     chatbotResponse1 = "not ok";
-				     chatbotResponse2 = "not ok";
-				     chatbotResponse3 = "not ok";
-				     chatbotResponse4 = "not ok";
-				     chatbotResponse5 = "not ok";
-				     chatbotResponse6 = "not ok";
-
-				    sendText(sender, chatbotResponse1)
-				    sendText(sender, chatbotResponse2)
-				    sendText(sender, chatbotResponse3)
-				    sendText(sender, chatbotResponse4)
-				    sendText(sender, chatbotResponse5)
-				    sendText(sender, chatbotResponse6)
-				    
-				  });
-
-				
-				
-			}
+			
 			if(text=='cp garcia')
 			// if(text.includes("pichon street-"))
 			{
