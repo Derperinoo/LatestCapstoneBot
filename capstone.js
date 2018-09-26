@@ -3336,7 +3336,6 @@ app.get('/pichonst',function(_req, _res){
 	  	var pichonns = pichonn/p;
 	  	
 	  	let analysis25 = "";
-	  	
 	  	if(pichonns == 0 || pichonns <=4){
 	  		analysis25 = "Free flow of traffic";
 	  	}else if(pichonns > 4 || pichonns <=8){
@@ -3349,11 +3348,78 @@ app.get('/pichonst',function(_req, _res){
 	  		analysis25 = "Cannot compute"
 	  	}
 
+	  	let analysis26 = "";
+	  	if(jfc1 == 0 || jfc1 <=4){
+	  		analysis25 = "F. Torres St: Free flow of traffic";
+	  	}else if(jfc1 > 4 || jfc1 <=8){
+	  		analysis26 = "F. Torres St: Sluggish flow of traffic";
+	  	}else if(jfc1 > 8 || jfc1 >=9){
+	  		analysis26 = "F. Torres St: Slow flow of traffic";
+	  	}else if(jfc1 == 10){
+	  		analysis26 = "F. Torres St: Traffic stopped or Road closed"
+	  	}else{
+	  		analysis26 = "Cannot compute"
+	  	}
+
+	  	let analysis27 = "";
+	  	if(jfc2 == 0 || jfc2 <=4){
+	  		analysis27 = "Davao City: Free flow of traffic";
+	  	}else if(jfc2 > 4 || jfc2 <=8){
+	  		analysis27 = "Davao City: Sluggish flow of traffic";
+	  	}else if(jfc2 > 8 || jfc2 >=9){
+	  		analysis27 = "Davao City: Slow flow of traffic";
+	  	}else if(pichonns == 10){
+	  		analysis27 = "Davao City: Traffic stopped or Road closed"
+	  	}else{
+	  		analysis27 = "Cannot compute"
+	  	}
+
+	  	let analysis28 = "";
+	  	if(jfc3 == 0 || jfc3 <=4){
+	  		analysis28 = "E. Quirino Ave: Free flow of traffic";
+	  	}else if(jfc3 > 4 || jfc3 <=8){
+	  		analysis28 = "E. Quirino Ave: Sluggish flow of traffic";
+	  	}else if(jfc3 > 8 || jfc3 >=9){
+	  		analysis28 = "E. Quirino Ave: Slow flow of traffic";
+	  	}else if(jfc3 == 10){
+	  		analysis28 = "E. Quirino Ave: Traffic stopped or Road closed"
+	  	}else{
+	  		analysis28 = "Cannot compute"
+	  	}
+
+	  	let analysis29 = "";
+	  	if(jfc4 == 0 || jfc4 <=4){
+	  		analysis29 = "C. M. Recto: Free flow of traffic";
+	  	}else if(jfc4 > 4 || jfc4 <=8){
+	  		analysis29 = "C. M. Recto: Sluggish flow of traffic";
+	  	}else if(jfc4 > 8 || jfc4 >=9){
+	  		analysis29 = "C. M. Recto: Slow flow of traffic";
+	  	}else if(jfc4 == 10){
+	  		analysis29 = "C. M. Recto: Traffic stopped or Road closed"
+	  	}else{
+	  		analysis29 = "Cannot compute"
+	  	}
+
+	  	let analysis30 = "";
+	  	if(jfc5 == 0 || jfc5 <=4){
+	  		analysis30 = "Quezon Blvd: Free flow of traffic";
+	  	}else if(jfc5 > 4 || jfc5 <=8){
+	  		analysis30 = "Quezon Blvd: Sluggish flow of traffic";
+	  	}else if(jfc5 > 8 || jfc5 >=9){
+	  		analysis30 = "Quezon Blvd: Slow flow of traffic";
+	  	}else if(jfc5 == 10){
+	  		analysis30 = "Quezon Blvd: Traffic stopped or Road closed"
+	  	}else{
+	  		analysis30 = "Cannot compute"
+	  	}
+
+	  	
 	  	
 
 
 	  	_res.setHeader('Content-Type', 'application/json');
-    	_res.send(JSON.stringify({ street: streetc, intc1: intc1, jfc1: jfc1, intc2: intc2, jfc2: jfc2, intc3: intc3, jfc3: jfc3, intc4: intc4, jfc4: jfc4, intc5: intc5, jfc5: jfc5, analysis25: analysis25 }));
+    	_res.send(JSON.stringify({ street: streetc, intc1: intc1, jfc1: jfc1, intc2: intc2, jfc2: jfc2, intc3: intc3, jfc3: jfc3, intc4: intc4, jfc4: jfc4, intc5: intc5, jfc5: jfc5, 
+    		analysis26:analysis26, analysis27:analysis27, analysis28:analysis28, analysis29:analysis29, analysis30:analysis30, analysis25: analysis25 }));
 	
 
 
@@ -8209,6 +8275,46 @@ app.post('/webhook/', function(req, res) {
 
 				
 			}
+
+			if(text=='pichon st intersections'){
+				let chatbotResponse1 = "";
+				let chatbotResponse2 = "";
+				let chatbotResponse3 = "";
+				let chatbotResponse4 = "";
+				let chatbotResponse5 = "";
+				
+				//source : https://www.npmjs.com/package/axios
+				axios.get(' https://cryptic-eyrie-21978.herokuapp.com/pichonst')
+				  .then(function (response) {
+				    //console.log(response);
+				    chatbotResponse1 = response.data.analysis26;
+				    sendText(sender, chatbotResponse1)
+				     chatbotResponse2 = response.data.analysis27;
+				    sendText(sender, chatbotResponse2)
+				     chatbotResponse3 = response.data.analysis28;
+				    sendText(sender, chatbotResponse3)
+				     chatbotResponse4 = response.data.analysis29;
+				    sendText(sender, chatbotResponse4)
+				     chatbotResponse5 = response.data.analysis30;
+				    sendText(sender, chatbotResponse5)
+				  })
+				  .catch(function (error) {
+				    //console.log(error);
+				    chatbotResponse1 = "not ok";
+				    chatbotResponse2 = "not ok";
+				    chatbotResponse3 = "not ok";
+				    chatbotResponse4 = "not ok";
+				    chatbotResponse5 = "not ok";
+				    sendText(sender, chatbotResponse1)
+				    sendText(sender, chatbotResponse2)
+				    sendText(sender, chatbotResponse3)
+				    sendText(sender, chatbotResponse4)
+				    sendText(sender, chatbotResponse5)
+				  });
+
+				
+			}
+
 			if(text=='pichon street-')
 			// if(text.includes("pichon street-"))
 			{
