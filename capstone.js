@@ -449,52 +449,52 @@ app.get('/jplaurel-',function(_req, _res){
 
 	  let analysisjp1 = "";
 	  	if(jf01 == 0 || jf01 <= 4){
-	  	analysisjp1 = "R. Castillo: Free flow of traffic";
+	  	analysisjp1 = "E. Quirino Ave/Sta. Ana Ave: Free flow of traffic";
 	  	}else if(jf01 > 4 || jf01 <= 8){
-	  		analysisjp1 = "R. Castillo: Sluggish flow of traffic";
+	  		analysisjp1 = "E. Quirino Ave/Sta. Ana Ave: Sluggish flow of traffic";
 	  	}else if(jf01 > 8 || jf01 >= 9){
-	  		analysisjp1 = "R. Castillo: Slow flow of traffic";
+	  		analysisjp1 = "E. Quirino Ave/Sta. Ana Ave: Slow flow of traffic";
 	  	}else if(jf01 == 10){
-	  		analysisjp1 = "R. Castillo: Traffic stopped or Road closed"
+	  		analysisjp1 = "E. Quirino Ave/Sta. Ana Ave: Traffic stopped or Road closed"
 	  	}else{
 	  		analysisjp1 = "Cannot compute"
 	  	}
 
 	  	let analysisjp2 = "";
 	  	if(jf02 == 0 || jf02 <= 4){
-	  	analysisjp2 = "Angliongto: Free flow of traffic";
+	  	analysisjp2 = "F. Torres: Free flow of traffic";
 	  	}else if(jf02 > 4 || jf02 <= 8){
-	  		analysisjp2 = "Angliongto: Sluggish flow of traffic";
+	  		analysisjp2 = "F. Torres: Sluggish flow of traffic";
 	  	}else if(jf02 > 8 || jf02 >= 9){
-	  		analysisjp2 = "Angliongto: Slow flow of traffic";
+	  		analysisjp2 = "F. Torres: Slow flow of traffic";
 	  	}else if(jf02 == 10){
-	  		analysisjp2 = "Angliongto: Traffic stopped or Road closed"
+	  		analysisjp2 = "F. Torres: Traffic stopped or Road closed"
 	  	}else{
 	  		analysisjp2 = "Cannot compute"
 	  	}
 
 	  	let analysisjp3 = "";
 	  	if(jf03 == 0 || jf03 <= 4){
-	  	analysisjp3 = "Cabaguio: Free flow of traffic";
+	  	analysisjp3 = "Dacudao Ave/Buhangin: Free flow of traffic";
 	  	}else if(jf03 > 4 || jf03 <= 8){
-	  		analysisjp3 = "Cabaguio: Sluggish flow of traffic";
+	  		analysisjp3 = "Dacudao Ave/Buhangin: Sluggish flow of traffic";
 	  	}else if(jf03 > 8 || jf03 >= 9){
-	  		analysisjp3 = "Cabaguio: Slow flow of traffic";
+	  		analysisjp3 = "Dacudao Ave/Buhangin: Slow flow of traffic";
 	  	}else if(jf03 == 10){
-	  		analysisjp3 = "Cabaguio: Traffic stopped or Road closed"
+	  		analysisjp3 = "Dacudao Ave/Buhangin: Traffic stopped or Road closed"
 	  	}else{
 	  		analysisjp3 = "Cannot compute"
 	  	}
 
 	  	let analysisjp4 = "";
 	  	if(jf04 == 0 || jf04 <= 4){
-	  	analysisjp4 = "Dacudao Ave/Buhangin: Free flow of traffic";
+	  	analysisjp4 = "Cabaguio: Free flow of traffic";
 	  	}else if(jf04 > 4 || jf04 <= 8){
-	  		analysisjp4 = "Dacudao Ave/Buhangin: Sluggish flow of traffic";
+	  		analysisjp4 = "Cabaguio: Sluggish flow of traffic";
 	  	}else if(jf04 > 8 || jf04 >= 9){
-	  		analysisjp4 = "Dacudao Ave/Buhangin: Slow flow of traffic";
+	  		analysisjp4 = "Cabaguio: Slow flow of traffic";
 	  	}else if(jf04 == 10){
-	  		analysisjp4 = "Dacudao Ave/Buhangin: Traffic stopped or Road closed"
+	  		analysisjp4 = "Cabaguio: Traffic stopped or Road closed"
 	  	}else{
 	  		analysisjp4 = "Cannot compute"
 	  	}
@@ -502,13 +502,13 @@ app.get('/jplaurel-',function(_req, _res){
 
 	  	let analysisjp5 = "";
 	  	if(jf05 == 0 || jf05 <= 4){
-	  	analysisjp5 = "F. Torres: Free flow of traffic";
+	  	analysisjp5 = "Angliongto: Free flow of traffic";
 	  	}else if(jf05 > 4 || jf05 <= 8){
-	  		analysisjp5 = "F. Torres: Sluggish flow of traffic";
+	  		analysisjp5 = "Angliongto: Sluggish flow of traffic";
 	  	}else if(jf05 > 8 || jf05 >= 9){
-	  		analysisjp5 = "F. Torres: Slow flow of traffic";
+	  		analysisjp5 = "Angliongto: Slow flow of traffic";
 	  	}else if(jf05 == 10){
-	  		analysisjp5 = "F. Torres: Traffic stopped or Road closed"
+	  		analysisjp5 = "Angliongto: Traffic stopped or Road closed"
 	  	}else{
 	  		analysisjp5 = "Cannot compute"
 	  	}
