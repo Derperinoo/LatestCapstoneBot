@@ -3429,7 +3429,6 @@ app.get('/abonifaciost',function(_req, _res){
 	  	var bonifacioo = bon/p;
 	  	
 	  	let analysis31 = "";
-	  	
 	  	if(bonifacioo == 0 || bonifacioo <=4){
 	  		analysis31 = "Free flow of traffic";
 	  	}else if(bonifacioo > 4 || bonifacioo <=8){
@@ -3442,9 +3441,49 @@ app.get('/abonifaciost',function(_req, _res){
 	  		analysis31 = "Cannot compute"
 	  	}
 
+	  	let analysis32 = "";
+	  	if(jfc1 == 0 || jfc1 <=4){
+	  		analysis32 = "Free flow of traffic";
+	  	}else if(jfc1 > 4 || jfc1 <=8){
+	  		analysis32 = "Sluggish flow of traffic";
+	  	}else if(jfc1 > 8 || jfc1 >=9){
+	  		analysis32 = "Slow flow of traffic";
+	  	}else if(jfc1 == 10){
+	  		analysis32 = "Traffic stopped or Road closed"
+	  	}else{
+	  		analysis32 = "Cannot compute"
+	  	}
+
+	  	let analysis33 = "";
+	  	if(jfc2 == 0 || jfc2 <=4){
+	  		analysis33 = "Free flow of traffic";
+	  	}else if(jfc2 > 4 || jfc2 <=8){
+	  		analysis33 = "Sluggish flow of traffic";
+	  	}else if(jfc2 > 8 || jfc2 >=9){
+	  		analysis33 = "Slow flow of traffic";
+	  	}else if(jfc2 == 10){
+	  		analysis33 = "Traffic stopped or Road closed"
+	  	}else{
+	  		analysis31 = "Cannot compute"
+	  	}
+
+	  	let analysis34 = "";
+	  	if(jfc3 == 0 || jfc3 <=4){
+	  		analysis34 = "Free flow of traffic";
+	  	}else if(jfc3 > 4 || jfc3 <=8){
+	  		analysis34 = "Sluggish flow of traffic";
+	  	}else if(jfc3 > 8 || jfc3 >=9){
+	  		analysis34 = "Slow flow of traffic";
+	  	}else if(jfc3 == 10){
+	  		analysis34 = "Traffic stopped or Road closed"
+	  	}else{
+	  		analysis34 = "Cannot compute"
+	  	}
+
 	  	
 	  	_res.setHeader('Content-Type', 'application/json');
-    	_res.send(JSON.stringify({ street: streetc, intc1: intc1, jfc1: jfc1, intc2: intc2, jfc2: jfc2, intc3: intc3, jfc3: jfc3, analysis31: analysis31 }));
+    	_res.send(JSON.stringify({ street: streetc, intc1: intc1, jfc1: jfc1, intc2: intc2, jfc2: jfc2, intc3: intc3, jfc3: jfc3, 
+    		analysis32:analysis32, analysis33:analysis33, analysis34:analysis34, analysis31: analysis31 }));
 	  
 	});
 
@@ -8745,6 +8784,45 @@ app.post('/webhook/', function(req, res) {
 				    sendText(sender, chatbotResponse)
 				  });
 
+				
+			}
+
+			if(text=='a bonifacio st intersections'){
+				
+				let chatbotResponse1 = "";
+				let chatbotResponse2 = "";
+				let chatbotResponse3 = "";
+				
+				
+				//source : https://www.npmjs.com/package/axios
+				   axios.get(' https://cryptic-eyrie-21978.herokuapp.com/abonifaciost')
+				  .then(function (response) {
+				
+
+				    chatbotResponse1 = response.data.analysis32;
+				    sendText(sender, chatbotResponse1)
+
+				    chatbotResponse2 = response.data.analysis33;
+				    sendText(sender, chatbotResponse2)
+
+				    chatbotResponse3 = response.data.analysis34;
+				    sendText(sender, chatbotResponse3)
+
+				   
+				  })
+				  .catch(function (error) {
+				    //console.log(error);
+				     chatbotResponse1 = "not ok";
+				     chatbotResponse2 = "not ok";
+				     chatbotResponse3 = "not ok";
+
+				    sendText(sender, chatbotResponse1)
+				    sendText(sender, chatbotResponse2)
+				    sendText(sender, chatbotResponse3)
+				    
+				  });
+
+				
 				
 			}
 
