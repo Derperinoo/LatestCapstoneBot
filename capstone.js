@@ -60,7 +60,12 @@ app.get('/equirino',function(_req, _res){
 	  	var sum = sum1/y;
 
 	  	var str = "Mac Arthur Hwy: Free flow of traffic";
-	  	var result = str.fontcolor("green")
+	  	var result = str.fontcolor("red")
+
+	  	let color = "";
+	  	if(str == "Mac Arthur Hwy: Free flow of traffic" ){
+	  		color = result;
+	  	}
 
 	  	let analysis = "";
 	  	if(sum == 0 || sum <= 4){
@@ -78,7 +83,6 @@ app.get('/equirino',function(_req, _res){
 	  	let analysisjf1 = "";
 	  	if(jf1 == 0 || jf1 <= 4){
 	  		analysisjf1 = "Mac Arthur Hwy: Free flow of traffic";
-	  		analysisjf1 = result;
 	  	}else if(jf1 > 4 || jf1 <= 8){
 	  		analysisjf1 = "Mac Arthur Hwy: Sluggish flow of traffic";
 	  	}else if(jf1 > 8 || jf1 >= 9){
