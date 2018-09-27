@@ -8657,6 +8657,7 @@ app.post('/webhook/', function(req, res) {
 
 			if(text=='ecoland-'){
 				let chatbotResponse = "";
+				let chatbotResponse1 = "";
 				
 				//source : https://www.npmjs.com/package/axios
 				axios.get(' https://cryptic-eyrie-21978.herokuapp.com/ecoland-')
@@ -8664,11 +8665,17 @@ app.post('/webhook/', function(req, res) {
 				    //console.log(response);
 				    chatbotResponse = response.data.analysis6;
 				    sendText(sender, chatbotResponse)
+				    chatbotResponse1 = response.data.analysiscolor;
+				    sendText(sender, chatbotResponse1)
+
+				   
 				  })
 				  .catch(function (error) {
 				    //console.log(error);
 				    chatbotResponse = "not ok";
+				     chatbotResponse = "not ok1";
 				    sendText(sender, chatbotResponse)
+				     sendText(sender, chatbotResponse1)
 				  });
 
 				
