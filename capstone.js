@@ -1272,8 +1272,9 @@ app.get('/ecoland-',function(_req, _res){
 
 	  	var ecolands = ecoland/p;
 
+	   
 	   let analysiscolor = "";
-	  	if(analysis6 == "Free flow of traffic"){
+	  	if(ecolands == "Free flow of traffic"){
 	  	analysiscolor = str.fontcolor("#0000FF");
 	  	}
 	  	
