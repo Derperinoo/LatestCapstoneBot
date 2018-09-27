@@ -1260,12 +1260,19 @@ app.get('/ecoland-',function(_req, _res){
 	  	const jfc3 = body.RWS[0].RW[11].FIS[0].FI[2].CF[0].JF;
 
 	  	
-
+		var str = "Free flow of traffic";
+		var result = str.fontcolor("blue");
+	  	
 	  	var p = 3
 	  
 	  	var ecoland = jfc1 + jfc2 ;
 
 	  	var ecolands = ecoland/p;
+
+	  	let analysiscolor = "";
+	  	if(str == "Free flow of traffic"){
+	  	 result = str.fontcolor("blue");
+	  	}
 	  	
 	  	let analysis6 = "";
 	  	if(ecolands == 0 || ecolands <= 4){
@@ -1324,7 +1331,7 @@ app.get('/ecoland-',function(_req, _res){
 
 	  	_res.setHeader('Content-Type', 'application/json');
     	_res.send(JSON.stringify({ street: streetc, intc1: intc1, jfc1: jfc1,  intc2: intc2, jfc2: jfc2, intc3: intc3,
-    		jfc3: jfc3, analysis7:analysis7, analysis8:analysis8, analysis9:analysis9, analysis6: analysis6 }));
+    		jfc3: jfc3, analysis7:analysis7, analysis8:analysis8, analysis9:analysis9, analysis6: analysis6 ,analysiscolor:analysiscolor }));
 	
 
 
