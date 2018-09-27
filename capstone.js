@@ -1260,11 +1260,11 @@ app.get('/ecoland-',function(_req, _res){
 	  	const jfc3 = body.RWS[0].RW[11].FIS[0].FI[2].CF[0].JF;
 
 	  	
-		//var str = "Free flow of traffic";
+		var str = "Free flow of traffic";
 		//var result = str.fontcolor("blue");
 
 
-		string.fontcolor("red")
+	//	string.fontcolor("red")
 	  	
 	  	var p = 3
 	  
@@ -1273,7 +1273,7 @@ app.get('/ecoland-',function(_req, _res){
 	  	var ecolands = ecoland/p;
 
 	   let analysiscolor = "";
-	  	if(str == "Free flow of traffic"){
+	  	if(analysis6 == "Free flow of traffic"){
 	  	analysiscolor = str.fontcolor("#0000FF");
 	  	}
 	  	
