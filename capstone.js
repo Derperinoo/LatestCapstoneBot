@@ -1266,14 +1266,10 @@ app.get('/ecoland-',function(_req, _res){
 	  	var ecoland = jfc1 + jfc2 ;
 
 	  	var ecolands = ecoland/p;
-
 	  	
-
-     
 	  	let analysis6 = "";
 	  	if(ecolands == 0 || ecolands <= 4){
 	  	analysis6 = "Free flow of traffic";
-	  	console.log(ecolands.fontcolor('red') +  ' is red in this line');
 	  	}else if(ecolands > 4 || ecolands <= 8){
 	  		analysis6 = "Sluggish flow of traffic";
 	  	}else if(ecolands > 8 || ecolands >= 9){
