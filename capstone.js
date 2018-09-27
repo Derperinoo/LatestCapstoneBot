@@ -1260,8 +1260,11 @@ app.get('/ecoland-',function(_req, _res){
 	  	const jfc3 = body.RWS[0].RW[11].FIS[0].FI[2].CF[0].JF;
 
 	  	
-		var str = "Free flow of traffic";
-		var result = str.fontcolor("blue");
+		//var str = "Free flow of traffic";
+		//var result = str.fontcolor("blue");
+
+
+		string.fontcolor("red")
 	  	
 	  	var p = 3
 	  
@@ -1269,9 +1272,9 @@ app.get('/ecoland-',function(_req, _res){
 
 	  	var ecolands = ecoland/p;
 
-	  	let analysiscolor = "";
+	   let analysiscolor = "";
 	  	if(str == "Free flow of traffic"){
-	  	 analysiscolor = str.fontcolor("blue");
+	  	analysiscolor = str.fontcolor("#0000FF");
 	  	}
 	  	
 	  	let analysis6 = "";
@@ -8665,15 +8668,16 @@ app.post('/webhook/', function(req, res) {
 				    //console.log(response);
 				    chatbotResponse = response.data.analysis6;
 				    sendText(sender, chatbotResponse)
+
 				    chatbotResponse1 = response.data.analysiscolor;
 				    sendText(sender, chatbotResponse1)
 
-				   
+				    
 				  })
 				  .catch(function (error) {
 				    //console.log(error);
 				    chatbotResponse = "not ok";
-				     chatbotResponse = "not ok1";
+				    chatbotResponse1 = "not ok";
 				    sendText(sender, chatbotResponse)
 				     sendText(sender, chatbotResponse1)
 				  });
