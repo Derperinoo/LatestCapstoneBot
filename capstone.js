@@ -12392,6 +12392,46 @@ app.post('/webhook/', function(req, res) {
 
 				
 			}
+
+			if(text=='daang maharlika intersections'){
+				
+				let chatbotResponse1 = "";
+				let chatbotResponse2 = "";
+				let chatbotResponse3 = "";
+				let chatbotResponse4 = "";
+				
+				//source : https://www.npmjs.com/package/axios
+				   axios.get(' https://cryptic-eyrie-21978.herokuapp.com/daangmaharlika')
+				  .then(function (response) {
+				
+
+				    chatbotResponse1 = response.data.analysis77;
+				    sendText(sender, chatbotResponse1)
+				    chatbotResponse2 = response.data.analysis78;
+				    sendText(sender, chatbotResponse2)
+				    chatbotResponse3 = response.data.analysis79;
+				    sendText(sender, chatbotResponse3)
+				    chatbotResponse4 = response.data.analysis80;
+				    sendText(sender, chatbotResponse4)
+
+				   
+				  })
+				  .catch(function (error) {
+				    //console.log(error);
+				     chatbotResponse1 = "not ok";
+				     chatbotResponse2 = "not ok";
+				     chatbotResponse3 = "not ok";
+				     chatbotResponse4 = "not ok";
+				    sendText(sender, chatbotResponse1)
+				    sendText(sender, chatbotResponse2)
+				    sendText(sender, chatbotResponse3)
+				    sendText(sender, chatbotResponse4)
+				    
+				  });
+
+				
+				
+			}
 			
 			if(text=='daang maharlika-')
 			// if(text.includes("pichon street-"))
