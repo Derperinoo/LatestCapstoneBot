@@ -8088,7 +8088,7 @@ app.post('/webhook/', function(req, res) {
 			}else {
 				sendText(sender, "please check equirino spelling!")
 			}
-			
+
 			if(text=='equirino-'){
 				let chatbotResponse = "";
 				
@@ -8106,7 +8106,10 @@ app.post('/webhook/', function(req, res) {
 				  });
 
 				
+			}else {
+				sendText(sender, "please check equirino- spelling!")
 			}
+
 			if(text=='equirino intersections'){
 				let chatbotResponse = "";
 				let chatbotResponse1 = "";
