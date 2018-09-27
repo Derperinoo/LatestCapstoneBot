@@ -1271,7 +1271,7 @@ app.get('/ecoland-',function(_req, _res){
 
 	  	let analysiscolor = "";
 	  	if(str == "Free flow of traffic"){
-	  	 result = str.fontcolor("blue");
+	  	 analysiscolor = str.fontcolor("blue");
 	  	}
 	  	
 	  	let analysis6 = "";
