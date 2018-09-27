@@ -1273,7 +1273,7 @@ app.get('/ecoland-',function(_req, _res){
 	  	var ecolands = ecoland/p;
 
 	   
-	   let analysiscolor = "";
+	    let analysiscolor = "";
 	  	if(ecolands == "Free flow of traffic"){
 	  	analysiscolor = str.fontcolor("#0000FF");
 	  	}
@@ -8085,7 +8085,10 @@ app.post('/webhook/', function(req, res) {
 				  });
 
 				
+			}else {
+				sendText(sender, "please check equirino spelling!")
 			}
+			
 			if(text=='equirino-'){
 				let chatbotResponse = "";
 				
