@@ -1260,10 +1260,7 @@ app.get('/ecoland-',function(_req, _res){
 	  	const jfc3 = body.RWS[0].RW[11].FIS[0].FI[2].CF[0].JF;
 
 	  	
-		var str = new String("Free flow of traffic");
-        document.write(str.fontcolor( "blue" ));
-        alert(str.fontcolor( "blue" ));
-	  	
+
 	  	var p = 3
 	  
 	  	var ecoland = jfc1 + jfc2 ;
