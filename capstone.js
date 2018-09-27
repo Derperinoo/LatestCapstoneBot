@@ -8062,12 +8062,7 @@ app.post('/webhook/', function(req, res) {
 				sendText(sender, "Ok! What now?")
 			}
 
-			if(text.includes("route2")){
-
-				
-				sendText(sender, "whats up ? how may I help you")
-			}
-
+			
 			if(text=='equirino'){
 				let chatbotResponse = "";
 				
@@ -8085,8 +8080,8 @@ app.post('/webhook/', function(req, res) {
 				  });
 
 				
-			}else{
-				 sendText(sender, chatbotResponse, "please check equirino spelling")
+			}else if(text!='equirino'){
+				 sendText(sender, "please type correct equirino spelling")
 			}
 			if(text=='equirino-'){
 				let chatbotResponse = "";
@@ -8105,8 +8100,6 @@ app.post('/webhook/', function(req, res) {
 				  });
 
 				
-			}else{
-				 sendText(sender, chatbotResponse, "please check equirino- spelling")
 			}
 			if(text=='equirino intersections'){
 				let chatbotResponse = "";
