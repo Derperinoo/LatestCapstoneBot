@@ -8321,7 +8321,7 @@ app.post('/webhook/', function(req, res) {
 				axios.get(' https://cryptic-eyrie-21978.herokuapp.com/mcarthur-')
 				  .then(function (response) {
 				    //console.log(response);
-				    chatbotResponse = response.data.analysis3;
+				    chatbotResponse = response.data.analysis2;
 				    sendText(sender, chatbotResponse)
 				  })
 				  .catch(function (error) {
