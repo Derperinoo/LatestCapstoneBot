@@ -10745,7 +10745,7 @@ app.post('/webhook/', function(req, res) {
 				axios.get('https://cryptic-eyrie-21978.herokuapp.com/lapulapu')
 				  .then(function (response) {
 				    //console.log(response);
-				    chatbotResponse = response.data.analysis45;
+				    chatbotResponse = response.data.analysis43;
 				    sendText(sender, chatbotResponse)
 				  })
 				  .catch(function (error) {
