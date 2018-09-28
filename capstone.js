@@ -12251,7 +12251,7 @@ app.post('/webhook/', function(req, res) {
 				
 				
 			}else{
-				 sendText(sender, "Err.... that is something that I dont understand, I'm only a robot you could rather check the road or street spelling")
+				 sendText(sender, "Err.... that is something that I dont understand, I'm only a robot you could rather check the road or street spelling!")
 			}
 			
 
