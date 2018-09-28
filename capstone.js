@@ -7,6 +7,7 @@ const bodyParser = require('body-parser')
 const request = require('request')
 const https = require('https');
 const axios = require('axios');
+const natural = require('natural');
 
 const app = express()
 
@@ -12250,7 +12251,7 @@ app.post('/webhook/', function(req, res) {
 
 				
 				
-			}else if(text=='good day chatbot')
+			}else if(text.includes("good day chatbot"))
 			// if(text.includes("pichon street-"))
 			{
 				sendText(sender, "good day! My name is Bot and I am a Robot, I can extract real-time traffic congestion within Davao City. How can I help you?")
