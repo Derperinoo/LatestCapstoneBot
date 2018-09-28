@@ -10954,7 +10954,7 @@ app.post('/webhook/', function(req, res) {
 				axios.get('https://cryptic-eyrie-21978.herokuapp.com/cpgarcia-')
 				  .then(function (response) {
 				    //console.log(response);
-				    chatbotResponse = response.data.analysis49;
+				    chatbotResponse = response.data.analysis52;
 				    sendText(sender, chatbotResponse)
 				  })
 				  .catch(function (error) {
@@ -11196,7 +11196,7 @@ app.post('/webhook/', function(req, res) {
 				axios.get('https://cryptic-eyrie-21978.herokuapp.com/cpgarcia')
 				  .then(function (response) {
 				    //console.log(response);
-				    chatbotResponse = response.data.analysis52;
+				    chatbotResponse = response.data.analysis49;
 				    sendText(sender, chatbotResponse)
 				  })
 				  .catch(function (error) {
