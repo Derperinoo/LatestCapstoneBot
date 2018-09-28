@@ -8026,6 +8026,20 @@ app.get('/geo',function(req, res){
 
 })
 
+function firstEntity(nlp, name) {
+  return nlp && nlp.entities && nlp.entities[name] && nlp.entities[name][0];
+}
+
+function handleMessage(message) {
+  // check greeting is here and is confident
+  const greeting = firstEntity(message.nlp, 'equirina');
+  if (greeting && greeting.confidence > 0.8) {
+    sendResponse('Hi there!');
+  } else { 
+    // default logic
+  }
+}
+
 
 
 
