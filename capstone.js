@@ -8063,7 +8063,11 @@ app.post('/webhook/', function(req, res) {
 			//}
 
 			
-			if(text=='equirino'){
+			if(text=='good day traffic chatbot'){
+
+				 sendText(sender, "good day! My name is Bot and I am a Robot, I can extract real time traffic congestion with in davao city. How can I help you ?")
+	
+			}else if(text=='equirino'){
 				let chatbotResponse = "";
 				
 				//source : https://www.npmjs.com/package/axios
