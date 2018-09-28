@@ -12250,6 +12250,8 @@ app.post('/webhook/', function(req, res) {
 
 				
 				
+			}else{
+				 sendText(sender, "yawa ka bogo")
 			}
 			
 
