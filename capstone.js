@@ -16,7 +16,7 @@ app.set('port', (process.env.PORT || 5000))
 app.use(bodyParser.urlencoded({extended: false}))
 app.use(bodyParser.json())
 
-// ROUTES
+
 
 app.get('/', function(req, res) {
 	res.send("Hi I am a chatbot")
@@ -12253,12 +12253,12 @@ app.post('/webhook/', function(req, res) {
 			}else if(text=='good day chatbot')
 			// if(text.includes("pichon street-"))
 			{
-				sendText(sender, "good day! My name is Bot and I am a Robot, I can extract real time traffic congestion with in Davao City. How can I help you ?")
+				sendText(sender, "good day! My name is Bot and I am a Robot, I can extract real-time traffic congestion within Davao City. How can I help you?")
 
 
 				
 			}else{
-				 sendText(sender, "Ooooopsss!.... that is something that I dont understand, I'm only a robot, I only understand specific inquiry! You could rather check the road or street spelling!")
+				 sendText(sender, "Ooooopsss!.... that is something that I don't understand, I'm only a robot, I only understand specific inquiry! You could rather check the road or street spelling! Make sure all the words are in lowercase.")
 			}
 			
 
