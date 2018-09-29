@@ -43,23 +43,28 @@ app.get('/equirino',function(_req, _res){
 		// all equirino average
 
 		//equirino intersections
+		//mcarthur
 		const jf01 = body.RWS[0].RW[0].FIS[0].FI[0].CF[0].JF;
+		const jfe5 = body.RWS[0].RW[1].FIS[0].FI[4].CF[0].JF;
+
+		//pichon st
 		const jf02 = body.RWS[0].RW[0].FIS[0].FI[1].CF[0].JF;
-		const jf03 = body.RWS[0].RW[0].FIS[0].FI[2].CF[0].JF;
-		const jf04 = body.RWS[0].RW[0].FIS[0].FI[3].CF[0].JF;
+	    const jfe4 = body.RWS[0].RW[1].FIS[0].FI[3].CF[0].JF;
+
+	   //sanpedro
+	   const jf03 = body.RWS[0].RW[0].FIS[0].FI[2].CF[0].JF;
+	   const jfe3 = body.RWS[0].RW[1].FIS[0].FI[2].CF[0].JF;
+
+	   //cbangoy
+	   const jf04 = body.RWS[0].RW[0].FIS[0].FI[3].CF[0].JF;
+	   	const jfe2 = body.RWS[0].RW[1].FIS[0].FI[1].CF[0].JF;
+
+	   //jplaurel
 		const jf05 = body.RWS[0].RW[0].FIS[0].FI[4].CF[0].JF;
-
-		const jfe001 = body.RWS[0].RW[1].FIS[0].FI[0].CF[0].JF;
-	    const jfe002 = body.RWS[0].RW[1].FIS[0].FI[1].CF[0].JF;
-	    const jfe003 = body.RWS[0].RW[1].FIS[0].FI[2].CF[0].JF;
-	    const jfe004 = body.RWS[0].RW[1].FIS[0].FI[3].CF[0].JF;
-	    const jfe005 = body.RWS[0].RW[1].FIS[0].FI[4].CF[0].JF;
-
-
+		const jfe1 = body.RWS[0].RW[1].FIS[0].FI[0].CF[0].JF;
 		//equirino intersections-
-
-	
-	  	const street = body.RWS[0].RW[0].DE;
+		
+		const street = body.RWS[0].RW[0].DE;
 	  	const int1 = body.RWS[0].RW[0].FIS[0].FI[0].TMC.DE;
 	  	const jf1 = body.RWS[0].RW[0].FIS[0].FI[0].CF[0].JF;
 	  	
@@ -76,6 +81,26 @@ app.get('/equirino',function(_req, _res){
 	  	const jf5 = body.RWS[0].RW[0].FIS[0].FI[4].CF[0].JF;
 
 	  	var y = 6
+
+	  	var mc = 2
+	  	var mcarthur = jf01+jfe5;
+	  	var mccarthur = mcarthur/mc;
+
+	  	var pich = 2
+	  	var pichon = jf02+jfe4;
+	  	var pichonst = pichon/pich;
+
+	  	var san = 2
+	  	var sanpedro = jf03+jfe3;
+	  	var sanpedrost = sanpedro/san;
+
+	  	var bang = 2
+	  	var cbangoy = jf04+jfe2;
+	  	var ccbangoy = cbangoy/bang;
+
+	  	var jp = 2
+	  	var jplaurel = jf05+jfe1;
+	  	var jjplaurel = jplaurel/jp;
 	  
 	  	var sum1 = jfm + jfc33 + jfc34 + jfc11+ jfm13+ jfc1;
 
@@ -95,65 +120,65 @@ app.get('/equirino',function(_req, _res){
 	  	}
 
 	  	let analysisjf1 = "";
-	  	if(jf1 == 0 || jf1 <= 4){
+	  	if(mccarthur == 0 || mccarthur <= 4){
 	  		analysisjf1 = "Mac Arthur Hwy: Free flow of traffic";
-	  	}else if(jf1 > 4 || jf1 <= 8){
+	  	}else if(mccarthur > 4 || mccarthur <= 8){
 	  		analysisjf1 = "Mac Arthur Hwy: Sluggish flow of traffic";
-	  	}else if(jf1 > 8 || jf1 >= 9){
+	  	}else if(mccarthur > 8 || mccarthur >= 9){
 	  		analysisjf1 = "Mac Arthur Hwy: Slow flow of traffic";
-	  	}else if(jf1 == 10){
+	  	}else if(mccarthur == 10){
 	  		analysisjf1 = "Mac Arthur Hwy: Traffic stopped or Road closed"
 	  	}else{
 	  		analysisjf1 = "Cannot compute"
 	  	}
 
 	  	let analysisjf2 = "";
-	  	if(jf2 == 0 || jf2 <= 4){
+	  	if(pichonst == 0 || pichonst <= 4){
 	  		analysisjf2 = "Pichon St: Free flow of traffic";
-	  	}else if(jf2 > 4 || jf2 <= 8){
+	  	}else if(pichonst > 4 || pichonst <= 8){
 	  		analysisjf2 = "Pichon St: Sluggish flow of traffic";
-	  	}else if(jf2 > 8 || jf2 >= 9){
+	  	}else if(pichonst > 8 || pichonst >= 9){
 	  		analysisjf2 = "Pichon St: Slow flow of traffic";
-	  	}else if(jf2 == 10){
+	  	}else if(pichonst == 10){
 	  		analysisjf2 = "Pichon St: Traffic stopped or Road closed"
 	  	}else{
 	  		analysisjf2 = "Cannot compute"
 	  	}
 
 	  	let analysisjf3 = "";
-	  	if(jf3 == 0 || jf3 <= 4){
+	  	if(sanpedrost == 0 || sanpedrost <= 4){
 	  		analysisjf3 = "San Pedro: Free flow of traffic";
-	  	}else if(jf3 > 4 || jf3 <= 8){
+	  	}else if(sanpedrost > 4 || sanpedrost <= 8){
 	  		analysisjf3 = "San Pedro: Sluggish flow of traffic";
-	  	}else if(jf3 > 8 || jf3 >= 9){
+	  	}else if(sanpedrost > 8 || sanpedrost >= 9){
 	  		analysisjf3 = "San Pedro: Slow flow of traffic";
-	  	}else if(jf3 == 10){
+	  	}else if(sanpedrost == 10){
 	  		analysisjf3 = "San Pedro: Traffic stopped or Road closed"
 	  	}else{
 	  		analysisjf3 = "Cannot compute"
 	  	}
 
 	  	let analysisjf4 = "";
-	  	if(jf4 == 0 || jf4 <= 4){
+	  	if(ccbangoy == 0 || ccbangoy <= 4){
 	  		analysisjf4 = "C. Bangoy: Free flow of traffic";
-	  	}else if(jf4 > 4 || jf4 <= 8){
+	  	}else if(ccbangoy > 4 || ccbangoy <= 8){
 	  		analysisjf4 = "C. Bangoy: Sluggish flow of traffic";
-	  	}else if(jf4 > 8 || jf4 >= 9){
+	  	}else if(ccbangoy > 8 || ccbangoy >= 9){
 	  		analysisjf4 = "C. Bangoy: Slow flow of traffic";
-	  	}else if(jf4 == 10){
+	  	}else if(ccbangoy == 10){
 	  		analysisjf4 = "C. Bangoy: Traffic stopped or Road closed"
 	  	}else{
 	  		analysisjf4 = "Cannot compute"
 	  	}
 
 	  	let analysisjf5 = "";
-	  	if(jf5 == 0 || jf5 <= 4){
+	  	if(jjplaurel == 0 || jjplaurel <= 4){
 	  		analysisjf5 = "J.P Laurel Ave: Free flow of traffic";
-	  	}else if(jf5 > 4 || jf5 <= 8){
+	  	}else if(jjplaurel > 4 || jjplaurel <= 8){
 	  		analysisjf5 = "J.P Laurel Ave: Sluggish flow of traffic";
-	  	}else if(jf5 > 8 || jf5 >= 9){
+	  	}else if(jjplaurel > 8 || jjplaurel >= 9){
 	  		analysisjf5 = "J.P Laurel Ave: Slow flow of traffic";
-	  	}else if(jf5 == 10){
+	  	}else if(jjplaurel == 10){
 	  		analysisjf5 = "J.P Laurel Ave: Traffic stopped or Road closed"
 	  	}else{
 	  		analysisjf5 = "Cannot compute"
