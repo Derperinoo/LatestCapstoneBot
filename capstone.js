@@ -41,6 +41,21 @@ app.get('/equirino',function(_req, _res){
 		const jfm13 = body.RWS[0].RW[5].FIS[0].FI[13].CF[0].JF;
 		const jfc1 = body.RWS[0].RW[40].FIS[0].FI[0].CF[0].JF;
 		// all equirino average
+
+		//equirino intersections
+		const jf01 = body.RWS[0].RW[0].FIS[0].FI[0].CF[0].JF;
+		const jf02 = body.RWS[0].RW[0].FIS[0].FI[1].CF[0].JF;
+		const jf03 = body.RWS[0].RW[0].FIS[0].FI[2].CF[0].JF;
+		const jf04 = body.RWS[0].RW[0].FIS[0].FI[3].CF[0].JF;
+		const jf05 = body.RWS[0].RW[0].FIS[0].FI[4].CF[0].JF;
+
+		const jfe1 = body.RWS[0].RW[1].FIS[0].FI[0].CF[0].JF;
+	    const jfe2 = body.RWS[0].RW[1].FIS[0].FI[1].CF[0].JF;
+	    const jfe3 = body.RWS[0].RW[1].FIS[0].FI[2].CF[0].JF;
+	    const jfe4 = body.RWS[0].RW[1].FIS[0].FI[3].CF[0].JF;
+	    const jfe2 = body.RWS[0].RW[1].FIS[0].FI[5].CF[0].JF;
+		//equirino intersections-
+
 	
 	  	const street = body.RWS[0].RW[0].DE;
 	  	const int1 = body.RWS[0].RW[0].FIS[0].FI[0].TMC.DE;
@@ -164,6 +179,7 @@ app.get('/equirino-',function(_req, _res){
 
 	request('https://traffic.api.here.com/traffic/6.1/flow.json?bbox=7.2598%2C125.0860%3B6.7670%2C125.6674&app_id=fQbW8CGYiU3l5mLqWgBE&app_code=SYZXwjFBHSYi_1t1GNuHow', { json: true }, (err, res, body) => {
 	  if (err) { return console.log(err); }
+	  	
 	  	// all equirino-
 	  	const jfm13 = body.RWS[0].RW[5].FIS[0].FI[13].CF[0].JF;
 		const jfc1 = body.RWS[0].RW[40].FIS[0].FI[0].CF[0].JF;
@@ -208,26 +224,26 @@ app.get('/equirino-',function(_req, _res){
 
 	  	let analysisjf1 = "";
 	  	if(jfe1 == 0 || jfe1 <= 4){
-	  		analysisjf1 = "Mac Arthur Hwy: Free flow of traffic";
+	  		analysisjf1 = "J.P Laurel Ave: Free flow of traffic";
 	  	}else if(jfe1 > 4 || jfe1 <= 8){
-	  		analysisjf1 = "Mac Arthur Hwy: Sluggish flow of traffic";
+	  		analysisjf1 = "J.P Laurel Ave: Sluggish flow of traffic";
 	  	}else if(jfe1 > 8 || jfe1 >= 9){
-	  		analysisjf1 = "Mac Arthur Hwy: Slow flow of traffic";
+	  		analysisjf1 = "J.P Laurel Ave: Slow flow of traffic";
 	  	}else if(jfe1 == 10){
-	  		analysisjf1 = "Mac Arthur Hwy: Traffic stopped or Road closed"
+	  		analysisjf1 = "J.P Laurel Ave: Traffic stopped or Road closed"
 	  	}else{
 	  		analysisjf1 = "Cannot compute"
 	  	}
 
 	  	let analysisjf2 = "";
 	  	if(jfe2 == 0 || jfe2 <= 4){
-	  		analysisjf2 = "Pichon St: Free flow of traffic";
+	  		analysisjf2 = "C. Bangoy: Free flow of traffic";
 	  	}else if(jfe2 > 4 || jfe2 <= 8){
-	  		analysisjf2 = "Pichon St: Sluggish flow of traffic";
+	  		analysisjf2 = "C. Bangoy: Sluggish flow of traffic";
 	  	}else if(jfe2 > 8 || jfe2 >= 9){
-	  		analysisjf2 = "Pichon St: Slow flow of traffic";
+	  		analysisjf2 = "C. Bangoy: Slow flow of traffic";
 	  	}else if(jfe2 == 10){
-	  		analysisjf2 = "Pichon St: Traffic stopped or Road closed"
+	  		analysisjf2 = "C. Bangoy: Traffic stopped or Road closed"
 	  	}else{
 	  		analysisjf2 = "Cannot compute"
 	  	}
@@ -247,26 +263,26 @@ app.get('/equirino-',function(_req, _res){
 
 	  	let analysisjf4 = "";
 	  	if(jfe4 == 0 || jfe4 <= 4){
-	  		analysisjf4 = "C. Bangoy: Free flow of traffic";
+	  		analysisjf4 = "Pichon St: Free flow of traffic";
 	  	}else if(jfe4 > 4 || jfe4 <= 8){
-	  		analysisjf4 = "C. Bangoy: Sluggish flow of traffic";
+	  		analysisjf4 = "Pichon St: Sluggish flow of traffic";
 	  	}else if(jfe4 > 8 || jfe4 >= 9){
-	  		analysisjf4 = "C. Bangoy: Slow flow of traffic";
+	  		analysisjf4 = "Pichon St: Slow flow of traffic";
 	  	}else if(jfe4 == 10){
-	  		analysisjf4 = "C. Bangoy: Traffic stopped or Road closed"
+	  		analysisjf4 = "Pichon St: Traffic stopped or Road closed"
 	  	}else{
 	  		analysisjf4 = "Cannot compute"
 	  	}
 
 	  	let analysisjf5 = "";
 	  	if(jfe5 == 0 || jfe5 <= 4){
-	  		analysisjf5 = "J.P Laurel Ave: Free flow of traffic";
+	  		analysisjf5 = "Mac Arthur Hwy: Free flow of traffic";
 	  	}else if(jfe5 > 4 || jfe5 <= 8){
-	  		analysisjf5 = "J.P Laurel Ave: Sluggish flow of traffic";
+	  		analysisjf5 = "Mac Arthur Hwy: Sluggish flow of traffic";
 	  	}else if(jfe5 > 8 || jfe5 >= 9){
-	  		analysisjf5 = "J.P Laurel Ave: Slow flow of traffic";
+	  		analysisjf5 = "Mac Arthur Hwy: Slow flow of traffic";
 	  	}else if(jfe5 == 10){
-	  		analysisjf5 = "J.P Laurel Ave: Traffic stopped or Road closed"
+	  		analysisjf5 = "Mac Arthur Hwy: Traffic stopped or Road closed"
 	  	}else{
 	  		analysisjf5 = "Cannot compute"
 	  	}
@@ -554,7 +570,10 @@ app.get('/mcarthur',function(_req, _res){
 	request('https://traffic.api.here.com/traffic/6.1/flow.json?bbox=7.2598%2C125.0860%3B6.7670%2C125.6674&app_id=fQbW8CGYiU3l5mLqWgBE&app_code=SYZXwjFBHSYi_1t1GNuHow', { json: true }, (err, res, body) => {
 	  if (err) { return console.log(err); }
 	  	
-	  	
+	  	//all mcarthur
+
+
+	  	//all mcarthur-
 
 	  	const streetmm = body.RWS[0].RW[4].DE;
 	  	const intm = body.RWS[0].RW[4].FIS[0].FI[0].TMC.DE;
