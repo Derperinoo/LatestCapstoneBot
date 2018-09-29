@@ -189,7 +189,7 @@ app.get('/equirino',function(_req, _res){
 
 
 	  	_res.setHeader('Content-Type', 'application/json');
-    	_res.send(JSON.stringify({ street: street, int1: int1, jf1: jf1,  int2: int2, jf2: jf2,  int3: int3, jf3: jf3, 
+    	_res.send(JSON.stringify({ street: street, int1: int1, mccarthur: mccarthur,  int2: int2, jf2: jf2,  int3: int3, jf3: jf3, 
     		int4: int4, jf4: jf4,  int5: int5, jf5: jf5, analysisjf1: analysisjf1, analysisjf2: analysisjf2, analysisjf3:analysisjf3, analysisjf4:analysisjf4, 
     		analysisjf5:analysisjf5, analysis: analysis }));
 	
