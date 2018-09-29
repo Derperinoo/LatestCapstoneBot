@@ -298,7 +298,16 @@ app.get('/jplaurel',function(_req, _res){
 		const jfc6 = body.RWS[0].RW[56].FIS[0].FI[1].CF[0].JF;
 		const jfc7 = body.RWS[0].RW[63].FIS[0].FI[2].CF[0].JF;
 		const jfc8 = body.RWS[0].RW[76].FIS[0].FI[3].CF[0].JF;
-		//jplaurel
+
+
+		const jfc11 = body.RWS[0].RW[66].FIS[0].FI[0].CF[0].JF;
+		const jfc22 = body.RWS[0].RW[23].FIS[0].FI[1].CF[0].JF;
+		const jfc33 = body.RWS[0].RW[25].FIS[0].FI[1].CF[0].JF;
+		const jfc44 = body.RWS[0].RW[32].FIS[0].FI[1].CF[0].JF;
+		const jfc55 = body.RWS[0].RW[44].FIS[0].FI[0].CF[0].JF;
+		const jfc66 = body.RWS[0].RW[55].FIS[0].FI[0].CF[0].JF;
+		const jfc77 = body.RWS[0].RW[78].FIS[0].FI[0].CF[0].JF;
+		//jplaurel-
 
 	  	const street1 = body.RWS[0].RW[2].DE;
 	  	const int01 = body.RWS[0].RW[2].FIS[0].FI[0].TMC.DE;
@@ -317,9 +326,9 @@ app.get('/jplaurel',function(_req, _res){
 	  	const jf05 = body.RWS[0].RW[2].FIS[0].FI[4].CF[0].JF;
 
 	  
-	  	const x = 8
+	  	const x = 15
 	  
-	  	var avejp = jfc1 + jfc2 + jfc3 + jfc4 + jfc5 +jfc6 +jfc7 +jfc8 ;
+	  	var avejp = jfc1 + jfc2 + jfc3 + jfc4 + jfc5 +jfc6 +jfc7 +jfc8+jfc11+jfc22+jfc33+jfc44+jfc55+jfc66+jfc77 ;
 	  	var avejp1 = avejp/x;
 
 	  	
