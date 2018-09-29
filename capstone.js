@@ -289,6 +289,16 @@ app.get('/jplaurel',function(_req, _res){
 	request('https://traffic.api.here.com/traffic/6.1/flow.json?bbox=7.2598%2C125.0860%3B6.7670%2C125.6674&app_id=fQbW8CGYiU3l5mLqWgBE&app_code=SYZXwjFBHSYi_1t1GNuHow', { json: true }, (err, res, body) => {
 	  if (err) { return console.log(err); }
 	  	
+		//jp laurel
+		const jfc1 = body.RWS[0].RW[20].FIS[0].FI[0].CF[0].JF;
+		const jfc2 = body.RWS[0].RW[24].FIS[0].FI[0].CF[0].JF;
+		const jfc3 = body.RWS[0].RW[30].FIS[0].FI[0].CF[0].JF;
+		const jfc4 = body.RWS[0].RW[43].FIS[0].FI[2].CF[0].JF;
+		const jfc5 = body.RWS[0].RW[49].FIS[0].FI[0].CF[0].JF;
+		const jfc6 = body.RWS[0].RW[56].FIS[0].FI[1].CF[0].JF;
+		const jfc7 = body.RWS[0].RW[63].FIS[0].FI[2].CF[0].JF;
+		const jfc8 = body.RWS[0].RW[76].FIS[0].FI[3].CF[0].JF;
+		//jplaurel
 
 	  	const street1 = body.RWS[0].RW[2].DE;
 	  	const int01 = body.RWS[0].RW[2].FIS[0].FI[0].TMC.DE;
@@ -307,9 +317,9 @@ app.get('/jplaurel',function(_req, _res){
 	  	const jf05 = body.RWS[0].RW[2].FIS[0].FI[4].CF[0].JF;
 
 	  
-	  	const x = 5
+	  	const x = 8
 	  
-	  	var avejp = jf01 + jf02 + jf03 + jf04 + jf05 ;
+	  	var avejp = jfc1 + jfc2 + jfc3 + jfc4 + jfc5 +jfc6 +jfc7 +jfc8 ;
 	  	var avejp1 = avejp/x;
 
 	  	
