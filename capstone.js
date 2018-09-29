@@ -33,10 +33,11 @@ app.get('/equirino',function(_req, _res){
 	  if (err) { return console.log(err); }
 	  	// console.log(body.url);
 	  	// console.log(body.explanation);
-	  	console.log(body.RWS[0].RW);
-	  	console.log("###################");
-	  	console.log(body.RWS[0].RW[0].DE);
-	  	console.log(body.RWS[0].RW[0].FIS[0].FI[0].TMC.DE);
+	  	const jfm = body.RWS[0].RW[4].FIS[0].FI[0].CF[0].JF;
+		const jfc33 = body.RWS[0].RW[28].FIS[0].FI[2].CF[0].JF;
+		const jfc34 = body.RWS[0].RW[27].FIS[0].FI[2].CF[0].JF;
+		const jfc11 = body.RWS[0].RW[39].FIS[0].FI[0].CF[0].JF;
+
 	
 	  	const street = body.RWS[0].RW[0].DE;
 	  	const int1 = body.RWS[0].RW[0].FIS[0].FI[0].TMC.DE;
@@ -54,9 +55,9 @@ app.get('/equirino',function(_req, _res){
 	  	const int5 = body.RWS[0].RW[0].FIS[0].FI[4].TMC.DE;
 	  	const jf5 = body.RWS[0].RW[0].FIS[0].FI[4].CF[0].JF;
 
-	  	var y = 5
+	  	var y = 4
 	  
-	  	var sum1 = jf1 + jf2 + jf3 + jf4 + jf5 ;
+	  	var sum1 = jfm + jfc33 + jfc34 + jfc11;
 
 	  	var sum = sum1/y;
 	  	
