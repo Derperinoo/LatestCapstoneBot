@@ -31,13 +31,16 @@ app.get('/equirino',function(_req, _res){
 
 	request('https://traffic.api.here.com/traffic/6.1/flow.json?bbox=7.2598%2C125.0860%3B6.7670%2C125.6674&app_id=fQbW8CGYiU3l5mLqWgBE&app_code=SYZXwjFBHSYi_1t1GNuHow', { json: true }, (err, res, body) => {
 	  if (err) { return console.log(err); }
-	  	// console.log(body.url);
-	  	// console.log(body.explanation);
+	  	
+	  	// all equirino average
 	  	const jfm = body.RWS[0].RW[4].FIS[0].FI[0].CF[0].JF;
 		const jfc33 = body.RWS[0].RW[28].FIS[0].FI[2].CF[0].JF;
 		const jfc34 = body.RWS[0].RW[27].FIS[0].FI[2].CF[0].JF;
 		const jfc11 = body.RWS[0].RW[39].FIS[0].FI[0].CF[0].JF;
 
+		const jfm13 = body.RWS[0].RW[5].FIS[0].FI[13].CF[0].JF;
+		const jfc1 = body.RWS[0].RW[40].FIS[0].FI[0].CF[0].JF;
+		// all equirino average
 	
 	  	const street = body.RWS[0].RW[0].DE;
 	  	const int1 = body.RWS[0].RW[0].FIS[0].FI[0].TMC.DE;
@@ -55,9 +58,9 @@ app.get('/equirino',function(_req, _res){
 	  	const int5 = body.RWS[0].RW[0].FIS[0].FI[4].TMC.DE;
 	  	const jf5 = body.RWS[0].RW[0].FIS[0].FI[4].CF[0].JF;
 
-	  	var y = 4
+	  	var y = 6
 	  
-	  	var sum1 = jfm + jfc33 + jfc34 + jfc11;
+	  	var sum1 = jfm + jfc33 + jfc34 + jfc11+ jfm13+ jfc1;
 
 	  	var sum = sum1/y;
 	  	
@@ -161,9 +164,10 @@ app.get('/equirino-',function(_req, _res){
 
 	request('https://traffic.api.here.com/traffic/6.1/flow.json?bbox=7.2598%2C125.0860%3B6.7670%2C125.6674&app_id=fQbW8CGYiU3l5mLqWgBE&app_code=SYZXwjFBHSYi_1t1GNuHow', { json: true }, (err, res, body) => {
 	  if (err) { return console.log(err); }
-	  	// console.log(body.url);
-	  	// console.log(body.explanation);
-
+	  	// all equirino-
+	  	const jfm13 = body.RWS[0].RW[5].FIS[0].FI[13].CF[0].JF;
+		const jfc1 = body.RWS[0].RW[40].FIS[0].FI[0].CF[0].JF;
+		// all equirino-
 	  	
 
 	  	const street = body.RWS[0].RW[1].DE;
