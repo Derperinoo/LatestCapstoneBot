@@ -54,6 +54,8 @@ app.get('/equirino',function(_req, _res){
 	    const jfe003 = body.RWS[0].RW[1].FIS[0].FI[2].CF[0].JF;
 	    const jfe004 = body.RWS[0].RW[1].FIS[0].FI[3].CF[0].JF;
 	    const jfe005 = body.RWS[0].RW[1].FIS[0].FI[5].CF[0].JF;
+	    const jfe00522 = body.RWS[0].RW[1].FIS[0].FI[5].CF[0].JF;
+
 		//equirino intersections-
 
 	
