@@ -49,11 +49,11 @@ app.get('/equirino',function(_req, _res){
 		const jf04 = body.RWS[0].RW[0].FIS[0].FI[3].CF[0].JF;
 		const jf05 = body.RWS[0].RW[0].FIS[0].FI[4].CF[0].JF;
 
-		const jfe1 = body.RWS[0].RW[1].FIS[0].FI[0].CF[0].JF;
-	    const jfe2 = body.RWS[0].RW[1].FIS[0].FI[1].CF[0].JF;
-	    const jfe3 = body.RWS[0].RW[1].FIS[0].FI[2].CF[0].JF;
-	    const jfe4 = body.RWS[0].RW[1].FIS[0].FI[3].CF[0].JF;
-	    const jfe2 = body.RWS[0].RW[1].FIS[0].FI[5].CF[0].JF;
+		const jfe001 = body.RWS[0].RW[1].FIS[0].FI[0].CF[0].JF;
+	    const jfe002 = body.RWS[0].RW[1].FIS[0].FI[1].CF[0].JF;
+	    const jfe003 = body.RWS[0].RW[1].FIS[0].FI[2].CF[0].JF;
+	    const jfe004 = body.RWS[0].RW[1].FIS[0].FI[3].CF[0].JF;
+	    const jfe005 = body.RWS[0].RW[1].FIS[0].FI[5].CF[0].JF;
 		//equirino intersections-
 
 	
