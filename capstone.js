@@ -422,13 +422,13 @@ app.get('/jplaurel',function(_req, _res){
 	  	}
 
 	  	let analysisjp1 = "";
-	  	if(jf01 == 0 || jf01 <= 4){
+	  	if(rrcastillo == 0 || rrcastillo <= 4){
 	  	analysisjp1 = "R. Castillo: Free flow of traffic";
-	  	}else if(jf01 > 4 || jf01 <= 8){
+	  	}else if(rrcastillo > 4 || rrcastillo <= 8){
 	  		analysisjp1 = "R. Castillo: Sluggish flow of traffic";
-	  	}else if(jf01 > 8 || jf01 >= 9){
+	  	}else if(rrcastillo > 8 || rrcastillo >= 9){
 	  		analysisjp1 = "R. Castillo: Slow flow of traffic";
-	  	}else if(jf01 == 10){
+	  	}else if(rrcastillo == 10){
 	  		analysisjp1 = "R. Castillo: Traffic stopped or Road closed"
 	  	}else{
 	  		analysisjp1 = "Cannot compute"
@@ -504,7 +504,7 @@ app.get('/jplaurel',function(_req, _res){
 
 
 	  	_res.setHeader('Content-Type', 'application/json');
-    	_res.send(JSON.stringify({ street1: street1,  int01: int01, jf01: jf01,  int02: int02, jf02: jf02,  int03: int03, jf03: jf03,  
+    	_res.send(JSON.stringify({ street1: street1,  int01: int01, rrcastillo: rrcastillo,  int02: int02, jf02: jf02,  int03: int03, jf03: jf03,  
     		int04: int04, jf04: jf04,  int05: int05, jf05: jf05, int06: int06, analysisjp1:analysisjp1, analysisjp2:analysisjp2, analysisjp3:analysisjp3,
     		analysisjp4:analysisjp4, analysisjp5:analysisjp5, analysis1: analysis1 }));
 	
