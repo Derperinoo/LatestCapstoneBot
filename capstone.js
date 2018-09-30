@@ -12396,15 +12396,21 @@ app.post('/webhook/', function(req, res) {
 			}else if(text=='Help')
 			// if(text.includes("pichon street-"))
 			{
-				sendText(sender, " Traffic Congestion Meanings!!! 					FREE FLOW OF TRAFFIC: walay traffic 			SLUGGISH FLOW OF TRAFFIC: tama tama ra traffic                 				SLOW FLOW OF TRAFFIC: traffic jud sya kaayo                							TRAFFIC STOPPED or ROAD CLOSED: wala na jud ni lihok ang mga sakyanan       ")
+				sendText(sender, " Traffic Congestion Meanings!!!\nFREE FLOW OF TRAFFIC: walay traffic\nSLUGGISH FLOW OF TRAFFIC: tama tama ra traffic                 				SLOW FLOW OF TRAFFIC: traffic jud sya kaayo                							TRAFFIC STOPPED or ROAD CLOSED: wala na jud ni lihok ang mga sakyanan       ")
 
 
 				
-			}
-			else if(text=='Commands')
+			}else if(text=='Commands')
 			// if(text.includes("pichon street-"))
 			{
 				sendText(sender, "Type 'Roads': For list of available roads										Type 'Help': For traffic congestion information")
+
+
+				
+			}else if(text=='Roads')
+			// if(text.includes("pichon street-"))
+			{
+				sendText(sender, "List of Roads!")
 
 
 				
