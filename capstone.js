@@ -8199,7 +8199,7 @@ app.post('/webhook/', function(req, res) {
 			//}
 
 			
-			if(text=='equirino'){
+			if(text=='Equirino'){
 				let chatbotResponse = "";
 				
 				//source : https://www.npmjs.com/package/axios
@@ -8216,7 +8216,7 @@ app.post('/webhook/', function(req, res) {
 				  });
 
 				
-			}else if(text=='equirino-'){
+			}else if(text=='Equirino-'){
 				let chatbotResponse = "";
 				
 				//source : https://www.npmjs.com/package/axios
@@ -8233,7 +8233,7 @@ app.post('/webhook/', function(req, res) {
 				  });
 
 				
-			}else if(text=='equirino intersections'){
+			}else if(text=='Equirino intersections'){
 				let chatbotResponse = "";
 				let chatbotResponse1 = "";
 				let chatbotResponse2 = "";
@@ -8275,7 +8275,7 @@ app.post('/webhook/', function(req, res) {
 				  });
 
 				
-			}else if(text=='equirino intersections-'){
+			}else if(text=='Equirino intersections-'){
 				let chatbotResponse = "";
 				let chatbotResponse1 = "";
 				let chatbotResponse2 = "";
@@ -8317,7 +8317,7 @@ app.post('/webhook/', function(req, res) {
 				  });
 
 				
-			}else if(text=='jplaurel'){
+			}else if(text=='Jplaurel'){
 				let chatbotResponse = "";
 				
 				//source : https://www.npmjs.com/package/axios
@@ -8334,7 +8334,7 @@ app.post('/webhook/', function(req, res) {
 				  });
 
 				
-			}else if(text=='jplaurel-'){
+			}else if(text=='Jplaurel-'){
 				let chatbotResponse = "";
 				
 				//source : https://www.npmjs.com/package/axios
@@ -8351,7 +8351,7 @@ app.post('/webhook/', function(req, res) {
 				  });
 
 				
-			}else if(text=='jplaurel intersections'){
+			}else if(text=='Jplaurel intersections'){
 				
 				let chatbotResponse1 = "";
 				let chatbotResponse2 = "";
@@ -8392,7 +8392,7 @@ app.post('/webhook/', function(req, res) {
 				  });
 
 				
-			}else if(text=='jplaurel intersections-'){
+			}else if(text=='Jplaurel intersections-'){
 				
 				let chatbotResponse1 = "";
 				let chatbotResponse2 = "";
@@ -8433,7 +8433,7 @@ app.post('/webhook/', function(req, res) {
 
 				
 				
-			}else if(text=='mcarthur'){
+			}else if(text=='Mcarthur'){
 				let chatbotResponse = "";
 				
 				//source : https://www.npmjs.com/package/axios
@@ -8450,7 +8450,7 @@ app.post('/webhook/', function(req, res) {
 				  });
 
 				
-			}else if(text=='mcarthur-'){
+			}else if(text=='Mcarthur-'){
 				let chatbotResponse = "";
 				
 				//source : https://www.npmjs.com/package/axios
@@ -8467,7 +8467,7 @@ app.post('/webhook/', function(req, res) {
 				  });
 
 				
-			}else if(text=='mcarthur intersections'){
+			}else if(text=='Mcarthur intersections'){
 				
 				let chatbotResponse1 = "";
 				let chatbotResponse2 = "";
@@ -8568,7 +8568,7 @@ app.post('/webhook/', function(req, res) {
 				  });
 
 				
-			}else if(text=='mcarthur intersections-'){
+			}else if(text=='Mcarthur intersections-'){
 				
 				let chatbotResponse1 = "";
 				let chatbotResponse2 = "";
@@ -8669,7 +8669,7 @@ app.post('/webhook/', function(req, res) {
 				  });
 
 				
-			}else if(text=='ecowestdr'){
+			}else if(text=='Ecowestdr'){
 				let chatbotResponse = "";
 				
 				//source : https://www.npmjs.com/package/axios
@@ -8686,7 +8686,7 @@ app.post('/webhook/', function(req, res) {
 				  });
 
 				
-			}else if(text=='ecowestdr-'){
+			}else if(text=='Ecowestdr-'){
 				let chatbotResponse = "";
 				
 				//source : https://www.npmjs.com/package/axios
@@ -8703,7 +8703,7 @@ app.post('/webhook/', function(req, res) {
 				  });
 
 				
-			}else if(text=='ecowestdr intersections'){
+			}else if(text=='Ecowestdr intersections'){
 				
 				let chatbotResponse1 = "";
 				let chatbotResponse2 = "";
@@ -8734,7 +8734,7 @@ app.post('/webhook/', function(req, res) {
 
 				
 				
-			}else if(text=='ecowestdr intersections-'){
+			}else if(text=='Ecowestdr intersections-'){
 				
 				let chatbotResponse1 = "";
 				let chatbotResponse2 = "";
@@ -8765,7 +8765,7 @@ app.post('/webhook/', function(req, res) {
 
 				
 				
-			}else if(text=='ecoland-'){
+			}else if(text=='Ecoland-'){
 				let chatbotResponse = "";
 				let chatbotResponse1 = "";
 				
@@ -8790,7 +8790,7 @@ app.post('/webhook/', function(req, res) {
 				  });
 
 				
-			}else if(text=='ecoland intersections-'){
+			}else if(text=='Ecoland intersections-'){
 				
 				let chatbotResponse1 = "";
 				let chatbotResponse2 = "";
@@ -8828,7 +8828,7 @@ app.post('/webhook/', function(req, res) {
 
 				
 				
-			}else if(text=='matina aplaya'){
+			}else if(text=='Matina aplaya'){
 				let chatbotResponse = "";
 				
 				//source : https://www.npmjs.com/package/axios
@@ -8845,7 +8845,7 @@ app.post('/webhook/', function(req, res) {
 				  });
 
 				
-			}else if(text=='matina aplaya intersections'){
+			}else if(text=='Matina aplaya intersections'){
 				
 				let chatbotResponse1 = "";
 				let chatbotResponse2 = "";
@@ -8888,7 +8888,7 @@ app.post('/webhook/', function(req, res) {
 
 				
 				
-			}else if(text=='matina aplaya-'){
+			}else if(text=='Matina aplaya-'){
 				let chatbotResponse = "";
 				
 				//source : https://www.npmjs.com/package/axios
@@ -8905,7 +8905,7 @@ app.post('/webhook/', function(req, res) {
 				  });
 
 				
-			}else if(text=='matina aplaya intersections-'){
+			}else if(text=='Matina aplaya intersections-'){
 				
 				let chatbotResponse1 = "";
 				let chatbotResponse2 = "";
@@ -8948,7 +8948,7 @@ app.post('/webhook/', function(req, res) {
 
 				
 				
-			}else if(text=='ecoland'){
+			}else if(text=='Ecoland'){
 				let chatbotResponse = "";
 				
 				//source : https://www.npmjs.com/package/axios
@@ -8965,7 +8965,7 @@ app.post('/webhook/', function(req, res) {
 				  });
 
 				
-			}else if(text=='ecoland intersections'){
+			}else if(text=='Ecoland intersections'){
 				
 				let chatbotResponse1 = "";
 				let chatbotResponse2 = "";
@@ -9003,7 +9003,7 @@ app.post('/webhook/', function(req, res) {
 
 				
 				
-			}else if(text=='tulip drive-')
+			}else if(text=='Tulip drive-')
 			// if(text.includes("tulip dr"))
 			{
 				let chatbotResponse = "";
@@ -9022,7 +9022,7 @@ app.post('/webhook/', function(req, res) {
 				  });
 
 				
-			}else if(text=='tulip drive intersections-'){
+			}else if(text=='Tulip drive intersections-'){
 				
 				let chatbotResponse1 = "";
 				let chatbotResponse2 = "";
@@ -9061,7 +9061,7 @@ app.post('/webhook/', function(req, res) {
 
 				
 				
-			}else if(text=='tulip drive')
+			}else if(text=='Tulip drive')
 			// if(text.includes("tulip drive-"))
 			{
 				let chatbotResponse = "";
@@ -9080,7 +9080,7 @@ app.post('/webhook/', function(req, res) {
 				  });
 
 				
-			}else if(text=='tulip drive intersections'){
+			}else if(text=='Tulip drive intersections'){
 				
 				let chatbotResponse1 = "";
 				let chatbotResponse2 = "";
@@ -9119,7 +9119,7 @@ app.post('/webhook/', function(req, res) {
 
 				
 				
-			}else if(text=='sandawa-')
+			}else if(text=='Sandawa-')
 			// if(text.includes("sandawa"))
 			{
 				let chatbotResponse = "";
@@ -9138,7 +9138,7 @@ app.post('/webhook/', function(req, res) {
 				  });
 
 				
-			}else if(text=='sandawa intersections-')
+			}else if(text=='Sandawa intersections-')
 			// if(text.includes("sandawa-"))
 			{
 				let chatbotResponse = "";
@@ -9164,8 +9164,8 @@ app.post('/webhook/', function(req, res) {
 				  });
 
 				
-			}else if(text=='quimpo boulevard-')
-			// if(text.includes("quimpo boulevard"))
+			}else if(text=='Quimpo blvd-')
+			// if(text.includes("quimpo blvd"))
 			{
 				let chatbotResponse = "";
 				
@@ -9183,7 +9183,7 @@ app.post('/webhook/', function(req, res) {
 				  });
 
 				
-			}else if(text=='quimpo boulevard intersections-')
+			}else if(text=='Quimpo blvd intersections-')
 			// if(text.includes("sandawa-"))
 			{
 				let chatbotResponse = "";
@@ -9222,7 +9222,7 @@ app.post('/webhook/', function(req, res) {
 				  });
 
 				
-			}else if(text=='sandawa')
+			}else if(text=='Sandawa')
 			// if(text.includes("sandawa-"))
 			{
 				let chatbotResponse = "";
@@ -9241,7 +9241,7 @@ app.post('/webhook/', function(req, res) {
 				  });
 
 				
-			}else if(text=='sandawa intersections')
+			}else if(text=='Sandawa intersections')
 			// if(text.includes("sandawa-"))
 			{
 				let chatbotResponse = "";
@@ -9267,8 +9267,8 @@ app.post('/webhook/', function(req, res) {
 				  });
 
 				
-			}else if(text=='quimpo boulevard')
-			// if(text.includes("quimpo boulevard-"))
+			}else if(text=='Quimpo blvd')
+			// if(text.includes("quimpo blvd-"))
 			{
 				let chatbotResponse = "";
 				
@@ -9286,7 +9286,7 @@ app.post('/webhook/', function(req, res) {
 				  });
 
 				
-			}else if(text=='quimpo boulevard intersections')
+			}else if(text=='Quimpo blvd intersections')
 			// if(text.includes("sandawa-"))
 			{
 				let chatbotResponse = "";
@@ -9325,8 +9325,8 @@ app.post('/webhook/', function(req, res) {
 				  });
 
 				
-			}else if(text=='quezon boulevard-')
-			// if(text.includes("quezon boulevard"))
+			}else if(text=='Quezon blvd-')
+			// if(text.includes("quezon blvd"))
 			{
 				let chatbotResponse = "";
 				
@@ -9344,7 +9344,7 @@ app.post('/webhook/', function(req, res) {
 				  });
 
 				
-			}else if(text=='quezon boulevard intersections-')
+			}else if(text=='Quezon blvd intersections-')
 			// if(text.includes("sandawa-"))
 			{
 				let chatbotResponse = "";
@@ -9389,8 +9389,8 @@ app.post('/webhook/', function(req, res) {
 				  });
 
 				
-			}else if(text=='quezon boulevard')
-			// if(text.includes("quezon boulevard-"))
+			}else if(text=='Quezon blvd')
+			// if(text.includes("quezon blvd-"))
 			{
 				let chatbotResponse = "";
 				
@@ -9408,7 +9408,7 @@ app.post('/webhook/', function(req, res) {
 				  });
 
 				
-			}else if(text=='quezon boulevard intersections')
+			}else if(text=='Quezon blvd intersections')
 			// if(text.includes("sandawa-"))
 			{
 				let chatbotResponse = "";
@@ -9453,7 +9453,7 @@ app.post('/webhook/', function(req, res) {
 				  });
 
 				
-			}else if(text=='cabaguio avenue-')
+			}else if(text=='Cabaguio avenue-')
 			// if(text.includes("cabaguio avenue"))
 			{
 				let chatbotResponse = "";
@@ -9472,7 +9472,7 @@ app.post('/webhook/', function(req, res) {
 				  });
 
 				
-			}else if(text=='cabaguio intersections-'){
+			}else if(text=='Cabaguio intersections-'){
 				
 				let chatbotResponse1 = "";
 				let chatbotResponse2 = "";
@@ -9503,8 +9503,8 @@ app.post('/webhook/', function(req, res) {
 
 				
 				
-			}else if(text=='ml quezon blvd-')
-			// if(text.includes("ml quezon boulevard"))
+			}else if(text=='Ml quezon blvd-')
+			// if(text.includes("ml quezon blvd"))
 			{
 				let chatbotResponse = "";
 				
@@ -9576,8 +9576,8 @@ app.post('/webhook/', function(req, res) {
 
 				
 				
-			}else if(text=='ml quezon blvd')
-			// if(text.includes("ml quezon boulevard-"))
+			}else if(text=='Ml quezon blvd')
+			// if(text.includes("ml quezon blvd-"))
 			{
 				let chatbotResponse = "";
 				
@@ -9595,7 +9595,7 @@ app.post('/webhook/', function(req, res) {
 				  });
 
 				
-			}else if(text=='ml quezon blvd intersections'){
+			}else if(text=='Ml quezon blvd intersections'){
 				
 				let chatbotResponse1 = "";
 				let chatbotResponse2 = "";
@@ -9649,7 +9649,7 @@ app.post('/webhook/', function(req, res) {
 
 				
 				
-			}else if(text=='cabaguio avenue')
+			}else if(text=='Cabaguio avenue')
 			// if(text.includes("cabaguio avenue-"))
 			{
 				let chatbotResponse = "";
@@ -9668,7 +9668,7 @@ app.post('/webhook/', function(req, res) {
 				  });
 
 				
-			}else if(text=='cabaguio intersections'){
+			}else if(text=='Cabaguio intersections'){
 				
 				let chatbotResponse1 = "";
 				let chatbotResponse2 = "";
@@ -9699,7 +9699,7 @@ app.post('/webhook/', function(req, res) {
 
 				
 				
-			}else if(text=='dacudao avenue-')
+			}else if(text=='Dacudao avenue-')
 			// if(text.includes("dacudao avenue"))
 			{
 				let chatbotResponse = "";
@@ -9718,7 +9718,7 @@ app.post('/webhook/', function(req, res) {
 				  });
 
 				
-			}else if(text=='dacudao intersections-'){
+			}else if(text=='Dacudao intersections-'){
 				
 				let chatbotResponse1 = "";
 				let chatbotResponse2 = "";
@@ -9749,7 +9749,7 @@ app.post('/webhook/', function(req, res) {
 
 				
 				
-			}else if(text=='dacudao avenue')
+			}else if(text=='Dacudao avenue')
 			// if(text.includes("dacudao avenue-"))
 			{
 				let chatbotResponse = "";
@@ -9768,7 +9768,7 @@ app.post('/webhook/', function(req, res) {
 				  });
 
 				
-			}else if(text=='dacudao intersections'){
+			}else if(text=='Dacudao intersections'){
 				
 				let chatbotResponse1 = "";
 				let chatbotResponse2 = "";
@@ -9799,7 +9799,7 @@ app.post('/webhook/', function(req, res) {
 
 				
 				
-			}else if(text=='pichon street')
+			}else if(text=='Pichon street')
 			// if(text.includes("pichon street"))
 			{
 				let chatbotResponse = "";
@@ -9818,7 +9818,7 @@ app.post('/webhook/', function(req, res) {
 				  });
 
 				
-			}else if(text=='pichon st intersections'){
+			}else if(text=='Pichon st intersections'){
 				let chatbotResponse1 = "";
 				let chatbotResponse2 = "";
 				let chatbotResponse3 = "";
@@ -9855,7 +9855,7 @@ app.post('/webhook/', function(req, res) {
 				  });
 
 				
-			}else if(text=='pichon street-')
+			}else if(text=='Pichon street-')
 			// if(text.includes("pichon street-"))
 			{
 				let chatbotResponse = "";
@@ -9874,7 +9874,7 @@ app.post('/webhook/', function(req, res) {
 				  });
 
 				
-			}else if(text=='pichon st intersections-'){
+			}else if(text=='Pichon st intersections-'){
 				let chatbotResponse = "";
 				
 				//source : https://www.npmjs.com/package/axios
@@ -9891,7 +9891,7 @@ app.post('/webhook/', function(req, res) {
 				  });
 
 				
-			}else if(text=='san pedro street')
+			}else if(text=='San pedro street')
 			// if(text.includes("pichon street-"))
 			{
 				let chatbotResponse = "";
@@ -9910,7 +9910,7 @@ app.post('/webhook/', function(req, res) {
 				  });
 
 				
-			}else if(text=='san pedro intersections'){
+			}else if(text=='San pedro intersections'){
 				
 				let chatbotResponse1 = "";
 				let chatbotResponse2 = "";
@@ -9948,7 +9948,7 @@ app.post('/webhook/', function(req, res) {
 
 				
 				
-			}else if(text=='f torres street-')
+			}else if(text=='F torres street-')
 			// if(text.includes("pichon street-"))
 			{
 				let chatbotResponse = "";
@@ -9967,7 +9967,7 @@ app.post('/webhook/', function(req, res) {
 				  });
 
 				
-			}else if(text=='f torres intersections-'){
+			}else if(text=='F torres intersections-'){
 				
 				let chatbotResponse1 = "";
 				let chatbotResponse2 = "";
@@ -9998,7 +9998,7 @@ app.post('/webhook/', function(req, res) {
 
 				
 				
-			}else if(text=='a bonifacio street-')
+			}else if(text=='A bonifacio street-')
 			// if(text.includes("pichon street-"))
 			{
 				let chatbotResponse = "";
@@ -10017,7 +10017,7 @@ app.post('/webhook/', function(req, res) {
 				  });
 
 				
-			}else if(text=='a bonifacio st intersections-'){
+			}else if(text=='A bonifacio st intersections-'){
 				
 				let chatbotResponse1 = "";
 				let chatbotResponse2 = "";
@@ -10054,7 +10054,7 @@ app.post('/webhook/', function(req, res) {
 
 				
 				
-			}else if(text=='f torres street')
+			}else if(text=='F torres street')
 			// if(text.includes("pichon street-"))
 			{
 				let chatbotResponse = "";
@@ -10073,7 +10073,7 @@ app.post('/webhook/', function(req, res) {
 				  });
 
 				
-			}else if(text=='f torres intersections'){
+			}else if(text=='F torres intersections'){
 				
 				let chatbotResponse1 = "";
 				let chatbotResponse2 = "";
@@ -10104,7 +10104,7 @@ app.post('/webhook/', function(req, res) {
 
 				
 				
-			}else if(text=='a bonifacio street')
+			}else if(text=='A bonifacio street')
 			// if(text.includes("pichon street-"))
 			{
 				let chatbotResponse = "";
@@ -10123,7 +10123,7 @@ app.post('/webhook/', function(req, res) {
 				  });
 
 				
-			}else if(text=='a bonifacio st intersections'){
+			}else if(text=='A bonifacio st intersections'){
 				
 				let chatbotResponse1 = "";
 				let chatbotResponse2 = "";
@@ -10160,7 +10160,7 @@ app.post('/webhook/', function(req, res) {
 
 				
 				
-			}else if(text=='m roxas')
+			}else if(text=='M roxas')
 			// if(text.includes("pichon street-"))
 			{
 				let chatbotResponse = "";
@@ -10179,7 +10179,7 @@ app.post('/webhook/', function(req, res) {
 				  });
 
 				
-			}else if(text=='m roxas intersections'){
+			}else if(text=='M roxas intersections'){
 				
 				let chatbotResponse1 = "";
 				let chatbotResponse2 = "";
@@ -10216,7 +10216,7 @@ app.post('/webhook/', function(req, res) {
 
 				
 				
-			}else if(text=='m roxas-')
+			}else if(text=='M roxas-')
 			// if(text.includes("pichon street-"))
 			{
 				let chatbotResponse = "";
@@ -10235,7 +10235,7 @@ app.post('/webhook/', function(req, res) {
 				  });
 
 				
-			}else if(text=='m roxas intersections-'){
+			}else if(text=='M roxas intersections-'){
 				
 				let chatbotResponse1 = "";
 				let chatbotResponse2 = "";
@@ -10272,7 +10272,7 @@ app.post('/webhook/', function(req, res) {
 
 				
 				
-			}else if(text=='jplaurel before gmall-')
+			}else if(text=='Jplaurel before gmall-')
 			// if(text.includes("pichon street-"))
 			{
 				let chatbotResponse = "";
@@ -10291,7 +10291,7 @@ app.post('/webhook/', function(req, res) {
 				  });
 
 				
-			}else if(text=='jplaurel gmall intersections-'){
+			}else if(text=='Jplaurel gmall intersections-'){
 				
 				let chatbotResponse1 = "";
 				let chatbotResponse2 = "";
@@ -10322,7 +10322,7 @@ app.post('/webhook/', function(req, res) {
 
 				
 				
-			}else if(text=='jplaurel before gmall')
+			}else if(text=='Jplaurel before gmall')
 			// if(text.includes("pichon street-"))
 			{
 				let chatbotResponse = "";
@@ -10341,7 +10341,7 @@ app.post('/webhook/', function(req, res) {
 				  });
 
 				
-			}else if(text=='jplaurel gmall intersections'){
+			}else if(text=='Jplaurel gmall intersections'){
 				
 				let chatbotResponse1 = "";
 				let chatbotResponse2 = "";
@@ -10372,7 +10372,7 @@ app.post('/webhook/', function(req, res) {
 
 				
 				
-			}else if(text=='cm recto')
+			}else if(text=='Cm recto')
 			// if(text.includes("pichon street-"))
 			{
 				let chatbotResponse = "";
@@ -10391,7 +10391,7 @@ app.post('/webhook/', function(req, res) {
 				  });
 
 				
-			}else if(text=='cm recto intersections'){
+			}else if(text=='Cm recto intersections'){
 				
 				let chatbotResponse1 = "";
 				let chatbotResponse2 = "";
@@ -10440,7 +10440,7 @@ app.post('/webhook/', function(req, res) {
 
 				
 				
-			}else if(text=='c bangoy-')
+			}else if(text=='C bangoy-')
 			// if(text.includes("pichon street-"))
 			{
 				let chatbotResponse = "";
@@ -10459,7 +10459,7 @@ app.post('/webhook/', function(req, res) {
 				  });
 
 				
-			}else if(text=='c bangoy intersections-'){
+			}else if(text=='C bangoy intersections-'){
 				
 				let chatbotResponse1 = "";
 				
@@ -10488,7 +10488,7 @@ app.post('/webhook/', function(req, res) {
 
 				
 				
-			}else if(text=='c bangoy')
+			}else if(text=='C bangoy')
 			// if(text.includes("pichon street-"))
 			{
 				let chatbotResponse = "";
@@ -10507,7 +10507,7 @@ app.post('/webhook/', function(req, res) {
 				  });
 
 				
-			}else if(text=='c bangoy intersections'){
+			}else if(text=='C bangoy intersections'){
 				
 				let chatbotResponse1 = "";
 				let chatbotResponse2 = "";
@@ -10543,7 +10543,7 @@ app.post('/webhook/', function(req, res) {
 
 				
 				
-			}else if(text=='r magsaysay-')
+			}else if(text=='R magsaysay-')
 			// if(text.includes("pichon street-"))
 			{
 				let chatbotResponse = "";
@@ -10562,7 +10562,7 @@ app.post('/webhook/', function(req, res) {
 				  });
 
 				
-			}else if(text=='r magsaysay intersections-'){
+			}else if(text=='R magsaysay intersections-'){
 				
 				let chatbotResponse1 = "";
 				let chatbotResponse2 = "";
@@ -10599,7 +10599,7 @@ app.post('/webhook/', function(req, res) {
 
 				
 				
-			}else if(text=='r magsaysay')
+			}else if(text=='R magsaysay')
 			// if(text.includes("pichon street-"))
 			{
 				let chatbotResponse = "";
@@ -10618,7 +10618,7 @@ app.post('/webhook/', function(req, res) {
 				  });
 
 				
-			}else if(text=='r magsaysay intersections'){
+			}else if(text=='R magsaysay intersections'){
 				
 				let chatbotResponse1 = "";
 				let chatbotResponse2 = "";
@@ -10655,7 +10655,7 @@ app.post('/webhook/', function(req, res) {
 
 				
 				
-			}else if(text=='sta ana-')
+			}else if(text=='Sta ana avenue-')
 			// if(text.includes("pichon street-"))
 			{
 				let chatbotResponse = "";
@@ -10674,7 +10674,7 @@ app.post('/webhook/', function(req, res) {
 				  });
 
 				
-			}else if(text=='sta ana intersections-'){
+			}else if(text=='Sta ana intersections-'){
 				
 				let chatbotResponse1 = "";
 				let chatbotResponse2 = "";
@@ -10711,7 +10711,7 @@ app.post('/webhook/', function(req, res) {
 
 				
 				
-			}else if(text=='sta ana')
+			}else if(text=='Sta ana avenue')
 			// if(text.includes("pichon street-"))
 			{
 				let chatbotResponse = "";
@@ -10730,7 +10730,7 @@ app.post('/webhook/', function(req, res) {
 				  });
 
 				
-			}else if(text=='sta ana intersections'){
+			}else if(text=='Sta ana intersections'){
 				
 				let chatbotResponse1 = "";
 				let chatbotResponse2 = "";
@@ -10767,7 +10767,7 @@ app.post('/webhook/', function(req, res) {
 
 				
 				
-			}else if(text=='lapu lapu-')
+			}else if(text=='Lapu lapu-')
 			// if(text.includes("pichon street-"))
 			{
 				let chatbotResponse = "";
@@ -10786,7 +10786,7 @@ app.post('/webhook/', function(req, res) {
 				  });
 
 				
-			}else if(text=='lapu lapu intersections-'){
+			}else if(text=='Lapu lapu intersections-'){
 				
 				let chatbotResponse1 = "";
 				let chatbotResponse2 = "";
@@ -10818,7 +10818,7 @@ app.post('/webhook/', function(req, res) {
 
 				
 				
-			}else if(text=='agdao flyover-')
+			}else if(text=='Agdao flyover-')
 			// if(text.includes("pichon street-"))
 			{
 				let chatbotResponse = "";
@@ -10837,7 +10837,7 @@ app.post('/webhook/', function(req, res) {
 				  });
 
 				
-			}else if(text=='agdao flyover intersections-'){
+			}else if(text=='Agdao flyover intersections-'){
 				
 				let chatbotResponse1 = "";
 				let chatbotResponse2 = "";
@@ -10872,7 +10872,7 @@ app.post('/webhook/', function(req, res) {
 
 				
 				
-			}else if(text=='lapu lapu')
+			}else if(text=='Lapu lapu')
 			// if(text.includes("pichon street-"))
 			{
 				let chatbotResponse = "";
@@ -10891,7 +10891,7 @@ app.post('/webhook/', function(req, res) {
 				  });
 
 				
-			}else if(text=='lapu lapu intersections'){
+			}else if(text=='Lapu lapu intersections'){
 				
 				let chatbotResponse1 = "";
 				let chatbotResponse2 = "";
@@ -10923,7 +10923,7 @@ app.post('/webhook/', function(req, res) {
 
 				
 				
-			}else if(text=='agdao flyover')
+			}else if(text=='Agdao flyover')
 			// if(text.includes("pichon street-"))
 			{
 				let chatbotResponse = "";
@@ -10942,7 +10942,7 @@ app.post('/webhook/', function(req, res) {
 				  });
 
 				
-			}else if(text=='agdao flyover intersections'){
+			}else if(text=='Agdao flyover intersections'){
 				
 				let chatbotResponse1 = "";
 				let chatbotResponse2 = "";
@@ -10977,7 +10977,7 @@ app.post('/webhook/', function(req, res) {
 
 				
 				
-			}else if(text=='r castillo-')
+			}else if(text=='R castillo-')
 			// if(text.includes("pichon street-"))
 			{
 				let chatbotResponse = "";
@@ -10996,7 +10996,7 @@ app.post('/webhook/', function(req, res) {
 				  });
 
 				
-			}else if(text=='r castillo intersections-'){
+			}else if(text=='R castillo intersections-'){
 				
 				let chatbotResponse1 = "";
 				let chatbotResponse2 = "";
@@ -11029,7 +11029,7 @@ app.post('/webhook/', function(req, res) {
 
 				
 				
-			}else if(text=='r castillo')
+			}else if(text=='R castillo')
 			// if(text.includes("pichon street-"))
 			{
 				let chatbotResponse = "";
@@ -11048,7 +11048,7 @@ app.post('/webhook/', function(req, res) {
 				  });
 
 				
-			}else if(text=='r castillo intersections'){
+			}else if(text=='R castillo intersections'){
 				
 				let chatbotResponse1 = "";
 				let chatbotResponse2 = "";
@@ -11081,7 +11081,7 @@ app.post('/webhook/', function(req, res) {
 
 				
 				
-			}else if(text=='cp garcia-')
+			}else if(text=='Cp garcia-')
 			// if(text.includes("pichon street-"))
 			{
 				let chatbotResponse = "";
@@ -11100,7 +11100,7 @@ app.post('/webhook/', function(req, res) {
 				  });
 
 				
-			}else if(text=='cp garcia intersections-'){
+			}else if(text=='Cp garcia intersections-'){
 				
 				let chatbotResponse1 = "";
 				let chatbotResponse2 = "";
@@ -11132,7 +11132,7 @@ app.post('/webhook/', function(req, res) {
 
 				
 				
-			}else if(text=='diversion road-')
+			}else if(text=='Diversion road-')
 			// if(text.includes("pichon street-"))
 			{
 				let chatbotResponse = "";
@@ -11151,7 +11151,7 @@ app.post('/webhook/', function(req, res) {
 				  });
 
 				
-			}else if(text=='diversion road intersections-'){
+			}else if(text=='Diversion road intersections-'){
 				
 				let chatbotResponse1 = "";
 				let chatbotResponse2 = "";
@@ -11203,7 +11203,7 @@ app.post('/webhook/', function(req, res) {
 
 				
 				
-			}else if(text=='cm recto intersections'){
+			}else if(text=='Cm recto intersections'){
 				
 				let chatbotResponse1 = "";
 				let chatbotResponse2 = "";
@@ -11252,7 +11252,7 @@ app.post('/webhook/', function(req, res) {
 
 				
 				
-			}else if(text=='diversion road')
+			}else if(text=='Diversion road')
 			// if(text.includes("pichon street-"))
 			{
 				let chatbotResponse = "";
@@ -11271,7 +11271,7 @@ app.post('/webhook/', function(req, res) {
 				  });
 
 				
-			}else if(text=='diversion road intersections'){
+			}else if(text=='Diversion road intersections'){
 				
 				let chatbotResponse1 = "";
 				let chatbotResponse2 = "";
@@ -11323,7 +11323,7 @@ app.post('/webhook/', function(req, res) {
 
 				
 				
-			}else if(text=='cp garcia')
+			}else if(text=='Cp garcia')
 			// if(text.includes("pichon street-"))
 			{
 				let chatbotResponse = "";
@@ -11342,7 +11342,7 @@ app.post('/webhook/', function(req, res) {
 				  });
 
 				
-			}else if(text=='cp garcia intersections'){
+			}else if(text=='Cp garcia intersections'){
 				
 				let chatbotResponse1 = "";
 				let chatbotResponse2 = "";
@@ -11374,7 +11374,7 @@ app.post('/webhook/', function(req, res) {
 
 				
 				
-			}else if(text=='m quinones road')
+			}else if(text=='M quinones road')
 			// if(text.includes("pichon street-"))
 			{
 				let chatbotResponse = "";
@@ -11393,7 +11393,7 @@ app.post('/webhook/', function(req, res) {
 				  });
 
 				
-			}else if(text=='m quinones road intersections'){
+			}else if(text=='M quinones road intersections'){
 				
 				let chatbotResponse1 = "";
 				let chatbotResponse2 = "";
@@ -11425,7 +11425,7 @@ app.post('/webhook/', function(req, res) {
 
 				
 				
-			}else if(text=='m quinones road-')
+			}else if(text=='M quinones road-')
 			// if(text.includes("pichon street-"))
 			{
 				let chatbotResponse = "";
@@ -11444,7 +11444,7 @@ app.post('/webhook/', function(req, res) {
 				  });
 
 				
-			}else if(text=='m quinones road intersections-'){
+			}else if(text=='M quinones road intersections-'){
 				
 				let chatbotResponse1 = "";
 				let chatbotResponse2 = "";
@@ -11476,7 +11476,7 @@ app.post('/webhook/', function(req, res) {
 
 				
 				
-			}else if(text=='j rodriguez maa-')
+			}else if(text=='J rodriguez maa-')
 			// if(text.includes("pichon street-"))
 			{
 				let chatbotResponse = "";
@@ -11495,7 +11495,7 @@ app.post('/webhook/', function(req, res) {
 				  });
 
 				
-			}else if(text=='j rodriguez maa intersections-'){
+			}else if(text=='J rodriguez maa intersections-'){
 				let chatbotResponse1 = "";
 				let chatbotResponse2 = "";
 				
@@ -11517,7 +11517,7 @@ app.post('/webhook/', function(req, res) {
 				  });
 
 				
-			}else if(text=='j rodriguez maa')
+			}else if(text=='J rodriguez maa')
 			// if(text.includes("pichon street-"))
 			{
 				let chatbotResponse = "";
@@ -11536,7 +11536,7 @@ app.post('/webhook/', function(req, res) {
 				  });
 
 				
-			}else if(text=='j rodriguez maa intersections'){
+			}else if(text=='J rodriguez maa intersections'){
 				let chatbotResponse1 = "";
 				let chatbotResponse2 = "";
 				
@@ -11558,7 +11558,7 @@ app.post('/webhook/', function(req, res) {
 				  });
 
 				
-			}else if(text=='maa road-')
+			}else if(text=='Maa road-')
 			// if(text.includes("pichon street-"))
 			{
 				let chatbotResponse = "";
@@ -11577,7 +11577,7 @@ app.post('/webhook/', function(req, res) {
 				  });
 
 				
-			}else if(text=='maa road intersections-'){
+			}else if(text=='Maa road intersections-'){
 				let chatbotResponse1 = "";
 				let chatbotResponse2 = "";
 				
@@ -11599,7 +11599,7 @@ app.post('/webhook/', function(req, res) {
 				  });
 
 				
-			}else if(text=='maa road')
+			}else if(text=='Maa road')
 			// if(text.includes("pichon street-"))
 			{
 				let chatbotResponse = "";
@@ -11618,7 +11618,7 @@ app.post('/webhook/', function(req, res) {
 				  });
 
 				
-			}else if(text=='maa road intersections'){
+			}else if(text=='Maa road intersections'){
 				let chatbotResponse1 = "";
 				let chatbotResponse2 = "";
 				
@@ -11640,7 +11640,7 @@ app.post('/webhook/', function(req, res) {
 				  });
 
 				
-			}else if(text=='shrine hills road-')
+			}else if(text=='Shrine hills road-')
 			// if(text.includes("pichon street-"))
 			{
 				let chatbotResponse = "";
@@ -11659,7 +11659,7 @@ app.post('/webhook/', function(req, res) {
 				  });
 
 				
-			}else if(text=='shrine hills road intersections-')
+			}else if(text=='Shrine hills road intersections-')
 			// if(text.includes("sandawa-"))
 			{
 				let chatbotResponse = "";
@@ -11685,7 +11685,7 @@ app.post('/webhook/', function(req, res) {
 				  });
 
 				
-			}else if(text=='shrine hills road')
+			}else if(text=='Shrine hills road')
 			// if(text.includes("pichon street-"))
 			{
 				let chatbotResponse = "";
@@ -11704,7 +11704,7 @@ app.post('/webhook/', function(req, res) {
 				  });
 
 				
-			}else if(text=='shrine hills road intersections')
+			}else if(text=='Shrine hills road intersections')
 			// if(text.includes("sandawa-"))
 			{
 				let chatbotResponse = "";
@@ -11730,7 +11730,7 @@ app.post('/webhook/', function(req, res) {
 				  });
 
 				
-			}else if(text=='angliongto-')
+			}else if(text=='Angliongto-')
 			// if(text.includes("pichon street-"))
 			{
 				let chatbotResponse = "";
@@ -11749,7 +11749,7 @@ app.post('/webhook/', function(req, res) {
 				  });
 
 				
-			}else if(text=='angliongto intersections-'){
+			}else if(text=='Angliongto intersections-'){
 				
 				let chatbotResponse1 = "";
 				let chatbotResponse2 = "";
@@ -11787,7 +11787,7 @@ app.post('/webhook/', function(req, res) {
 
 				
 				
-			}else if(text=='buhangin cabantian road-')
+			}else if(text=='Buhangin cabantian road-')
 			// if(text.includes("pichon street-"))
 			{
 				let chatbotResponse = "";
@@ -11806,7 +11806,7 @@ app.post('/webhook/', function(req, res) {
 				  });
 
 				
-			}else if(text=='buhangin cabantian road intersections-'){
+			}else if(text=='Buhangin cabantian road intersections-'){
 				
 				let chatbotResponse1 = "";
 				
@@ -11833,7 +11833,7 @@ app.post('/webhook/', function(req, res) {
 
 				
 				
-			}else if(text=='saint anthony subd-')
+			}else if(text=='Saint anthony subd-')
 			// if(text.includes("pichon street-"))
 			{
 				let chatbotResponse = "";
@@ -11852,7 +11852,7 @@ app.post('/webhook/', function(req, res) {
 				  });
 
 				
-			}else if(text=='saint anthony subd intersections-'){
+			}else if(text=='Saint anthony subd intersections-'){
 				
 				let chatbotResponse1 = "";
 				
@@ -11883,7 +11883,7 @@ app.post('/webhook/', function(req, res) {
 
 				
 				
-			}else if(text=='angliongto')
+			}else if(text=='Angliongto')
 			// if(text.includes("pichon street-"))
 			{
 				let chatbotResponse = "";
@@ -11902,7 +11902,7 @@ app.post('/webhook/', function(req, res) {
 				  });
 
 				
-			}else if(text=='angliongto intersections'){
+			}else if(text=='Angliongto intersections'){
 				
 				let chatbotResponse1 = "";
 				let chatbotResponse2 = "";
@@ -11940,7 +11940,7 @@ app.post('/webhook/', function(req, res) {
 
 				
 				
-			}else if(text=='buhangin cabantian road')
+			}else if(text=='Buhangin cabantian road')
 			// if(text.includes("pichon street-"))
 			{
 				let chatbotResponse = "";
@@ -11959,7 +11959,7 @@ app.post('/webhook/', function(req, res) {
 				  });
 
 				
-			}else if(text=='buhangin cabantian road intersections'){
+			}else if(text=='Buhangin cabantian road intersections'){
 				
 				let chatbotResponse1 = "";
 				
@@ -11988,7 +11988,7 @@ app.post('/webhook/', function(req, res) {
 
 				
 				
-			}else if(text=='saint anthony subd')
+			}else if(text=='Saint anthony subd')
 			// if(text.includes("pichon street-"))
 			{
 				let chatbotResponse = "";
@@ -12007,7 +12007,7 @@ app.post('/webhook/', function(req, res) {
 				  });
 
 				
-			}else if(text=='saint anthony subd intersections'){
+			}else if(text=='Saint anthony subd intersections'){
 				
 				let chatbotResponse1 = "";
 				
@@ -12038,7 +12038,7 @@ app.post('/webhook/', function(req, res) {
 
 				
 				
-			}else if(text=='cabantian road-')
+			}else if(text=='Cabantian road-')
 			// if(text.includes("pichon street-"))
 			{
 				let chatbotResponse = "";
@@ -12057,7 +12057,7 @@ app.post('/webhook/', function(req, res) {
 				  });
 
 				
-			}else if(text=='cabantian road intersections-'){
+			}else if(text=='Cabantian road intersections-'){
 				
 				let chatbotResponse1 = "";
 			
@@ -12087,7 +12087,7 @@ app.post('/webhook/', function(req, res) {
 
 				
 				
-			}else if(text=='cabantian road')
+			}else if(text=='Cabantian road')
 			// if(text.includes("pichon street-"))
 			{
 				let chatbotResponse = "";
@@ -12106,7 +12106,7 @@ app.post('/webhook/', function(req, res) {
 				  });
 
 				
-			}else if(text=='cabantian road intersections'){
+			}else if(text=='Cabantian road intersections'){
 				
 				let chatbotResponse1 = "";
 			
@@ -12136,7 +12136,7 @@ app.post('/webhook/', function(req, res) {
 
 				
 				
-			}else if(text=='davao city maharlika-')
+			}else if(text=='Davao city maharlika-')
 			// if(text.includes("pichon street-"))
 			{
 				let chatbotResponse = "";
@@ -12155,7 +12155,7 @@ app.post('/webhook/', function(req, res) {
 				  });
 
 				
-			}else if(text=='davao city maharlika')
+			}else if(text=='Davao city maharlika')
 			// if(text.includes("pichon street-"))
 			{
 				let chatbotResponse = "";
@@ -12174,7 +12174,7 @@ app.post('/webhook/', function(req, res) {
 				  });
 
 				
-			}else if(text=='davao bukidnon road-')
+			}else if(text=='Davao bukidnon road-')
 			// if(text.includes("pichon street-"))
 			{
 				let chatbotResponse = "";
@@ -12193,7 +12193,7 @@ app.post('/webhook/', function(req, res) {
 				  });
 
 				
-			}else if(text=='davao bukidnon road intersections-'){
+			}else if(text=='Davao bukidnon road intersections-'){
 				
 				let chatbotResponse1 = "";
 				let chatbotResponse2 = "";
@@ -12223,7 +12223,7 @@ app.post('/webhook/', function(req, res) {
 
 				
 				
-			}else if(text=='davao bukidnon road')
+			}else if(text=='Davao bukidnon road')
 			// if(text.includes("pichon street-"))
 			{
 				let chatbotResponse = "";
@@ -12242,7 +12242,7 @@ app.post('/webhook/', function(req, res) {
 				  });
 
 				
-			}else if(text=='davao bukidnon road intersections'){
+			}else if(text=='Davao bukidnon road intersections'){
 				
 				let chatbotResponse1 = "";
 				let chatbotResponse2 = "";
@@ -12272,7 +12272,7 @@ app.post('/webhook/', function(req, res) {
 
 				
 				
-			}else if(text=='daang maharlika')
+			}else if(text=='Daang maharlika')
 			// if(text.includes("pichon street-"))
 			{
 				let chatbotResponse = "";
@@ -12291,7 +12291,7 @@ app.post('/webhook/', function(req, res) {
 				  });
 
 				
-			}else if(text=='daang maharlika intersections'){
+			}else if(text=='Daang maharlika intersections'){
 				
 				let chatbotResponse1 = "";
 				let chatbotResponse2 = "";
@@ -12329,7 +12329,7 @@ app.post('/webhook/', function(req, res) {
 
 				
 				
-			}else if(text=='daang maharlika-')
+			}else if(text=='Daang maharlika-')
 			// if(text.includes("pichon street-"))
 			{
 				let chatbotResponse = "";
@@ -12348,7 +12348,7 @@ app.post('/webhook/', function(req, res) {
 				  });
 
 				
-			}else if(text=='daang maharlika intersections-'){
+			}else if(text=='Daang maharlika intersections-'){
 				
 				let chatbotResponse1 = "";
 				let chatbotResponse2 = "";
@@ -12386,10 +12386,10 @@ app.post('/webhook/', function(req, res) {
 
 				
 				
-			}else if(text=='good day chatbot' || text=='Hi' || text=='Hello')
+			}else if(text=='Good day chatbot' || text=='Hi' || text=='Hello')
 			// if(text.includes("pichon street-"))
 			{
-				sendText(sender, "good day! My name is Bot and I am a Robot, I can extract real-time traffic congestion within Davao City. If you want to know the list commands type 'Commands' :)")
+				sendText(sender, "Good day! My name is Bot and I am a Robot, I can extract real-time traffic congestion within Davao City. If you want to know the list commands type 'Commands' :)")
 
 
 				
@@ -12410,12 +12410,12 @@ app.post('/webhook/', function(req, res) {
 			}else if(text=='Roads')
 			// if(text.includes("pichon street-"))
 			{
-				sendText(sender, 'LIST OF ROADS!\n "Equirino"\n "Jplaurel"\n "Mcarthur"\n "Ecowestdr"\n "Ecoland"\n "Matina aplaya"\n "Tulip drive"\n "Sandawa"\n "Quimpo boulevard"\n "Quezon boulevard"\n "Cabaguio avenue"\n "Ml quezon boulevard"\n "Dacudao avenue"\n "Pichon street"\n "San pedro street"\n "F torres street"\n "A bonifacio street"\n "M roxas"\n "Jp laurel avenue"\n "Cm recto"\n "C bangoy"\n "R magsaysay avenue"\n "Sta ana avenue"\n "Lapu lapu"\n "Agdao flyover"\n "R castillo"\n "Cp garcia"\n "Diversion road"\n "M quinones road"\n "J rodriguez maa"\n "Maa road"\n "Shrine hills road"\n "Angliongto"\n "Buhangin cabantian road"\n "Saint anthony subd"\n "Cabantian road"\n "Davao bukidnon road"\n "Daang maharlika"\n\n"NOTE: If you want to know the traffic status of a specific intersection of the main road, just add "intersections" after the road name.')
+				sendText(sender, 'LIST OF ROADS!\n "Equirino"\n "Jplaurel"\n "Mcarthur"\n "Ecowestdr"\n "Ecoland"\n "Matina aplaya"\n "Tulip drive"\n "Sandawa"\n "Quimpo blvd"\n "Quezon blvd"\n "Cabaguio avenue"\n "Ml quezon blvd"\n "Dacudao avenue"\n "Pichon street"\n "San pedro street"\n "F torres street"\n "A bonifacio street"\n "M roxas"\n "Jp laurel avenue"\n "Cm recto"\n "C bangoy"\n "R magsaysay avenue"\n "Sta ana avenue"\n "Lapu lapu"\n "Agdao flyover"\n "R castillo"\n "Cp garcia"\n "Diversion road"\n "M quinones road"\n "J rodriguez maa"\n "Maa road"\n "Shrine hills road"\n "Angliongto"\n "Buhangin cabantian road"\n "Saint anthony subd"\n "Cabantian road"\n "Davao bukidnon road"\n "Daang maharlika"\n\n"NOTE: If you want to know the traffic status of a specific intersection of the main road, just add "intersections" after the road name.')
 
 
 				
 			}else{
-				 sendText(sender, 'Ooooopsss!.... that is something that I dont understand, Im only a robot, I only understand specific inquiry! Please check spelling of your command.\nYou can type "Help" to know all the commands.')
+				 sendText(sender, 'Ooooopsss!.... that is something that I dont understand, I only understand specific inquiry! Please check spelling or make sure that the first letter of the first word is in UPPER CASE.\nYou can type "Help" to know all the commands.')
 			}
 			
 
