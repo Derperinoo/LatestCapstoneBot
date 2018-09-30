@@ -505,7 +505,7 @@ app.get('/jplaurel',function(_req, _res){
 
 	  	_res.setHeader('Content-Type', 'application/json');
     	_res.send(JSON.stringify({ street1: street1,  int01: int01, rrcastillo: rrcastillo,  int02: int02, jf02: jf02,  int03: int03, jf03: jf03,  
-    		int04: int04, jf04: jf04,  int05: int05, jf05: jf05, int06: int06, analysisjp1:analysisjp1, analysisjp2:analysisjp2, analysisjp3:analysisjp3,
+    		int04: int04, jf04: jf04,  int05: int05, jf05: jf05, int06: int06,jf06:jf06, analysisjp1:analysisjp1, analysisjp2:analysisjp2, analysisjp3:analysisjp3,
     		analysisjp4:analysisjp4, analysisjp5:analysisjp5, analysis1: analysis1 }));
 	
 
@@ -12390,6 +12390,13 @@ app.post('/webhook/', function(req, res) {
 			// if(text.includes("pichon street-"))
 			{
 				sendText(sender, "good day! My name is Bot and I am a Robot, I can extract real-time traffic congestion within Davao City. How can I help you?")
+
+
+				
+			}else if(text=='help')
+			// if(text.includes("pichon street-"))
+			{
+				sendText(sender, "Free Flow Traffic: walay traffic 			Sluggish Flow Traffic: tama tama ra traffic             Slow Flow Traffic: traffic jud sya kaayo            Traffic stopped or Road closed: wala na jud ni lihok ang mga sakyanan       ")
 
 
 				
