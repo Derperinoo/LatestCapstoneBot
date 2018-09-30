@@ -12389,7 +12389,7 @@ app.post('/webhook/', function(req, res) {
 			}else if(text=='Good day chatbot' || text=='Hi' || text=='Hello')
 			// if(text.includes("pichon street-"))
 			{
-				sendText(sender, "Good day! My name is Bot and I am a Robot, I can extract real-time traffic congestion within Davao City. If you want to know the list commands type 'Commands' :)")
+				sendText(sender, 'Good day! My name is Bot and I am a Robot, I can extract real-time traffic congestion within Davao City. If you want to know the list commands type "Help" :)')
 
 
 				
