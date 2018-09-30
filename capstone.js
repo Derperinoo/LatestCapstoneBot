@@ -12393,29 +12393,29 @@ app.post('/webhook/', function(req, res) {
 
 
 				
-			}else if(text=='Help')
+			}else if(text=='Descriptions')
 			// if(text.includes("pichon street-"))
 			{
 				sendText(sender, " Traffic Congestion Meanings!!!\nFREE FLOW OF TRAFFIC: walay traffic\nSLUGGISH FLOW OF TRAFFIC: tama tama ra traffic                 				SLOW FLOW OF TRAFFIC: traffic jud sya kaayo                							TRAFFIC STOPPED or ROAD CLOSED: wala na jud ni lihok ang mga sakyanan       ")
 
 
 				
-			}else if(text=='Commands')
+			}else if(text=='Help')
 			// if(text.includes("pichon street-"))
 			{
-				sendText(sender, "Type 'Roads': For list of available roads										Type 'Help': For traffic congestion information")
+				sendText(sender, "Type 'Roads': For list of available roads\nType 'Descriptions': For better understanding of traffic congestion information")
 
 
 				
 			}else if(text=='Roads')
 			// if(text.includes("pichon street-"))
 			{
-				sendText(sender, 'LIST OF ROADS!\n "Equirino"\n "Equirino intersections"\n "jplaurel"\n "Jplaurel intersections"\n "Mcarthur"\n "Mcarthur intersections"\n "Ecowestdr"\n "Ecowestdr intersections"\n "Ecoland"\n "Ecoland intersections"\n "Matina aplaya"\n "Matina aplaya intersections"\n "Tulip drive"\n "Tulip drive intersections"\n "Sandawa"\n "Sandawa intersections"\n "Quimpo boulevard"\n "Quimpo boulevard intersections"\n "Quimpo boulevard intersections"\n "Quimpo boulevard"\n "Quimpo boulevard intersections"')
+				sendText(sender, 'LIST OF ROADS!\n "Equirino"\n "Jplaurel"\n "Mcarthur"\n "Ecowestdr"\n "Ecoland"\n "Matina aplaya"\n "Tulip drive"\n "Sandawa"\n "Quimpo boulevard"\n "Quezon boulevard"\n "Cabaguio avenue"\n "Ml quezon boulevard"\n "Dacudao avenue"\n "Pichon street"\n "San pedro street"\n "F torres street"\n "A bonifacio street"\n "M roxas"\n "Jp laurel avenue"\n "Cm recto"\n "C bangoy"\n "R magsaysay avenue"\n "Sta ana avenue"\n "Lapu lapu"\n "Agdao flyover"\n "R castillo"\n "Cp garcia"\n "Diversion road"\n "M quinones road"\n "J rodriguez maa"\n "Maa road"\n "Shrine hills road"\n "Angliongto"\n "Buhangin cabantian road"\n "Saint anthony subd"\n "Cabantian road"\n "Davao bukidnon road"\n "Daang maharlika"\n\n"NOTE: If you want to know the traffic status of a specific intersection of the main road, just add "intersections" after the road name.')
 
 
 				
 			}else{
-				 sendText(sender, "Ooooopsss!.... that is something that I don't understand, I'm only a robot, I only understand specific inquiry! You could rather check the road or street spelling! Make sure all the words are in lowercase.")
+				 sendText(sender, 'Ooooopsss!.... that is something that I dont understand, Im only a robot, I only understand specific inquiry! Please check spelling of your command.\n You can type "Help" to know all the commands.')
 			}
 			
 
