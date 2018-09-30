@@ -12386,14 +12386,14 @@ app.post('/webhook/', function(req, res) {
 
 				
 				
-			}else if(text=='good day chatbot')
+			}else if(text=='good day chatbot' || text=='Hi' || text=='Hello')
 			// if(text.includes("pichon street-"))
 			{
-				sendText(sender, "good day! My name is Bot and I am a Robot, I can extract real-time traffic congestion within Davao City. Type 'help' for traffic congestion information  :)")
+				sendText(sender, "good day! My name is Bot and I am a Robot, I can extract real-time traffic congestion within Davao City. Type 'Help' for traffic congestion information  :) ")
 
 
 				
-			}else if(text=='help')
+			}else if(text=='Help')
 			// if(text.includes("pichon street-"))
 			{
 				sendText(sender, " Traffic Congestion Meanings!!! 					FREE FLOW OF TRAFFIC: walay traffic 			SLUGGISH FLOW OF TRAFFIC: tama tama ra traffic                 				SLOW FLOW OF TRAFFIC: traffic jud sya kaayo                							TRAFFIC STOPPED or ROAD CLOSED: wala na jud ni lihok ang mga sakyanan       ")
