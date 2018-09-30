@@ -9343,7 +9343,7 @@ app.post('/webhook/', function(req, res) {
 				    sendText(sender, chatbotResponse)
 				  });
 
-				
+				// else if(text=='Quezon blvd intersections-' || text=='quezon blvd intersections-')
 			}else if(text=='Quezon blvd intersections-' || text=='quezon blvd intersections-')
 			// if(text.includes("sandawa-"))
 			{
