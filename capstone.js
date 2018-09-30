@@ -10674,7 +10674,7 @@ app.post('/webhook/', function(req, res) {
 				  });
 
 				
-			}else if(text=='Sta ana intersections-'){
+			}else if(text=='Sta ana avenue intersections-'){
 				
 				let chatbotResponse1 = "";
 				let chatbotResponse2 = "";
