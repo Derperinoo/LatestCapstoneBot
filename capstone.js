@@ -342,7 +342,6 @@ app.get('/jplaurel',function(_req, _res){
 		const jfc7 = body.RWS[0].RW[63].FIS[0].FI[2].CF[0].JF;
 		const jfc8 = body.RWS[0].RW[76].FIS[0].FI[3].CF[0].JF;
 
-
 		const jfc11 = body.RWS[0].RW[66].FIS[0].FI[0].CF[0].JF;
 		const jfc22 = body.RWS[0].RW[23].FIS[0].FI[1].CF[0].JF;
 		const jfc33 = body.RWS[0].RW[25].FIS[0].FI[1].CF[0].JF;
@@ -351,6 +350,33 @@ app.get('/jplaurel',function(_req, _res){
 		const jfc66 = body.RWS[0].RW[55].FIS[0].FI[0].CF[0].JF;
 		const jfc77 = body.RWS[0].RW[78].FIS[0].FI[0].CF[0].JF;
 		//jplaurel-
+
+		//jplaurel intersections
+		//rcastillo
+		const jf001 = body.RWS[0].RW[2].FIS[0].FI[0].CF[0].JF;
+		const jf066 = body.RWS[0].RW[3].FIS[0].FI[5].CF[0].JF;
+
+		//Angliongto
+		const jf002 = body.RWS[0].RW[2].FIS[0].FI[1].CF[0].JF;
+		const jf055 = body.RWS[0].RW[3].FIS[0].FI[4].CF[0].JF;
+
+		//Cabaguio
+		const jf003 = body.RWS[0].RW[2].FIS[0].FI[2].CF[0].JF;
+		const jf044 = body.RWS[0].RW[3].FIS[0].FI[3].CF[0].JF;
+
+		//Dacudao Ave/Buhangin
+		const jf004 = body.RWS[0].RW[2].FIS[0].FI[3].CF[0].JF;
+		const jf033 = body.RWS[0].RW[3].FIS[0].FI[2].CF[0].JF;
+
+		//F. Torres
+		const jf005 = body.RWS[0].RW[2].FIS[0].FI[4].CF[0].JF;
+	   	const jf022 = body.RWS[0].RW[3].FIS[0].FI[1].CF[0].JF;
+
+	   	//E. Quirino Ave/Sta. Ana Ave
+	    const jf006 = body.RWS[0].RW[2].FIS[0].FI[5].CF[0].JF;
+		const jf011 = body.RWS[0].RW[3].FIS[0].FI[0].CF[0].JF;
+	
+		//jplaurel intersections- 
 
 	  	const street1 = body.RWS[0].RW[2].DE;
 	  	const int01 = body.RWS[0].RW[2].FIS[0].FI[0].TMC.DE;
@@ -368,11 +394,18 @@ app.get('/jplaurel',function(_req, _res){
 	  	const int05 = body.RWS[0].RW[2].FIS[0].FI[4].TMC.DE;
 	  	const jf05 = body.RWS[0].RW[2].FIS[0].FI[4].CF[0].JF;
 
+	  	const int06 = body.RWS[0].RW[2].FIS[0].FI[5].TMC.DE;
+	  	const jf06 = body.RWS[0].RW[2].FIS[0].FI[5].CF[0].JF;
+
 	  
 	  	const x = 15
 	  
-	  	var avejp = jfc1 + jfc2 + jfc3 + jfc4 + jfc5 +jfc6 +jfc7 +jfc8+jfc11+jfc22+jfc33+jfc44+jfc55+jfc66+jfc77 ;
+	  	var avejp = jfc1 + jfc2 + jfc3 + jfc4 + jfc5 +jfc6 +jfc7 +jfc8+jfc11+jfc22+jfc33+jfc44+jfc55+jfc66+jfc77;
 	  	var avejp1 = avejp/x;
+
+	  	var rcas = 2
+	  	var rcastillo = jf001+jf06;
+	  	var rrcastillo = jf001/rcas;
 
 	  	
 	  	let analysis1 = "";
@@ -454,12 +487,25 @@ app.get('/jplaurel',function(_req, _res){
 	  		analysisjp5 = "Cannot compute"
 	  	}
 
+	  	let analysisjp6 = "";
+	  	if(jf05 == 0 || jf05 <= 4){
+	  	analysisjp5 = "E. Quirino Ave/Sta. Ana Ave: Free flow of traffic";
+	  	}else if(jf05 > 4 || jf05 <= 8){
+	  		analysisjp5 = "E. Quirino Ave/Sta. Ana Ave: Sluggish flow of traffic";
+	  	}else if(jf05 > 8 || jf05 >= 9){
+	  		analysisjp5 = "E. Quirino Ave/Sta. Ana Ave: Slow flow of traffic";
+	  	}else if(jf05 == 10){
+	  		analysisjp5 = "E. Quirino Ave/Sta. Ana Ave: Traffic stopped or Road closed"
+	  	}else{
+	  		analysisjp5 = "Cannot compute"
+	  	}
+
 
 
 
 	  	_res.setHeader('Content-Type', 'application/json');
     	_res.send(JSON.stringify({ street1: street1,  int01: int01, jf01: jf01,  int02: int02, jf02: jf02,  int03: int03, jf03: jf03,  
-    		int04: int04, jf04: jf04,  int05: int05, jf05: jf05, analysisjp1:analysisjp1, analysisjp2:analysisjp2, analysisjp3:analysisjp3,
+    		int04: int04, jf04: jf04,  int05: int05, jf05: jf05, int06: int06, analysisjp1:analysisjp1, analysisjp2:analysisjp2, analysisjp3:analysisjp3,
     		analysisjp4:analysisjp4, analysisjp5:analysisjp5, analysis1: analysis1 }));
 	
 
@@ -493,6 +539,9 @@ app.get('/jplaurel-',function(_req, _res){
 
 	  	const int05 = body.RWS[0].RW[3].FIS[0].FI[4].TMC.DE;
 	  	const jf05 = body.RWS[0].RW[3].FIS[0].FI[4].CF[0].JF;
+
+		const int06 = body.RWS[0].RW[3].FIS[0].FI[5].TMC.DE;
+	  	const jf06 = body.RWS[0].RW[3].FIS[0].FI[5].CF[0].JF;
 
 	  
 
@@ -581,9 +630,23 @@ app.get('/jplaurel-',function(_req, _res){
 	  		analysisjp5 = "Cannot compute"
 	  	}
 
+	    let analysisjp6 = "";
+	  	if(jf06 == 0 || jf06 <= 4){
+	  	analysisjp5 = "R. Castillo: Free flow of traffic";
+	  	}else if(jf06 > 4 || jf06 <= 8){
+	  		analysisjp5 = "R. Castillo: Sluggish flow of traffic";
+	  	}else if(jf06 > 8 || jf06 >= 9){
+	  		analysisjp5 = "R. Castillo: Slow flow of traffic";
+	  	}else if(jf06 == 10){
+	  		analysisjp5 = "R. Castillo: Traffic stopped or Road closed"
+	  	}else{
+	  		analysisjp5 = "Cannot compute"
+	  	}
+
 
 	  	_res.setHeader('Content-Type', 'application/json');
     	_res.send(JSON.stringify({ street1: street1,  int01: int01, jf01: jf01,  int02: int02, jf02:  jf02 ,int03: int03, jf03: jf03, int04: int04, jf04: jf04,  int05: int05, jf05: jf05,
+    		int06:int06, analysisjp6:analysisjp6,
 		analysisjp1:analysisjp1, analysisjp2:analysisjp2, analysisjp3:analysisjp3,
     		analysisjp4:analysisjp4, analysisjp5:analysisjp5, analysis1: analysis1 }));
 	});
