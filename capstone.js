@@ -12396,7 +12396,7 @@ app.post('/webhook/', function(req, res) {
 			}else if(text=='help')
 			// if(text.includes("pichon street-"))
 			{
-				sendText(sender, "Free Flow Traffic: walay traffic, Sluggish Flow Traffic: tama tama ra traffic, Slow Flow Traffic: traffic jud sya kaayo, Traffic stopped or Road closed: wala na jud ni lihok ang mga sakyanan")
+				sendText(sender, "FREE FLOW OF TRAFFIC: walay traffic 			SLUGGISH FLOW OF TRAFFIC: tama tama ra traffic                 SLOW FLOW OF TRAFFIC: traffic jud sya kaayo                TRAFFIC STOPPED or ROAD CLOSED: wala na jud ni lihok ang mga sakyanan       ")
 
 
 				
