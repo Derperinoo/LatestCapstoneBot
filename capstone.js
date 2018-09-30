@@ -646,7 +646,7 @@ app.get('/jplaurel-',function(_req, _res){
 
 	  	_res.setHeader('Content-Type', 'application/json');
     	_res.send(JSON.stringify({ street1: street1,  int01: int01, jf01: jf01,  int02: int02, jf02:  jf02 ,int03: int03, jf03: jf03, int04: int04, jf04: jf04,  int05: int05, jf05: jf05,
-    		int06:int06, analysisjp6:analysisjp6,
+    		int06:int06,jf06:jf06, analysisjp6:analysisjp6,
 		analysisjp1:analysisjp1, analysisjp2:analysisjp2, analysisjp3:analysisjp3,
     		analysisjp4:analysisjp4, analysisjp5:analysisjp5, analysis1: analysis1 }));
 	});
