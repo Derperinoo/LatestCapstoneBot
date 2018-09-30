@@ -12396,14 +12396,14 @@ app.post('/webhook/', function(req, res) {
 			}else if(text=='Descriptions')
 			// if(text.includes("pichon street-"))
 			{
-				sendText(sender, " Traffic Congestion Meanings!!!\nFREE FLOW OF TRAFFIC: walay traffic\nSLUGGISH FLOW OF TRAFFIC: tama tama ra traffic                 				SLOW FLOW OF TRAFFIC: traffic jud sya kaayo                							TRAFFIC STOPPED or ROAD CLOSED: wala na jud ni lihok ang mga sakyanan       ")
+				sendText(sender, " TRAFFIC CONGESTION MEANING!!!\n\nFREE FLOW OF TRAFFIC: walay traffic\n\nSLUGGISH FLOW OF TRAFFIC: tama tama ra traffic\n\nSLOW FLOW OF TRAFFIC: traffic jud sya kaayo\n\nTRAFFIC STOPPED or ROAD CLOSED: wala na jud ni lihok ang mga sakyanan")
 
 
 				
 			}else if(text=='Help')
 			// if(text.includes("pichon street-"))
 			{
-				sendText(sender, "Type 'Roads': For list of available roads\nType 'Descriptions': For better understanding of traffic congestion information")
+				sendText(sender, 'Type "Roads":\nFor list of available roads\n\nType "Descriptions":\nFor better understanding of traffic congestion information')
 
 
 				
@@ -12415,7 +12415,7 @@ app.post('/webhook/', function(req, res) {
 
 				
 			}else{
-				 sendText(sender, 'Ooooopsss!.... that is something that I dont understand, Im only a robot, I only understand specific inquiry! Please check spelling of your command.\n You can type "Help" to know all the commands.')
+				 sendText(sender, 'Ooooopsss!.... that is something that I dont understand, Im only a robot, I only understand specific inquiry! Please check spelling of your command.\nYou can type "Help" to know all the commands.')
 			}
 			
 
