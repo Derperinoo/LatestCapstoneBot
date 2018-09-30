@@ -12389,7 +12389,7 @@ app.post('/webhook/', function(req, res) {
 			}else if(text=='good day chatbot' || text=='Hi' || text=='Hello')
 			// if(text.includes("pichon street-"))
 			{
-				sendText(sender, "good day! My name is Bot and I am a Robot, I can extract real-time traffic congestion within Davao City. Type 'Help' for traffic congestion information  :) If you want to know the list commands type 'Commands'")
+				sendText(sender, "good day! My name is Bot and I am a Robot, I can extract real-time traffic congestion within Davao City. If you want to know the list commands type 'Commands' :)")
 
 
 				
@@ -12397,6 +12397,14 @@ app.post('/webhook/', function(req, res) {
 			// if(text.includes("pichon street-"))
 			{
 				sendText(sender, " Traffic Congestion Meanings!!! 					FREE FLOW OF TRAFFIC: walay traffic 			SLUGGISH FLOW OF TRAFFIC: tama tama ra traffic                 				SLOW FLOW OF TRAFFIC: traffic jud sya kaayo                							TRAFFIC STOPPED or ROAD CLOSED: wala na jud ni lihok ang mga sakyanan       ")
+
+
+				
+			}
+			else if(text=='Commands')
+			// if(text.includes("pichon street-"))
+			{
+				sendText(sender, "Type 'Roads': For list of available roads										Type 'Help': For traffic congestion information")
 
 
 				
